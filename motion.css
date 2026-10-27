@@ -1,0 +1,737 @@
+/* ========================================================================= */
+/* AEROFILL MOTION DESIGN SYSTEM TOKENS & PERFORMANCE-SAFE MOTION LAYER     */
+/* Durations: 150ms / 250ms / 400ms / 800ms                                  */
+/* Easing: cubic-bezier(0.22, 1, 0.36, 1)                                   */
+/* Transform & Opacity Only (Zero Layout Shifts)                            */
+/* ========================================================================= */
+
+:root {
+    --motion-duration-fast: 150ms;
+    --motion-duration-normal: 250ms;
+    --motion-duration-moderate: 400ms;
+    --motion-duration-slow: 800ms;
+    --motion-duration-ambient: 20000ms;
+
+    --motion-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+    --motion-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --motion-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+    --motion-stagger-step: 70ms;
+}
+
+/* ========================================================================= */
+/* 1. SCROLL-LINKED FLIGHT PATH & PAPER PLANE                                */
+/* ========================================================================= */
+#flightPathMarginTracker {
+    position: fixed;
+    top: 72px;
+    right: 18px;
+    width: 32px;
+    height: calc(100vh - 96px);
+    pointer-events: none;
+    z-index: 35;
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    #flightPathMarginTracker {
+        display: block;
+    }
+}
+
+.flight-track-path {
+    stroke: rgba(99, 102, 241, 0.22);
+    stroke-width: 1.5;
+    stroke-dasharray: 4 6;
+    fill: none;
+}
+
+.flight-track-fill {
+    stroke: #6366F1;
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 80ms linear;
+}
+
+.flight-tracker-plane {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    transform: translate(-50%, -50%);
+    will-change: transform;
+    pointer-events: auto;
+    filter: drop-shadow(0 2px 6px rgba(99, 102, 241, 0.45));
+    transition: transform 80ms linear;
+}
+
+/* ========================================================================= */
+/* 2. SECTION REVEAL & STAGGER                                              */
+/* ========================================================================= */
+.motion-reveal-section {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity var(--motion-duration-moderate) var(--motion-ease-standard),
+                transform var(--motion-duration-moderate) var(--motion-ease-standard);
+    will-change: opacity, transform;
+}
+
+.motion-reveal-section.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Act Dividers Drawing */
+.act-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(226, 232, 240, 0.9), transparent);
+    width: 100%;
+    margin: 0 auto;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform var(--motion-duration-slow) var(--motion-ease-standard);
+    will-change: transform;
+}
+
+.act-divider.is-drawn {
+    transform: scaleX(1);
+}
+
+.dark .act-divider {
+    background: linear-gradient(90deg, transparent, rgba(51, 65, 85, 0.8), transparent);
+}
+
+/* ========================================================================= */
+/* 3. CARDS: 4PX HOVER LIFT & CURSOR SPOTLIGHT GRADIENT                     */
+/* ========================================================================= */
+.motion-lift-card {
+    transition: transform var(--motion-duration-normal) var(--motion-ease-standard),
+                box-shadow var(--motion-duration-normal) var(--motion-ease-standard);
+    will-change: transform;
+}
+
+.motion-lift-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -4px rgba(15, 23, 42, 0.08), 0 4px 6px -2px rgba(15, 23, 42, 0.04);
+}
+
+.dark .motion-lift-card:hover {
+    box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* Cursor-Following Soft Spotlight for Guardrail Cards */
+.guardrail-card {
+    position: relative;
+    --spotlight-x: -999px;
+    --spotlight-y: -999px;
+    --spotlight-opacity: 0;
+}
+
+.guardrail-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(circle 220px at var(--spotlight-x) var(--spotlight-y), rgba(99, 102, 241, 0.12), transparent 75%);
+    opacity: var(--spotlight-opacity);
+    transition: opacity var(--motion-duration-normal) var(--motion-ease-standard);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.dark .guardrail-card::after {
+    background: radial-gradient(circle 220px at var(--spotlight-x) var(--spotlight-y), rgba(129, 140, 248, 0.14), transparent 75%);
+}
+
+/* ========================================================================= */
+/* 4. PRIMARY CTA MAGNETIC HOVER & IDLE GENTLE PULSE                         */
+/* ========================================================================= */
+.magnetic-btn {
+    transition: transform var(--motion-duration-fast) var(--motion-ease-standard);
+    will-change: transform;
+}
+
+@keyframes gentleCtaPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 1px 3px rgba(99, 102, 241, 0.2);
+    }
+    50% {
+        transform: scale(1.035);
+        box-shadow: 0 8px 20px rgba(99, 102, 241, 0.45);
+    }
+}
+
+.cta-idle-pulse {
+    animation: gentleCtaPulse 2.4s var(--motion-ease-standard) infinite;
+}
+
+/* ========================================================================= */
+/* 5. HERO STORY REVEAL & UNDERLINE-DRAW                                    */
+/* ========================================================================= */
+.draw-underline-target {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.draw-underline-target::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2.5px;
+    background: currentColor;
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--motion-duration-slow) var(--motion-ease-standard);
+    will-change: transform;
+}
+
+.draw-underline-target.is-drawn::after {
+    transform: scaleX(1);
+}
+
+/* 186-Seat Cabin Dot Grid (Hero Matrix) */
+.hero-dot-grid {
+    display: grid;
+    grid-template-columns: repeat(31, minmax(0, 1fr));
+    gap: 2.5px;
+    padding: 8px;
+    border-radius: 12px;
+    background: rgba(15, 23, 42, 0.04);
+    user-select: none;
+}
+
+.dark .hero-dot-grid {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.hero-cabin-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #CBD5E1;
+    transition: transform var(--motion-duration-normal) var(--motion-ease-spring),
+                background-color var(--motion-duration-normal) var(--motion-ease-standard),
+                border-color var(--motion-duration-normal) var(--motion-ease-standard);
+    will-change: transform, background-color;
+}
+
+.dark .hero-cabin-dot {
+    background: #475569;
+}
+
+.hero-cabin-dot.dot-empty-hollow {
+    background: transparent;
+    border: 1.5px solid #EA580C;
+    transform: scale(1.25);
+    box-shadow: 0 0 6px rgba(234, 88, 12, 0.4);
+}
+
+/* Ken Burns Slow 20s Zoom */
+@keyframes kenBurnsSlow {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08) translate3d(-0.5%, -0.5%, 0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.ken-burns-active {
+    animation: kenBurnsSlow var(--motion-duration-ambient) var(--motion-ease-in-out) infinite !important;
+    will-change: transform;
+}
+
+/* ========================================================================= */
+/* 8. PERISHABLE SHELF-LIFE LIVE TIMERS & FLUTTER                           */
+/* ========================================================================= */
+@keyframes redFlashExpire {
+    0%, 100% {
+        background-color: transparent;
+    }
+    30%, 70% {
+        background-color: rgba(239, 68, 68, 0.25);
+        color: #DC2626;
+        transform: scale(1.05);
+    }
+}
+
+.seat-expire-flash {
+    animation: redFlashExpire 1.2s var(--motion-ease-standard) 1;
+}
+
+/* ========================================================================= */
+/* 9. CANNIBALIZATION DRAIN & SHIELD PULSE                                  */
+/* ========================================================================= */
+@keyframes shieldPulseFX {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.shield-pulse-active {
+    animation: shieldPulseFX 500ms var(--motion-ease-spring);
+}
+
+@keyframes redYieldDrainFlash {
+    0% {
+        box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.6);
+    }
+    50% {
+        box-shadow: 0 0 0 8px rgba(225, 29, 72, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(225, 29, 72, 0);
+    }
+}
+
+.yield-drain-flash {
+    animation: redYieldDrainFlash 700ms ease-out;
+}
+
+/* ========================================================================= */
+/* 10. GUARDRAIL MINI VISUAL LOOPS                                          */
+/* ========================================================================= */
+/* Rule 01 Radar Sweep Dot */
+@keyframes radarSweepOrbit {
+    0% {
+        transform: rotate(0deg) translateX(12px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(12px) rotate(-360deg);
+    }
+}
+
+.radar-blip-orbit {
+    animation: radarSweepOrbit 3.5s linear infinite;
+}
+
+/* Rule 03 Window Chip Slide */
+@keyframes windowChipSlide {
+    0%, 100% {
+        transform: translateX(-4px);
+    }
+    50% {
+        transform: translateX(4px);
+    }
+}
+
+.window-chip-slide-active {
+    animation: windowChipSlide 2.8s var(--motion-ease-in-out) infinite;
+}
+
+/* Rule 06 Baggage Bounce & Slide */
+@keyframes bagBounceOff {
+    0% {
+        transform: translateX(-16px) scale(0.9);
+        opacity: 0;
+    }
+    40% {
+        transform: translateX(0px) scale(1);
+        opacity: 1;
+    }
+    60% {
+        transform: translateX(4px) scale(1.1) rotate(6deg);
+    }
+    80% {
+        transform: translateX(-10px) rotate(-6deg);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateX(-24px);
+        opacity: 0;
+    }
+}
+
+@keyframes bagSlideIn {
+    0% {
+        transform: translateX(18px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.bag-bounce-off {
+    animation: bagBounceOff 1.6s var(--motion-ease-standard) infinite;
+}
+
+.bag-slide-in {
+    animation: bagSlideIn 1.6s var(--motion-ease-standard) infinite;
+}
+
+/* ========================================================================= */
+/* 12. SANDBOX BLOCKED STAMP OVERSHOOT & 2-FRAME SHAKE                       */
+/* ========================================================================= */
+@keyframes stampSlamOvershoot {
+    0% {
+        opacity: 0;
+        transform: scale(1.4) rotate(-8deg);
+    }
+    65% {
+        opacity: 1;
+        transform: scale(0.96) rotate(-3deg);
+    }
+    80% {
+        transform: scale(1.04) rotate(-5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(-4deg);
+    }
+}
+
+@keyframes twoFrameShake {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(-3px, 2px);
+    }
+    75% {
+        transform: translate(3px, -2px);
+    }
+}
+
+.blocked-stamp-slam {
+    animation: stampSlamOvershoot 420ms var(--motion-ease-spring) forwards,
+               twoFrameShake 180ms ease 420ms 1;
+    will-change: transform, opacity;
+}
+
+/* ========================================================================= */
+/* 14. SANJEEVANI ECG PATH & HEARTBEAT SYNC                                  */
+/* ========================================================================= */
+@keyframes ecgDraw {
+    0% {
+        stroke-dashoffset: 160;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.ecg-continuous-line {
+    stroke-dasharray: 160;
+    stroke-dashoffset: 160;
+    animation: ecgDraw 2.4s linear infinite;
+}
+
+@keyframes heartbeatPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    15% {
+        transform: scale(1.22);
+    }
+    30% {
+        transform: scale(1.02);
+    }
+    45% {
+        transform: scale(1.18);
+    }
+    60% {
+        transform: scale(1);
+    }
+}
+
+.heartbeat-synced-pulse {
+    animation: heartbeatPulse 833ms var(--motion-ease-standard) infinite;
+    transform-origin: center;
+}
+
+/* ========================================================================= */
+/* 16. SANJEEVANI QUEUE PRIORITY ARC JUMP                                   */
+/* ========================================================================= */
+@keyframes queueDotArcJump {
+    0% {
+        transform: translate(0, 0);
+    }
+    40% {
+        transform: translate(-48px, -22px) scale(1.2);
+    }
+    100% {
+        transform: translate(-96px, 0) scale(1);
+    }
+}
+
+.queue-dot-arc-jump {
+    animation: queueDotArcJump 800ms var(--motion-ease-spring) forwards;
+}
+
+/* ========================================================================= */
+/* 18. FLIGHT SCHOOL TABS SLIDING INDICATOR & CROSSFADE                      */
+/* ========================================================================= */
+.tutorial-tab-content {
+    transition: opacity var(--motion-duration-normal) var(--motion-ease-standard),
+                transform var(--motion-duration-normal) var(--motion-ease-standard);
+    will-change: opacity, transform;
+}
+
+.tutorial-tab-content.tab-enter-right {
+    opacity: 0;
+    transform: translateX(12px);
+}
+
+.tutorial-tab-content.tab-enter-left {
+    opacity: 0;
+    transform: translateX(-12px);
+}
+
+.tutorial-tab-content.tab-active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Aircraft Cutaway Blue Scan Line */
+@keyframes laserScanSweep {
+    0% {
+        transform: translateX(-10%);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.9;
+    }
+    80% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateX(110%);
+        opacity: 0;
+    }
+}
+
+.cutaway-laser-sweep {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, transparent, #22D3EE, #06B6D4, transparent);
+    box-shadow: 0 0 12px #06B6D4;
+    animation: laserScanSweep 6s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 15;
+}
+
+/* Hotspot Connector Line SVG */
+.hotspot-connector-line {
+    stroke: #06B6D4;
+    stroke-width: 1.5;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    transition: stroke-dashoffset 400ms var(--motion-ease-standard);
+}
+
+.hotspot-connector-line.is-connected {
+    stroke-dashoffset: 0;
+}
+
+/* ========================================================================= */
+/* 20. BOARDING PASSENGER FLOW DOTS                                          */
+/* ========================================================================= */
+@keyframes passengerDotFlow {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(120px, 0);
+        opacity: 0;
+    }
+}
+
+.passenger-flow-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #06B6D4;
+    animation: passengerDotFlow 2.5s linear infinite;
+}
+
+/* ========================================================================= */
+/* 22. CABIN SEATMAP SCALE POP WAVE                                         */
+/* ========================================================================= */
+@keyframes seatScalePop {
+    0% {
+        transform: scale(0.9);
+    }
+    50% {
+        transform: scale(1.22);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.seat-wave-pop {
+    animation: seatScalePop 280ms var(--motion-ease-spring);
+}
+
+/* Seat Click Ripple Ring */
+@keyframes seatClickRipple {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(1.7);
+        opacity: 0;
+    }
+}
+
+.seat-click-ripple {
+    position: absolute;
+    inset: -3px;
+    border: 2px solid #6366F1;
+    border-radius: 8px;
+    animation: seatClickRipple 400ms ease-out forwards;
+    pointer-events: none;
+}
+
+/* ========================================================================= */
+/* 23. CFO DELTA WATERFALL GLOW                                              */
+/* ========================================================================= */
+@keyframes deltaBarGlowFX {
+    0%, 100% {
+        filter: drop-shadow(0 0 0 rgba(16, 185, 129, 0));
+    }
+    50% {
+        filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.65));
+    }
+}
+
+.delta-bar-glow {
+    animation: deltaBarGlowFX 600ms var(--motion-ease-standard);
+}
+
+/* ========================================================================= */
+/* 24. PITCH CARD STAGGER & FINAL GRADIENT SHIMMER                          */
+/* ========================================================================= */
+@keyframes gradientShimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.closing-cta-shimmer {
+    background-size: 200% 200% !important;
+    animation: gradientShimmer 9s ease infinite;
+}
+
+/* ========================================================================= */
+/* PREFERS-REDUCED-MOTION: COMPLETE ACCESSIBILITY OVERRIDES                  */
+/* ========================================================================= */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .ken-burns-active,
+    .cta-idle-pulse,
+    .ecg-continuous-line,
+    .cutaway-laser-sweep,
+    .passenger-flow-dot,
+    .radar-blip-orbit,
+    .window-chip-slide-active,
+    .bag-bounce-off,
+    .bag-slide-in,
+    .closing-cta-shimmer,
+    .heartbeat-synced-pulse {
+        animation: none !important;
+    }
+
+    .motion-reveal-section {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .act-divider {
+        transform: scaleX(1) !important;
+    }
+
+    .draw-underline-target::after {
+        transform: scaleX(1) !important;
+    }
+
+    #flightPathMarginTracker {
+        display: none !important;
+    }
+}
+
+/* User Manual Override Class for Reduced Motion */
+html.reduce-motion-active *,
+html.reduce-motion-active *::before,
+html.reduce-motion-active *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+}
+
+html.reduce-motion-active .ken-burns-active,
+html.reduce-motion-active .cta-idle-pulse,
+html.reduce-motion-active .ecg-continuous-line,
+html.reduce-motion-active .cutaway-laser-sweep,
+html.reduce-motion-active .passenger-flow-dot,
+html.reduce-motion-active .radar-blip-orbit,
+html.reduce-motion-active .window-chip-slide-active,
+html.reduce-motion-active .bag-bounce-off,
+html.reduce-motion-active .bag-slide-in,
+html.reduce-motion-active .closing-cta-shimmer,
+html.reduce-motion-active .heartbeat-synced-pulse {
+    animation: none !important;
+}
+
+html.reduce-motion-active .motion-reveal-section {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+html.reduce-motion-active .act-divider {
+    transform: scaleX(1) !important;
+}
+
+html.reduce-motion-active .draw-underline-target::after {
+    transform: scaleX(1) !important;
+}
+
+html.reduce-motion-active #flightPathMarginTracker {
+    display: none !important;
+}
