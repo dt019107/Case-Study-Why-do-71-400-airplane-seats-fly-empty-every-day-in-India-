@@ -323,10 +323,10 @@
                     <span>A320neo 186-Seat Cabin Matrix</span>
                 </span>
                 <span class="text-[11px] font-bold text-orange-600 dark:text-orange-400">
-                    <span id="heroDotsEmptyCounter" class="tabular-nums">0</span> / 26 Empty Seats
+                    <span id="heroDotsEmptyCounter" class="tabular-nums">0</span> / 24 Empty Seats
                 </span>
             </div>
-            <div id="heroDotGridMatrix" class="hero-dot-grid" aria-label="186 seat cabin dot grid: 26 empty seats transitioning to hollow" role="img"></div>
+            <div id="heroDotGridMatrix" class="hero-dot-grid" aria-label="186 seat cabin dot grid: 24 empty middle seats transitioning to hollow" role="img"></div>
             <div class="flex items-center justify-between text-[10px] font-mono text-slate-400">
                 <span>Row 01 (Cockpit Forward)</span>
                 <span>Row 31 (Aft Galley)</span>
@@ -338,7 +338,7 @@
         if (!gridEl) return;
 
         const TOTAL_SEATS = 186;
-        const EMPTY_COUNT = (typeof window.FLIGHT_6E205_EMPTY_SEATS !== 'undefined') ? window.FLIGHT_6E205_EMPTY_SEATS : 26;
+        const EMPTY_COUNT = (typeof window.FLIGHT_6E205_EMPTY_SEATS !== 'undefined') ? window.FLIGHT_6E205_EMPTY_SEATS : 24;
         const dots = [];
 
         for (let i = 0; i < TOTAL_SEATS; i++) {
@@ -349,8 +349,10 @@
             dots.push(dot);
         }
 
-        // Pick 26 pseudo-random distinct seat indices distributed through cabin
-        const emptyIndices = [14, 17, 23, 26, 35, 41, 53, 56, 71, 74, 89, 92, 107, 110, 125, 128, 143, 146, 155, 161, 167, 173, 179, 182, 184, 185];
+        // 24 empty seats distributed strictly in middle columns B and E
+        const emptyIndices = (typeof window.emptySeatIndices !== 'undefined')
+            ? window.emptySeatIndices
+            : [7, 10, 19, 22, 31, 34, 43, 46, 61, 64, 73, 76, 91, 94, 103, 106, 115, 118, 133, 136, 151, 154, 163, 166];
 
         const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
@@ -619,7 +621,7 @@
                     return;
                 }
 
-                const emptySeatIndices = window.emptySeatIndices || [14, 17, 23, 26, 35, 41, 53, 56, 71, 74, 89, 92, 107, 110, 125, 128, 143, 146, 155, 161, 167, 173, 179, 185];
+                const emptySeatIndices = window.emptySeatIndices || [7, 10, 19, 22, 31, 34, 43, 46, 61, 64, 73, 76, 91, 94, 103, 106, 115, 118, 133, 136, 151, 154, 163, 166];
                 const isCurrentlyFilled = window.isCabinFilled;
 
                 // Call core logic
