@@ -183,7 +183,142 @@
         button, a.magnetic-btn {
             border-radius: 8px !important;
         }
-/* --- Headings in Newsreader (Editorial Serif) --- */
+
+        /* ========================================================================= */
+        /* STORIES 1 TO 4: PERFECT VISUAL COLOR CONTRAST ARCHITECTURE               */
+        /* High-contrast WCAG AAA typography on purposeful tinted light backgrounds  */
+        /* ========================================================================= */
+        
+        /* 1. Amber Tinted Cards (Hook / Attention) */
+        [class*="bg-amber-50"] {
+            background-color: #FFFBEB !important; /* Rich warm amber tint */
+            border-color: #FCD34D !important; /* Visible amber border */
+        }
+        [class*="bg-amber-50"] p,
+        [class*="bg-amber-50"] span {
+            color: #78350F !important; /* Deep warm amber text (Contrast 8.5:1) */
+        }
+        [class*="bg-amber-50"] strong,
+        [class*="bg-amber-50"] h3,
+        [class*="bg-amber-50"] h4 {
+            color: #451A03 !important; /* Pure ink amber heading */
+        }
+        .text-amber-800, .text-amber-700, .text-amber-900, .text-amber-600 {
+            color: #78350F !important;
+        }
+
+        /* 2. Indigo / Slate Tinted Cards (Decision / Architecture) */
+        [class*="bg-indigo-50"] {
+            background-color: #F8FAFC !important; /* Calm clean surface */
+            border-color: #CBD5E1 !important;
+        }
+        [class*="bg-indigo-50"] p {
+            color: #1E293B !important;
+        }
+        [class*="bg-indigo-50"] strong,
+        [class*="bg-indigo-50"] h3,
+        [class*="bg-indigo-50"] h4 {
+            color: #0F172A !important;
+        }
+        .text-indigo-700, .text-indigo-800, .text-indigo-600 {
+            color: #1E293B !important;
+        }
+
+        /* 3. Emerald Tinted Cards (Result / Proof) */
+        [class*="bg-emerald-50"] {
+            background-color: #F0FDF4 !important; /* Crisp sage light */
+            border-color: #86EFAC !important; /* Defined emerald boundary */
+        }
+        [class*="bg-emerald-50"] p,
+        [class*="bg-emerald-50"] span {
+            color: #14532D !important; /* Deep forest green (Contrast 9.8:1) */
+        }
+        [class*="bg-emerald-50"] strong,
+        [class*="bg-emerald-50"] h3,
+        [class*="bg-emerald-50"] h4 {
+            color: #052E16 !important;
+        }
+        .text-emerald-800, .text-emerald-700, .text-emerald-900, .text-emerald-600 {
+            color: #14532D !important;
+        }
+
+        /* 4. Rose Tinted Cards (Medical / Sanjeevani) */
+        [class*="bg-rose-50"] {
+            background-color: #FFF1F2 !important; /* Soft rose tint */
+            border-color: #FECDD3 !important;
+        }
+        [class*="bg-rose-50"] p,
+        [class*="bg-rose-50"] span {
+            color: #881337 !important; /* Deep rose ink (Contrast 9.4:1) */
+        }
+        [class*="bg-rose-50"] strong,
+        [class*="bg-rose-50"] h3,
+        [class*="bg-rose-50"] h4 {
+            color: #4C0519 !important;
+        }
+        .text-rose-700, .text-rose-800, .text-rose-900, .text-rose-600 {
+            color: #881337 !important;
+        }
+
+        /* 5. Teal Tinted Cards (Story 3 / Narrative) */
+        [class*="bg-teal-50"] {
+            background-color: #F0FDFA !important;
+            border-color: #99F6E4 !important;
+        }
+        [class*="bg-teal-50"] p,
+        [class*="bg-teal-50"] span {
+            color: #134E4A !important; /* Deep teal ink (Contrast 9.2:1) */
+        }
+        [class*="bg-teal-50"] strong,
+        [class*="bg-teal-50"] h3,
+        [class*="bg-teal-50"] h4 {
+            color: #042F2E !important;
+        }
+        .text-teal-800, .text-teal-700, .text-teal-900, .text-teal-600 {
+            color: #134E4A !important;
+        }
+
+        /* 6. Neutral Base Cards (Before / Trade-off / Technical Details) */
+        [class*="bg-slate-50"] {
+            background-color: #F8FAFC !important;
+            border-color: #E2E8F0 !important;
+        }
+        [class*="bg-slate-50"] p,
+        [class*="bg-slate-50"] li {
+            color: #334155 !important;
+        }
+        [class*="bg-slate-50"] strong,
+        [class*="bg-slate-50"] h3,
+        [class*="bg-slate-50"] h4 {
+            color: #0F172A !important;
+        }
+
+        /* 7. Standby Guardrail & Simulator Cards Contrast */
+        .guardrail-card {
+            background-color: #FFFFFF !important;
+            border: 1px solid #CBD5E1 !important;
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+        }
+        .guardrail-card h3 {
+            color: #0F172A !important;
+        }
+        .guardrail-card p {
+            color: #334155 !important;
+        }
+        .guardrail-card .defense-front {
+            background-color: #F8FAFC !important;
+            border: 1px solid #E2E8F0 !important;
+        }
+        .guardrail-card .defense-front p {
+            color: #1E293B !important;
+        }
+
+        /* 8. Fix Faint Watermarks & Decorative Numbers */
+        .guardrail-card span.font-mono.font-black {
+            color: #E2E8F0 !important; /* Clean visible watermark */
+        }
+
+        /* --- Headings in Newsreader (Editorial Serif) --- */
         h1, h2, h3, h4 {
             font-family: 'Newsreader', Georgia, serif;
             letter-spacing: -0.02em;
