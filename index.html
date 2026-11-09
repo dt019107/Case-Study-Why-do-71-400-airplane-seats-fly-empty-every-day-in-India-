@@ -115,6 +115,97 @@
     <style>
 
         /* ========================================================================= */
+        /* PREMIUM 6 GUARDRAIL CARDS & CORPORATE DEFENSE ARCHITECTURE                */
+        /* ========================================================================= */
+        .guardrail-card {
+            background-color: #FFFFFF !important;
+            border: 1px solid #CBD5E1 !important;
+            border-radius: 18px !important;
+            padding: 1.75rem !important;
+            box-shadow: 0 1px 3px rgba(11, 16, 32, 0.05), 0 1px 2px rgba(11, 16, 32, 0.03) !important;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease !important;
+        }
+
+        .guardrail-card:hover {
+            border-color: #94A3B8 !important;
+            box-shadow: 0 6px 16px -2px rgba(11, 16, 32, 0.08) !important;
+            transform: translateY(-2px);
+        }
+
+        .guardrail-card.check-active {
+            border-color: #E11D48 !important;
+            box-shadow: 0 0 0 2px #E11D48, 0 8px 24px -4px rgba(225, 29, 72, 0.25) !important;
+            transform: translateY(-4px) !important;
+        }
+
+        /* Number Watermark (Clean, visible, elegant) */
+        .guardrail-card span.font-mono.font-black {
+            color: #E2E8F0 !important;
+            font-size: 2.5rem !important;
+            font-weight: 800 !important;
+            opacity: 0.8 !important;
+        }
+
+        /* Card Titles & Body */
+        .guardrail-card h3 {
+            color: #020617 !important;
+            font-size: 1.18rem !important;
+            font-weight: 700 !important;
+            letter-spacing: -0.02em !important;
+            line-height: 1.35 !important;
+        }
+
+        .guardrail-card p {
+            color: #334155 !important;
+            font-size: 14px !important;
+            line-height: 1.6 !important;
+        }
+
+        /* Mini Telemetry Visual Inside Card */
+        .guardrail-card .my-2 {
+            background-color: #F8FAFC !important;
+            border: 1px solid #E2E8F0 !important;
+            border-radius: 12px !important;
+            padding: 0.65rem 0.85rem !important;
+        }
+
+        /* Defense Box: Professional corporate defense status */
+        .defense-box {
+            min-height: 96px;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .defense-front {
+            background-color: #F1F5F9 !important;
+            border: 1px solid #CBD5E1 !important;
+            border-radius: 12px !important;
+            padding: 0.85rem 1rem !important;
+        }
+
+        .defense-front p {
+            color: #1E293B !important;
+            font-size: 12.5px !important;
+            line-height: 1.5 !important;
+        }
+
+        .defense-back {
+            background-color: #0B1020 !important;
+            border: 1px solid #9F1239 !important;
+            border-radius: 12px !important;
+            padding: 0.85rem 1rem !important;
+            color: #FFFFFF !important;
+        }
+
+        .defense-back p {
+            color: #FECDD3 !important;
+            font-size: 12px !important;
+            line-height: 1.45 !important;
+        }
+
+
+        /* ========================================================================= */
         /* TASK SCOPE: UNIFIED SEMANTIC COLOR SYSTEM & WCAG AA CONTRAST TOKENS       */
         /* ========================================================================= */
         :root {
@@ -1685,26 +1776,27 @@
                     <!-- Embedded Guardrail Cards & Interactive Sandbox -->
                     <div class="space-y-8">
                         <!-- "Run all 6 checks" Live Toolbar -->
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 p-4 rounded-2xl bg-indigo-50/70 dark:bg-slate-900/90 border border-indigo-100 dark:border-indigo-950/70 shadow-xs">
-                <div class="flex items-center gap-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 p-4 sm:p-5 rounded-2xl bg-white border border-slate-300 shadow-sm">
+                <div class="flex items-center gap-3.5">
                     <span class="relative flex h-3 w-3" aria-hidden="true">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-600"></span>
                     </span>
                     <div>
-                        <div class="text-xs font-bold font-mono uppercase tracking-wider text-indigo-900 dark:text-indigo-200">
-                            Enforcement Engine: 6/6 Active
+                        <div class="text-xs font-bold font-mono uppercase tracking-wider text-slate-950 flex items-center gap-2">
+                            <span>Automated Friction Engine: 6/6 Active</span>
+                            <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 text-[10px] font-bold border border-emerald-300">Defensive Mode</span>
                         </div>
-                        <div class="text-xs text-slate-500 dark:text-slate-400">
-                            Leakage minimised in tested scenarios • Algorithmic Enforcement (simulated)
+                        <div class="text-xs text-slate-600 mt-0.5">
+                            Cryptographic geofence, time gates, and physical cabin constraints active in simulation.
                         </div>
                     </div>
                 </div>
 
-                <div class="flex items-center gap-2">
-                    <button id="runGuardrailsBtn" onclick="runAllGuardrailChecks()" class="magnetic-btn inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-[#e11d48] hover:bg-[#be123c] text-white text-xs sm:text-sm font-semibold shadow-sm hover:shadow-indigo-500/20 active:scale-[0.98] transition-all">
-                        <i data-lucide="play-circle" class="w-4 h-4"></i>
-                        <span>Run all 6 checks</span>
+                <div class="flex items-center gap-3">
+                    <button id="runGuardrailsBtn" onclick="runAllGuardrailChecks()" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-slate-950 hover:bg-slate-800 text-white text-xs font-mono font-semibold transition-all shadow-xs active:scale-[0.98]">
+                        <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
+                        <span>Simulate 6/6 Checks</span>
                     </button>
                 </div>
             </div>
@@ -2156,35 +2248,40 @@
             </div>
 
             <!-- Interactive Anti-Fraud Sandbox Simulation -->
-            <div id="antiFraudSandbox" class="bg-white dark:bg-slate-900 p-5 sm:p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-card space-y-3.5">
-                <div class="flex items-center justify-between">
-                    <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                        <i data-lucide="terminal" class="w-4 h-4 text-brand-600"></i>
-                        <span>Interactive Anti-Fraud Sandbox: Can a Corporate Buyer Game This?</span>
-                    </h3>
-                    <span class="text-xs font-mono font-medium text-slate-400">Click a scenario</span>
+            <div id="antiFraudSandbox" class="bg-white p-6 sm:p-7 rounded-2xl border border-slate-300 shadow-sm space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 pb-3">
+                    <div class="space-y-0.5">
+                        <div class="text-xs font-mono font-bold text-rose-700 uppercase tracking-wider">Simulated Stress Test</div>
+                        <h3 class="text-base sm:text-lg font-bold text-slate-950 font-serif">
+                            Anti-Fraud Sandbox: Can Corporate Buyers Exploit Standby?
+                        </h3>
+                    </div>
+                    <span class="text-xs font-mono text-slate-500 bg-slate-100 px-2.5 py-1 rounded self-start sm:self-auto">Select a test vector below</span>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
                     <button onclick="simulateFraud('exec-office')" id="fraudScenarioA"
-                        class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left text-xs transition">
-                        <strong class="text-slate-900 dark:text-white block mb-0.5 font-semibold">Scenario A:</strong>
-                        <span class="text-slate-600 dark:text-slate-300">VP tries to book from BKC Mumbai Office at 10 AM</span>
+                        class="p-4 rounded-xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200 hover:border-slate-400 text-left text-xs transition space-y-1">
+                        <span class="text-rose-700 font-mono font-bold uppercase text-[10px] tracking-wider block">Vector A &bull; Location Spoofing</span>
+                        <strong class="text-slate-950 block text-xs font-bold leading-snug">VP books from BKC Office at 10 AM</strong>
+                        <span class="text-slate-600 block text-[11px] leading-normal">Tests terminal geofence &amp; cellular telemetry check.</span>
                     </button>
                     <button onclick="simulateFraud('trolley-bag')" id="fraudScenarioB"
-                        class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left text-xs transition">
-                        <strong class="text-slate-900 dark:text-white block mb-0.5 font-semibold">Scenario B:</strong>
-                        <span class="text-slate-600 dark:text-slate-300">Consultant arrives at airport with 20kg Samsonite bag</span>
+                        class="p-4 rounded-xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200 hover:border-slate-400 text-left text-xs transition space-y-1">
+                        <span class="text-rose-700 font-mono font-bold uppercase text-[10px] tracking-wider block">Vector B &bull; Luggage Smuggling</span>
+                        <strong class="text-slate-950 block text-xs font-bold leading-snug">Consultant with 20kg Samsonite bag</strong>
+                        <span class="text-slate-600 block text-[11px] leading-normal">Tests 7kg backpack limitation at Digi Yatra gate.</span>
                     </button>
                     <button onclick="simulateFraud('student-fake')" id="fraudScenarioC"
-                        class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left text-xs transition">
-                        <strong class="text-slate-900 dark:text-white block mb-0.5 font-semibold">Scenario C:</strong>
-                        <span class="text-slate-600 dark:text-slate-300">Travel agent attempts to use photoshopped student ID</span>
+                        class="p-4 rounded-xl bg-slate-50 hover:bg-slate-100/90 border border-slate-200 hover:border-slate-400 text-left text-xs transition space-y-1">
+                        <span class="text-rose-700 font-mono font-bold uppercase text-[10px] tracking-wider block">Vector C &bull; Identity Forgery</span>
+                        <strong class="text-slate-950 block text-xs font-bold leading-snug">Agent with forged Student PDF</strong>
+                        <span class="text-slate-600 block text-[11px] leading-normal">Tests live DigiLocker university API cryptographic hash.</span>
                     </button>
                 </div>
 
                 <div id="fraudSimulationResult" aria-live="polite"
-                    class="p-3.5 rounded-xl bg-slate-900 text-emerald-400 border border-slate-800 text-xs font-mono">
+                    class="p-4 rounded-xl bg-[#0B1020] text-emerald-400 border border-slate-800 text-xs font-mono leading-relaxed">
                     Select a scenario above to test the cryptographic defense engine.
                 </div>
             </div>
