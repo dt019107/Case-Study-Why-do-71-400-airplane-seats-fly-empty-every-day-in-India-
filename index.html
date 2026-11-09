@@ -113,9 +113,10 @@
     </script>
 
     <style>
+        
         /* ========================================================================= */
-        /* PREMIUM HIGH-CONTRAST LIGHT MODE ARCHITECTURE                            */
-        /* Meets WCAG AAA Contrast Standards (>= 7:1 for text, >= 4.5:1 for UI)     */
+        /* MINIMAL EDITORIAL PORTFOLIO DESIGN SYSTEM (MATCHING HERO AESTHETIC)       */
+        /* Clean white space, subtle hairline borders, Newsreader serif typography   */
         /* ========================================================================= */
         html, html.dark, body, body.dark {
             background-color: #F8FAFC !important;
@@ -124,104 +125,65 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* 1. Deep, crystal-clear typography hierarchy */
+        /* 1. Typography */
         h1, h2, h3, h4, h5, h6 {
-            color: #0F172A !important;
-            letter-spacing: -0.02em;
+            color: #020617 !important;
+            font-family: 'Newsreader', Georgia, serif;
+            letter-spacing: -0.025em;
         }
 
-        /* Primary editorial prose & narrative lines */
-        p, li, .scene-line {
-            color: #1E293B !important; /* Deep Slate 800 - contrast ratio 12.6:1 */
-            line-height: 1.7;
-        }
-
-        /* Secondary metadata, captions, and supporting copy */
-        .text-slate-600, .text-slate-500, .text-slate-400 {
-            color: #334155 !important; /* Slate 700 - contrast ratio 9.1:1 */
-        }
-
-        /* Dark mode leftover classes mapped to sharp light mode ink */
-        .dark\:text-white, .dark\:text-slate-100, .dark\:text-slate-200 {
-            color: #0F172A !important;
-        }
-        .dark\:text-slate-300, .dark\:text-slate-400 {
+        p, li {
             color: #334155 !important;
+            line-height: 1.72;
         }
 
-        /* 2. Defined, crisp card containers (no muddy borders or washed-out backgrounds) */
+        /* 2. Container Constraints: Clean, spacious reading flow */
+        .story-chapter {
+            max-width: 64rem !important; /* 1024px max width for optimal line length */
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding-top: 3.5rem !important;
+            padding-bottom: 4rem !important;
+            border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+        }
+
+        /* 3. Restrained Card Surfaces (Light hairline borders, no heavy shadows) */
         .bg-white, [class*="bg-white/"], .ds-card-base, .ds-card-raised {
             background-color: #FFFFFF !important;
-            border-color: #CBD5E1 !important; /* Slate 300 - clearly visible boundary */
-            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+            border: 1px solid #E2E8F0 !important;
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+            border-radius: 16px !important;
         }
 
-        /* Card borders */
-        .border-slate-200, .border-slate-200\/90, .border-slate-200\/80, .border-slate-200\/70, .border-slate-100 {
-            border-color: #CBD5E1 !important;
-        }
-        .dark\:border-slate-800, .dark\:border-slate-700 {
-            border-color: #CBD5E1 !important;
-        }
-
-        /* Secondary card backgrounds (specs, tables, pills) */
-        .bg-slate-50, .bg-slate-50\/90, .bg-slate-100 {
-            background-color: #F1F5F9 !important; /* Slate 100 */
-            border-color: #CBD5E1 !important;
-        }
-        .dark\:bg-slate-900, .dark\:bg-slate-850, .dark\:bg-slate-950 {
+        /* Convert dark background containers to clean light surfaces */
+        .dark\:bg-slate-900, .dark\:bg-slate-950, .dark\:bg-slate-800 {
             background-color: #FFFFFF !important;
         }
 
-        /* 3. Summary section, callout cards & interactive dark demos converted to clean white cards */
-        #summary .bg-slate-900,
-        #summary [class*="bg-slate-900"],
-        .ds-card-dark-demo {
-            background-color: #FFFFFF !important;
-            color: #0F172A !important;
-            border: 1px solid #CBD5E1 !important;
-        }
-        #summary h2, #summary .text-white {
-            color: #0F172A !important;
-        }
-        #summary p, #summary .text-slate-300, #summary .text-slate-400 {
-            color: #334155 !important;
-        }
-        #summary .bg-slate-800,
-        #summary [class*="bg-slate-800"],
-        #summary .bg-slate-50 {
+        /* Muted background chips & tables */
+        .bg-slate-50, .bg-slate-100 {
             background-color: #F8FAFC !important;
-            border-color: #CBD5E1 !important;
-            color: #0F172A !important;
+            border: 1px solid #E2E8F0 !important;
         }
 
-        /* 4. Telemetry and Mono Tags Contrast */
-        .font-mono {
-            color: #0F172A;
-        }
-        span.font-mono, div.font-mono {
-            font-weight: 500;
+        /* Section divider matching hero */
+        .act-divider {
+            display: none !important; /* Managed cleanly via section borders */
         }
 
-        /* 5. Brand Accent and Link Highlights */
-        a {
-            color: #0F172A;
-        }
-        a:hover {
-            color: #E11D48 !important;
-        }
-
-        /* Primary action button solid contrast */
-        button.bg-\[\#e11d48\], .bg-\[\#e11d48\], a#navPrimaryCta {
-            background-color: #E11D48 !important;
-            color: #FFFFFF !important;
-            font-weight: 600;
-        }
-        button.bg-\[\#e11d48\]:hover, a#navPrimaryCta:hover {
-            background-color: #BE123C !important;
+        /* Subtle pill badges matching hero */
+        .rounded-full.uppercase {
+            border-radius: 6px !important;
+            font-weight: 600 !important;
+            font-size: 11px !important;
+            letter-spacing: 0.05em !important;
         }
 
-        /* --- Headings in Newsreader (Editorial Serif) --- */
+        /* Primary and Secondary button styling */
+        button, a.magnetic-btn {
+            border-radius: 8px !important;
+        }
+/* --- Headings in Newsreader (Editorial Serif) --- */
         h1, h2, h3, h4 {
             font-family: 'Newsreader', Georgia, serif;
             letter-spacing: -0.02em;
@@ -1345,23 +1307,18 @@
         <!-- DECISION STORY 1: FRICTION OVER PRICE                                     -->
         <!-- ========================================================================= -->
         <section id="story-1" class="story-chapter scroll-mt-24 py-8 space-y-6" data-chapter-name="Story 1: Friction vs Price">
-            <!-- Header with Title & Anchor Link -->
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200/80 dark:border-slate-800 pb-5">
-                <div class="space-y-1.5 max-w-3xl">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200/80 dark:border-indigo-800/60 font-mono">
-                        <i data-lucide="shield-check" class="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400"></i>
-                        <span>Decision Story 1 of 4 • Standby Economics &amp; Friction</span>
-                    </div>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
-                        Why I used friction instead of price to control who buys standby
-                    </h2>
+            <!-- Minimal Hero-Style Header -->
+            <div class="space-y-3 pb-6 border-b border-slate-200/90">
+                <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                    <span class="uppercase tracking-widest text-slate-500 font-semibold">Decision 01 &bull; Standby Economics</span>
+                    <a href="#story-1" class="text-slate-400 hover:text-slate-900 transition font-mono">#story-1</a>
                 </div>
-                <div class="flex items-center gap-2 self-start sm:self-auto">
-                    <a href="#story-1" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-mono font-medium transition" title="Direct shareable link to Story 1">
-                        <i data-lucide="link" class="w-3.5 h-3.5"></i>
-                        <span>#story-1</span>
-                    </a>
-                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-[44px] font-normal text-slate-950 font-serif tracking-[-0.025em] leading-tight">
+                    Why I used physical friction instead of price discounts
+                </h2>
+                <p class="text-base sm:text-lg text-slate-600 font-serif italic max-w-2xl">
+                    How 6 deliberate hurdles prevent corporate budget leakage without requiring invasive financial means testing.
+                </p>
             </div>
 
             <!-- 6-Part Narrative Architecture -->
@@ -2186,23 +2143,18 @@
         <!-- DECISION STORY 2: MEDICAL EMERGENCY STANDBY TIER                          -->
         <!-- ========================================================================= -->
         <section id="story-2" class="story-chapter scroll-mt-24 py-8 space-y-6" data-chapter-name="Story 2: Medical Tier">
-            <!-- Header with Title & Anchor Link -->
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200/80 dark:border-slate-800 pb-5">
-                <div class="space-y-1.5 max-w-3xl">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-rose-50 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border border-rose-200/80 dark:border-rose-800/60 font-mono">
-                        <i data-lucide="heart-pulse" class="w-3.5 h-3.5 text-rose-600 dark:text-rose-400"></i>
-                        <span>Decision Story 2 of 4 • Ethical Emergency Systems</span>
-                    </div>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
-                        Why I gave medical emergencies their own tier
-                    </h2>
+            <!-- Minimal Hero-Style Header -->
+            <div class="space-y-3 pb-6 border-b border-slate-200/90">
+                <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                    <span class="uppercase tracking-widest text-rose-700 font-semibold">Decision 02 &bull; Project Sanjeevani</span>
+                    <a href="#story-2" class="text-slate-400 hover:text-slate-900 transition font-mono">#story-2</a>
                 </div>
-                <div class="flex items-center gap-2 self-start sm:self-auto">
-                    <a href="#story-2" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-mono font-medium transition" title="Direct shareable link to Story 2">
-                        <i data-lucide="link" class="w-3.5 h-3.5"></i>
-                        <span>#story-2</span>
-                    </a>
-                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-[44px] font-normal text-slate-950 font-serif tracking-[-0.025em] leading-tight">
+                    Why medical emergencies need their own protected tier
+                </h2>
+                <p class="text-base sm:text-lg text-slate-600 font-serif italic max-w-2xl">
+                    Designing a flat ₹3,200 humanitarian price cap verified instantly through India’s ABHA digital health network.
+                </p>
             </div>
 
             <!-- 6-Part Narrative Architecture -->
