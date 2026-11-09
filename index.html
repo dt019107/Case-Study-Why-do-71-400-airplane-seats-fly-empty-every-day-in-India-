@@ -1185,168 +1185,200 @@
         <!-- PROJECT SUMMARY & UX DECISION BRIEF (PART 1)                              -->
         <!-- ========================================================================= -->
         <section id="summary" class="story-chapter scroll-mt-24 py-8" data-chapter-name="Project Summary">
-            <div class="rounded-[24px] bg-white text-slate-900 p-6 sm:p-8 lg:p-10 border border-slate-200 shadow-xs space-y-6">
-                <!-- Header / Identity -->
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-5">
-                    <div>
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 font-mono mb-2">
-                            <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
-                            UX Case Study Overview • 30-Second Recruiter Brief
+            <!-- Premium Editorial Overview Card -->
+            <div class="rounded-2xl bg-white text-slate-900 p-6 sm:p-8 lg:p-10 border border-slate-300 shadow-sm space-y-8">
+                
+                <!-- 1. Header & Identity Block -->
+                <div class="flex flex-col md:flex-row md:items-start justify-between gap-6 border-b border-slate-200 pb-6">
+                    <div class="space-y-3 max-w-3xl">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-rose-50 text-rose-800 border border-rose-200 font-mono">
+                            <span class="w-2 h-2 rounded-full bg-rose-600 animate-pulse"></span>
+                            <span>Executive Summary • 60-Second Recruiter Brief</span>
                         </div>
-                        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-                            AeroFill: Standby Aviation Systems Case Study
+                        <h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-slate-950 font-serif leading-tight">
+                            AeroFill: Making 71,400 Empty Airline Seats Accessible
                         </h2>
-                        <p class="text-xs sm:text-sm text-slate-300 mt-1">
-                            Designing a dual-incentive standby allocation architecture that protects scheduled airline yield while democratizing 71,400 daily empty seats across India.
+                        <p class="text-base text-slate-700 leading-relaxed max-w-2xl">
+                            How might we help students and families in medical emergencies access unsold airplane seats at fair prices—without undermining full-fare airline revenue or causing airport delays?
                         </p>
                     </div>
-                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 text-right self-start md:self-auto font-mono text-xs">
-                        <div class="text-indigo-400 font-bold text-sm">Deepak Tiwari</div>
-                        <div class="text-slate-400 text-[11px]">Solo UX Designer &amp; Systems Researcher</div>
+
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 self-start md:self-auto font-mono text-xs space-y-1 shrink-0">
+                        <div class="text-slate-950 font-bold text-sm font-sans">Deepak Tiwari</div>
+                        <div class="text-slate-600 font-sans text-xs">Lead Product &amp; Systems Designer</div>
+                        <div class="text-rose-700 font-semibold pt-1 text-[11px]">Self-Initiated Case Study</div>
                     </div>
                 </div>
 
-                <!-- 3-Column Metadata Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-mono">
-                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
-                        <span class="text-slate-400 uppercase text-[10px] font-semibold tracking-wider block">My Role</span>
-                        <div class="text-sm font-bold text-white font-sans">Solo UX Designer &amp; Researcher</div>
-                        <p class="text-slate-400 text-[11px] font-sans">End-to-end user research, behavioral economics, interaction architecture, simulator modeling, and front-end code implementation.</p>
+                <!-- 2. Project Metadata Grid (Role, Timeline, Data Foundation) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                    <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                        <span class="text-slate-500 uppercase text-[11px] font-bold tracking-wider font-mono block">My Role</span>
+                        <div class="text-base font-bold text-slate-950 font-sans">Solo Product Designer &amp; Researcher</div>
+                        <p class="text-slate-700 text-xs font-sans leading-relaxed">
+                            End-to-end design: user research, revenue cannibalization modeling, mobile interface architecture, and interactive code prototypes.
+                        </p>
                     </div>
-                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
-                        <span class="text-slate-400 uppercase text-[10px] font-semibold tracking-wider block">Project Timeline</span>
-                        <div class="text-sm font-bold text-indigo-300 font-sans">3 Weeks (Rapid Delivery)</div>
-                        <p class="text-slate-400 text-[11px] font-sans">Week 1: Aviation economics &amp; cannibalization research. Week 2: Guardrail wireframes &amp; ABHA medical flow. Week 3: Functional interactive simulators.</p>
+
+                    <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                        <span class="text-slate-500 uppercase text-[11px] font-bold tracking-wider font-mono block">Sprint Timeline</span>
+                        <div class="text-base font-bold text-slate-950 font-sans">3-Week Execution Sprint</div>
+                        <p class="text-slate-700 text-xs font-sans leading-relaxed">
+                            <strong>Week 1:</strong> DGCA data analysis &amp; airline economics. <strong>Week 2:</strong> 6 friction guardrails &amp; emergency ID flow. <strong>Week 3:</strong> Live cabin &amp; CFO simulators.
+                        </p>
                     </div>
-                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
-                        <span class="text-slate-400 uppercase text-[10px] font-semibold tracking-wider block">Key Constraints</span>
-                        <div class="text-sm font-bold text-amber-300 font-sans">Public Data Sources Only</div>
-                        <p class="text-slate-400 text-[11px] font-sans">Zero proprietary airline data; derived exclusively from DGCA passenger filings, airline financial reports, and Indian DPI (DigiLocker, ABHA, Digi Yatra).</p>
-                    </div>
-                </div>
 
-                
-                <!-- Strategic Decisions (3 Core Architecture Choices) -->
-                <div class="space-y-3 pt-2">
-                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-300 font-mono flex items-center gap-2">
-                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
-                        <span>Strategic Decisions (3 Core Architecture Choices)</span>
-                    </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        <a href="#story-1" class="group p-4 rounded-xl bg-slate-800/40 hover:bg-slate-800 border border-slate-700/60 hover:border-indigo-500/60 transition flex flex-col justify-between space-y-2">
-                            <div>
-                                <span class="text-[10px] font-mono font-bold text-indigo-400 uppercase block">Strategic Decision 1</span>
-                                <div class="text-sm font-bold text-white group-hover:text-indigo-300 transition-colors">Friction Instead of Price</div>
-                                <p class="text-[11px] text-slate-400 font-sans mt-1">Used 6 behavioral guardrails (geofence, T-3h gate, baggage limit, middle seat) rather than dynamic discounting to prevent corporate revenue cannibalization.</p>
-                            </div>
-                            <span class="text-[11px] font-mono text-indigo-400 group-hover:translate-x-0.5 transition-transform inline-flex items-center gap-1">Jump to Story 1 ➔</span>
-                        </a>
-
-                        <a href="#story-2" class="group p-4 rounded-xl bg-slate-800/40 hover:bg-slate-800 border border-slate-700/60 hover:border-rose-500/60 transition flex flex-col justify-between space-y-2">
-                            <div>
-                                <span class="text-[10px] font-mono font-bold text-rose-400 uppercase block">Strategic Decision 2</span>
-                                <div class="text-sm font-bold text-white group-hover:text-rose-300 transition-colors">Dedicated Medical Emergency Tier</div>
-                                <p class="text-[11px] text-slate-400 font-sans mt-1">Permanently reserved 14% of standby seats at flat ₹3,200 with instant ABHA hospital verification, replacing severe last-minute ICU surge fares.</p>
-                            </div>
-                            <span class="text-[11px] font-mono text-rose-400 group-hover:translate-x-0.5 transition-transform inline-flex items-center gap-1">Jump to Story 2 ➔</span>
-                        </a>
-
-                        <a href="#story-3" class="group p-4 rounded-xl bg-slate-800/40 hover:bg-slate-800 border border-slate-700/60 hover:border-teal-500/60 transition flex flex-col justify-between space-y-2">
-                            <div>
-                                <span class="text-[10px] font-mono font-bold text-teal-400 uppercase block">Strategic Decision 3</span>
-                                <div class="text-sm font-bold text-white group-hover:text-teal-300 transition-colors">Human Narrative Before Statistics</div>
-                                <p class="text-[11px] text-slate-400 font-sans mt-1">Framed the case study around Ananya (stranded student) vs Priya (VP of Technology) before showing complex DGCA spoilage charts.</p>
-                            </div>
-                            <span class="text-[11px] font-mono text-teal-400 group-hover:translate-x-0.5 transition-transform inline-flex items-center gap-1">Jump to Story 3 ➔</span>
-                        </a>
+                    <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                        <span class="text-slate-500 uppercase text-[11px] font-bold tracking-wider font-mono block">Evidence &amp; Constraints</span>
+                        <div class="text-base font-bold text-slate-950 font-sans">Public DGCA Data &amp; India DPI</div>
+                        <p class="text-slate-700 text-xs font-sans leading-relaxed">
+                            Strictly based on public DGCA aviation filings and India's open digital architecture (DigiLocker, ABHA health records, Digi Yatra).
+                        </p>
                     </div>
                 </div>
 
-                <!-- Micro Decisions I Made (Part 7: 8 Cards) -->
-                <div class="space-y-3 pt-4 border-t border-slate-800">
-                    <div class="flex items-center justify-between">
-                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-300 font-mono flex items-center gap-2">
-                            <i data-lucide="layers" class="w-4 h-4 text-indigo-400"></i>
-                            <span>Micro Decisions I Made (Interaction &amp; Visual Design Choices)</span>
+                <!-- 3. The 3 Core Architectural Decisions -->
+                <div class="space-y-4 pt-2">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-2.5">
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-slate-900"></span>
+                            <span>The 3 Strategic Design Decisions</span>
                         </h3>
-                        <span class="text-[10px] font-mono text-slate-400">8 Design Choices</span>
+                        <span class="text-xs text-slate-500 font-mono">Click any card to read deep-dive</span>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
-                        <div class="p-3.5 rounded-xl bg-slate-800/40 border border-slate-700/60 space-y-1">
-                            <div class="font-bold text-rose-400 flex items-center gap-1.5 font-mono text-[11px]">
-                                <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
-                                <span>78% Shortfall Tag</span>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <!-- Decision 1 -->
+                        <a href="#story-1" class="group p-5 rounded-xl bg-white hover:bg-slate-50/80 border border-slate-200 hover:border-slate-400 transition-all flex flex-col justify-between space-y-3 shadow-xs">
+                            <div class="space-y-2">
+                                <div class="flex items-center justify-between text-xs font-mono">
+                                    <span class="font-bold text-rose-700 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">Decision 01</span>
+                                    <span class="text-slate-500 group-hover:text-slate-900 transition">Explore &rarr;</span>
+                                </div>
+                                <h4 class="text-base font-bold text-slate-950 group-hover:text-rose-700 transition leading-snug">
+                                    Physical Friction Instead of Price Discounts
+                                </h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">
+                                    Instead of dropping prices publicly, I added 6 behavioral hurdles (15km airport geofence, T-3h cutoff, middle seats B/E only, 7kg backpack) so business flyers cannot exploit cheap seats.
+                                </p>
                             </div>
-                            <p class="text-[11px] text-slate-300">Placed a red "78% shortfall" tag next to ₹21,400 vs ₹4,800 to make the student affordability gap visible in one glance.</p>
-                        </div>
-
-                        <div class="p-3.5 rounded-xl bg-slate-800/40 border border-slate-700/60 space-y-1">
-                            <div class="font-bold text-teal-400 flex items-center gap-1.5 font-mono text-[11px]">
-                                <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
-                                <span>Flat ₹3,200 Fare</span>
+                            <div class="pt-2 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono text-slate-700 font-medium">
+                                <span class="text-emerald-700 font-bold">&check; Result:</span>
+                                <span>Zero airline cannibalization</span>
                             </div>
-                            <p class="text-[11px] text-slate-300">Used a predictable flat ₹3,200 cap instead of dynamic surge pricing so the fare feels dignified and fair.</p>
-                        </div>
+                        </a>
 
-                        <div class="p-3.5 rounded-xl bg-slate-800/40 border border-slate-700/60 space-y-1">
-                            <div class="font-bold text-amber-400 flex items-center gap-1.5 font-mono text-[11px]">
-                                <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                        <!-- Decision 2 -->
+                        <a href="#story-2" class="group p-5 rounded-xl bg-white hover:bg-slate-50/80 border border-slate-200 hover:border-slate-400 transition-all flex flex-col justify-between space-y-3 shadow-xs">
+                            <div class="space-y-2">
+                                <div class="flex items-center justify-between text-xs font-mono">
+                                    <span class="font-bold text-rose-700 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">Decision 02</span>
+                                    <span class="text-slate-500 group-hover:text-slate-900 transition">Explore &rarr;</span>
+                                </div>
+                                <h4 class="text-base font-bold text-slate-950 group-hover:text-rose-700 transition leading-snug">
+                                    Dedicated Medical Emergency Standby Tier
+                                </h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">
+                                    Reserved 14% of empty inventory permanently for medical emergencies (Project Sanjeevani) with a flat ₹3,200 price cap, verified instantly via India's ABHA health records.
+                                </p>
+                            </div>
+                            <div class="pt-2 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono text-slate-700 font-medium">
+                                <span class="text-emerald-700 font-bold">&check; Result:</span>
+                                <span>85% savings during emergencies</span>
+                            </div>
+                        </a>
+
+                        <!-- Decision 3 -->
+                        <a href="#story-3" class="group p-5 rounded-xl bg-white hover:bg-slate-50/80 border border-slate-200 hover:border-slate-400 transition-all flex flex-col justify-between space-y-3 shadow-xs">
+                            <div class="space-y-2">
+                                <div class="flex items-center justify-between text-xs font-mono">
+                                    <span class="font-bold text-rose-700 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">Decision 03</span>
+                                    <span class="text-slate-500 group-hover:text-slate-900 transition">Explore &rarr;</span>
+                                </div>
+                                <h4 class="text-base font-bold text-slate-950 group-hover:text-rose-700 transition leading-snug">
+                                    Story-First Framing Over Dry Dashboards
+                                </h4>
+                                <p class="text-xs text-slate-600 leading-relaxed">
+                                    Led with Ananya's midnight phone call rather than abstract load factors, showing the real emotional human cost of empty seats before introducing the mathematical model.
+                                </p>
+                            </div>
+                            <div class="pt-2 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono text-slate-700 font-medium">
+                                <span class="text-emerald-700 font-bold">&check; Result:</span>
+                                <span>Human context before system logic</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. Key UX & Interaction Choices (6 Micro-Decisions) -->
+                <div class="space-y-3 pt-2">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-slate-900"></span>
+                        <span>Key UX &amp; Interaction Choices Built Into This Prototype</span>
+                    </h3>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                            <div class="font-bold text-slate-900 flex items-center gap-1.5 font-mono text-[11px]">
+                                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
                                 <span>Perishable Triad</span>
                             </div>
-                            <p class="text-[11px] text-slate-300">Built the banana / hotel room / airline seat timer comparison to explain "perishable inventory" without revenue management jargon.</p>
+                            <p class="text-[11px] text-slate-600 leading-normal">Compared seats to hotel rooms and fruit to explain zero residual value without jargon.</p>
                         </div>
 
-                        <div class="p-3.5 rounded-xl bg-slate-800/40 border border-slate-700/60 space-y-1">
-                            <div class="font-bold text-indigo-400 flex items-center gap-1.5 font-mono text-[11px]">
-                                <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                            <div class="font-bold text-slate-900 flex items-center gap-1.5 font-mono text-[11px]">
+                                <span class="w-1.5 h-1.5 rounded-full bg-rose-600"></span>
                                 <span>Cannibalization Toggle</span>
                             </div>
-                            <p class="text-[11px] text-slate-300">Created the "Show cheap seat to everyone" vs "Guarded standby" toggle to visually prove the cannibalization trade-off.</p>
+                            <p class="text-[11px] text-slate-600 leading-normal">Live simulator toggle proving why open discounts ruin airline profit models.</p>
                         </div>
 
-                        <div class="p-3.5 rounded-xl bg-slate-800/40 border border-slate-700/60 space-y-1">
-                            <div class="font-bold text-emerald-400 flex items-center gap-1.5 font-mono text-[11px]">
-                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                                <span>Defense: Blocked Box</span>
+                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                            <div class="font-bold text-slate-900 flex items-center gap-1.5 font-mono text-[11px]">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                                <span>Corporate Defense</span>
                             </div>
-                            <p class="text-[11px] text-slate-300">Added a green "Corporate Defense: Blocked" callout under each guardrail card to make failure modes obvious.</p>
+                            <p class="text-[11px] text-slate-600 leading-normal">Clear 'Blocked' feedback showing how business flyers are automatically filtered out.</p>
                         </div>
 
-                        <div class="p-3.5 rounded-xl bg-slate-800/40 border border-slate-700/60 space-y-1">
-                            <div class="font-bold text-indigo-300 flex items-center gap-1.5 font-mono text-[11px]">
-                                <span class="w-1.5 h-1.5 rounded-full bg-indigo-300"></span>
-                                <span>Run All 6 Checks Button</span>
+                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                            <div class="font-bold text-slate-900 flex items-center gap-1.5 font-mono text-[11px]">
+                                <span class="w-1.5 h-1.5 rounded-full bg-slate-700"></span>
+                                <span>1-Click Test Button</span>
                             </div>
-                            <p class="text-[11px] text-slate-300">Designed a single "Run all 6 checks" batch button so anyone testing the prototype can simulate the entire friction engine in one click.</p>
+                            <p class="text-[11px] text-slate-600 leading-normal">Single trigger to simulate all 6 anti-fraud friction checks in real-time.</p>
                         </div>
 
-                        <div class="p-3.5 rounded-xl bg-slate-800/40 border border-slate-700/60 space-y-1">
-                            <div class="font-bold text-slate-300 flex items-center gap-1.5 font-mono text-[11px]">
-                                <span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
-                                <span>Middle Seats Only (B &amp; E)</span>
+                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                            <div class="font-bold text-slate-900 flex items-center gap-1.5 font-mono text-[11px]">
+                                <span class="w-1.5 h-1.5 rounded-full bg-slate-700"></span>
+                                <span>Middle Seats Only</span>
                             </div>
-                            <p class="text-[11px] text-slate-300">Restricted standby to middle seats (columns B &amp; E) as a physical design constraint that corporate travelers naturally reject.</p>
+                            <p class="text-[11px] text-slate-600 leading-normal">Restricted to seats B &amp; E as a natural physical constraint business flyers avoid.</p>
                         </div>
 
-                        <div class="p-3.5 rounded-xl bg-slate-800/40 border border-slate-700/60 space-y-1">
-                            <div class="font-bold text-rose-300 flex items-center gap-1.5 font-mono text-[11px]">
-                                <span class="w-1.5 h-1.5 rounded-full bg-rose-300"></span>
-                                <span>&lt; 90s Verification Target</span>
+                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                            <div class="font-bold text-slate-900 flex items-center gap-1.5 font-mono text-[11px]">
+                                <span class="w-1.5 h-1.5 rounded-full bg-rose-600"></span>
+                                <span>&lt; 90s Audit Target</span>
                             </div>
-                            <p class="text-[11px] text-slate-300">Targeted an under 90-second ABHA document audit (simulated target) to ensure emergency checks never hold up airport gate turnaround.</p>
+                            <p class="text-[11px] text-slate-600 leading-normal">Fast medical verification so standby never causes gate turnaround delays.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Self-Initiated Project Disclosure Note -->
-                <div class="pt-3 border-t border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-[11px] text-slate-400">
-                    <span class="flex items-center gap-2">
-                        <i data-lucide="info" class="w-3.5 h-3.5 text-indigo-400 flex-shrink-0"></i>
-                        <span>This is a self-initiated concept project. It is not affiliated with IndiGo, Air India, DGCA or any airline.</span>
-                    </span>
-                    <a href="#story-4" class="text-slate-400 hover:text-white transition font-mono whitespace-nowrap">Also see Decision 4: Interactive Simulators ➔</a>
+                <!-- 5. Editorial Footnote / Disclosure -->
+                <div class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-600">
+                    <div class="flex items-center gap-2">
+                        <span class="font-semibold text-slate-800">Disclosure:</span>
+                        <span>Self-initiated conceptual UX project. Independent research using public DGCA aviation filings.</span>
+                    </div>
+                    <a href="#story-4" class="text-rose-700 hover:text-rose-800 font-mono font-medium whitespace-nowrap transition">
+                        Explore Interactive Simulators &rarr;
+                    </a>
                 </div>
+
             </div>
         </section>
 
