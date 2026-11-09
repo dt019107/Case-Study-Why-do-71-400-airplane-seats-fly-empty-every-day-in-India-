@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Lucide Icons -->
@@ -34,20 +34,36 @@
                 extend: {
                     fontFamily: {
                         sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        serif: ['"Newsreader"', 'Georgia', 'serif'],
+                        heading: ['"Newsreader"', 'Georgia', 'serif'],
                         mono: ['"JetBrains Mono"', 'monospace'],
                     },
                     colors: {
                         brand: {
-                            50: '#EEF2FF',
-                            100: '#E0E7FF',
-                            200: '#C7D2FE',
-                            300: '#A5B4FC',
-                            400: '#818CF8',
-                            500: '#6366F1',
-                            600: '#4F46E5',
-                            700: '#4338CA',
-                            800: '#3730A3',
-                            900: '#1E1B4B',
+                            50: '#FFF1F2',
+                            100: '#FFE4E6',
+                            200: '#FECDD3',
+                            300: '#FDA4AF',
+                            400: '#FB7185',
+                            500: '#F43F5E',
+                            600: '#E11D48',
+                            700: '#BE123C',
+                            800: '#9F1239',
+                            900: '#881337',
+                        },
+                        slate: {
+                            50: '#F8FAFC',
+                            100: '#F1F4F9',
+                            200: '#E2E7F0',
+                            300: '#CBD4E1',
+                            400: '#939EB0',
+                            500: '#636F84',
+                            600: '#464E61',
+                            700: '#334155',
+                            800: '#1E2538',
+                            850: '#151928',
+                            900: '#0F1320',
+                            950: '#080A12',
                         },
                         indigoAirline: {
                             50: '#F0F5FF',
@@ -91,6 +107,12 @@
     </script>
 
     <style>
+        /* --- Headings in Newsreader (Editorial Serif) --- */
+        h1, h2, h3, h4 {
+            font-family: 'Newsreader', Georgia, serif;
+            letter-spacing: -0.02em;
+        }
+
         /* ========================================================================= */
         /* DESIGN SYSTEM TOKENS (Shared 8px Scale, Radii, Per-Act Accent Colors)    */
         /* ========================================================================= */
@@ -648,7 +670,7 @@
 
     <!-- Accessibility Skip Link -->
     <a href="#main-content"
-        class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-slate-900 text-white font-semibold rounded-lg shadow-xl ring-2 ring-brand-500">
+        class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-slate-900 text-white font-semibold rounded-lg shadow-xs ring-2 ring-brand-500">
         Skip directly to main content
     </a>
 
@@ -697,7 +719,7 @@
                 <!-- ZONE 3 (RIGHT): Secondary Link ("Login") + Primary CTA ("Book a Pilot") + Theme Toggle -->
                 <div class="flex items-center gap-2.5 sm:gap-3 flex-shrink-0">
                     <div class="desktop-nav-right hidden items-center gap-2.5">
-                        <a href="[PLACEHOLDER: my email or LinkedIn URL]" id="navPrimaryCta" class="magnetic-btn inline-flex items-center justify-center px-3.5 py-1.5 rounded-[10px] bg-gradient-to-r from-indigo-600 via-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white text-xs font-semibold shadow-sm hover:shadow-md hover:shadow-indigo-500/20 active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 whitespace-nowrap">
+                        <a href="[PLACEHOLDER: my email or LinkedIn URL]" id="navPrimaryCta" class="magnetic-btn inline-flex items-center justify-center px-3.5 py-1.5 rounded-[10px] bg-[#e11d48] hover:bg-[#be123c] text-white text-xs font-semibold shadow-xs active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e11d48] whitespace-nowrap">
                             Contact me
                         </a>
                     </div>
@@ -734,7 +756,7 @@
 
         <!-- Mobile Full-Width Slide-down / Drawer (Below 900px, 44px+ tap targets, pinned CTA) -->
         <div id="mobileMenuSheet"
-            class="hidden w-full border-t border-slate-200/80 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl px-4 py-5 shadow-2xl transition-all">
+            class="hidden w-full border-t border-slate-200/80 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95  px-4 py-5 shadow-sm transition-all">
             <div class="flex flex-col space-y-1">
                 <a href="#summary" onclick="closeMobileMenu()" class="min-h-[44px] flex items-center justify-between px-3.5 rounded-xl text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                     <span>Summary (Role &amp; Decisions)</span>
@@ -764,7 +786,7 @@
             
             <!-- Pinned CTAs at bottom of Mobile Drawer -->
             <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2.5">
-                <a href="[PLACEHOLDER: my email or LinkedIn URL]" onclick="closeMobileMenu()" class="min-h-[44px] w-full flex items-center justify-center gap-2 py-3 px-4 rounded-[10px] bg-gradient-to-r from-indigo-600 via-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-semibold text-sm shadow-sm transition-colors">
+                <a href="[PLACEHOLDER: my email or LinkedIn URL]" onclick="closeMobileMenu()" class="min-h-[44px] w-full flex items-center justify-center gap-2 py-3 px-4 rounded-[10px] bg-[#e11d48] hover:bg-[#be123c] text-white font-semibold text-sm shadow-xs transition-colors">
                     <i data-lucide="mail" class="w-4 h-4"></i>
                     <span>Contact me</span>
                 </a>
@@ -774,7 +796,7 @@
 
     <!-- GLOBAL SEARCH COMMAND PALETTE MODAL (CMD + K) -->
     <div id="searchModal"
-        class="hidden fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-slate-900/40 backdrop-blur-xs"
+        class="hidden fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-slate-900/40 "
         role="dialog" aria-modal="true" aria-label="Search Case Study">
         <div
             class="w-full max-w-xl rounded-2xl bg-white border border-[#E5E7EB] shadow-modal overflow-hidden animate-fadeIn">
@@ -849,27 +871,20 @@
         <section id="prologue" class="story-chapter pt-3 pb-8 scroll-mt-24" data-chapter-name="Prologue: The Midnight Phone Call">
             <!-- 1. Ambient Lighting & Dispatch Bar -->
             <div class="space-y-4 mb-2">
-                <div class="flex flex-wrap items-center gap-2.5">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/5 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 text-xs font-mono text-slate-700 dark:text-slate-300 shadow-2xs">
-                        <span class="relative flex h-2 w-2">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
-                        </span>
-                        <span class="font-semibold uppercase tracking-wider">Bengaluru ATC • 11:42 PM IST</span>
-                    </div>
-                    <span class="hidden sm:inline-block text-xs font-mono text-slate-400 dark:text-slate-500">•</span>
-                    <span class="inline-flex items-center gap-1.5 text-xs font-mono text-slate-500 dark:text-slate-400">
-                        <i data-lucide="plane-takeoff" class="w-3.5 h-3.5 text-indigo-500"></i>
-                        <span>Flight 6E-205 • Kempegowda (BLR) to Delhi (DEL)</span>
+                <div class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-600 dark:text-slate-400">
+                    <span class="font-semibold text-slate-800 dark:text-slate-200">Bengaluru ATC &bull; 11:42 PM IST</span>
+                    <span class="text-slate-400 dark:text-slate-600">&bull;</span>
+                    <span class="inline-flex items-center gap-1.5">
+                        <i data-lucide="plane-takeoff" class="w-3.5 h-3.5 text-slate-500"></i>
+                        <span>Flight 6E-205 &bull; Kempegowda (BLR) to Delhi (DEL)</span>
                     </span>
-                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/20">
-                        Doors Closed
-                    </span>
+                    <span class="text-slate-400 dark:text-slate-600">&bull;</span>
+                    <span class="font-medium text-amber-700 dark:text-amber-400">Doors Closed</span>
                 </div>
 
                 <!-- Page Headline (H1: Bold, Expressive Accent Gradient, Tight Leading) -->
-                <h1 class="text-3xl sm:text-5xl lg:text-[62px] font-bold text-slate-900 dark:text-white tracking-[-0.035em] leading-[1.08] max-w-5xl">
-                    Why do <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-amber-600 to-rose-600 dark:from-orange-400 dark:via-amber-300 dark:to-rose-400">71,400 airplane seats</span> fly empty every day in India?
+                <h1 class="text-3xl sm:text-5xl lg:text-[62px] font-semibold text-slate-900 dark:text-white tracking-tight leading-[1.08] max-w-5xl">
+                    Why do 71,400 airplane seats fly empty every day in India?
                 </h1>
             </div>
 
@@ -880,7 +895,7 @@
                 <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
 
                     <!-- 2. Scene Card: Emergency Dossier with Staggered Narrative Reveal -->
-                    <div class="p-6 sm:p-7 rounded-2xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 shadow-card hover:shadow-lg transition-shadow duration-300 space-y-5 relative overflow-hidden">
+                    <div class="p-6 sm:p-7 rounded-2xl bg-white/90 dark:bg-slate-900/90  border border-slate-200/90 dark:border-slate-800 shadow-xs hover:border-slate-300 dark:hover:border-slate-700 transition-shadow duration-300 space-y-5 relative overflow-hidden">
                         <!-- Top Incident Bar -->
                         <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3 text-xs">
                             <span class="font-mono text-[11px] font-semibold text-rose-600 dark:text-rose-400 uppercase tracking-wider flex items-center gap-1.5">
@@ -920,14 +935,14 @@
                     <!-- Supporting Thesis Quote -->
                     <div class="border-l-2 border-orange-500/80 pl-4 py-1">
                         <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
-                            This is not just an airline efficiency metric. This is a profound structural failure of modern transportation: <strong>everyday citizens locked on the ground while empty metal chairs cruise through Indian skies at 36,000 feet.</strong>
+                            This is a profound structural failure of modern transportation: <strong>everyday citizens locked on the ground while empty metal chairs cruise through Indian skies at 36,000 feet.</strong>
                         </p>
                     </div>
 
                     <!-- 4. Stats: One Color System (Orange for Loss, Teal for Recovery), Count-Up -->
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-1">
                         <!-- Stat 1: Loss (Orange) -->
-                        <div class="bg-white dark:bg-slate-900 p-3.5 sm:p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-card hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 space-y-1">
+                        <div class="bg-white dark:bg-slate-900 p-3.5 sm:p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-xs transition-all duration-200 space-y-1">
                             <div class="text-xs font-normal text-slate-500 dark:text-slate-400">Empty seats / day</div>
                             <div class="text-[clamp(1.15rem,1.9vw,1.65rem)] font-bold text-orange-600 dark:text-orange-400 tracking-tight font-sans whitespace-nowrap tabular-nums">
                                 <span class="hero-stat-number" data-target="71400" data-suffix="+" data-format="comma">71,400+</span>
@@ -936,7 +951,7 @@
                         </div>
 
                         <!-- Stat 2: Loss (Orange) -->
-                        <div class="bg-white dark:bg-slate-900 p-3.5 sm:p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-card hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 space-y-1">
+                        <div class="bg-white dark:bg-slate-900 p-3.5 sm:p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-xs transition-all duration-200 space-y-1">
                             <div class="text-xs font-normal text-slate-500 dark:text-slate-400">Annual lost revenue</div>
                             <div class="text-[clamp(1.15rem,1.9vw,1.65rem)] font-bold text-orange-600 dark:text-orange-400 tracking-tight font-sans whitespace-nowrap tabular-nums">
                                 <span class="hero-stat-number" data-target="9800" data-prefix="₹" data-suffix=" Cr" data-format="comma">₹9,800 Cr</span>
@@ -945,7 +960,7 @@
                         </div>
 
                         <!-- Stat 3: Recovery (Teal) -->
-                        <div class="bg-white dark:bg-slate-900 p-3.5 sm:p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-card hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 space-y-1">
+                        <div class="bg-white dark:bg-slate-900 p-3.5 sm:p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-xs transition-all duration-200 space-y-1">
                             <div class="text-xs font-normal text-slate-500 dark:text-slate-400">Standby fare</div>
                             <div class="text-[clamp(1.15rem,1.9vw,1.65rem)] font-bold text-teal-600 dark:text-teal-400 tracking-tight font-sans whitespace-nowrap tabular-nums">
                                 <span class="hero-stat-number" data-target="3200" data-prefix="₹" data-format="comma">₹3,200</span>
@@ -954,7 +969,7 @@
                         </div>
 
                         <!-- Stat 4: Recovery (Teal) -->
-                        <div class="bg-white dark:bg-slate-900 p-3.5 sm:p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-card hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 space-y-1">
+                        <div class="bg-white dark:bg-slate-900 p-3.5 sm:p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-xs transition-all duration-200 space-y-1">
                             <div class="text-xs font-normal text-slate-500 dark:text-slate-400">Extra profit margin</div>
                             <div class="text-[clamp(1.15rem,1.9vw,1.65rem)] font-bold text-teal-600 dark:text-teal-400 tracking-tight font-sans whitespace-nowrap tabular-nums">
                                 <span class="hero-stat-number" data-target="68" data-prefix="+" data-suffix="%" data-format="integer">+68%</span>
@@ -1006,11 +1021,11 @@
 
                         <!-- Top Floating Telemetry Chips -->
                         <div class="absolute top-4 inset-x-4 flex items-center justify-between pointer-events-none z-10">
-                            <span class="px-2.5 py-1 bg-slate-950/80 backdrop-blur-md rounded-lg text-[10px] font-mono font-medium tracking-wide text-white border border-white/10 flex items-center gap-1.5 shadow-xs">
+                            <span class="px-2.5 py-1 bg-slate-950/80  rounded-lg text-[10px] font-mono font-medium tracking-wide text-white border border-white/10 flex items-center gap-1.5 shadow-xs">
                                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                                 AIRBUS A320neo
                             </span>
-                            <span class="px-2.5 py-1 bg-slate-950/80 backdrop-blur-md rounded-lg text-[10px] font-mono text-slate-300 border border-white/10 shadow-xs">
+                            <span class="px-2.5 py-1 bg-slate-950/80  rounded-lg text-[10px] font-mono text-slate-300 border border-white/10 shadow-xs">
                                 186 SEATS • TYPICAL LOAD: 162
                             </span>
                         </div>
@@ -1029,7 +1044,7 @@
                             </div>
 
                             <!-- Zero Value Warning Strip -->
-                            <div class="p-3 rounded-xl bg-slate-900/90 backdrop-blur-md border border-amber-500/30 text-xs space-y-1">
+                            <div class="p-3 rounded-xl bg-slate-900/90  border border-amber-500/30 text-xs space-y-1">
                                 <div class="flex items-center justify-between text-amber-300 font-mono font-semibold text-[11px]">
                                     <span>STATUS: DOORS CLOSED</span>
                                     <span class="text-rose-400">RESIDUAL VALUE: ₹0.00</span>
@@ -1079,7 +1094,7 @@
         <!-- PROJECT SUMMARY & UX DECISION BRIEF (PART 1)                              -->
         <!-- ========================================================================= -->
         <section id="summary" class="story-chapter scroll-mt-24 py-8" data-chapter-name="Project Summary">
-            <div class="rounded-[24px] bg-slate-900 text-white p-6 sm:p-8 lg:p-10 border border-slate-800 shadow-xl space-y-6">
+            <div class="rounded-[24px] bg-slate-900 text-white p-6 sm:p-8 lg:p-10 border border-slate-800 shadow-xs space-y-6">
                 <!-- Header / Identity -->
                 <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-5">
                     <div>
@@ -1261,7 +1276,7 @@
                         <span>Decision Story 1 of 4 • Standby Economics &amp; Friction</span>
                     </div>
                     <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
-                        <span class="font-mono text-indigo-600 dark:text-indigo-400 text-lg sm:text-xl font-semibold mr-1.5">[Title]</span>Why I used friction instead of price to control who buys standby
+                        Why I used friction instead of price to control who buys standby
                     </h2>
                 </div>
                 <div class="flex items-center gap-2 self-start sm:self-auto">
@@ -1364,7 +1379,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
 
                 <!-- Rule 1: Geofence -->
-                <article id="guardrail-card-1" class="guardrail-card group relative flex flex-col justify-between h-full p-7 sm:p-8 rounded-[20px] bg-gradient-to-b from-white via-white to-slate-50/70 dark:from-slate-900 dark:via-slate-900/95 dark:to-slate-950 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 hover:border-indigo-400/80 dark:hover:border-indigo-500/70 transition-all duration-200 ease-out hover:-translate-y-1 focus-within:-translate-y-1 focus-within:ring-2 focus-within:ring-indigo-500 overflow-hidden" tabindex="0" aria-label="Rule 01: 15 km GPS Perimeter">
+                <article id="guardrail-card-1" class="guardrail-card group relative flex flex-col justify-between h-full p-7 sm:p-8 rounded-[20px] bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:border-slate-400 dark:hover:border-slate-600 hover:border-indigo-400/80 dark:hover:border-indigo-500/70 transition-all duration-200 ease-out hover:-translate-y-1 focus-within:-translate-y-1 focus-within:ring-2 focus-within:ring-indigo-500 overflow-hidden" tabindex="0" aria-label="Rule 01: 15 km GPS Perimeter">
                     <!-- Faded decorative number watermark in top-right -->
                     <span class="absolute bottom-3 right-4 sm:bottom-4 sm:right-5 text-4xl sm:text-5xl font-mono font-black text-slate-200/30 dark:text-slate-800/20 select-none pointer-events-none tracking-tighter group-hover:text-indigo-200/30 dark:group-hover:text-indigo-900/30 transition-colors z-0" aria-hidden="true">01</span>
 
@@ -1425,7 +1440,7 @@
                                 Blocks corporate desks from booking standby tickets in bulk.
                             </p>
                         </div>
-                        <div class="defense-back p-4 rounded-xl bg-rose-950/95 border border-rose-500/80 shadow-lg shadow-rose-950/40 flex flex-col justify-between text-white">
+                        <div class="defense-back p-4 rounded-xl bg-rose-950/95 border border-rose-500/80 shadow-xs shadow-rose-950/40 flex flex-col justify-between text-white">
                             <div class="flex items-center justify-between gap-2">
                                 <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-rose-600 text-white font-mono font-bold text-[10px] tracking-wider uppercase">
                                     BLOCKED [DEMO]
@@ -1440,7 +1455,7 @@
                 </article>
 
                 <!-- Rule 2: Time Gate -->
-                <article id="guardrail-card-2" class="guardrail-card group relative flex flex-col justify-between h-full p-7 sm:p-8 rounded-[20px] bg-gradient-to-b from-white via-white to-slate-50/70 dark:from-slate-900 dark:via-slate-900/95 dark:to-slate-950 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 hover:border-indigo-400/80 dark:hover:border-indigo-500/70 transition-all duration-200 ease-out hover:-translate-y-1 focus-within:-translate-y-1 focus-within:ring-2 focus-within:ring-indigo-500 overflow-hidden" tabindex="0" aria-label="Rule 02: T-Minus 3 Hour Gate">
+                <article id="guardrail-card-2" class="guardrail-card group relative flex flex-col justify-between h-full p-7 sm:p-8 rounded-[20px] bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:border-slate-400 dark:hover:border-slate-600 hover:border-indigo-400/80 dark:hover:border-indigo-500/70 transition-all duration-200 ease-out hover:-translate-y-1 focus-within:-translate-y-1 focus-within:ring-2 focus-within:ring-indigo-500 overflow-hidden" tabindex="0" aria-label="Rule 02: T-Minus 3 Hour Gate">
                     <!-- Faded decorative number watermark in top-right -->
                     <span class="absolute bottom-3 right-4 sm:bottom-4 sm:right-5 text-4xl sm:text-5xl font-mono font-black text-slate-200/30 dark:text-slate-800/20 select-none pointer-events-none tracking-tighter group-hover:text-indigo-200/30 dark:group-hover:text-indigo-900/30 transition-colors z-0" aria-hidden="true">02</span>
 
@@ -1499,7 +1514,7 @@
                                 Executives must confirm their meetings and hotels days ahead.
                             </p>
                         </div>
-                        <div class="defense-back p-4 rounded-xl bg-rose-950/95 border border-rose-500/80 shadow-lg shadow-rose-950/40 flex flex-col justify-between text-white">
+                        <div class="defense-back p-4 rounded-xl bg-rose-950/95 border border-rose-500/80 shadow-xs shadow-rose-950/40 flex flex-col justify-between text-white">
                             <div class="flex items-center justify-between gap-2">
                                 <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-rose-600 text-white font-mono font-bold text-[10px] tracking-wider uppercase">
                                     BLOCKED [DEMO]
@@ -1514,7 +1529,7 @@
                 </article>
 
                 <!-- Rule 3: Time Band -->
-                <article id="guardrail-card-3" class="guardrail-card group relative flex flex-col justify-between h-full p-7 sm:p-8 rounded-[20px] bg-gradient-to-b from-white via-white to-slate-50/70 dark:from-slate-900 dark:via-slate-900/95 dark:to-slate-950 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 hover:border-indigo-400/80 dark:hover:border-indigo-500/70 transition-all duration-200 ease-out hover:-translate-y-1 focus-within:-translate-y-1 focus-within:ring-2 focus-within:ring-indigo-500 overflow-hidden" tabindex="0" aria-label="Rule 03: Flexible ±90m Window">
+                <article id="guardrail-card-3" class="guardrail-card group relative flex flex-col justify-between h-full p-7 sm:p-8 rounded-[20px] bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:border-slate-400 dark:hover:border-slate-600 hover:border-indigo-400/80 dark:hover:border-indigo-500/70 transition-all duration-200 ease-out hover:-translate-y-1 focus-within:-translate-y-1 focus-within:ring-2 focus-within:ring-indigo-500 overflow-hidden" tabindex="0" aria-label="Rule 03: Flexible ±90m Window">
                     <!-- Faded decorative number watermark in top-right -->
                     <span class="absolute bottom-3 right-4 sm:bottom-4 sm:right-5 text-4xl sm:text-5xl font-mono font-black text-slate-200/30 dark:text-slate-800/20 select-none pointer-events-none tracking-tighter group-hover:text-indigo-200/30 dark:group-hover:text-indigo-900/30 transition-colors z-0" aria-hidden="true">03</span>
 
@@ -1570,7 +1585,7 @@
                                 Business travelers cannot risk arriving late to client calls.
                             </p>
                         </div>
-                        <div class="defense-back p-4 rounded-xl bg-rose-950/95 border border-rose-500/80 shadow-lg shadow-rose-950/40 flex flex-col justify-between text-white">
+                        <div class="defense-back p-4 rounded-xl bg-rose-950/95 border border-rose-500/80 shadow-xs shadow-rose-950/40 flex flex-col justify-between text-white">
                             <div class="flex items-center justify-between gap-2">
                                 <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-rose-600 text-white font-mono font-bold text-[10px] tracking-wider uppercase">
                                     BLOCKED [DEMO]
@@ -1585,7 +1600,7 @@
                 </article>
 
                 <!-- Rule 4: Middle Seat -->
-                <article id="guardrail-card-4" class="guardrail-card group relative flex flex-col justify-between h-full p-7 sm:p-8 rounded-[20px] bg-gradient-to-b from-white via-white to-slate-50/70 dark:from-slate-900 dark:via-slate-900/95 dark:to-slate-950 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 hover:border-indigo-400/80 dark:hover:border-indigo-500/70 transition-all duration-200 ease-out hover:-translate-y-1 focus-within:-translate-y-1 focus-within:ring-2 focus-within:ring-indigo-500 overflow-hidden" tabindex="0" aria-label="Rule 04: Automated Middle Seat">
+                <article id="guardrail-card-4" class="guardrail-card group relative flex flex-col justify-between h-full p-7 sm:p-8 rounded-[20px] bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:border-slate-400 dark:hover:border-slate-600 hover:border-indigo-400/80 dark:hover:border-indigo-500/70 transition-all duration-200 ease-out hover:-translate-y-1 focus-within:-translate-y-1 focus-within:ring-2 focus-within:ring-indigo-500 overflow-hidden" tabindex="0" aria-label="Rule 04: Automated Middle Seat">
                     <!-- Faded decorative number watermark in top-right -->
                     <span class="absolute bottom-3 right-4 sm:bottom-4 sm:right-5 text-4xl sm:text-5xl font-mono font-black text-slate-200/30 dark:text-slate-800/20 select-none pointer-events-none tracking-tighter group-hover:text-indigo-200/30 dark:group-hover:text-indigo-900/30 transition-colors z-0" aria-hidden="true">04</span>
 
@@ -1646,7 +1661,7 @@
                                 Preserves premium front-row and extra-legroom window/aisle revenues.
                             </p>
                         </div>
-                        <div class="defense-back p-4 rounded-xl bg-rose-950/95 border border-rose-500/80 shadow-lg shadow-rose-950/40 flex flex-col justify-between text-white">
+                        <div class="defense-back p-4 rounded-xl bg-rose-950/95 border border-rose-500/80 shadow-xs shadow-rose-950/40 flex flex-col justify-between text-white">
                             <div class="flex items-center justify-between gap-2">
                                 <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-rose-600 text-white font-mono font-bold text-[10px] tracking-wider uppercase">
                                     BLOCKED [DEMO]
@@ -1661,7 +1676,7 @@
                 </article>
 
                 <!-- Rule 5: DigiLocker Verification -->
-                <article id="guardrail-card-5" class="guardrail-card group relative flex flex-col justify-between h-full p-7 sm:p-8 rounded-[20px] bg-gradient-to-b from-white via-white to-slate-50/70 dark:from-slate-900 dark:via-slate-900/95 dark:to-slate-950 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 hover:border-indigo-400/80 dark:hover:border-indigo-500/70 transition-all duration-200 ease-out hover:-translate-y-1 focus-within:-translate-y-1 focus-within:ring-2 focus-within:ring-indigo-500 overflow-hidden" tabindex="0" aria-label="Rule 05: Cryptographic DigiLocker ID (simulated)">
+                <article id="guardrail-card-5" class="guardrail-card group relative flex flex-col justify-between h-full p-7 sm:p-8 rounded-[20px] bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:border-slate-400 dark:hover:border-slate-600 hover:border-indigo-400/80 dark:hover:border-indigo-500/70 transition-all duration-200 ease-out hover:-translate-y-1 focus-within:-translate-y-1 focus-within:ring-2 focus-within:ring-indigo-500 overflow-hidden" tabindex="0" aria-label="Rule 05: Cryptographic DigiLocker ID (simulated)">
                     <!-- Faded decorative number watermark in top-right -->
                     <span class="absolute bottom-3 right-4 sm:bottom-4 sm:right-5 text-4xl sm:text-5xl font-mono font-black text-slate-200/30 dark:text-slate-800/20 select-none pointer-events-none tracking-tighter group-hover:text-indigo-200/30 dark:group-hover:text-indigo-900/30 transition-colors z-0" aria-hidden="true">05</span>
 
@@ -1716,7 +1731,7 @@
                                 Corporate executives cannot forge genuine government student IDs.
                             </p>
                         </div>
-                        <div class="defense-back p-4 rounded-xl bg-rose-950/95 border border-rose-500/80 shadow-lg shadow-rose-950/40 flex flex-col justify-between text-white">
+                        <div class="defense-back p-4 rounded-xl bg-rose-950/95 border border-rose-500/80 shadow-xs shadow-rose-950/40 flex flex-col justify-between text-white">
                             <div class="flex items-center justify-between gap-2">
                                 <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-rose-600 text-white font-mono font-bold text-[10px] tracking-wider uppercase">
                                     BLOCKED [DEMO]
@@ -1731,7 +1746,7 @@
                 </article>
 
                 <!-- Rule 6: Backpack Only -->
-                <article id="guardrail-card-6" class="guardrail-card group relative flex flex-col justify-between h-full p-7 sm:p-8 rounded-[20px] bg-gradient-to-b from-white via-white to-slate-50/70 dark:from-slate-900 dark:via-slate-900/95 dark:to-slate-950 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 hover:border-indigo-400/80 dark:hover:border-indigo-500/70 transition-all duration-200 ease-out hover:-translate-y-1 focus-within:-translate-y-1 focus-within:ring-2 focus-within:ring-indigo-500 overflow-hidden" tabindex="0" aria-label="Rule 06: 7kg Backpack (Zero Baggage)">
+                <article id="guardrail-card-6" class="guardrail-card group relative flex flex-col justify-between h-full p-7 sm:p-8 rounded-[20px] bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-sm hover:border-slate-400 dark:hover:border-slate-600 hover:border-indigo-400/80 dark:hover:border-indigo-500/70 transition-all duration-200 ease-out hover:-translate-y-1 focus-within:-translate-y-1 focus-within:ring-2 focus-within:ring-indigo-500 overflow-hidden" tabindex="0" aria-label="Rule 06: 7kg Backpack (Zero Baggage)">
                     <!-- Faded decorative number watermark in top-right -->
                     <span class="absolute bottom-3 right-4 sm:bottom-4 sm:right-5 text-4xl sm:text-5xl font-mono font-black text-slate-200/30 dark:text-slate-800/20 select-none pointer-events-none tracking-tighter group-hover:text-indigo-200/30 dark:group-hover:text-indigo-900/30 transition-colors z-0" aria-hidden="true">06</span>
 
@@ -1790,7 +1805,7 @@
                                 Multi-day corporate trips requiring suitcases are naturally filtered out.
                             </p>
                         </div>
-                        <div class="defense-back p-4 rounded-xl bg-rose-950/95 border border-rose-500/80 shadow-lg shadow-rose-950/40 flex flex-col justify-between text-white">
+                        <div class="defense-back p-4 rounded-xl bg-rose-950/95 border border-rose-500/80 shadow-xs shadow-rose-950/40 flex flex-col justify-between text-white">
                             <div class="flex items-center justify-between gap-2">
                                 <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-rose-600 text-white font-mono font-bold text-[10px] tracking-wider uppercase">
                                     BLOCKED [DEMO]
@@ -1857,7 +1872,7 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pt-2">
                             <!-- Screen 1: Standby Entry -->
                             <div class="flex flex-col space-y-3">
-                                <div class="w-full rounded-[30px] border-4 border-slate-800 bg-slate-950 text-white p-4 shadow-2xl flex flex-col justify-between min-h-[460px] relative overflow-hidden font-sans">
+                                <div class="w-full rounded-[30px] border-4 border-slate-800 bg-slate-950 text-white p-4 shadow-sm flex flex-col justify-between min-h-[460px] relative overflow-hidden font-sans">
                                     <!-- Status Bar -->
                                     <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 pb-2 border-b border-slate-800/80">
                                         <span>18:14</span>
@@ -1891,7 +1906,7 @@
                                         </div>
                                     </div>
                                     <!-- Screen Action -->
-                                    <button class="w-full py-2.5 rounded-xl bg-indigo-600 text-white font-bold text-xs shadow-md flex items-center justify-center gap-1.5">
+                                    <button class="w-full py-2.5 rounded-xl bg-indigo-600 text-white font-bold text-xs shadow-xs flex items-center justify-center gap-1.5">
                                         <span>Request Standby Seat</span>
                                         <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                                     </button>
@@ -1903,7 +1918,7 @@
 
                             <!-- Screen 2: Rules Screen -->
                             <div class="flex flex-col space-y-3">
-                                <div class="w-full rounded-[30px] border-4 border-slate-800 bg-slate-950 text-white p-4 shadow-2xl flex flex-col justify-between min-h-[460px] relative overflow-hidden font-sans">
+                                <div class="w-full rounded-[30px] border-4 border-slate-800 bg-slate-950 text-white p-4 shadow-sm flex flex-col justify-between min-h-[460px] relative overflow-hidden font-sans">
                                     <!-- Status Bar -->
                                     <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 pb-2 border-b border-slate-800/80">
                                         <span>18:16</span>
@@ -1940,7 +1955,7 @@
                                         </label>
                                     </div>
                                     <!-- Screen Action -->
-                                    <button class="w-full py-2.5 rounded-xl bg-indigo-600 text-white font-bold text-xs shadow-md">
+                                    <button class="w-full py-2.5 rounded-xl bg-indigo-600 text-white font-bold text-xs shadow-xs">
                                         Accept &amp; Verify Identity
                                     </button>
                                 </div>
@@ -1951,7 +1966,7 @@
 
                             <!-- Screen 3: Verification Screen -->
                             <div class="flex flex-col space-y-3">
-                                <div class="w-full rounded-[30px] border-4 border-slate-800 bg-slate-950 text-white p-4 shadow-2xl flex flex-col justify-between min-h-[460px] relative overflow-hidden font-sans">
+                                <div class="w-full rounded-[30px] border-4 border-slate-800 bg-slate-950 text-white p-4 shadow-sm flex flex-col justify-between min-h-[460px] relative overflow-hidden font-sans">
                                     <!-- Status Bar -->
                                     <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 pb-2 border-b border-slate-800/80">
                                         <span>18:18</span>
@@ -1987,7 +2002,7 @@
                                         </div>
                                     </div>
                                     <!-- Screen Action -->
-                                    <button class="w-full py-2.5 rounded-xl bg-emerald-600 text-white font-bold text-xs shadow-md">
+                                    <button class="w-full py-2.5 rounded-xl bg-emerald-600 text-white font-bold text-xs shadow-xs">
                                         Pay ₹3,200 &amp; Issue Pass
                                     </button>
                                 </div>
@@ -1998,7 +2013,7 @@
 
                             <!-- Screen 4: Boarding Pass -->
                             <div class="flex flex-col space-y-3">
-                                <div class="w-full rounded-[30px] border-4 border-slate-800 bg-slate-950 text-white p-4 shadow-2xl flex flex-col justify-between min-h-[460px] relative overflow-hidden font-sans">
+                                <div class="w-full rounded-[30px] border-4 border-slate-800 bg-slate-950 text-white p-4 shadow-sm flex flex-col justify-between min-h-[460px] relative overflow-hidden font-sans">
                                     <!-- Status Bar -->
                                     <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 pb-2 border-b border-slate-800/80">
                                         <span>18:22</span>
@@ -2102,7 +2117,7 @@
                         <span>Decision Story 2 of 4 • Ethical Emergency Systems</span>
                     </div>
                     <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
-                        <span class="font-mono text-rose-600 dark:text-rose-400 text-lg sm:text-xl font-semibold mr-1.5">[Title]</span>Why I gave medical emergencies their own tier
+                        Why I gave medical emergencies their own tier
                     </h2>
                 </div>
                 <div class="flex items-center gap-2 self-start sm:self-auto">
@@ -2170,7 +2185,7 @@
                     <!-- Embedded Act 4 Container -->
                     <div>
                         <!-- Premium Outer Card: 28px radius, rose-200 border, layered shadow, subtle gradient, 48-56px desktop padding -->
-            <div class="rounded-[28px] bg-gradient-to-b from-white via-white to-rose-50/30 dark:from-slate-900 dark:via-slate-900/95 dark:to-rose-950/20 border border-rose-200/90 dark:border-rose-900/50 shadow-xl shadow-rose-950/5 p-6 sm:p-10 lg:p-12 xl:p-14 transition-all">
+            <div class="rounded-[28px] bg-gradient-to-b from-white via-white to-rose-50/30 dark:from-slate-900 dark:via-slate-900/95 dark:to-rose-950/20 border border-rose-200/90 dark:border-rose-900/50 shadow-xs shadow-rose-950/5 p-6 sm:p-10 lg:p-12 xl:p-14 transition-all">
 
                 <!-- 7/5 Column Grid on Desktop (>=900px), 1 col on Mobile, Equal Heights -->
                 <div class="sanjeevani-two-col items-stretch">
@@ -2200,8 +2215,8 @@
                             </div>
 
                             <!-- Headline: Clamp 36-52px, Tight Tracking, Crimson Gradient on Dignity Over Profit -->
-                            <h2 class="text-[clamp(32px,3.5vw,52px)] font-bold text-slate-900 dark:text-white leading-[1.12] tracking-[-0.02em]">
-                                When Minutes Count: <span class="bg-gradient-to-r from-rose-600 via-rose-500 to-red-600 dark:from-rose-400 dark:via-rose-300 dark:to-red-400 bg-clip-text text-transparent">Dignity Over Profit</span>
+                            <h2 class="text-[clamp(32px,3.5vw,52px)] font-semibold text-slate-900 dark:text-white leading-[1.12] tracking-tight">
+                                When Minutes Count: Dignity Over Profit
                             </h2>
 
                             <!-- Paragraph 1: Emotional Hook (20px, slate-700, thin red left-border quote treatment) -->
@@ -2266,7 +2281,7 @@
                             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5" id="sanjeevaniStatsGrid">
                                 
                                 <!-- Stat Card 1: Capped Fare -->
-                                <article class="group relative p-4 rounded-2xl bg-white/90 dark:bg-slate-800/80 border border-rose-100 dark:border-rose-900/40 shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between">
+                                <article class="group relative p-4 rounded-2xl bg-white/90 dark:bg-slate-800/80 border border-rose-100 dark:border-rose-900/40 shadow-xs hover:shadow-xs hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between">
                                     <div class="flex items-center gap-2.5 mb-2">
                                         <div class="w-8 h-8 rounded-lg bg-rose-50 dark:bg-rose-950/70 border border-rose-200/60 dark:border-rose-800/50 text-rose-600 dark:text-rose-400 flex items-center justify-center font-bold text-sm shadow-2xs" aria-hidden="true">
                                             ₹
@@ -2286,7 +2301,7 @@
                                 </article>
 
                                 <!-- Stat Card 2: ABHA OCR Check (simulated) -->
-                                <article class="group relative p-4 rounded-2xl bg-white/90 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/60 shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between">
+                                <article class="group relative p-4 rounded-2xl bg-white/90 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/60 shadow-xs hover:shadow-xs hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between">
                                     <div class="flex items-center gap-2.5 mb-2">
                                         <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-700/60 border border-slate-200/70 dark:border-slate-600 text-slate-700 dark:text-slate-300 flex items-center justify-center shadow-2xs" aria-hidden="true">
                                             <i data-lucide="scan-line" class="w-4 h-4"></i>
@@ -2306,7 +2321,7 @@
                                 </article>
 
                                 <!-- Stat Card 3: Queue Priority -->
-                                <article class="group relative p-4 rounded-2xl bg-white/90 dark:bg-slate-800/80 border border-emerald-200/80 dark:border-emerald-900/50 shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between">
+                                <article class="group relative p-4 rounded-2xl bg-white/90 dark:bg-slate-800/80 border border-emerald-200/80 dark:border-emerald-900/50 shadow-xs hover:shadow-xs hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between">
                                     <div class="flex items-center gap-2.5 mb-2">
                                         <div class="w-8 h-8 rounded-lg bg-emerald-50 dark:bg-emerald-950/70 border border-emerald-200/70 dark:border-emerald-800/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shadow-2xs" aria-hidden="true">
                                             <i data-lucide="shield-check" class="w-4 h-4"></i>
@@ -2346,7 +2361,7 @@
                     </div>
 
                     <!-- Right Column (5 cols): Hero Image (equal height, refined scrim & meta) -->
-                    <figure class="sanjeevani-col-right relative rounded-[24px] overflow-hidden shadow-lg border border-slate-200/80 dark:border-slate-800 bg-slate-950 group flex flex-col justify-end min-h-[360px] sm:min-h-[420px] w-full h-full">
+                    <figure class="sanjeevani-col-right relative rounded-[24px] overflow-hidden shadow-xs border border-slate-200/80 dark:border-slate-800 bg-slate-950 group flex flex-col justify-end min-h-[360px] sm:min-h-[420px] w-full h-full">
                         <img src="assets/medical-crew-emergency.jpg"
                             alt="Emergency Medical Team with Organ Transport Box at Airport Boarding Gate"
                             class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -2357,7 +2372,7 @@
 
                         <!-- Top-Right: Clean Life Critical Priority Pill with subtle pulse -->
                         <div class="absolute top-5 right-5 z-10">
-                            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-600/95 hover:bg-rose-600 text-white text-xs font-semibold uppercase tracking-wider backdrop-blur-md shadow-md shadow-rose-950/30 transition-colors">
+                            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-600/95 hover:bg-rose-600 text-white text-xs font-semibold uppercase tracking-wider  shadow-xs shadow-rose-950/30 transition-colors">
                                 <i data-lucide="heart-pulse" class="w-4 h-4 text-rose-200 animate-pulse" aria-hidden="true"></i>
                                 <span>Life Critical Priority</span>
                             </span>
@@ -2418,7 +2433,7 @@
                             </button>
 
                             <button id="runMedicalAuditBtn" onclick="runMedicalAudit()"
-                                class="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl bg-gradient-to-r from-rose-600 via-rose-600 to-red-600 hover:from-rose-700 hover:to-red-700 text-white font-semibold text-xs sm:text-sm shadow-md shadow-rose-600/25 active:scale-[0.98] transition-all flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
+                                class="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl bg-[#e11d48] hover:bg-[#be123c] text-white font-semibold text-xs sm:text-sm shadow-xs active:scale-[0.98] transition-all flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e11d48] focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900">
                                 <i data-lucide="play" class="w-4 h-4 fill-white text-white"></i>
                                 <span>Simulate ICU Audit</span>
                             </button>
@@ -2426,7 +2441,7 @@
                     </div>
 
                     <!-- macOS-Style Terminal Panel -->
-                    <div class="rounded-2xl bg-slate-950 border border-slate-800 shadow-xl overflow-hidden font-mono text-[13px] sm:text-[14px]">
+                    <div class="rounded-2xl bg-slate-950 border border-slate-800 shadow-xs overflow-hidden font-mono text-[13px] sm:text-[14px]">
                         <!-- macOS Window Header Bar -->
                         <div class="px-4 py-2.5 bg-slate-900/90 border-b border-slate-800/80 flex items-center justify-between gap-3 text-xs">
                             <!-- Left: 3 Window Dots & Filename -->
@@ -3439,7 +3454,7 @@
                     </div>
 
                     <!-- Mid-page Contextual CTA for Airline Leadership (Item 18) -->
-                    <div class="p-4 sm:p-5 rounded-2xl bg-slate-900 dark:bg-slate-950 text-white flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md border border-slate-800">
+                    <div class="p-4 sm:p-5 rounded-2xl bg-slate-900 dark:bg-slate-950 text-white flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs border border-slate-800">
                         <div class="space-y-0.5 text-center sm:text-left">
                             <div class="text-xs font-bold text-emerald-400 font-mono uppercase tracking-wider">Airline CFO Fleet Analysis</div>
                             <div class="text-sm font-semibold text-slate-100">See your airline's specific fleet &amp; route network yield model</div>
@@ -3749,7 +3764,7 @@
         <!-- RETROSPECTIVE: WHAT I LEARNED & WHAT I WOULD DO NEXT                      -->
         <!-- ========================================================================= -->
         <section id="retrospective" class="story-chapter scroll-mt-24 py-8 space-y-6" data-chapter-name="Retrospective">
-            <div class="rounded-[28px] bg-slate-900 text-white p-6 sm:p-10 border border-slate-800 shadow-2xl space-y-8">
+            <div class="rounded-[28px] bg-slate-900 text-white p-6 sm:p-10 border border-slate-800 shadow-sm space-y-8">
                 <div class="max-w-3xl space-y-2">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 font-mono">
                         <i data-lucide="book-open" class="w-3.5 h-3.5 text-indigo-400"></i>
@@ -3891,7 +3906,7 @@
             </div>
 
             <!-- Aviation Tutorial Container: 28px radius, refined border, layered shadow -->
-            <div class="bg-white dark:bg-slate-900 rounded-[28px] border border-slate-200/80 dark:border-slate-800 shadow-xl shadow-slate-950/5 overflow-hidden p-5 sm:p-8 lg:p-10 space-y-6" role="region"
+            <div class="bg-white dark:bg-slate-900 rounded-[28px] border border-slate-200/80 dark:border-slate-800 shadow-xs shadow-slate-950/5 overflow-hidden p-5 sm:p-8 lg:p-10 space-y-6" role="region"
                 aria-label="Aviation Tutorial Lessons">
 
                 <!-- 2. Modern Segmented Tab Navigation -->
@@ -3998,7 +4013,7 @@
                     </div>
 
                     <!-- 4. Top-Down Technical Blueprint Cutaway Visual (Dark Panel) -->
-                    <div class="relative bg-slate-950 rounded-[24px] border border-slate-800 shadow-xl overflow-hidden text-white blueprint-grid-bg">
+                    <div class="relative bg-slate-950 rounded-[24px] border border-slate-800 shadow-xs overflow-hidden text-white blueprint-grid-bg">
                         
                         <!-- Top Meta Header Row -->
                         <div class="px-5 py-3 bg-slate-900/90 border-b border-slate-800/90 flex flex-wrap items-center justify-between gap-3 text-xs">
@@ -4024,7 +4039,7 @@
                             </div>
 
                             <!-- Top-Down Aircraft Technical SVG Illustration -->
-                            <svg viewBox="0 0 1000 440" class="w-full h-full max-h-[380px] drop-shadow-2xl" fill="none"
+                            <svg viewBox="0 0 1000 440" class="w-full h-full max-h-[380px] drop-shadow-sm" fill="none"
                                 xmlns="http://www.w3.org/2000/svg" role="figure" aria-label="Technical top-down blueprint cutaway of Airbus A320neo">
                                 <title>Airbus A320neo Boarding Architecture</title>
                                 <desc>Top-down cutaway view illustrating cockpit, boarding door 1L, cargo holds, CFM LEAP-1A engines, cabin seating rows, and APU stabilizer trim.</desc>
@@ -4422,7 +4437,7 @@
                                 incurs ₹3,50,000 in delay penalties. Hand-luggage only is the non-negotiable secret.
                             </p>
                         </div>
-                        <div class="lg:col-span-5 bg-slate-950 text-white p-5 rounded-2xl border border-slate-800 space-y-3 font-mono text-xs shadow-xl">
+                        <div class="lg:col-span-5 bg-slate-950 text-white p-5 rounded-2xl border border-slate-800 space-y-3 font-mono text-xs shadow-xs">
                             <div class="text-slate-300 font-semibold border-b border-slate-800 pb-2.5 flex items-center justify-between">
                                 <span class="flex items-center gap-2">
                                     <i data-lucide="clock" class="w-4 h-4 text-cyan-400"></i>
@@ -4478,7 +4493,7 @@
                                 airline on every flight!
                             </p>
                         </div>
-                        <div class="lg:col-span-5 bg-slate-950 text-white p-5 rounded-2xl border border-slate-800 text-center space-y-4 shadow-xl font-mono">
+                        <div class="lg:col-span-5 bg-slate-950 text-white p-5 rounded-2xl border border-slate-800 text-center space-y-4 shadow-xs font-mono">
                             <div class="text-xs text-slate-300 font-semibold border-b border-slate-800 pb-2.5 flex items-center justify-between">
                                 <span class="flex items-center gap-2">
                                     <i data-lucide="scale" class="w-4 h-4 text-emerald-400"></i>
@@ -4490,7 +4505,7 @@
                                 <div class="w-full h-2 bg-slate-800 rounded-full relative overflow-visible">
                                     <div class="absolute inset-y-0 left-[45%] right-[25%] bg-emerald-500/30 rounded-full"></div>
                                     <div id="cgMarker"
-                                        class="absolute top-1/2 -translate-y-1/2 left-[58%] w-6 h-6 rounded-full bg-emerald-400 border-2 border-white flex items-center justify-center text-[10px] font-bold text-slate-950 shadow-md transition-all">
+                                        class="absolute top-1/2 -translate-y-1/2 left-[58%] w-6 h-6 rounded-full bg-emerald-400 border-2 border-white flex items-center justify-center text-[10px] font-bold text-slate-950 shadow-xs transition-all">
                                         CG
                                     </div>
                                 </div>
@@ -4547,7 +4562,7 @@
                         </div>
 
                         <!-- Radar Canvas Visualizer -->
-                        <div class="lg:col-span-6 bg-slate-950 p-6 rounded-2xl border border-slate-800 flex flex-col items-center justify-center relative overflow-hidden h-[300px] shadow-xl">
+                        <div class="lg:col-span-6 bg-slate-950 p-6 rounded-2xl border border-slate-800 flex flex-col items-center justify-center relative overflow-hidden h-[300px] shadow-xs">
                             <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
                                 <div class="w-56 h-56 rounded-full border border-cyan-800/40"></div>
                                 <div class="w-40 h-40 rounded-full border border-cyan-800/30"></div>
