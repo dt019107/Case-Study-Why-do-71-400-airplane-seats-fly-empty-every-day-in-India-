@@ -982,221 +982,153 @@
     <main id="main-content" class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-4">
 
         <!-- PROLOGUE HERO SECTION -->
-        <section id="prologue" class="story-chapter pt-6 pb-12 scroll-mt-24" data-chapter-name="Prologue: The Midnight Phone Call">
+        <section id="prologue" class="story-chapter pt-12 pb-16 scroll-mt-24 max-w-5xl mx-auto" data-chapter-name="Prologue: The Midnight Phone Call">
             
-            <!-- 1. Editorial Header Bar -->
-            <div class="space-y-4 mb-6">
-                <div class="flex flex-wrap items-center gap-2.5 text-xs font-mono">
-                    <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 font-semibold border border-slate-200">
-                        Kempegowda Int'l (BLR) &rarr; Indira Gandhi Int'l (DEL)
-                    </span>
-                    <span class="text-slate-400">&bull;</span>
-                    <span class="text-slate-600 font-medium">Flight 6E-205</span>
-                    <span class="text-slate-400">&bull;</span>
-                    <span class="text-slate-600">11:42 PM IST</span>
-                    <span class="text-slate-400">&bull;</span>
-                    <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-semibold bg-rose-50 text-rose-800 border border-rose-200">
-                        <span class="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse"></span>
+            <!-- 1. Minimalist Monospace Metadata Header -->
+            <div class="flex flex-wrap items-center justify-between gap-3 text-xs font-mono pb-6 border-b border-slate-200/90 text-slate-500">
+                <div class="flex items-center gap-2">
+                    <span class="text-slate-900 font-semibold">Flight 6E-205</span>
+                    <span class="text-slate-300">&bull;</span>
+                    <span>Kempegowda (BLR) &rarr; Delhi (DEL)</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="tabular-nums">11:42 PM IST</span>
+                    <span class="text-slate-300">&bull;</span>
+                    <span class="inline-flex items-center gap-1.5 text-rose-700 font-medium">
+                        <span class="w-1.5 h-1.5 rounded-full bg-rose-600"></span>
                         Doors Closed &bull; 24 Empty Seats
                     </span>
                 </div>
+            </div>
 
-                <!-- Main Display Headline -->
-                <h1 class="text-3xl sm:text-5xl lg:text-[62px] font-bold text-slate-950 font-serif tracking-tight leading-[1.06] max-w-5xl">
+            <!-- 2. Typography Hero (Restrained, Editorial, Striking) -->
+            <div class="pt-8 pb-10 space-y-5">
+                <span class="text-xs font-mono uppercase tracking-widest text-slate-400 font-semibold block">
+                    UX Systems &bull; Aviation Yield Economics
+                </span>
+                
+                <h1 class="text-4xl sm:text-6xl lg:text-[70px] font-normal text-slate-950 font-serif tracking-[-0.03em] leading-[1.05]">
                     Why do 71,400 airplane seats fly empty every day in India?
                 </h1>
-                
-                <p class="text-lg sm:text-xl text-slate-700 font-normal leading-relaxed max-w-3xl pt-1">
-                    A systems-thinking UX case study designing a zero-cannibalization standby protocol that turns lost airline seats into life-saving emergency transit.
+
+                <p class="text-lg sm:text-2xl text-slate-600 font-normal leading-relaxed max-w-3xl pt-2 font-serif italic">
+                    An investigation into why airlines fly empty metal chairs at 36,000 feet while families in medical emergencies are locked on the tarmac.
                 </p>
             </div>
 
-            <!-- 2. Main Executive Hero Grid (7 Cols Left / 5 Cols Right) -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch pt-2">
-
-                <!-- Left Column (7 Cols): The Human Crisis & Economics -->
-                <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
-
-                    <!-- The Core Human Dilemma Card -->
-                    <div class="p-6 sm:p-7 rounded-2xl bg-white border border-slate-300 shadow-sm space-y-5 relative overflow-hidden">
-                        <!-- Card Label -->
-                        <div class="flex items-center justify-between border-b border-slate-200 pb-3 text-xs">
-                            <span class="font-mono text-xs font-bold text-rose-700 uppercase tracking-wider flex items-center gap-2">
-                                <span class="w-2 h-2 rounded-full bg-rose-600"></span>
-                                The Human Problem Behind The Data
-                            </span>
-                            <span class="font-mono text-xs text-slate-500 font-medium">
-                                Persona Scenario &bull; Student Ananya
-                            </span>
-                        </div>
-
-                        <!-- 3 Narrative Scene Lines -->
-                        <div class="space-y-4">
-                            <p class="scene-line scene-line-1 text-base sm:text-lg text-slate-900 leading-relaxed font-normal">
-                                At 11:42 PM in Bengaluru, 22-year-old engineering student Ananya gets the phone call every family dreads: <strong>her mother has suffered an emergency brain hemorrhage in Delhi.</strong>
-                            </p>
-                            
-                            <div class="scene-line scene-line-2 space-y-2.5">
-                                <p class="text-base sm:text-lg text-slate-900 leading-relaxed font-normal">
-                                    The earliest morning emergency fare is <span class="font-bold text-slate-950 tabular-nums">₹21,400</span>. But looking at her phone banking app, her total student savings is only <span class="font-bold text-slate-950 tabular-nums">₹4,800</span>.
-                                </p>
-                                
-                                <!-- High-Contrast Price Gap Indicator -->
-                                <div class="inline-flex flex-wrap items-center gap-2.5 px-3.5 py-2 rounded-xl bg-rose-50 border border-rose-200 text-xs font-mono text-rose-950 font-medium">
-                                    <span>Emergency Fare: <strong>₹21,400</strong></span>
-                                    <span>&bull;</span>
-                                    <span>Savings: <strong>₹4,800</strong></span>
-                                    <span>&bull;</span>
-                                    <span class="font-bold text-rose-700 bg-rose-100/80 px-2 py-0.5 rounded border border-rose-300">78% Financial Shortfall</span>
-                                </div>
-                            </div>
-
-                            <p class="scene-line scene-line-3 text-base sm:text-lg text-slate-900 leading-relaxed font-normal pt-1">
-                                Six hours later, Flight 6E-205 pushes back from the gate with <span class="font-bold text-rose-700 underline decoration-rose-300 decoration-2 underline-offset-4">24 empty seats</span>—because current airline revenue systems would rather let seats fly empty than discount them.
-                            </p>
-                        </div>
+            <!-- 3. The Human Story & Problem Definition (Clean, Elegant Borderless Layout) -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pt-8 pb-12 border-t border-b border-slate-200/90">
+                
+                <!-- Left: The Story of Ananya (7 Cols) -->
+                <div class="md:col-span-7 space-y-4">
+                    <span class="text-xs font-mono uppercase tracking-wider text-rose-700 font-bold block">
+                        The Human Scenario
+                    </span>
+                    
+                    <p class="text-base sm:text-lg text-slate-900 leading-relaxed font-normal">
+                        At 11:42 PM in Bengaluru, 22-year-old engineering student Ananya receives an urgent call: <strong>her mother has suffered an emergency brain hemorrhage in Delhi.</strong>
+                    </p>
+                    
+                    <p class="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
+                        The next ticket costs <strong class="text-slate-950 font-bold tabular-nums">₹21,400</strong>. Her savings account has exactly <strong class="text-slate-950 font-bold tabular-nums">₹4,800</strong>. Six hours later, Flight 6E-205 takes off toward Delhi with <strong class="text-rose-700 font-semibold underline decoration-rose-300 underline-offset-4">24 empty seats</strong>.
+                    </p>
+                    
+                    <div class="pt-2 flex items-center gap-3 text-xs font-mono text-slate-500">
+                        <span>Emergency Ticket: ₹21,400</span>
+                        <span>/</span>
+                        <span>Savings: ₹4,800</span>
+                        <span>/</span>
+                        <span class="text-rose-700 font-bold">78% Shortfall</span>
                     </div>
+                </div>
 
-                    <!-- Direct Problem Definition Box -->
-                    <div class="p-4 sm:p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
-                        <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-500 block">The Core Design Challenge</span>
-                        <p class="text-sm sm:text-base text-slate-900 leading-relaxed font-normal">
-                            <strong>The Dilemma:</strong> If airlines openly discount unsold seats, business travelers stop paying full price. If they don’t discount them, seats perish into thin air while families in distress remain stranded.
+                <!-- Right: The Economic Reality (5 Cols) -->
+                <div class="md:col-span-5 md:pl-6 md:border-l md:border-slate-200/90 space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <span class="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold block">
+                            The Structural Failure
+                        </span>
+                        
+                        <p class="text-sm sm:text-base text-slate-800 leading-relaxed font-normal">
+                            Airlines would rather let seats perish than discount them, fearing business travelers will exploit cheap fares. When the pushback tug connects, those 24 seats' financial value drops to exactly <strong>₹0.00</strong>.
                         </p>
                     </div>
 
-                    <!-- Key Economics Metrics (4 Stat Counters) -->
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1">
-                        <!-- Stat 1: Daily Empty Seats -->
-                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs space-y-1">
-                            <div class="text-xs font-medium text-slate-500 font-mono">Empty seats / day</div>
-                            <div class="text-2xl sm:text-3xl font-bold text-rose-700 tracking-tight font-sans tabular-nums">
-                                <span class="hero-stat-number" data-target="71400" data-suffix="+" data-format="comma">71,400+</span>
-                            </div>
-                            <div class="text-[11px] text-slate-600 font-medium">13.6% domestic capacity</div>
+                    <div class="p-3.5 rounded-lg bg-slate-100/70 text-xs font-mono text-slate-700 space-y-1">
+                        <div class="flex justify-between font-bold text-slate-950">
+                            <span>FLIGHT DEPARTED</span>
+                            <span class="text-rose-700">RESIDUAL VALUE: ₹0.00</span>
                         </div>
-
-                        <!-- Stat 2: Annual Lost Revenue -->
-                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs space-y-1">
-                            <div class="text-xs font-medium text-slate-500 font-mono">Annual loss</div>
-                            <div class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight font-sans tabular-nums">
-                                <span class="hero-stat-number" data-target="9800" data-prefix="₹" data-suffix=" Cr" data-format="comma">₹9,800 Cr</span>
-                            </div>
-                            <div class="text-[11px] text-slate-600 font-medium">Perishes at pushback</div>
-                        </div>
-
-                        <!-- Stat 3: Proposed Standby Fare -->
-                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs space-y-1">
-                            <div class="text-xs font-medium text-slate-500 font-mono">Standby fare</div>
-                            <div class="text-2xl sm:text-3xl font-bold text-emerald-700 tracking-tight font-sans tabular-nums">
-                                <span class="hero-stat-number" data-target="3200" data-prefix="₹" data-format="comma">₹3,200</span>
-                            </div>
-                            <div class="text-[11px] text-emerald-800 font-medium font-mono">Flat &bull; Dignified</div>
-                        </div>
-
-                        <!-- Stat 4: Airline Extra Margin -->
-                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs space-y-1">
-                            <div class="text-xs font-medium text-slate-500 font-mono">Profit gain</div>
-                            <div class="text-2xl sm:text-3xl font-bold text-emerald-700 tracking-tight font-sans tabular-nums">
-                                <span class="hero-stat-number" data-target="68" data-prefix="+" data-suffix="%" data-format="integer">+68%</span>
-                            </div>
-                            <div class="text-[11px] text-emerald-800 font-medium font-mono">Pure EBITDAR gain</div>
-                        </div>
+                        <p class="text-[11px] text-slate-500 leading-normal">Airbus A320neo &bull; 186 Seats &bull; Typical Load: 162</p>
                     </div>
-
-                    <!-- Sources & Regulatory Assumptions Drawer -->
-                    <div class="pt-1">
-                        <button onclick="toggleAccordion('heroSourcesAssumptions')"
-                            class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-slate-950 transition-colors py-1 group"
-                            aria-expanded="false" aria-controls="heroSourcesAssumptions">
-                            <span class="underline underline-offset-4 decoration-slate-300 group-hover:decoration-slate-900">View Data Sources &amp; Economic Assumptions</span>
-                            <span class="text-xs text-slate-400 group-hover:text-slate-800 font-mono">&darr;</span>
-                        </button>
-                        <div id="heroSourcesAssumptions"
-                            class="hidden mt-2 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 space-y-2">
-                            <div class="font-semibold text-slate-900 flex items-center justify-between border-b border-slate-200 pb-2">
-                                <span>Civil Aviation Economic Assumptions</span>
-                                <span class="text-[10px] font-mono uppercase bg-slate-200 text-slate-800 px-2 py-0.5 rounded font-bold">Public DGCA Data</span>
-                            </div>
-                            <ul class="list-disc pl-4 space-y-1.5 text-xs leading-relaxed">
-                                <li><strong>71,400+ Empty Seats Daily:</strong> Based on ~525,000 daily domestic seats across ~3,100 flights at an 86.4% industry-average passenger load factor (DGCA official filings).</li>
-                                <li><strong>₹9,800 Cr Perishable Loss:</strong> Calculated as 71,400 empty seats &times; ~₹3,760 average ticket yield &times; 365 days.</li>
-                                <li><strong>+68% EBITDAR Contribution:</strong> Standby fare (₹3,200) minus direct variable costs (₹820 jet fuel burn + ₹630 airport security/UDF statutory fees) yields ~₹1,750 net margin per filled standby seat.</li>
-                            </ul>
-                        </div>
-                    </div>
-
                 </div>
-
-                <!-- Right Column (5 Cols): Real Aircraft Visual & Fast Navigation -->
-                <div class="lg:col-span-5 flex flex-col justify-between space-y-4">
-
-                    <!-- Aircraft Photo & Telemetry Card -->
-                    <div class="relative rounded-2xl overflow-hidden border border-slate-300 bg-slate-950 group h-full flex flex-col justify-end min-h-[420px] shadow-sm">
-                        <img src="assets/indigo-aircraft-tarmac.jpg"
-                            alt="Airbus A320neo on Indian airport terminal tarmac"
-                            class="absolute inset-0 w-full h-full object-cover slow-photo-zoom">
-                        
-                        <!-- Crisp Vignette Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/20 pointer-events-none"></div>
-
-                        <!-- Top Telemetry Pill -->
-                        <div class="absolute top-4 inset-x-4 flex items-center justify-between z-10">
-                            <span class="px-2.5 py-1 rounded-md bg-slate-950/90 text-white font-mono text-[11px] font-semibold border border-white/20 flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                                Airbus A320neo &bull; 186 Seats
-                            </span>
-                            <span class="px-2.5 py-1 rounded-md bg-slate-950/90 text-slate-200 font-mono text-[11px] border border-white/20">
-                                BLR &rarr; DEL Sector
-                            </span>
-                        </div>
-
-                        <!-- Bottom Content & Perishability Alert -->
-                        <div class="relative p-6 text-white space-y-3 z-10 w-full">
-                            <div class="space-y-1">
-                                <div class="text-[11px] font-mono uppercase tracking-wider text-amber-400 font-bold flex items-center gap-1.5">
-                                    <span>The Zero-Value Horizon</span>
-                                </div>
-                                <h3 class="text-lg sm:text-xl font-bold text-white tracking-tight font-serif">
-                                    Once Cabin Doors Close: Residual Value = ₹0.00
-                                </h3>
-                            </div>
-
-                            <div class="p-3.5 rounded-xl bg-slate-900/95 border border-amber-500/40 text-xs space-y-1.5">
-                                <div class="flex items-center justify-between text-amber-300 font-mono font-bold text-[11px]">
-                                    <span>STATUS: FLIGHT DEPARTED</span>
-                                    <span class="text-rose-400 font-mono">SEAT VALUE: ₹0.00</span>
-                                </div>
-                                <p class="text-slate-200 leading-relaxed text-xs">
-                                    Unlike physical goods, an airplane seat cannot be inventoried or sold tomorrow. When the pushback tug connects, 24 empty seats vanish into thin air forever.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Fast Action Bar for Reviewers -->
-                    <div class="bg-white p-4 rounded-xl border border-slate-300 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-3">
-                        <div class="flex items-center gap-2.5 w-full sm:w-auto">
-                            <a href="#summary"
-                                class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-slate-950 hover:bg-rose-700 text-white font-semibold text-xs sm:text-sm shadow-xs transition-colors whitespace-nowrap w-full sm:w-auto">
-                                <span>Read Executive Brief</span>
-                                <span>&darr;</span>
-                            </a>
-                            <a href="#story-1"
-                                class="inline-flex items-center gap-1.5 px-3 py-2.5 rounded-xl text-slate-700 hover:text-slate-950 hover:bg-slate-100 text-xs font-semibold transition-colors">
-                                <span>6 Guardrails</span>
-                                <span>&rarr;</span>
-                            </a>
-                        </div>
-                        <div class="inline-flex items-center gap-2 text-xs text-slate-500 font-mono whitespace-nowrap">
-                            <span class="w-2 h-2 rounded-full bg-rose-600 animate-pulse"></span>
-                            <span>Scroll down to explore</span>
-                        </div>
-                    </div>
-
-                </div>
-
             </div>
+
+            <!-- 4. Four Key Metrics (Minimalist Typographic Grid, Zero Clutter) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 pb-10">
+                <div class="space-y-1.5">
+                    <div class="text-xs font-mono uppercase tracking-wider text-slate-400">Empty seats / day</div>
+                    <div class="text-3xl sm:text-4xl font-light text-rose-700 font-serif tabular-nums">
+                        <span class="hero-stat-number" data-target="71400" data-suffix="+" data-format="comma">71,400+</span>
+                    </div>
+                    <div class="text-xs text-slate-500 font-normal">13.6% domestic capacity</div>
+                </div>
+
+                <div class="space-y-1.5">
+                    <div class="text-xs font-mono uppercase tracking-wider text-slate-400">Annual lost value</div>
+                    <div class="text-3xl sm:text-4xl font-light text-slate-950 font-serif tabular-nums">
+                        <span class="hero-stat-number" data-target="9800" data-prefix="₹" data-suffix=" Cr" data-format="comma">₹9,800 Cr</span>
+                    </div>
+                    <div class="text-xs text-slate-500 font-normal">Perishes at cabin pushback</div>
+                </div>
+
+                <div class="space-y-1.5">
+                    <div class="text-xs font-mono uppercase tracking-wider text-slate-400">Standby fare</div>
+                    <div class="text-3xl sm:text-4xl font-light text-slate-950 font-serif tabular-nums">
+                        <span class="hero-stat-number" data-target="3200" data-prefix="₹" data-format="comma">₹3,200</span>
+                    </div>
+                    <div class="text-xs text-slate-500 font-normal">Flat capped emergency price</div>
+                </div>
+
+                <div class="space-y-1.5">
+                    <div class="text-xs font-mono uppercase tracking-wider text-slate-400">Airline contribution</div>
+                    <div class="text-3xl sm:text-4xl font-light text-slate-950 font-serif tabular-nums">
+                        <span class="hero-stat-number" data-target="68" data-prefix="+" data-suffix="%" data-format="integer">+68%</span>
+                    </div>
+                    <div class="text-xs text-slate-500 font-normal">Marginal EBITDAR gain</div>
+                </div>
+            </div>
+
+            <!-- 5. Minimalist Navigation Anchor -->
+            <div class="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-slate-200/90 text-xs">
+                <div class="flex items-center gap-3">
+                    <a href="#summary" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-slate-950 hover:bg-slate-800 text-white font-medium transition-colors">
+                        <span>Read Executive Brief</span>
+                        <span class="font-mono">&darr;</span>
+                    </a>
+                    
+                    <button onclick="toggleAccordion('heroSourcesAssumptions')"
+                        class="px-3 py-2 text-slate-600 hover:text-slate-950 transition-colors font-mono underline underline-offset-4 decoration-slate-300">
+                        Sources &amp; Data &darr;
+                    </button>
+                </div>
+
+                <span class="text-slate-400 font-mono text-[11px]">Scroll to begin case study &darr;</span>
+            </div>
+
+            <!-- Expandable Data Sources Drawer -->
+            <div id="heroSourcesAssumptions" class="hidden mt-4 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 space-y-2">
+                <div class="font-semibold text-slate-900 flex items-center justify-between">
+                    <span>Civil Aviation Assumptions</span>
+                    <span class="text-[10px] font-mono text-slate-500 uppercase">DGCA Official Data</span>
+                </div>
+                <ul class="list-disc pl-4 space-y-1 text-[11px] leading-relaxed">
+                    <li><strong>71,400+ Empty Seats Daily:</strong> Based on ~525,000 daily domestic seats offered across ~3,100 flights at an 86.4% industry-average passenger load factor (DGCA monthly filings).</li>
+                    <li><strong>₹9,800 Cr Perishable Loss:</strong> 71,400 empty seats &times; ~₹3,760 average ticket yield &times; 365 days.</li>
+                    <li><strong>+68% Marginal Contribution:</strong> Standby fare (₹3,200) minus direct variable costs (₹820 jet fuel burn + ₹630 airport security/UDF statutory fees) generates ~₹1,750 net margin per filled standby seat.</li>
+                </ul>
+            </div>
+
         </section>
 
         <!-- SUBTLE DIVIDER -->
