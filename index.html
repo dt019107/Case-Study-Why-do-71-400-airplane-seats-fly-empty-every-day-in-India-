@@ -236,17 +236,27 @@
         }
 
         .defense-back {
-            background-color: #0B1020 !important;
-            border: 1px solid #9F1239 !important;
+            background-color: var(--ink) !important;
+            border: 1px solid var(--critical) !important;
             border-radius: 12px !important;
             padding: 0.85rem 1rem !important;
-            color: #FFFFFF !important;
+            color: var(--dark-text) !important;
         }
 
         .defense-back p {
-            color: #FECDD3 !important;
+            color: var(--dark-text-muted) !important;
             font-size: 12px !important;
             line-height: 1.45 !important;
+        }
+
+        .defense-back span[class*="text-rose-300"],
+        .defense-back p[class*="text-rose-100"] {
+            color: var(--dark-text-muted) !important;
+        }
+
+        .defense-back span[class*="bg-rose-600"] {
+            background-color: var(--critical) !important;
+            color: #FFFFFF !important;
         }
 
 
@@ -255,14 +265,17 @@
         /* ========================================================================= */
         :root {
             --ink: #0B1020;
-            --ink-muted: #5B6475;
+            --ink-muted: #4B5563; /* Passes 4.5:1 on white and surface */
             --surface: #F8F9FB;
             --card: #FFFFFF;
-            --border: #E3E6EC;
-            --brand: #E11D48;
-            --positive: #0F9D8A;
-            --warning: #B45309;
-            --critical: #9F1239;
+            --border: #D5D9E2;
+            --brand: #E11D48;     /* CTAs, active states, key headline figures ONLY */
+            --positive: #0F8A78;  /* All teal and green unified */
+            --warning: #B45309;   /* Hook / caution */
+            --critical: #9F1239;  /* Blocked, emergency, Project Sanjeevani only */
+            --neutral-bar: #475569; /* Costs, negative values, neutral chart series */
+            --dark-text: #E5E9F2;   /* Primary text on dark panels */
+            --dark-text-muted: #A7B0C2; /* Secondary text on dark panels, 4.5:1 on --ink */
         }
 
         /* 1. Global Reset & High Contrast Typography */
@@ -274,75 +287,116 @@
         }
 
         p, li {
-            color: #1E293B !important; /* Passes 12.6:1 against #F8F9FB */
+            color: #1E293B !important; /* 12.6:1 against #F8F9FB */
             line-height: 1.7;
         }
 
         h1, h2, h3, h4, h5, h6 {
             color: var(--ink) !important;
+            font-family: 'Newsreader', Georgia, serif;
+            letter-spacing: -0.02em;
         }
 
         .text-slate-600, .text-slate-500, .text-slate-400 {
-            color: var(--ink-muted) !important; /* #5B6475 passes 4.8:1 on #FFFFFF and #F8F9FB */
+            color: var(--ink-muted) !important; /* Passes >= 4.5:1 on white and surface */
         }
 
-        /* 2. Consistent Label Colors (Requirement 4) */
-        /* Hook = --warning */
+        /* 2. Floating Nav Contrast */
+        .desktop-nav-center a {
+            color: var(--ink-muted) !important;
+        }
+        .desktop-nav-center a:hover,
+        .desktop-nav-center a.is-active {
+            color: var(--ink) !important;
+        }
+        #actIndicatorPill {
+            background-color: var(--surface) !important;
+            border-color: var(--border) !important;
+            color: var(--ink) !important;
+        }
+        #actIndicatorPill span#actIndicatorText {
+            color: var(--ink) !important;
+        }
+        #actIndicatorDot {
+            background-color: var(--brand) !important;
+        }
+
+        /* 3. Consistent Label Chips Across All Stories */
+        /* Hook / Challenge = --warning */
         .story-hook-label,
-        .story-chapter span:has(+ span:contains("Trap")),
-        span.chip-hook {
+        .chip-hook,
+        span.chip-hook,
+        [class*="bg-amber-500"],
+        span[class*="bg-[#B45309]"] {
             background-color: var(--warning) !important;
             color: #FFFFFF !important;
         }
 
-        /* Before = slate (#475569) */
+        /* Before / Initial Attempt = #475569 */
         .story-before-label,
-        span.chip-before {
-            background-color: #475569 !important;
+        .chip-before,
+        span.chip-before,
+        span[class*="bg-[#475569]"] {
+            background-color: var(--neutral-bar) !important;
             color: #FFFFFF !important;
         }
 
-        /* Decision = --ink (#0B1020) */
+        /* Decision / Core Decision = --ink */
         .story-decision-label,
-        span.chip-decision {
+        .chip-decision,
+        span.chip-decision,
+        span[class*="bg-[#0B1020]"] {
             background-color: var(--ink) !important;
             color: #FFFFFF !important;
         }
 
-        /* After = --brand outline */
+        /* After / Prototype = outline in --brand, text --brand, background transparent */
         .story-after-label,
-        span.chip-after {
+        .chip-after,
+        span.chip-after,
+        span.prototype-badge,
+        span[class*="border-[#E11D48]"] {
             background-color: transparent !important;
             border: 1.5px solid var(--brand) !important;
             color: var(--brand) !important;
             font-weight: 700 !important;
         }
 
-        /* Result = --positive (#0F9D8A) */
+        /* Result / Outcome = --positive */
         .story-result-label,
-        span.chip-result {
+        .chip-result,
+        span.chip-result,
+        span[class*="bg-[#0F9D8A]"],
+        span[class*="bg-[#0F8A78]"] {
             background-color: var(--positive) !important;
             color: #FFFFFF !important;
         }
 
-        /* 3. Tinted Card Backgrounds Derived from Tokens (8-10% tint of role color) */
+        /* 4. Tinted Card Backgrounds (8-10% tint of role color) */
         /* Hook card tint: 8% warning */
         [class*="bg-amber-50"] {
             background-color: rgba(180, 83, 9, 0.08) !important;
-            border-color: rgba(180, 83, 9, 0.3) !important;
+            border-color: rgba(180, 83, 9, 0.25) !important;
         }
         [class*="bg-amber-50"] p, [class*="bg-amber-50"] span {
-            color: #451A03 !important;
+            color: #78350F !important;
+        }
+        [class*="bg-amber-50"] strong, [class*="bg-amber-50"] h3, [class*="bg-amber-50"] h4 {
+            color: var(--ink) !important;
         }
 
         /* Result / Positive card tint: 8% positive */
         [class*="bg-emerald-50"], [class*="bg-teal-50"] {
-            background-color: rgba(15, 157, 138, 0.08) !important;
-            border-color: rgba(15, 157, 138, 0.3) !important;
+            background-color: rgba(15, 138, 120, 0.08) !important;
+            border-color: rgba(15, 138, 120, 0.25) !important;
         }
         [class*="bg-emerald-50"] p, [class*="bg-emerald-50"] span,
         [class*="bg-teal-50"] p, [class*="bg-teal-50"] span {
-            color: #042F2E !important;
+            color: #064E3B !important;
+        }
+        [class*="bg-emerald-50"] strong, [class*="bg-emerald-50"] h3, [class*="bg-emerald-50"] h4,
+        [class*="bg-teal-50"] strong, [class*="bg-teal-50"] h3, [class*="bg-teal-50"] h4 {
+            color: var(--ink) !important;
         }
 
         /* Sanjeevani / Emergency card tint: 8% critical */
@@ -353,57 +407,163 @@
         [class*="bg-rose-50"] p, [class*="bg-rose-50"] span {
             color: #4C0519 !important;
         }
+        [class*="bg-rose-50"] strong, [class*="bg-rose-50"] h3, [class*="bg-rose-50"] h4 {
+            color: var(--critical) !important;
+        }
 
         /* Neutral card surfaces */
         [class*="bg-slate-50"] {
             background-color: var(--surface) !important;
             border-color: var(--border) !important;
         }
-
-        /* 4. Fix Invisible / Faded Text and Animation End States */
-        .persona-card-initial,
-        .persona-card-revealed,
-        .guardrail-card,
-        .scene-line,
-        [class*="opacity-0"] {
-            opacity: 1 !important;
-        }
-
-        /* Sanjeevani Panel Text Contrast on Dark Ink */
-        .sanjeevani-two-col h2,
-        .sanjeevani-two-col h3,
-        .sanjeevani-two-col .text-white {
-            color: #FFFFFF !important;
-        }
-        .sanjeevani-two-col p,
-        .sanjeevani-two-col .text-slate-300,
-        .sanjeevani-two-col .text-slate-200 {
-            color: #CBD5E1 !important; /* Contrast 8.9:1 on #0B1020 */
-        }
-        .sanjeevani-two-col .text-slate-400 {
-            color: #94A3B8 !important; /* Contrast 5.1:1 on #0B1020 */
-        }
-
-        /* What I Learned & What I Would Do Next Section Contrast */
-        #retrospective h2,
-        #retrospective h3,
-        #retrospective .text-white {
-            color: var(--ink) !important;
-        }
-        #retrospective p,
-        #retrospective li,
-        #retrospective .text-slate-300,
-        #retrospective .text-slate-200 {
-            color: #1E293B !important;
-        }
-        #retrospective [class*="bg-slate-800"],
-        #retrospective [class*="bg-slate-900"] {
+        [class*="bg-white"], .ds-card-base, .ds-card-raised {
             background-color: var(--card) !important;
             border-color: var(--border) !important;
+        }
+
+        /* 5. Sublabels in Decision Stories */
+        .story-chapter span.text-slate-700,
+        .story-chapter span.text-slate-300 {
+            color: var(--ink) !important;
+        }
+        .story-chapter span.text-slate-400 {
+            color: var(--ink-muted) !important;
+        }
+
+        /* 6. Sanjeevani Panel Text Contrast on Dark Ink */
+        .sanjeevani-two-col h2 {
+            color: var(--ink) !important;
+        }
+        .sanjeevani-two-col p {
+            color: #1E293B !important;
+        }
+        .sanjeevani-col-right figcaption {
+            background-color: rgba(11, 16, 32, 0.88) !important;
+            color: var(--dark-text) !important;
+        }
+        .sanjeevani-col-right figcaption h3 {
+            color: var(--dark-text) !important;
+        }
+        .sanjeevani-col-right figcaption span,
+        .sanjeevani-col-right figcaption div {
+            color: var(--dark-text-muted) !important;
+        }
+
+        /* 7. Cannibalization Section */
+        #cannibalPriyaBadge {
+            background-color: var(--surface) !important;
+            border: 1px solid var(--border) !important;
+            color: var(--ink) !important;
+        }
+        #cannibalPriyaVal {
+            color: var(--ink) !important;
+        }
+        #cannibalAnanyaBadge {
+            background-color: rgba(15, 138, 120, 0.1) !important;
+            border: 1px solid rgba(15, 138, 120, 0.3) !important;
+            color: var(--positive) !important;
+        }
+        #cannibalAnanyaVal {
+            color: var(--positive) !important;
+        }
+
+        /* 8. "What I rejected and why" titles */
+        h4.font-mono,
+        .font-mono.uppercase {
+            color: var(--ink) !important;
+        }
+        .grid .font-bold.text-slate-800,
+        .grid .font-bold.text-slate-200 {
+            color: var(--ink) !important;
+        }
+        .grid p.text-slate-500,
+        .grid p.text-slate-400 {
+            color: var(--ink-muted) !important;
+        }
+
+        /* 9. Cabin Section Jump Segmented Control */
+        #cabinJumpAll, #cabinJumpFwd, #cabinJumpMid, #cabinJumpAft {
+            color: var(--ink-muted) !important;
+        }
+        #cabinJumpAll.bg-white, #cabinJumpFwd.bg-white, #cabinJumpMid.bg-white, #cabinJumpAft.bg-white,
+        #cabinJumpAll[class*="bg-white"], #cabinJumpFwd[class*="bg-white"], #cabinJumpMid[class*="bg-white"], #cabinJumpAft[class*="bg-white"] {
+            background-color: var(--card) !important;
+            color: var(--ink) !important;
+            border: 1px solid var(--border) !important;
+            box-shadow: 0 1px 2px rgba(11, 16, 32, 0.05) !important;
+        }
+
+        /* 10. CFO Simulator */
+        label[for^="input-"] {
+            color: var(--ink) !important;
+        }
+        #lbl-gauge, #lbl-plf, #lbl-ancillary {
+            color: var(--ink) !important;
+        }
+        #lbl-fare {
+            color: var(--positive) !important;
+        }
+        input[type="range"] {
+            accent-color: var(--positive) !important;
+        }
+        #res-margin {
+            color: var(--positive) !important;
+        }
+        #res-annual {
+            color: var(--ink) !important;
+        }
+        #res-vacant {
+            color: var(--warning) !important;
+        }
+        #res-cleared {
+            color: var(--positive) !important;
+        }
+
+        /* CFO Hero Card */
+        #cfoBigExtraProfit {
+            color: var(--positive) !important;
+        }
+
+        /* Seat Telemetry Initial Badge */
+        #inspectSeatBadge {
+            background-color: var(--surface) !important;
+            border: 1px solid var(--border) !important;
+            color: var(--ink-muted) !important;
+        }
+
+        /* 11. Appendix Tutorial Tabs */
+        .tutorial-tab-btn[aria-selected="true"] {
+            background-color: var(--card) !important;
+            color: var(--ink) !important;
+            border-bottom: 2px solid var(--brand) !important;
+            border-color: var(--border) !important;
+        }
+        .tutorial-tab-btn[aria-selected="false"] {
+            color: var(--ink-muted) !important;
+            background-color: transparent !important;
+        }
+        #zoneDesc {
+            color: var(--dark-text-muted) !important;
+        }
+        #zoneMetaChips span {
+            color: var(--dark-text-muted) !important;
+        }
+
+        /* 12. Footer Contrast */
+        footer a {
+            color: var(--ink-muted) !important;
+        }
+        footer a:hover {
+            color: var(--brand) !important;
+        }
+        footer span, footer div {
+            color: var(--ink-muted) !important;
+        }
+        footer .font-semibold {
             color: var(--ink) !important;
         }
 
-        /* 5. Clean Button Contrast */
+        /* 13. Clean Button Contrast */
         button.bg-indigo-600, a.bg-indigo-600,
         button.bg-\[\#e11d48\], a.bg-\[\#e11d48\], a#navPrimaryCta {
             background-color: var(--brand) !important;
@@ -414,215 +574,22 @@
             background-color: #BE123C !important;
         }
 
-        
-        /* ========================================================================= */
-        /* MINIMAL EDITORIAL PORTFOLIO DESIGN SYSTEM (MATCHING HERO AESTHETIC)       */
-        /* Clean white space, subtle hairline borders, Newsreader serif typography   */
-        /* ========================================================================= */
-        html, html.dark, body, body.dark {
-            background-color: #F8FAFC !important;
-            color: #0F172A !important;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+        /* 14. Reveal Animations End State & Reduced Motion */
+        .persona-card-initial,
+        .persona-card-revealed,
+        .guardrail-card,
+        .scene-line,
+        .motion-reveal-section,
+        [class*="opacity-0"] {
+            opacity: 1 !important;
         }
 
-        /* 1. Typography */
-        h1, h2, h3, h4, h5, h6 {
-            color: #020617 !important;
-            font-family: 'Newsreader', Georgia, serif;
-            letter-spacing: -0.025em;
-        }
-
-        p, li {
-            color: #334155 !important;
-            line-height: 1.72;
-        }
-
-        /* 2. Container Constraints: Clean, spacious reading flow */
-        .story-chapter {
-            max-width: 64rem !important; /* 1024px max width for optimal line length */
-            margin-left: auto !important;
-            margin-right: auto !important;
-            padding-top: 3.5rem !important;
-            padding-bottom: 4rem !important;
-            border-bottom: 1px solid rgba(226, 232, 240, 0.9);
-        }
-
-        /* 3. Restrained Card Surfaces (Light hairline borders, no heavy shadows) */
-        .bg-white, [class*="bg-white/"], .ds-card-base, .ds-card-raised {
-            background-color: #FFFFFF !important;
-            border: 1px solid #E2E8F0 !important;
-            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
-            border-radius: 16px !important;
-        }
-
-        /* Convert dark background containers to clean light surfaces */
-        .dark\:bg-slate-900, .dark\:bg-slate-950, .dark\:bg-slate-800 {
-            background-color: #FFFFFF !important;
-        }
-
-        /* Muted background chips & tables */
-        .bg-slate-50, .bg-slate-100 {
-            background-color: #F8FAFC !important;
-            border: 1px solid #E2E8F0 !important;
-        }
-
-        /* Section divider matching hero */
-        .act-divider {
-            display: none !important; /* Managed cleanly via section borders */
-        }
-
-        /* Subtle pill badges matching hero */
-        .rounded-full.uppercase {
-            border-radius: 6px !important;
-            font-weight: 600 !important;
-            font-size: 11px !important;
-            letter-spacing: 0.05em !important;
-        }
-
-        /* Primary and Secondary button styling */
-        button, a.magnetic-btn {
-            border-radius: 8px !important;
-        }
-
-        /* ========================================================================= */
-        /* STORIES 1 TO 4: PERFECT VISUAL COLOR CONTRAST ARCHITECTURE               */
-        /* High-contrast WCAG AAA typography on purposeful tinted light backgrounds  */
-        /* ========================================================================= */
-        
-        /* 1. Amber Tinted Cards (Hook / Attention) */
-        [class*="bg-amber-50"] {
-            background-color: #FFFBEB !important; /* Rich warm amber tint */
-            border-color: #FCD34D !important; /* Visible amber border */
-        }
-        [class*="bg-amber-50"] p,
-        [class*="bg-amber-50"] span {
-            color: #78350F !important; /* Deep warm amber text (Contrast 8.5:1) */
-        }
-        [class*="bg-amber-50"] strong,
-        [class*="bg-amber-50"] h3,
-        [class*="bg-amber-50"] h4 {
-            color: #451A03 !important; /* Pure ink amber heading */
-        }
-        .text-amber-800, .text-amber-700, .text-amber-900, .text-amber-600 {
-            color: #78350F !important;
-        }
-
-        /* 2. Indigo / Slate Tinted Cards (Decision / Architecture) */
-        [class*="bg-indigo-50"] {
-            background-color: #F8FAFC !important; /* Calm clean surface */
-            border-color: #CBD5E1 !important;
-        }
-        [class*="bg-indigo-50"] p {
-            color: #1E293B !important;
-        }
-        [class*="bg-indigo-50"] strong,
-        [class*="bg-indigo-50"] h3,
-        [class*="bg-indigo-50"] h4 {
-            color: #0F172A !important;
-        }
-        .text-indigo-700, .text-indigo-800, .text-indigo-600 {
-            color: #1E293B !important;
-        }
-
-        /* 3. Emerald Tinted Cards (Result / Proof) */
-        [class*="bg-emerald-50"] {
-            background-color: #F0FDF4 !important; /* Crisp sage light */
-            border-color: #86EFAC !important; /* Defined emerald boundary */
-        }
-        [class*="bg-emerald-50"] p,
-        [class*="bg-emerald-50"] span {
-            color: #14532D !important; /* Deep forest green (Contrast 9.8:1) */
-        }
-        [class*="bg-emerald-50"] strong,
-        [class*="bg-emerald-50"] h3,
-        [class*="bg-emerald-50"] h4 {
-            color: #052E16 !important;
-        }
-        .text-emerald-800, .text-emerald-700, .text-emerald-900, .text-emerald-600 {
-            color: #14532D !important;
-        }
-
-        /* 4. Rose Tinted Cards (Medical / Sanjeevani) */
-        [class*="bg-rose-50"] {
-            background-color: #FFF1F2 !important; /* Soft rose tint */
-            border-color: #FECDD3 !important;
-        }
-        [class*="bg-rose-50"] p,
-        [class*="bg-rose-50"] span {
-            color: #881337 !important; /* Deep rose ink (Contrast 9.4:1) */
-        }
-        [class*="bg-rose-50"] strong,
-        [class*="bg-rose-50"] h3,
-        [class*="bg-rose-50"] h4 {
-            color: #4C0519 !important;
-        }
-        .text-rose-700, .text-rose-800, .text-rose-900, .text-rose-600 {
-            color: #881337 !important;
-        }
-
-        /* 5. Teal Tinted Cards (Story 3 / Narrative) */
-        [class*="bg-teal-50"] {
-            background-color: #F0FDFA !important;
-            border-color: #99F6E4 !important;
-        }
-        [class*="bg-teal-50"] p,
-        [class*="bg-teal-50"] span {
-            color: #134E4A !important; /* Deep teal ink (Contrast 9.2:1) */
-        }
-        [class*="bg-teal-50"] strong,
-        [class*="bg-teal-50"] h3,
-        [class*="bg-teal-50"] h4 {
-            color: #042F2E !important;
-        }
-        .text-teal-800, .text-teal-700, .text-teal-900, .text-teal-600 {
-            color: #134E4A !important;
-        }
-
-        /* 6. Neutral Base Cards (Before / Trade-off / Technical Details) */
-        [class*="bg-slate-50"] {
-            background-color: #F8FAFC !important;
-            border-color: #E2E8F0 !important;
-        }
-        [class*="bg-slate-50"] p,
-        [class*="bg-slate-50"] li {
-            color: #334155 !important;
-        }
-        [class*="bg-slate-50"] strong,
-        [class*="bg-slate-50"] h3,
-        [class*="bg-slate-50"] h4 {
-            color: #0F172A !important;
-        }
-
-        /* 7. Standby Guardrail & Simulator Cards Contrast */
-        .guardrail-card {
-            background-color: #FFFFFF !important;
-            border: 1px solid #CBD5E1 !important;
-            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) !important;
-        }
-        .guardrail-card h3 {
-            color: #0F172A !important;
-        }
-        .guardrail-card p {
-            color: #334155 !important;
-        }
-        .guardrail-card .defense-front {
-            background-color: #F8FAFC !important;
-            border: 1px solid #E2E8F0 !important;
-        }
-        .guardrail-card .defense-front p {
-            color: #1E293B !important;
-        }
-
-        /* 8. Fix Faint Watermarks & Decorative Numbers */
-        .guardrail-card span.font-mono.font-black {
-            color: #E2E8F0 !important; /* Clean visible watermark */
-        }
-
-        /* --- Headings in Newsreader (Editorial Serif) --- */
-        h1, h2, h3, h4 {
-            font-family: 'Newsreader', Georgia, serif;
-            letter-spacing: -0.02em;
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation: none !important;
+                transition: none !important;
+                opacity: 1 !important;
+            }
         }
 
         /* ========================================================================= */
@@ -1205,13 +1172,13 @@
                     </a>
 
                     <!-- Reusable UX Case Study Indicator Pill -->
-                    <div class="hidden md:flex flex-col text-left border-l border-slate-200 dark:border-slate-800 pl-3">
-                        <span class="text-xs font-bold text-slate-800 dark:text-slate-200">Deepak Tiwari</span>
-                        <span class="text-[10px] text-slate-500 dark:text-slate-400 font-mono">Solo UX Designer &amp; Researcher</span>
+                    <div class="hidden md:flex flex-col text-left border-l border-[#D5D9E2] pl-3">
+                        <span class="text-xs font-bold text-[#0B1020]">Deepak Tiwari</span>
+                        <span class="text-[10px] text-[#4B5563] font-mono">Solo UX Designer &amp; Researcher</span>
                     </div>
-                    <div id="actIndicatorPill" class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700/60 shadow-2xs transition-all duration-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 " id="actIndicatorDot"></span>
-                        <span id="actIndicatorText" class="font-mono text-[11px] font-bold">Case Study</span>
+                    <div id="actIndicatorPill" class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-[#F8F9FB] text-[#0B1020] border border-[#D5D9E2] shadow-2xs transition-all duration-300">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#E11D48]" id="actIndicatorDot"></span>
+                        <span id="actIndicatorText" class="font-mono text-[11px] font-bold text-[#0B1020]">Case Study</span>
                     </div>
                 </div>
 
@@ -1813,9 +1780,9 @@
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
                             <span class="px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider border border-[#E11D48] bg-transparent text-[#E11D48] font-bold font-mono">Prototype</span>
-                            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">The 6 Guardrail Cards &amp; Interactive Anti-Fraud Sandbox</span>
+                            <span class="text-xs font-semibold text-[#0B1020]">The 6 Guardrail Cards &amp; Interactive Anti-Fraud Sandbox</span>
                         </div>
-                        <span class="text-[11px] text-slate-400 font-mono">Live test scenarios below ➔</span>
+                        <span class="text-[11px] text-[#4B5563] font-mono">Live test scenarios below ➔</span>
                     </div>
 
                     <!-- Embedded Guardrail Cards & Interactive Sandbox -->
@@ -2541,7 +2508,7 @@
 
                 <div class="p-5 sm:p-6 rounded-2xl bg-emerald-50/60 dark:bg-emerald-950/20 border border-emerald-200/80 dark:border-emerald-900/40 shadow-xs space-y-2">
                     <div class="flex items-center gap-2">
-                        <span class="px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-[#0F9D8A] text-white font-mono">Outcome</span>
+                        <span class="px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-[#0F8A78] text-white font-mono">Outcome</span>
                         <span class="text-xs font-semibold text-emerald-800 dark:text-emerald-300 font-mono">Verified Validation Outcome</span>
                     </div>
                     <p class="text-base sm:text-lg font-bold text-emerald-950 dark:text-emerald-200 leading-snug">
@@ -2648,9 +2615,9 @@
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
                             <span class="px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider border border-[#E11D48] bg-transparent text-[#E11D48] font-bold font-mono">Prototype</span>
-                            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Interactive Emergency Relief Slider &amp; ABHA Audit Simulator</span>
+                            <span class="text-xs font-semibold text-[#0B1020]">Interactive Emergency Relief Slider &amp; ABHA Audit Simulator</span>
                         </div>
-                        <span class="text-[11px] text-slate-400 font-mono">Test audit simulation below ➔</span>
+                        <span class="text-[11px] text-[#4B5563] font-mono">Test audit simulation below ➔</span>
                     </div>
 
                     <!-- Embedded Act 4 Container -->
@@ -2850,10 +2817,10 @@
                         </div>
 
                         <!-- Structured Bottom Caption -->
-                        <figcaption class="relative z-10 p-6 sm:p-7 text-white space-y-2 bg-slate-950/80 rounded-b-[24px]">
+                        <figcaption class="relative z-10 p-6 sm:p-7 text-white space-y-2 bg-[#0B1020]/90 rounded-b-[24px]">
                             <!-- Small Red Tag -->
                             <div>
-                                <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold tracking-wider bg-rose-600 text-white uppercase shadow-xs">
+                                <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold tracking-wider bg-[#9F1239] text-white uppercase shadow-xs">
                                     ORGAN &amp; ICU CORRIDOR
                                 </span>
                             </div>
@@ -2973,7 +2940,7 @@
                 <!-- Row 4: Result -->
                 <div class="p-5 sm:p-6 rounded-2xl bg-emerald-50/60 dark:bg-emerald-950/20 border border-emerald-200/80 dark:border-emerald-900/40 shadow-xs space-y-2">
                     <div class="flex items-center gap-2">
-                        <span class="px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-[#0F9D8A] text-white font-mono">Outcome</span>
+                        <span class="px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-[#0F8A78] text-white font-mono">Outcome</span>
                         <span class="text-xs font-semibold text-emerald-800 dark:text-emerald-300 font-mono">Honest Operational Trade-Off</span>
                     </div>
                     <p class="text-base sm:text-lg font-bold text-emerald-950 dark:text-emerald-200 leading-snug">
@@ -3085,9 +3052,9 @@
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
                             <span class="px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider border border-[#E11D48] bg-transparent text-[#E11D48] font-bold font-mono">Prototype</span>
-                            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Persona Divergence &amp; Perishable Inventory Economics</span>
+                            <span class="text-xs font-semibold text-[#0B1020]">Persona Divergence &amp; Perishable Inventory Economics</span>
                         </div>
-                        <span class="text-[11px] text-slate-400 font-mono">Toggle personas below ➔</span>
+                        <span class="text-[11px] text-[#4B5563] font-mono">Toggle personas below ➔</span>
                     </div>
 
                     <!-- Persona Divergence Card (from Act 2) -->
@@ -3269,21 +3236,21 @@
                         <span>Flight 6E-205 (Same Aircraft)</span>
                     </div>
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs tabular-nums">
-                        <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60">
-                            <div class="text-[11px] text-slate-400 dark:text-slate-400 font-normal">Late public drop</div>
-                            <div class="text-sm font-bold text-slate-800 dark:text-slate-200">₹3,000</div>
+                        <div class="p-2.5 rounded-xl bg-[#F8F9FB] border border-[#D5D9E2]">
+                            <div class="text-[11px] text-[#4B5563] font-normal">Late public drop</div>
+                            <div class="text-sm font-bold text-[#0B1020]">₹3,000</div>
                         </div>
-                        <div class="p-2.5 rounded-xl bg-teal-50/70 dark:bg-teal-950/30 border border-teal-200/70 dark:border-teal-800/60">
-                            <div class="text-[11px] text-teal-700 dark:text-teal-400 font-normal">Ananya's Standby Fare</div>
-                            <div class="text-sm font-bold text-teal-700 dark:text-teal-400">₹3,200</div>
+                        <div class="p-2.5 rounded-xl bg-[#0F8A78]/10 border border-[#0F8A78]/25">
+                            <div class="text-[11px] text-[#0F8A78] font-normal">Ananya's Standby Fare</div>
+                            <div class="text-sm font-bold text-[#0F8A78]">₹3,200</div>
                         </div>
-                        <div class="p-2.5 rounded-xl bg-slate-100/70 dark:bg-slate-800 border border-slate-300 dark:border-slate-700">
-                            <div class="text-[11px] text-slate-700 dark:text-slate-300 font-normal">Priya's Corporate Fare</div>
-                            <div class="text-sm font-bold text-slate-900 dark:text-white">₹16,500</div>
+                        <div class="p-2.5 rounded-xl bg-[#F8F9FB] border border-[#D5D9E2]">
+                            <div class="text-[11px] text-[#4B5563] font-normal">Priya's Corporate Fare</div>
+                            <div class="text-sm font-bold text-[#0B1020]">₹16,500</div>
                         </div>
-                        <div class="p-2.5 rounded-xl bg-rose-50/50 dark:bg-rose-950/20 border border-rose-200/60 dark:border-rose-900/40">
-                            <div class="text-[11px] text-rose-600 dark:text-rose-400 font-normal">Emergency Counter Ticket</div>
-                            <div class="text-sm font-bold text-rose-700 dark:text-rose-400">₹21,400</div>
+                        <div class="p-2.5 rounded-xl bg-[#9F1239]/10 border border-[#9F1239]/25">
+                            <div class="text-[11px] text-[#9F1239] font-normal">Emergency Counter Ticket</div>
+                            <div class="text-sm font-bold text-[#9F1239]">₹21,400</div>
                         </div>
                     </div>
                 </div>
@@ -3296,23 +3263,23 @@
                         <div class="flex justify-between items-center">
                             <div>
                                 <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Priya (Age 36, VP of Technology)</span>
-                                <span class="text-[11px] text-slate-400 block">Baseline: ₹16,500</span>
+                                <span class="text-[11px] text-[#4B5563] block">Baseline: ₹16,500</span>
                             </div>
-                            <span id="cannibalPriyaBadge" class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200">
+                            <span id="cannibalPriyaBadge" class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-[#F8F9FB] text-[#0B1020] border border-[#D5D9E2]">
                                 100% Protected
                             </span>
                         </div>
                         
                         <div class="space-y-1.5">
                             <div class="flex justify-between items-baseline">
-                                <span id="cannibalPriyaVal" class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tabular-nums tracking-tight">
+                                <span id="cannibalPriyaVal" class="text-2xl sm:text-3xl font-extrabold text-[#0B1020] tabular-nums tracking-tight">
                                     ₹16,500
                                 </span>
-                                <span class="text-xs text-slate-400">Airline Revenue</span>
+                                <span class="text-xs text-[#4B5563]">Airline Revenue</span>
                             </div>
                             <!-- Bar Container -->
                             <div class="w-full bg-slate-200 dark:bg-slate-700 h-7 rounded-lg overflow-hidden p-0.5">
-                                <div id="cannibalPriyaBar" style="width: 100%;" class="h-6 rounded-md bg-slate-800 dark:bg-slate-200 transition-all duration-700 ease-out"></div>
+                                <div id="cannibalPriyaBar" style="width: 100%;" class="h-6 rounded-md bg-[#0B1020] transition-all duration-700 ease-out"></div>
                             </div>
                         </div>
 
@@ -3329,21 +3296,21 @@
                                 <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Ananya (Age 22, Student, Bengaluru)</span>
                                 <span class="text-[11px] text-slate-400 block">Savings: ₹4,800 vs Surge Fare: ₹21,400 <span class="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 ml-1">78% shortfall</span></span>
                             </div>
-                            <span id="cannibalAnanyaBadge" class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-teal-100 text-teal-800 dark:bg-teal-950/70 dark:text-teal-300">
+                            <span id="cannibalAnanyaBadge" class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-[#0F8A78]/10 text-[#0F8A78] border border-[#0F8A78]/30">
                                 +₹1,366 pure profit
                             </span>
                         </div>
                         
                         <div class="space-y-1.5">
                             <div class="flex justify-between items-baseline">
-                                <span id="cannibalAnanyaVal" class="text-2xl sm:text-3xl font-extrabold text-teal-600 dark:text-teal-400 tabular-nums tracking-tight">
+                                <span id="cannibalAnanyaVal" class="text-2xl sm:text-3xl font-extrabold text-[#0F8A78] tabular-nums tracking-tight">
                                     ₹3,200
                                 </span>
-                                <span class="text-xs text-slate-400">Recovered Yield</span>
+                                <span class="text-xs text-[#4B5563]">Recovered Yield</span>
                             </div>
                             <!-- Bar Container -->
                             <div class="w-full bg-slate-200 dark:bg-slate-700 h-7 rounded-lg overflow-hidden p-0.5">
-                                <div id="cannibalAnanyaBar" style="width: 19.4%;" class="h-6 rounded-md bg-teal-600 transition-all duration-700 ease-out"></div>
+                                <div id="cannibalAnanyaBar" style="width: 19.4%;" class="h-6 rounded-md bg-[#0F8A78] transition-all duration-700 ease-out"></div>
                             </div>
                         </div>
 
@@ -3367,17 +3334,17 @@
 
                 <!-- Three Short Items in a Row with Simple Icons -->
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto pt-2">
-                    <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700/70 flex flex-col items-center justify-center space-y-2">
-                        <i data-lucide="clock" class="w-6 h-6 text-slate-600 dark:text-slate-300"></i>
-                        <span class="text-sm font-bold text-slate-800 dark:text-slate-200">No advance booking</span>
+                    <div class="p-4 rounded-xl bg-[#F8F9FB] border border-[#D5D9E2] flex flex-col items-center justify-center space-y-2">
+                        <i data-lucide="clock" class="w-6 h-6 text-[#4B5563]"></i>
+                        <span class="text-sm font-bold text-[#0B1020]">No advance booking</span>
                     </div>
-                    <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700/70 flex flex-col items-center justify-center space-y-2">
-                        <i data-lucide="armchair" class="w-6 h-6 text-slate-600 dark:text-slate-300"></i>
-                        <span class="text-sm font-bold text-slate-800 dark:text-slate-200">No seat choice</span>
+                    <div class="p-4 rounded-xl bg-[#F8F9FB] border border-[#D5D9E2] flex flex-col items-center justify-center space-y-2">
+                        <i data-lucide="armchair" class="w-6 h-6 text-[#4B5563]"></i>
+                        <span class="text-sm font-bold text-[#0B1020]">No seat choice</span>
                     </div>
-                    <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700/70 flex flex-col items-center justify-center space-y-2">
-                        <i data-lucide="backpack" class="w-6 h-6 text-slate-600 dark:text-slate-300"></i>
-                        <span class="text-sm font-bold text-slate-800 dark:text-slate-200">No check-in bags</span>
+                    <div class="p-4 rounded-xl bg-[#F8F9FB] border border-[#D5D9E2] flex flex-col items-center justify-center space-y-2">
+                        <i data-lucide="backpack" class="w-6 h-6 text-[#4B5563]"></i>
+                        <span class="text-sm font-bold text-[#0B1020]">No check-in bags</span>
                     </div>
                 </div>
 
@@ -3391,7 +3358,7 @@
                     <!-- Row 4: Result -->
                 <div class="p-5 sm:p-6 rounded-2xl bg-emerald-50/60 dark:bg-emerald-950/20 border border-emerald-200/80 dark:border-emerald-900/40 shadow-xs space-y-2">
                     <div class="flex items-center gap-2">
-                        <span class="px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-[#0F9D8A] text-white font-mono">Outcome</span>
+                        <span class="px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-[#0F8A78] text-white font-mono">Outcome</span>
                         <span class="text-xs font-semibold text-emerald-800 dark:text-emerald-300 font-mono">Immediate Narrative Resonance</span>
                     </div>
                     <p class="text-base sm:text-lg font-bold text-emerald-950 dark:text-emerald-200 leading-snug">
@@ -3505,9 +3472,9 @@
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
                             <span class="px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider border border-[#E11D48] bg-transparent text-[#E11D48] font-bold font-mono">Prototype</span>
-                            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Live Interactive Cabin Map &amp; CFO Yield Waterfall</span>
+                            <span class="text-xs font-semibold text-[#0B1020]">Live Interactive Cabin Map &amp; CFO Yield Waterfall</span>
                         </div>
-                        <span class="text-[11px] text-slate-400 font-mono">Adjust sliders below ➔</span>
+                        <span class="text-[11px] text-[#4B5563] font-mono">Adjust sliders below ➔</span>
                     </div>
 
                     <!-- Cabin Seatmap Component -->
@@ -3556,27 +3523,27 @@
                     <!-- Seat Legends -->
                     <div class="flex flex-wrap items-center gap-3 text-xs font-mono font-medium">
                         <div class="flex items-center gap-1.5">
-                            <span class="w-3.5 h-3.5 rounded bg-slate-900 dark:bg-slate-700 border border-slate-700"></span>
-                            <span class="text-slate-700 dark:text-slate-300">Corporate Full Fare (₹16,500)</span>
+                            <span class="w-3.5 h-3.5 rounded bg-[#0B1020] border border-[#0B1020]"></span>
+                            <span class="text-[#0B1020]">Corporate Full Fare (₹16,500)</span>
                         </div>
                         <div class="flex items-center gap-1.5">
-                            <span class="w-3.5 h-3.5 rounded bg-amber-100 dark:bg-amber-950 border border-amber-500"></span>
-                            <span class="text-amber-800 dark:text-amber-300 font-semibold">Unsold Empty Seat (₹0)</span>
+                            <span class="w-3.5 h-3.5 rounded bg-[#FEF3C7] border border-[#B45309]"></span>
+                            <span class="text-[#78350F] font-semibold">Unsold Empty Seat (₹0)</span>
                         </div>
                         <div class="flex items-center gap-1.5">
-                            <span class="w-3.5 h-3.5 rounded bg-emerald-600"></span>
-                            <span class="text-emerald-800 dark:text-emerald-300 font-semibold">AeroFill Standby (₹3,200)</span>
+                            <span class="w-3.5 h-3.5 rounded bg-[#0F8A78] border border-[#0F8A78]"></span>
+                            <span class="text-[#0F8A78] font-semibold">AeroFill Standby (₹3,200)</span>
                         </div>
                         <div class="flex items-center gap-1.5">
-                            <span class="w-3.5 h-3.5 rounded bg-red-600"></span>
-                            <span class="text-red-800 dark:text-red-300 font-semibold">Medical Emergency Tier</span>
+                            <span class="w-3.5 h-3.5 rounded bg-[#9F1239] border border-[#9F1239]"></span>
+                            <span class="text-[#9F1239] font-semibold">Medical Emergency Tier</span>
                         </div>
                     </div>
 
                     <!-- Action Trigger Buttons -->
                     <div class="flex items-center gap-2">
                         <button id="fillCabinBtn" onclick="toggleCabinFill()"
-                            class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs font-mono transition shadow-soft flex items-center gap-1.5">
+                            class="px-4 py-2 rounded-lg bg-[#0F8A78] hover:bg-[#0D7A6A] text-white font-semibold text-xs font-mono transition shadow-soft flex items-center gap-1.5">
                             <i data-lucide="zap" class="w-3.5 h-3.5"></i>
                             <span id="fillCabinBtnLabel">Activate AeroFill Algorithm</span>
                         </button>
@@ -3647,9 +3614,9 @@
                     <div
                         class="lg:col-span-4 bg-white p-5 rounded-xl border border-slate-200 shadow-soft space-y-4 sticky top-24">
                         <div class="border-b border-slate-100 pb-2.5 flex items-center justify-between">
-                            <span class="text-xs font-mono font-semibold text-slate-400 uppercase">Seat Telemetry</span>
+                            <span class="text-xs font-mono font-semibold text-[#4B5563] uppercase">Seat Telemetry</span>
                             <span id="inspectSeatBadge"
-                                class="text-xs font-mono font-semibold px-2 py-0.5 rounded bg-brand-50 text-brand-700 border border-brand-200">
+                                class="text-xs font-mono font-semibold px-2 py-0.5 rounded bg-[#F8F9FB] text-[#4B5563] border border-[#D5D9E2]">
                                 Click Any Seat
                             </span>
                         </div>
@@ -3767,14 +3734,14 @@
                     <!-- Persistent Labels above inputs (Never rely on placeholder alone) -->
                     <!-- Slider 1: Aircraft Gauge -->
                     <div class="space-y-1 font-mono text-xs">
-                        <div class="flex justify-between font-semibold text-slate-700 dark:text-slate-300">
+                        <div class="flex justify-between font-semibold text-[#0B1020]">
                             <label for="input-gauge">Plane Gauge (Total Capacity)</label>
-                            <span id="lbl-gauge" class="text-brand-700 dark:text-brand-400 font-bold">186 Seats</span>
+                            <span id="lbl-gauge" class="text-[#0B1020] font-bold">186 Seats</span>
                         </div>
                         <input type="range" id="input-gauge" min="150" max="232" step="6" value="186"
                             oninput="updateYieldSim()"
-                            class="w-full accent-brand-600 h-2 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer">
-                        <div class="flex justify-between text-[11px] text-slate-400">
+                            class="w-full accent-[#0F8A78] h-2 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer">
+                        <div class="flex justify-between text-[11px] text-[#4B5563]">
                             <span>150 (A319)</span>
                             <span>186 (A320neo)</span>
                             <span>232 (A321neo)</span>
@@ -3783,14 +3750,14 @@
 
                     <!-- Slider 2: Passenger Load Factor -->
                     <div class="space-y-1 font-mono text-xs">
-                        <div class="flex justify-between font-semibold text-slate-700 dark:text-slate-300">
+                        <div class="flex justify-between font-semibold text-[#0B1020]">
                             <label for="input-plf">Historical Normal Load (PLF)</label>
-                            <span id="lbl-plf" class="text-brand-700 dark:text-brand-400 font-bold">87%</span>
+                            <span id="lbl-plf" class="text-[#0B1020] font-bold">87%</span>
                         </div>
                         <input type="range" id="input-plf" min="72" max="96" step="1" value="87"
                             oninput="updateYieldSim()"
-                            class="w-full accent-brand-600 h-2 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer">
-                        <div class="flex justify-between text-[11px] text-slate-400">
+                            class="w-full accent-[#0F8A78] h-2 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer">
+                        <div class="flex justify-between text-[11px] text-[#4B5563]">
                             <span>72% (Off-Peak)</span>
                             <span>87% (DGCA Avg)</span>
                             <span>96% (Diwali)</span>
@@ -3799,14 +3766,14 @@
 
                     <!-- Slider 3: Standby Ticket Price -->
                     <div class="space-y-1 font-mono text-xs">
-                        <div class="flex justify-between font-semibold text-slate-700 dark:text-slate-300">
+                        <div class="flex justify-between font-semibold text-[#0B1020]">
                             <label for="input-fare">Flat Standby Price</label>
-                            <span id="lbl-fare" class="text-emerald-700 dark:text-emerald-400 font-bold">₹3,200</span>
+                            <span id="lbl-fare" class="text-[#0F8A78] font-bold">₹3,200</span>
                         </div>
                         <input type="range" id="input-fare" min="2500" max="5000" step="100" value="3200"
                             oninput="updateYieldSim()"
-                            class="w-full accent-emerald-600 h-2 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer">
-                        <div class="flex justify-between text-[11px] text-slate-400">
+                            class="w-full accent-[#0F8A78] h-2 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer">
+                        <div class="flex justify-between text-[11px] text-[#4B5563]">
                             <span>₹2,500</span>
                             <span>₹3,200 (Optimal)</span>
                             <span>₹5,000</span>
@@ -3815,14 +3782,14 @@
 
                     <!-- Slider 4: Meal & Snack Purchases -->
                     <div class="space-y-1 font-mono text-xs">
-                        <div class="flex justify-between font-semibold text-slate-700 dark:text-slate-300">
+                        <div class="flex justify-between font-semibold text-[#0B1020]">
                             <label for="input-ancillary">Ancillary Buy-On-Board Uptake</label>
-                            <span id="lbl-ancillary" class="text-brand-700 dark:text-brand-400 font-bold">35%</span>
+                            <span id="lbl-ancillary" class="text-[#0B1020] font-bold">35%</span>
                         </div>
                         <input type="range" id="input-ancillary" min="10" max="60" step="5" value="35"
                             oninput="updateYieldSim()"
-                            class="w-full accent-brand-600 h-2 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer">
-                        <div class="flex justify-between text-[11px] text-slate-400">
+                            class="w-full accent-[#0F8A78] h-2 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer">
+                        <div class="flex justify-between text-[11px] text-[#4B5563]">
                             <span>10% (Low)</span>
                             <span>35% (Avg)</span>
                             <span>60% (High)</span>
@@ -3867,21 +3834,21 @@
                     </h3>
 
                     <!-- High-Impact Extra Profit Callout with Count-up (Item 12) -->
-                    <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-teal-500/10 dark:from-emerald-950/40 dark:to-teal-950/20 border border-emerald-300/80 dark:border-emerald-800/80 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div class="p-4 sm:p-5 rounded-2xl bg-[#0F8A78]/10 border border-[#0F8A78]/25 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                         <div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-300 block font-mono">
+                            <span class="text-xs font-bold uppercase tracking-wider text-[#0B1020] block font-mono">
                                 Extra Bottom-Line Profit Per Flight Leg
                             </span>
-                            <div class="text-[clamp(1.75rem,3vw,2.5rem)] font-extrabold text-emerald-600 dark:text-emerald-400 font-mono tabular-nums tracking-tight leading-none my-1" id="cfoBigExtraProfit">
+                            <div class="text-[clamp(1.75rem,3vw,2.5rem)] font-extrabold text-[#0F8A78] font-mono tabular-nums tracking-tight leading-none my-1" id="cfoBigExtraProfit">
                                 +₹31,450
                             </div>
-                            <span class="text-[11px] text-slate-500 dark:text-slate-400 font-medium">
+                            <span class="text-[11px] text-[#4B5563] font-medium">
                                 Incremental net contribution from seats that otherwise perish at ₹0
                             </span>
                         </div>
                         <div class="text-left sm:text-right sm:self-center">
-                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800">
-                                <span class="w-2 h-2 rounded-full bg-emerald-500 "></span>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#0F8A78]/10 text-[#0F8A78] border border-[#0F8A78]/30">
+                                <span class="w-2 h-2 rounded-full bg-[#0F8A78]"></span>
                                 +Modelled incremental margin
                             </span>
                         </div>
@@ -3890,23 +3857,23 @@
                     <!-- 4 Live Metrics Cards -->
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono">
                         <div class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-xl border border-slate-200 dark:border-slate-700">
-                            <span class="text-[10px] font-semibold uppercase text-slate-500 dark:text-slate-400">Empty Seats</span>
-                            <div id="res-vacant" class="text-base sm:text-lg font-bold text-amber-700 dark:text-amber-400 mt-0.5">24 Seats</div>
+                            <span class="text-[10px] font-semibold uppercase text-[#4B5563]">Empty Seats</span>
+                            <div id="res-vacant" class="text-base sm:text-lg font-bold text-[#B45309] mt-0.5">24 Seats</div>
                         </div>
 
                         <div class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-xl border border-slate-200 dark:border-slate-700">
-                            <span class="text-[10px] font-semibold uppercase text-slate-500 dark:text-slate-400">Seats Filled</span>
-                            <div id="res-cleared" class="text-base sm:text-lg font-bold text-emerald-700 dark:text-emerald-400 mt-0.5">17 Seats</div>
+                            <span class="text-[10px] font-semibold uppercase text-[#4B5563]">Seats Filled</span>
+                            <div id="res-cleared" class="text-base sm:text-lg font-bold text-[#0F8A78] mt-0.5">17 Seats</div>
                         </div>
 
                         <div class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-xl border border-slate-200 dark:border-slate-700">
-                            <span class="text-[10px] font-semibold uppercase text-slate-500 dark:text-slate-400">Profit / Leg (Modelled)</span>
-                            <div id="res-margin" class="text-base sm:text-lg font-bold text-brand-700 dark:text-brand-400 mt-0.5">₹31,450</div>
+                            <span class="text-[10px] font-semibold uppercase text-[#4B5563]">Profit / Leg (Modelled)</span>
+                            <div id="res-margin" class="text-base sm:text-lg font-bold text-[#0F8A78] mt-0.5">₹31,450</div>
                         </div>
 
                         <div class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-xl border border-slate-200 dark:border-slate-700">
-                            <span class="text-[10px] font-semibold uppercase text-slate-500 dark:text-slate-400">Route Cluster ROI (Modelled)</span>
-                            <div id="res-annual" class="text-base sm:text-lg font-bold text-slate-900 dark:text-white mt-0.5">₹45.9 Cr/yr</div>
+                            <span class="text-[10px] font-semibold uppercase text-[#4B5563]">Route Cluster ROI (Modelled)</span>
+                            <div id="res-annual" class="text-base sm:text-lg font-bold text-[#0B1020] mt-0.5">₹45.9 Cr/yr</div>
                         </div>
                     </div>
 
@@ -3918,11 +3885,11 @@
                     <!-- Mid-page Contextual CTA for Airline Leadership (Item 18) -->
                     <div class="p-4 sm:p-5 rounded-2xl bg-slate-900 dark:bg-slate-950 text-white flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs border border-slate-800">
                         <div class="space-y-0.5 text-center sm:text-left">
-                            <div class="text-xs font-bold text-emerald-400 font-mono uppercase tracking-wider">Airline CFO Fleet Analysis</div>
-                            <div class="text-sm font-semibold text-slate-100">See your airline's specific fleet &amp; route network yield model</div>
+                            <div class="text-xs font-bold text-[#0F8A78] font-mono uppercase tracking-wider">Airline CFO Fleet Analysis</div>
+                            <div class="text-sm font-semibold text-[#E5E9F2]">See your airline's specific fleet &amp; route network yield model</div>
                         </div>
                         <a href="mailto:leadership-pilot@aerofill.in?subject=Custom%20Fleet%20Yield%20Analysis%20Request"
-                            class="px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs font-mono transition shadow-sm whitespace-nowrap flex items-center gap-1.5">
+                            class="px-4 py-2.5 rounded-xl bg-[#0F8A78] hover:bg-[#0D7A6A] text-white font-bold text-xs font-mono transition shadow-sm whitespace-nowrap flex items-center gap-1.5">
                             <span>See your airline's numbers</span>
                             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                         </a>
@@ -3960,7 +3927,7 @@
 <!-- Row 4: Result -->
                 <div class="p-5 sm:p-6 rounded-2xl bg-emerald-50/60 dark:bg-emerald-950/20 border border-emerald-200/80 dark:border-emerald-900/40 shadow-xs space-y-2">
                     <div class="flex items-center gap-2">
-                        <span class="px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-[#0F9D8A] text-white font-mono">Outcome</span>
+                        <span class="px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-[#0F8A78] text-white font-mono">Outcome</span>
                         <span class="text-xs font-semibold text-emerald-800 dark:text-emerald-300 font-mono">Proof Through Exploration</span>
                     </div>
                     <p class="text-base sm:text-lg font-bold text-emerald-950 dark:text-emerald-200 leading-snug">
@@ -4128,29 +4095,29 @@
 
                     <!-- Direct Slices Breakdown Callouts (Outside Chart, No Separate Legend) -->
                     <div class="grid grid-cols-2 gap-2 text-xs tabular-nums pt-1">
-                        <div class="p-2.5 rounded-xl bg-teal-50/70 dark:bg-teal-950/30 border border-teal-200/70 dark:border-teal-800/50 flex items-center justify-between">
-                            <span class="font-medium text-teal-800 dark:text-teal-300">Airline profit</span>
-                            <span class="font-bold text-teal-700 dark:text-teal-400">₹1,366 (42.7%)</span>
+                        <div class="p-2.5 rounded-xl bg-[#0F8A78]/10 border border-[#0F8A78]/30 flex items-center justify-between">
+                            <span class="font-medium text-[#0F8A78]">Airline profit</span>
+                            <span class="font-bold text-[#0F8A78]">₹1,366 (42.7%)</span>
                         </div>
-                        <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-700/50 flex items-center justify-between">
-                            <span class="font-medium text-slate-600 dark:text-slate-300">Extra fuel burn</span>
-                            <span class="font-semibold text-slate-700 dark:text-slate-200">₹820 (25.6%)</span>
+                        <div class="p-2.5 rounded-xl bg-[#F8F9FB] border border-[#D5D9E2] flex items-center justify-between">
+                            <span class="font-medium text-[#4B5563]">Extra fuel burn</span>
+                            <span class="font-semibold text-[#0B1020]">₹820 (25.6%)</span>
                         </div>
-                        <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-700/50 flex items-center justify-between">
-                            <span class="font-medium text-slate-600 dark:text-slate-300">Airport & CISF</span>
-                            <span class="font-semibold text-slate-700 dark:text-slate-200">₹630 (19.7%)</span>
+                        <div class="p-2.5 rounded-xl bg-[#F8F9FB] border border-[#D5D9E2] flex items-center justify-between">
+                            <span class="font-medium text-[#4B5563]">Airport &amp; CISF</span>
+                            <span class="font-semibold text-[#0B1020]">₹630 (19.7%)</span>
                         </div>
-                        <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-700/50 flex items-center justify-between">
-                            <span class="font-medium text-slate-600 dark:text-slate-300">Technology fee</span>
-                            <span class="font-semibold text-slate-700 dark:text-slate-200">₹384 (12.0%)</span>
+                        <div class="p-2.5 rounded-xl bg-[#F8F9FB] border border-[#D5D9E2] flex items-center justify-between">
+                            <span class="font-medium text-[#4B5563]">Technology fee</span>
+                            <span class="font-semibold text-[#0B1020]">₹384 (12.0%)</span>
                         </div>
                     </div>
 
                     <!-- Explicit Reconciled Formula Footer -->
                     <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs sm:text-sm">
-                        <span class="font-medium text-slate-500 dark:text-slate-400">Unit equation:</span>
-                        <span class="font-semibold text-slate-800 dark:text-slate-100 tabular-nums">
-                            ₹3,200 <span class="text-slate-400 font-normal">−</span> ₹1,834 <span class="text-slate-400 font-normal">=</span> <span class="text-teal-600 dark:text-teal-400 font-bold">₹1,366</span>
+                        <span class="font-medium text-[#4B5563]">Unit equation:</span>
+                        <span class="font-semibold text-[#0B1020] tabular-nums">
+                            ₹3,200 <span class="text-[#4B5563] font-normal">−</span> ₹1,834 <span class="text-[#4B5563] font-normal">=</span> <span class="text-[#0F8A78] font-bold">₹1,366</span>
                         </span>
                     </div>
 
@@ -4813,7 +4780,7 @@
                                                 <span id="zoneTitle">HOTSPOT 1: FLIGHT DECK (COCKPIT)</span>
                                             </span>
                                         </div>
-                                        <p id="zoneDesc" class="text-sm sm:text-[15px] text-slate-300 leading-relaxed font-normal">
+                                        <p id="zoneDesc" class="text-sm sm:text-[15px] text-[#A7B0C2] leading-relaxed font-normal">
                                             Captains receive final electronic manifest at T-20m under DGCA CAR Series X rules. Zero manual paperwork is required.
                                         </p>
                                     </div>
@@ -4821,15 +4788,15 @@
                                     <!-- Right: Meta Chips & Stepper -->
                                     <div class="flex flex-col sm:flex-row lg:flex-col items-start lg:items-end justify-between gap-3">
                                         <!-- Meta Chips -->
-                                        <div id="zoneMetaChips" class="flex flex-wrap items-center gap-1.5 text-[11px] font-mono text-slate-400">
+                                        <div id="zoneMetaChips" class="flex flex-wrap items-center gap-1.5 text-[11px] font-mono text-[#A7B0C2]">
                                             <span class="px-2 py-0.5 rounded bg-slate-800 border border-slate-700/80 text-cyan-300">DGCA CAR Series X</span>
-                                            <span class="px-2 py-0.5 rounded bg-slate-800 border border-slate-700/80 text-slate-300">T-20m Manifest</span>
+                                            <span class="px-2 py-0.5 rounded bg-slate-800 border border-slate-700/80 text-[#E5E9F2]">T-20m Manifest</span>
                                             <span class="px-2 py-0.5 rounded bg-slate-800 border border-slate-700/80 text-emerald-400">Paperless</span>
                                         </div>
 
                                         <!-- Stepper Navigation -->
                                         <div class="flex items-center gap-2">
-                                            <span id="hotspotStepperText" class="text-xs font-mono text-slate-400">1 / 6</span>
+                                            <span id="hotspotStepperText" class="text-xs font-mono text-[#A7B0C2]">1 / 6</span>
                                             <div class="flex items-center gap-1">
                                                 <button onclick="prevHotspot()" class="p-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition border border-slate-700" aria-label="Previous hotspot">
                                                     <i data-lucide="chevron-left" class="w-3.5 h-3.5"></i>
@@ -4845,28 +4812,28 @@
 
                             <!-- Mini Legend / Zone Picker List (Accessible 1-Click Selection) -->
                             <div class="mt-4 pt-4 border-t border-slate-800/80 flex flex-wrap items-center gap-2">
-                                <span class="text-[11px] uppercase tracking-wider text-slate-400 font-mono">Zones:</span>
-                                <button onclick="inspectAircraftZone('cockpit')" id="zone-pill-cockpit" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700 hover:bg-slate-700 transition flex items-center gap-1.5">
+                                <span class="text-[11px] uppercase tracking-wider text-[#A7B0C2] font-mono">Zones:</span>
+                                <button onclick="inspectAircraftZone('cockpit')" id="zone-pill-cockpit" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-[#E5E9F2] border border-slate-700 hover:bg-slate-700 transition flex items-center gap-1.5">
                                     <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
                                     <span>1. Cockpit</span>
                                 </button>
-                                <button onclick="inspectAircraftZone('door1')" id="zone-pill-door1" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 border border-slate-700 hover:text-slate-200 transition flex items-center gap-1.5">
+                                <button onclick="inspectAircraftZone('door1')" id="zone-pill-door1" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-[#A7B0C2] border border-slate-700 hover:text-white transition flex items-center gap-1.5">
                                     <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
                                     <span>2. Door 1L</span>
                                 </button>
-                                <button onclick="inspectAircraftZone('cargo')" id="zone-pill-cargo" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 border border-slate-700 hover:text-slate-200 transition flex items-center gap-1.5">
+                                <button onclick="inspectAircraftZone('cargo')" id="zone-pill-cargo" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-[#A7B0C2] border border-slate-700 hover:text-white transition flex items-center gap-1.5">
                                     <span class="w-2 h-2 rounded-full bg-amber-400"></span>
                                     <span>3. Cargo Holds</span>
                                 </button>
-                                <button onclick="inspectAircraftZone('engine')" id="zone-pill-engine" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 border border-slate-700 hover:text-slate-200 transition flex items-center gap-1.5">
+                                <button onclick="inspectAircraftZone('engine')" id="zone-pill-engine" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-[#A7B0C2] border border-slate-700 hover:text-white transition flex items-center gap-1.5">
                                     <span class="w-2 h-2 rounded-full bg-sky-400"></span>
                                     <span>4. CFM Engine</span>
                                 </button>
-                                <button onclick="inspectAircraftZone('cabin')" id="zone-pill-cabin" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 border border-slate-700 hover:text-slate-200 transition flex items-center gap-1.5">
+                                <button onclick="inspectAircraftZone('cabin')" id="zone-pill-cabin" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-[#A7B0C2] border border-slate-700 hover:text-white transition flex items-center gap-1.5">
                                     <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                                     <span>5. Rear Cabin</span>
                                 </button>
-                                <button onclick="inspectAircraftZone('apu')" id="zone-pill-apu" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-slate-400 border border-slate-700 hover:text-slate-200 transition flex items-center gap-1.5">
+                                <button onclick="inspectAircraftZone('apu')" id="zone-pill-apu" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-800 text-[#A7B0C2] border border-slate-700 hover:text-white transition flex items-center gap-1.5">
                                     <span class="w-2 h-2 rounded-full bg-violet-400"></span>
                                     <span>6. APU &amp; Trim</span>
                                 </button>
@@ -5148,21 +5115,21 @@
                 </div>
 
                 <!-- 8-Section Navigation Links matching Top Navbar -->
-                <nav aria-label="Footer Navigation" class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-slate-600 dark:text-slate-400 font-medium text-xs">
-                    <a href="#summary" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Summary</a>
-                    <a href="#story-1" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Story 1</a>
-                    <a href="#story-2" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Story 2</a>
-                    <a href="#story-3" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Story 3</a>
-                    <a href="#story-4" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Story 4</a>
-                    <a href="#appendix" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Appendix</a>
+                <nav aria-label="Footer Navigation" class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[#4B5563] font-medium text-xs">
+                    <a href="#summary" class="hover:text-[#E11D48] transition">Summary</a>
+                    <a href="#story-1" class="hover:text-[#E11D48] transition">Story 1</a>
+                    <a href="#story-2" class="hover:text-[#E11D48] transition">Story 2</a>
+                    <a href="#story-3" class="hover:text-[#E11D48] transition">Story 3</a>
+                    <a href="#story-4" class="hover:text-[#E11D48] transition">Story 4</a>
+                    <a href="#appendix" class="hover:text-[#E11D48] transition">Appendix</a>
                 </nav>
             </div>
 
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-500 dark:text-slate-400">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-[#4B5563]">
                 <div>
-                    Built by <span class="font-semibold text-slate-700 dark:text-slate-300">Deepak Tiwari</span> • Aviation Economics, UX Systems &amp; Digital Public Infrastructure
+                    Built by <span class="font-semibold text-[#0B1020]">Deepak Tiwari</span> • Aviation Economics, UX Systems &amp; Digital Public Infrastructure
                 </div>
-                <div class="font-mono text-slate-400 dark:text-slate-500">
+                <div class="font-mono text-[#4B5563]">
                     Indian Civil Aviation Standby Architecture © 2026
                 </div>
             </div>
@@ -6318,7 +6285,7 @@
                         seatBtn.className = 'aircraft-seat w-10 h-8 rounded-md flex items-center justify-center text-[10px] font-mono font-bold transition bg-[#9F1239] border border-[#9F1239] text-[#FFFFFF] shadow-soft';
                         seatBtn.setAttribute('data-status', 'medical');
                     } else {
-                        seatBtn.className = 'aircraft-seat w-10 h-8 rounded-md flex items-center justify-center text-[10px] font-mono font-bold transition bg-[#0F9D8A] border border-[#0F9D8A] text-[#FFFFFF] shadow-soft';
+                        seatBtn.className = 'aircraft-seat w-10 h-8 rounded-md flex items-center justify-center text-[10px] font-mono font-bold transition bg-[#0F8A78] border border-[#0F8A78] text-[#FFFFFF] shadow-soft';
                         seatBtn.setAttribute('data-status', 'standby');
                     }
                 } else {
@@ -6501,7 +6468,7 @@
                     labels: ['Airline Profit (42.7%)', 'Extra Fuel Burn (25.6%)', 'Airport & CISF Fees (19.7%)', 'Platform Fee (12.0%)'],
                     datasets: [{
                         data: [1366, 820, 630, 384],
-                        backgroundColor: ['#0F9D8A', '#475569', '#5B6475', '#94A3B8'],
+                        backgroundColor: ['#0F8A78', '#475569', '#5B6475', '#94A3B8'],
                         borderWidth: 2,
                         borderColor: '#FFFFFF',
                         hoverOffset: 10
@@ -6591,49 +6558,49 @@
                 btnPublic.setAttribute('aria-pressed', 'true');
                 btnGuarded.setAttribute('aria-selected', 'false');
                 btnGuarded.setAttribute('aria-pressed', 'false');
-                btnPublic.className = "px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-rose-600 text-white shadow-sm transition-all";
-                btnGuarded.className = "px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all";
+                btnPublic.className = "px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-[#9F1239] text-white shadow-sm transition-all";
+                btnGuarded.className = "px-3.5 py-1.5 rounded-lg text-xs font-semibold text-[#4B5563] hover:text-[#0B1020] transition-all";
 
                 // Public mode: Corporate buyer waits for cheap fare; both bars drop to ₹3,000 (18.2% of ₹16,500)
                 priyaBar.style.width = '18.2%';
-                priyaBar.className = "h-6 rounded-md bg-rose-600 transition-all duration-700 ease-out";
+                priyaBar.className = "h-6 rounded-md bg-[#9F1239] transition-all duration-700 ease-out";
                 priyaVal.textContent = '₹3,000';
-                priyaVal.className = "text-2xl sm:text-3xl font-extrabold text-rose-600 dark:text-rose-400 tabular-nums tracking-tight";
+                priyaVal.className = "text-2xl sm:text-3xl font-extrabold text-[#9F1239] tabular-nums tracking-tight";
                 priyaBadge.textContent = '-₹13,500 lost yield';
-                priyaBadge.className = "text-[11px] font-bold px-2 py-0.5 rounded-full bg-rose-100 text-rose-700 dark:bg-rose-950/70 dark:text-rose-300";
+                priyaBadge.className = "text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#9F1239]/10 text-[#9F1239] border border-[#9F1239]/30";
                 priyaCaption.textContent = "Priya's company waits for the public bargain. Corporate yield is destroyed.";
 
                 ananyaBar.style.width = '18.2%';
-                ananyaBar.className = "h-6 rounded-md bg-slate-400 dark:bg-slate-500 transition-all duration-700 ease-out";
+                ananyaBar.className = "h-6 rounded-md bg-[#475569] transition-all duration-700 ease-out";
                 ananyaVal.textContent = '₹3,000';
-                ananyaVal.className = "text-2xl sm:text-3xl font-extrabold text-slate-700 dark:text-slate-300 tabular-nums tracking-tight";
+                ananyaVal.className = "text-2xl sm:text-3xl font-extrabold text-[#0B1020] tabular-nums tracking-tight";
                 ananyaBadge.textContent = 'Public discount';
-                ananyaBadge.className = "text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300";
+                ananyaBadge.className = "text-[11px] font-semibold px-2 py-0.5 rounded-full bg-[#F8F9FB] text-[#4B5563] border border-[#D5D9E2]";
                 ananyaCaption.textContent = "Ananya gets a seat, but the airline gave away ₹13,500 from Priya just to earn ₹3,000.";
             } else {
                 btnPublic.setAttribute('aria-selected', 'false');
                 btnPublic.setAttribute('aria-pressed', 'false');
                 btnGuarded.setAttribute('aria-selected', 'true');
                 btnGuarded.setAttribute('aria-pressed', 'true');
-                btnPublic.className = "px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all";
-                btnGuarded.className = "px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-teal-600 text-white shadow-sm transition-all";
+                btnPublic.className = "px-3.5 py-1.5 rounded-lg text-xs font-semibold text-[#4B5563] hover:text-[#0B1020] transition-all";
+                btnGuarded.className = "px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-[#0F8A78] text-white shadow-sm transition-all";
 
                 // Guarded mode: Priya is 100% full (₹16,500); Ananya is proportional: 3,200 / 16,500 = 19.4%
                 priyaBar.style.width = '100%';
-                priyaBar.className = "h-6 rounded-md bg-slate-800 dark:bg-slate-200 transition-all duration-700 ease-out";
+                priyaBar.className = "h-6 rounded-md bg-[#0B1020] transition-all duration-700 ease-out";
                 priyaVal.textContent = '₹16,500';
-                priyaVal.className = "text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tabular-nums tracking-tight";
+                priyaVal.className = "text-2xl sm:text-3xl font-extrabold text-[#0B1020] tabular-nums tracking-tight";
                 priyaBadge.textContent = '100% Protected';
-                priyaBadge.className = "text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200";
+                priyaBadge.className = "text-[11px] font-semibold px-2 py-0.5 rounded-full bg-[#F8F9FB] text-[#0B1020] border border-[#D5D9E2]";
                 priyaCaption.textContent = "Priya's company pays full ₹16,500 because standby offers zero booking certainty or seat selection.";
 
                 ananyaBar.style.width = '19.4%';
-                ananyaBar.className = "h-6 rounded-md bg-teal-600 transition-all duration-700 ease-out";
+                ananyaBar.className = "h-6 rounded-md bg-[#0F8A78] transition-all duration-700 ease-out";
                 ananyaVal.textContent = '₹3,200';
-                ananyaVal.className = "text-2xl sm:text-3xl font-extrabold text-teal-600 dark:text-teal-400 tabular-nums tracking-tight";
+                ananyaVal.className = "text-2xl sm:text-3xl font-extrabold text-[#0F8A78] tabular-nums tracking-tight";
                 ananyaBadge.textContent = '+₹1,366 pure profit';
-                ananyaBadge.className = "text-[11px] font-semibold px-2 py-0.5 rounded-full bg-teal-100 text-teal-800 dark:bg-teal-950/70 dark:text-teal-300";
-                ananyaCaption.textContent = "Ananya fills seat 28B at ₹3,200 (19.4% of full fare) without ever leaking discounted inventory to Priya's company.";
+                ananyaBadge.className = "text-[11px] font-semibold px-2 py-0.5 rounded-full bg-[#0F8A78]/10 text-[#0F8A78] border border-[#0F8A78]/30";
+                ananyaCaption.textContent = "Ananya fills seat 28B at ₹3,200 (19.4% of full corporate fare) without ever leaking discounted inventory to Priya's company.";
             }
         }
 
@@ -6704,7 +6671,7 @@
                     datasets: [{
                         label: 'Standby Per-Flight Economics',
                         data: [54400, 22950, 31450],
-                        backgroundColor: ['#0D9488', '#E11D48', '#059669'],
+                        backgroundColor: ['#0F8A78', '#475569', '#0F8A78'],
                         borderRadius: 8,
                         borderSkipped: false
                     }]
