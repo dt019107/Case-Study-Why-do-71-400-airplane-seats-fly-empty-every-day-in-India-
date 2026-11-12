@@ -2997,13 +2997,31 @@
                         </div>
                     </div>
 
-                    <!-- 4 Phone Frames Grid -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-2">
+                    <!-- View Layout Selector (2x2 Grid vs Side-by-Side Scroll) -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1 border-b border-[#D5DCE8]/60 pb-3">
+                        <div class="flex items-center gap-2 text-xs font-mono text-[#5B6B85]">
+                            <i data-lucide="smartphone" class="w-4 h-4 text-[#14295B]"></i>
+                            <span>Rendered Frame: <strong class="text-[#0F1B33]">440 × 974 pt</strong> (iPhone 16 Pro Max full scale)</span>
+                        </div>
+                        <div class="flex items-center gap-1.5 bg-slate-200/90 p-1 rounded-lg border border-[#D5DCE8] text-xs font-semibold self-start sm:self-auto">
+                            <button id="viewGridBtn" onclick="setMockupViewLayout('grid')" class="px-3 py-1 rounded-md bg-white text-[#14295B] shadow-xs flex items-center gap-1.5 transition-all">
+                                <i data-lucide="grid" class="w-3.5 h-3.5"></i>
+                                <span>2×2 Grid</span>
+                            </button>
+                            <button id="viewRowBtn" onclick="setMockupViewLayout('row')" class="px-3 py-1 rounded-md text-[#5B6B85] hover:text-[#0F1B33] flex items-center gap-1.5 transition-all">
+                                <i data-lucide="columns" class="w-3.5 h-3.5"></i>
+                                <span>Side-by-Side (Scroll)</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 4 Phone Frames Container (440px Width, 974px Height) -->
+                    <div id="mockupScreensContainer" class="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 gap-8 pt-2 justify-items-center">
 
                         <!-- ==========================================
                              SCREEN 1: "Seats near you" (Home with Tab Bar)
                              ========================================== -->
-                        <div class="flex flex-col space-y-3">
+                        <div class="flex flex-col space-y-3 w-full sm:w-[440px] max-w-[440px] shrink-0">
                             <div class="flex items-center justify-between text-xs">
                                 <span class="font-bold font-mono text-[#0F1B33] uppercase tracking-wider text-[11px]">01 • Seats near you</span>
                                 <!-- State Selector for Screen 1 -->
@@ -3015,8 +3033,8 @@
                             </div>
 
                             <!-- iPhone 16 Pro Max Frame: 440 x 974 pt -->
-                            <div class="relative w-full max-w-[360px] mx-auto rounded-[54px] p-[10px] bg-[#14295B] shadow-[0_22px_55px_-10px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
-                                <div class="rounded-[44px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[796px] relative text-[#0F1B33] select-none">
+                            <div class="relative w-full sm:w-[440px] max-w-[440px] mx-auto rounded-[54px] p-[12px] bg-[#14295B] shadow-[0_22px_55px_-10px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
+                                <div class="rounded-[44px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[974px] relative text-[#0F1B33] select-none">
                                     
                                     <!-- Sky Header Gradient Band (~210pt tall) -->
                                     <div class="shrink-0 pt-4 pb-6 px-6 text-white" style="background: linear-gradient(180deg, #2A6FC9 0%, #76AEE7 55%, #BFDDF7 85%, #F3F6FB 100%);">
@@ -3250,15 +3268,15 @@
                         <!-- ==========================================
                              SCREEN 2: "Before you continue"
                              ========================================== -->
-                        <div class="flex flex-col space-y-3">
+                        <div class="flex flex-col space-y-3 w-full sm:w-[440px] max-w-[440px] shrink-0">
                             <div class="flex items-center justify-between text-xs">
                                 <span class="font-bold font-mono text-[#0F1B33] uppercase tracking-wider text-[11px]">02 • Friction contract</span>
                                 <span class="text-[10px] font-mono text-[#5B6B85] font-semibold">Anti-leakage</span>
                             </div>
 
                             <!-- iPhone 16 Pro Max Frame: 440 x 974 pt -->
-                            <div class="relative w-full max-w-[360px] mx-auto rounded-[54px] p-[10px] bg-[#14295B] shadow-[0_22px_55px_-10px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
-                                <div class="rounded-[44px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[796px] relative text-[#0F1B33] select-none">
+                            <div class="relative w-full sm:w-[440px] max-w-[440px] mx-auto rounded-[54px] p-[12px] bg-[#14295B] shadow-[0_22px_55px_-10px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
+                                <div class="rounded-[44px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[974px] relative text-[#0F1B33] select-none">
                                     
                                     <!-- Sky Header Gradient Band (~210pt tall) -->
                                     <div class="shrink-0 pt-4 pb-6 px-6 text-white" style="background: linear-gradient(180deg, #2A6FC9 0%, #76AEE7 55%, #BFDDF7 85%, #F3F6FB 100%);">
@@ -3384,7 +3402,7 @@
                         <!-- ==========================================
                              SCREEN 3: "Confirm hospital admission"
                              ========================================== -->
-                        <div class="flex flex-col space-y-3">
+                        <div class="flex flex-col space-y-3 w-full sm:w-[440px] max-w-[440px] shrink-0">
                             <div class="flex items-center justify-between text-xs">
                                 <span class="font-bold font-mono text-[#0F1B33] uppercase tracking-wider text-[11px]">03 • Admission verify</span>
                                 <!-- State Selector for Screen 3 -->
@@ -3397,8 +3415,8 @@
                             </div>
 
                             <!-- iPhone 16 Pro Max Frame: 440 x 974 pt -->
-                            <div class="relative w-full max-w-[360px] mx-auto rounded-[54px] p-[10px] bg-[#14295B] shadow-[0_22px_55px_-10px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
-                                <div class="rounded-[44px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[796px] relative text-[#0F1B33] select-none">
+                            <div class="relative w-full sm:w-[440px] max-w-[440px] mx-auto rounded-[54px] p-[12px] bg-[#14295B] shadow-[0_22px_55px_-10px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
+                                <div class="rounded-[44px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[974px] relative text-[#0F1B33] select-none">
                                     
                                     <!-- Sky Header Gradient Band (~210pt tall) -->
                                     <div class="shrink-0 pt-4 pb-6 px-6 text-white" style="background: linear-gradient(180deg, #2A6FC9 0%, #76AEE7 55%, #BFDDF7 85%, #F3F6FB 100%);">
@@ -3576,15 +3594,15 @@
                         <!-- ==========================================
                              SCREEN 4: "Your standby pass" (Boarding Pass)
                              ========================================== -->
-                        <div class="flex flex-col space-y-3">
+                        <div class="flex flex-col space-y-3 w-full sm:w-[440px] max-w-[440px] shrink-0">
                             <div class="flex items-center justify-between text-xs">
                                 <span class="font-bold font-mono text-[#0F1B33] uppercase tracking-wider text-[11px]">04 • Boarding pass</span>
                                 <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-[#E7F6EC] text-[#067647] font-mono">Digi Yatra</span>
                             </div>
 
                             <!-- iPhone 16 Pro Max Frame: 440 x 974 pt -->
-                            <div class="relative w-full max-w-[360px] mx-auto rounded-[54px] p-[10px] bg-[#14295B] shadow-[0_22px_55px_-10px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
-                                <div class="rounded-[44px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[796px] relative text-[#0F1B33] select-none">
+                            <div class="relative w-full sm:w-[440px] max-w-[440px] mx-auto rounded-[54px] p-[12px] bg-[#14295B] shadow-[0_22px_55px_-10px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
+                                <div class="rounded-[44px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[974px] relative text-[#0F1B33] select-none">
                                     
                                     <!-- Sky Header Gradient Band (~210pt tall) -->
                                     <div class="shrink-0 pt-4 pb-6 px-6 text-white" style="background: linear-gradient(180deg, #2A6FC9 0%, #76AEE7 55%, #BFDDF7 85%, #F3F6FB 100%);">
@@ -9357,6 +9375,23 @@
                     geoBadge.className = 'text-[11px] font-semibold text-[#14295B] bg-[#EBF1F9] px-2 py-0.5 rounded-full shrink-0';
                     geoBadge.textContent = 'Scheduled';
                 }
+            }
+            if (window.lucide) window.lucide.createIcons();
+        }
+
+        function setMockupViewLayout(mode) {
+            const container = document.getElementById('mockupScreensContainer');
+            const btnGrid = document.getElementById('viewGridBtn');
+            const btnRow = document.getElementById('viewRowBtn');
+            if (!container) return;
+            if (mode === 'row') {
+                container.className = 'flex overflow-x-auto gap-8 pb-6 pt-2 snap-x items-start justify-start w-full';
+                if (btnRow) btnRow.className = 'px-3 py-1 rounded-md bg-white text-[#14295B] shadow-xs flex items-center gap-1.5 transition-all';
+                if (btnGrid) btnGrid.className = 'px-3 py-1 rounded-md text-[#5B6B85] hover:text-[#0F1B33] flex items-center gap-1.5 transition-all';
+            } else {
+                container.className = 'grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 gap-8 pt-2 justify-items-center';
+                if (btnGrid) btnGrid.className = 'px-3 py-1 rounded-md bg-white text-[#14295B] shadow-xs flex items-center gap-1.5 transition-all';
+                if (btnRow) btnRow.className = 'px-3 py-1 rounded-md text-[#5B6B85] hover:text-[#0F1B33] flex items-center gap-1.5 transition-all';
             }
             if (window.lucide) window.lucide.createIcons();
         }
