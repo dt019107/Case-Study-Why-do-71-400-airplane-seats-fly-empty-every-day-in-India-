@@ -20,3 +20,15 @@ logs/
 /.plugins/
 /.opencode-skills/
 .vscode/
+
+# Agent and tooling state
+.agent/
+.agents/
+.gemini/
+.gsd/
+GSD-STYLE.md
+PROJECT_RULES.md
+VERSION
+adapters/
+model_capabilities.yaml
+scripts/
