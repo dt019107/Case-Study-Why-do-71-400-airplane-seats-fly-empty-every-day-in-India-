@@ -2997,266 +2997,198 @@
                         </div>
                     </div>
 
-                    <!-- Single Row Flow Header (Aligned 1-by-1 in One Row) -->
+                                        <!-- Single Row Presentation Header (All 4 Screens Visible Simultaneously) -->
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1 border-b border-[#D5DCE8]/60 pb-3">
                         <div class="flex items-center gap-2 text-xs font-mono text-[#5B6B85]">
                             <i data-lucide="smartphone" class="w-4 h-4 text-[#14295B]"></i>
-                            <span>4 Screens in 1 Single Row: <strong class="text-[#0F1B33]">440 × 974 pt</strong> (iPhone 16 Pro Max)</span>
+                            <span>All 4 Screens in 1 Row: <strong class="text-[#0F1B33]">440 × 974 pt Canvas</strong> (Scaled for Desktop Presentation)</span>
                         </div>
                         <div class="flex items-center gap-2 text-xs font-mono text-[#5B6B85]">
-                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-[#D5DCE8] text-[#14295B] font-semibold text-[11px]">
-                                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                                <span>Scroll horizontally to view 01 &rarr; 04</span>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 font-semibold text-[11px]">
+                                <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                                <span>Visible all at a time • Zero horizontal scrolling</span>
                             </span>
                         </div>
                     </div>
 
-                    <!-- 4 Phone Frames Container (Aligned in 1 Single Horizontal Row) -->
-                    <div id="mockupScreensContainer" class="flex flex-nowrap overflow-x-auto gap-8 pb-8 pt-3 items-start justify-start w-full scroll-smooth" style="scrollbar-width: thin;">
+                    <!-- 4 Phone Frames in 1 Row (All 4 Visible Simultaneously) -->
+                    <div id="mockupScreensContainer" class="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 lg:gap-5 pt-2 items-start justify-items-center w-full">
 
                         <!-- ==========================================
                              SCREEN 1: "Seats near you" (Home with Tab Bar)
                              ========================================== -->
-                        <div class="flex flex-col space-y-3 w-[440px] min-w-[440px] max-w-[440px] shrink-0 snap-start">
+                        <div class="flex flex-col space-y-2 w-full max-w-[275px]">
                             <div class="flex items-center justify-between text-xs">
-                                <span class="font-bold font-mono text-[#0F1B33] uppercase tracking-wider text-[11px]">01 • Seats near you</span>
+                                <span class="font-bold font-mono text-[#0F1B33] uppercase tracking-wider text-[10px]">01 • Seats near you</span>
                                 <!-- State Selector for Screen 1 -->
-                                <div class="flex items-center gap-1 bg-slate-200/90 p-0.5 rounded-lg border border-[#D5DCE8] text-[10px] font-medium">
-                                    <button id="geoTabIn" onclick="setMockupGeofence('in')" class="px-2 py-0.5 rounded font-bold transition-all bg-white text-[#14295B] shadow-xs">In-Range</button>
-                                    <button id="geoTabOut" onclick="setMockupGeofence('out')" class="px-2 py-0.5 rounded text-[#5B6B85] hover:text-[#0F1B33] transition-all">26 km</button>
-                                    <button id="geoTabWin" onclick="setMockupGeofence('win')" class="px-2 py-0.5 rounded text-[#5B6B85] hover:text-[#0F1B33] transition-all">17:55</button>
+                                <div class="flex items-center gap-0.5 bg-slate-200/90 p-0.5 rounded-lg border border-[#D5DCE8] text-[9px] font-medium">
+                                    <button id="geoTabIn" onclick="setMockupGeofence('in')" class="px-1.5 py-0.5 rounded font-bold transition-all bg-white text-[#14295B] shadow-xs">In-Range</button>
+                                    <button id="geoTabOut" onclick="setMockupGeofence('out')" class="px-1.5 py-0.5 rounded text-[#5B6B85] hover:text-[#0F1B33] transition-all">26 km</button>
+                                    <button id="geoTabWin" onclick="setMockupGeofence('win')" class="px-1.5 py-0.5 rounded text-[#5B6B85] hover:text-[#0F1B33] transition-all">17:55</button>
                                 </div>
                             </div>
 
-                            <!-- iPhone 16 Pro Max Frame: 440 x 974 pt -->
-                            <div class="relative w-[440px] min-w-[440px] max-w-[440px] mx-auto rounded-[54px] p-[12px] bg-[#14295B] shadow-[0_22px_55px_-10px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
-                                <div class="rounded-[44px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[974px] relative text-[#0F1B33] select-none">
+                            <!-- Phone Frame (Proportional 440x974) -->
+                            <div class="relative w-full max-w-[275px] mx-auto rounded-[38px] p-[8px] bg-[#14295B] shadow-[0_16px_36px_-8px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
+                                <div class="rounded-[30px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[590px] relative text-[#0F1B33] select-none">
                                     
-                                    <!-- Sky Header Gradient Band (~210pt tall) -->
-                                    <div class="shrink-0 pt-4 pb-6 px-6 text-white" style="background: linear-gradient(180deg, #2A6FC9 0%, #76AEE7 55%, #BFDDF7 85%, #F3F6FB 100%);">
-                                        <!-- iOS Status Bar (9:41, Dynamic Island, Signal, Wi-Fi, Battery) -->
-                                        <div class="flex items-center justify-between text-[12px] font-semibold select-none pb-2">
+                                    <!-- Sky Header Gradient Band -->
+                                    <div class="shrink-0 pt-2 pb-3 px-3.5 text-white" style="background: linear-gradient(180deg, #2A6FC9 0%, #76AEE7 55%, #BFDDF7 85%, #F3F6FB 100%);">
+                                        <!-- iOS Status Bar & Dynamic Island -->
+                                        <div class="flex items-center justify-between text-[10px] font-semibold select-none pb-1">
                                             <span>9:41</span>
-                                            <div class="w-[108px] h-[28px] bg-black rounded-full mx-auto flex items-center justify-between px-3 shadow-sm">
-                                                <span class="w-2 h-2 rounded-full bg-[#1e293b]"></span>
-                                                <span class="w-1.5 h-1.5 rounded-full bg-[#0a1426]"></span>
+                                            <div class="w-[74px] h-[18px] bg-black rounded-full mx-auto flex items-center justify-between px-2 shadow-xs">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-[#1e293b]"></span>
+                                                <span class="w-1 h-1 rounded-full bg-[#0a1426]"></span>
                                             </div>
-                                            <div class="flex items-center gap-1.5 text-white">
-                                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M2 20h20L12 4 2 20z"/></svg>
-                                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4zm0 4c3.31 0 6.33 1.25 8.64 3.32L12 19.82 3.36 11.32C5.67 9.25 8.69 8 12 8z"/></svg>
-                                                <div class="w-4 h-2.5 rounded-xs border-1.5 border-white p-0.5 flex items-center">
-                                                    <div class="w-full h-full bg-white rounded-2xs"></div>
+                                            <div class="flex items-center gap-1 text-white">
+                                                <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24"><path d="M2 20h20L12 4 2 20z"/></svg>
+                                                <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4zm0 4c3.31 0 6.33 1.25 8.64 3.32L12 19.82 3.36 11.32C5.67 9.25 8.69 8 12 8z"/></svg>
+                                                <div class="w-3 h-2 rounded-2xs border border-white p-0.5 flex items-center">
+                                                    <div class="w-full h-full bg-white rounded-3xs"></div>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <!-- Greeting and Header Row (24pt side margin) -->
-                                        <div class="flex items-center justify-between pt-1">
+                                        <!-- Greeting and Header Row -->
+                                        <div class="flex items-center justify-between pt-0.5">
                                             <div>
-                                                <div class="text-[13px] font-normal text-white/90">Hello Ananya</div>
-                                                <h4 class="text-[24px] font-semibold tracking-tight text-white leading-tight">Seats near you</h4>
+                                                <div class="text-[10px] font-normal text-white/90 leading-tight">Hello Ananya</div>
+                                                <h4 class="text-[15px] font-semibold tracking-tight text-white leading-tight">Seats near you</h4>
                                             </div>
-                                            <div class="relative w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white cursor-pointer hover:bg-white/30 transition-colors">
-                                                <i data-lucide="bell" class="w-5 h-5 text-white" stroke-width="1.5"></i>
-                                                <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-rose-500 ring-2 ring-white"></span>
+                                            <div class="relative w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-white">
+                                                <i data-lucide="bell" class="w-3.5 h-3.5 text-white" stroke-width="1.5"></i>
+                                                <span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-rose-500 ring-1 ring-white"></span>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!-- Screen Body (24pt Side Margins & 24pt Spacing) -->
-                                    <div class="px-6 -mt-2 space-y-6 flex-1 overflow-y-auto" style="scrollbar-width: thin;">
+                                    <!-- Screen Body -->
+                                    <div class="px-3.5 -mt-2 space-y-2 flex-1 overflow-y-auto" style="scrollbar-width: thin;">
                                         
-                                        <!-- Search-Style Card with Location & Segmented Control -->
-                                        <div class="bg-white rounded-[20px] p-4 shadow-[0_4px_20px_rgba(15,27,51,0.06)] space-y-3">
+                                        <!-- Location & Segmented Control Card -->
+                                        <div class="bg-white rounded-[14px] p-2.5 shadow-xs space-y-2">
                                             <!-- Verified Location Line -->
-                                            <div id="mockupGeoBar" class="flex items-center justify-between text-[14px] font-medium text-[#0F1B33]">
-                                                <div class="flex items-center gap-2 truncate">
-                                                    <i id="mockupGeoIcon" data-lucide="check-circle" class="w-4 h-4 text-[#067647] shrink-0" stroke-width="1.5"></i>
+                                            <div id="mockupGeoBar" class="flex items-center justify-between text-[11px] font-medium text-[#0F1B33]">
+                                                <div class="flex items-center gap-1.5 truncate">
+                                                    <i id="mockupGeoIcon" data-lucide="check-circle" class="w-3.5 h-3.5 text-[#067647] shrink-0" stroke-width="1.5"></i>
                                                     <span id="mockupGeoText" class="truncate">BLR Terminal 1 • 1.2 km away</span>
                                                 </div>
-                                                <span id="mockupGeoBadge" class="text-[12px] font-semibold text-[#067647] bg-[#E7F6EC] px-2.5 py-0.5 rounded-full shrink-0">Verified</span>
+                                                <span class="text-[9px] font-bold text-[#067647] bg-[#E7F6EC] px-1.5 py-0.5 rounded-full shrink-0">Verified</span>
                                             </div>
 
-                                            <!-- Pill-shaped Segmented Control (Reference Style) -->
-                                            <div class="bg-[#EBF1F9] p-1 rounded-full flex items-center text-[13px] font-semibold">
-                                                <button id="laneTabStandby" onclick="setScreen1Lane('standby')" class="flex-1 py-2 rounded-full bg-white text-[#14295B] shadow-xs transition-all text-center">
-                                                    Standby
+                                            <!-- Segmented Control: Standby vs Emergency Lane -->
+                                            <div class="bg-[#EBF1F9] p-0.5 rounded-full flex items-center text-[10px] font-semibold">
+                                                <button id="laneTabStandby" onclick="setScreen1Lane('standby')" class="flex-1 py-1 rounded-full text-[#5B6B85] hover:text-[#0F1B33] transition-all text-center">
+                                                    Standby fare
                                                 </button>
-                                                <button id="laneTabMedical" onclick="setScreen1Lane('medical')" class="flex-1 py-2 rounded-full text-[#5B6B85] hover:text-[#0F1B33] transition-all text-center flex items-center justify-center gap-1.5">
-                                                    <i data-lucide="plus" class="w-3.5 h-3.5 text-[#B42318]" stroke-width="2"></i>
-                                                    <span>Medical emergency</span>
-                                                </button>
-                                            </div>
-                                        </div>
-
-                                        <!-- State 1A: In-Range View -->
-                                        <div id="mockupGeoStateIn" class="space-y-4">
-                                            <!-- White Rounded Flight Ticket Card (Reference Style) -->
-                                            <div class="bg-white rounded-[20px] shadow-[0_4px_20px_rgba(15,27,51,0.06)] overflow-hidden">
-                                                
-                                                <!-- Card Header: Monogram, Flight, Cabin -->
-                                                <div class="p-5 pb-2 flex items-center justify-between">
-                                                    <div class="flex items-center gap-2.5">
-                                                        <!-- Neutral Monogram Vector -->
-                                                        <div class="w-8 h-8 rounded-lg bg-[#EBF1F9] flex items-center justify-center text-[#14295B]">
-                                                            <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                                <path d="M4 14l8-8 8 8M7 17l5-5 5 5"/>
-                                                            </svg>
-                                                        </div>
-                                                        <span class="font-bold text-[16px] text-[#0F1B33]">6E-205</span>
-                                                    </div>
-                                                    <span class="text-[14px] font-medium text-[#5B6B85]">Economy Class</span>
-                                                </div>
-
-                                                <!-- Route Row (BLR ---plane--- DEL) with 30px numerals -->
-                                                <div class="px-5 py-3 flex items-center justify-between">
-                                                    <div>
-                                                        <div class="text-[30px] font-bold text-[#0F1B33] leading-none tracking-tight">BLR</div>
-                                                        <div class="text-[12px] text-[#5B6B85] mt-1">Bengaluru</div>
-                                                        <div class="text-[18px] font-mono tabular-nums font-semibold text-[#0F1B33] mt-0.5">20:55</div>
-                                                    </div>
-
-                                                    <div class="flex-1 px-4 text-center">
-                                                        <div class="flex items-center justify-center gap-1.5 text-[#D5DCE8]">
-                                                            <span class="w-1.5 h-1.5 rounded-full bg-[#D5DCE8]"></span>
-                                                            <div class="border-t-2 border-dashed border-[#D5DCE8] flex-1"></div>
-                                                            <i data-lucide="plane" class="w-4 h-4 text-[#14295B] rotate-90 shrink-0" stroke-width="1.5"></i>
-                                                            <div class="border-t-2 border-dashed border-[#D5DCE8] flex-1"></div>
-                                                            <span class="w-1.5 h-1.5 rounded-full bg-[#14295B]"></span>
-                                                        </div>
-                                                        <div class="text-[12px] font-mono text-[#5B6B85] mt-1">2h 45m</div>
-                                                    </div>
-
-                                                    <div class="text-right">
-                                                        <div class="text-[30px] font-bold text-[#0F1B33] leading-none tracking-tight">DEL</div>
-                                                        <div class="text-[12px] text-[#5B6B85] mt-1">New Delhi</div>
-                                                        <div class="text-[18px] font-mono tabular-nums font-semibold text-[#0F1B33] mt-0.5">23:40</div>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Dashed Divider with Bilateral Ticket Notches -->
-                                                <div class="relative flex items-center justify-between py-1 bg-white">
-                                                    <div class="w-5 h-5 rounded-full bg-[#F3F6FB] -ml-2.5"></div>
-                                                    <div class="border-t-2 border-dashed border-[#D5DCE8] flex-1 mx-2"></div>
-                                                    <div class="w-5 h-5 rounded-full bg-[#F3F6FB] -mr-2.5"></div>
-                                                </div>
-
-                                                <!-- Flight Footer: Time, Luggage, and Price Comparison -->
-                                                <div class="p-5 pt-1 space-y-3">
-                                                    <div class="flex items-center justify-between text-[14px] text-[#5B6B85]">
-                                                        <div class="flex items-center gap-1.5">
-                                                            <i data-lucide="clock" class="w-4 h-4 text-[#14295B]" stroke-width="1.5"></i>
-                                                            <span>Leaves in 2 h 20 min</span>
-                                                        </div>
-                                                        <div class="flex items-center gap-1.5">
-                                                            <i data-lucide="briefcase" class="w-4 h-4 text-[#14295B]" stroke-width="1.5"></i>
-                                                            <span>7 kg backpack</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="bg-[#F8FAFD] rounded-[14px] p-3.5 space-y-1">
-                                                        <div class="flex justify-between items-center text-[14px] text-[#5B6B85]">
-                                                            <span>Regular fare today</span>
-                                                            <span class="line-through font-mono tabular-nums">Rs 21,400</span>
-                                                        </div>
-                                                        <div class="flex justify-between items-baseline pt-0.5">
-                                                            <span class="text-[16px] font-semibold text-[#0F1B33]">AeroFill standby</span>
-                                                            <span class="text-[24px] font-bold text-[#14295B] font-mono tabular-nums">Rs 3,200</span>
-                                                        </div>
-                                                        <div class="text-[12px] text-[#5B6B85] pt-0.5">
-                                                            About 24 seats open
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                            <!-- Warning-tint Note -->
-                                            <div class="bg-[#FEF0C7] text-[#B54708] rounded-[14px] p-3.5 text-[12px] font-medium leading-snug">
-                                                Standby is not guaranteed. If no seat clears, you get a full refund.
-                                            </div>
-
-                                            <!-- Primary Navy CTA (56pt tall, 14pt radius) -->
-                                            <div class="pt-1">
-                                                <button id="btnScreen1CTA" onclick="setMockupAbdmState('form')" class="w-full h-[56px] rounded-[14px] bg-[#14295B] text-white font-semibold text-[16px] flex items-center justify-center shadow-xs hover:bg-[#0c1a3b] transition-colors">
-                                                    Continue with standby
+                                                <button id="laneTabMedical" onclick="setScreen1Lane('medical')" class="flex-1 py-1 rounded-full bg-white text-[#14295B] shadow-xs transition-all text-center flex items-center justify-center gap-1">
+                                                    <i data-lucide="plus" class="w-2.5 h-2.5 text-[#B42318]" stroke-width="2.5"></i>
+                                                    <span>Medical priority</span>
                                                 </button>
                                             </div>
                                         </div>
 
-                                        <!-- State 1B: 26 km Out of Range -->
-                                        <div id="mockupGeoStateOut" class="space-y-4 hidden py-6">
-                                            <div class="bg-white rounded-[20px] p-6 space-y-3 text-center shadow-[0_4px_20px_rgba(15,27,51,0.06)]">
-                                                <div class="w-12 h-12 rounded-full bg-[#FEF0C7] text-[#B54708] flex items-center justify-center mx-auto">
-                                                    <i data-lucide="map-pin-off" class="w-6 h-6" stroke-width="1.5"></i>
+                                        <!-- Flight Block with Large Numerals -->
+                                        <div class="bg-white rounded-[14px] p-2.5 shadow-xs space-y-2 text-left">
+                                            <div class="flex items-center justify-between text-[10px]">
+                                                <span class="font-mono font-bold text-[#14295B] bg-[#EBF1F9] px-1.5 py-0.5 rounded">6E-205</span>
+                                                <span class="text-[#5B6B85] font-mono text-[9.5px]">Leaves in 2h 20m</span>
+                                            </div>
+
+                                            <!-- Route Row -->
+                                            <div class="flex items-baseline justify-between pt-0.5">
+                                                <div>
+                                                    <div class="text-[18px] font-bold text-[#0F1B33] leading-none tracking-tight">BLR</div>
+                                                    <div class="text-[9.5px] text-[#5B6B85]">Bengaluru</div>
+                                                    <div class="text-[12px] font-mono tabular-nums font-semibold text-[#0F1B33]">20:55</div>
                                                 </div>
-                                                <div class="text-[18px] font-semibold text-[#0F1B33]">
-                                                    Standby opens within 15 km of the airport
+
+                                                <div class="flex-1 px-2 text-center">
+                                                    <div class="flex items-center justify-center gap-1 text-[#D5DCE8]">
+                                                        <span class="w-1 h-1 rounded-full bg-[#D5DCE8]"></span>
+                                                        <div class="border-t border-dashed border-[#D5DCE8] flex-1"></div>
+                                                        <i data-lucide="plane" class="w-3 h-3 text-[#14295B] rotate-90 shrink-0" stroke-width="1.5"></i>
+                                                        <div class="border-t border-dashed border-[#D5DCE8] flex-1"></div>
+                                                        <span class="w-1 h-1 rounded-full bg-[#14295B]"></span>
+                                                    </div>
+                                                    <div class="text-[9px] font-mono text-[#5B6B85] mt-0.5">2h 45m non-stop</div>
                                                 </div>
-                                                <p class="text-[14px] text-[#5B6B85] leading-relaxed">
-                                                    You are currently 26 km away. To prevent remote booking from offices, you must be positioned near BLR airport.
-                                                </p>
-                                                <button onclick="setMockupGeofence('in')" class="w-full h-[56px] rounded-[14px] bg-[#14295B] text-white font-semibold text-[16px] flex items-center justify-center hover:bg-[#0c1a3b] transition-colors mt-2">
-                                                    Get directions
-                                                </button>
+
+                                                <div class="text-right">
+                                                    <div class="text-[18px] font-bold text-[#0F1B33] leading-none tracking-tight">DEL</div>
+                                                    <div class="text-[9.5px] text-[#5B6B85]">New Delhi</div>
+                                                    <div class="text-[12px] font-mono tabular-nums font-semibold text-[#0F1B33]">23:40</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border-t border-dashed border-[#D5DCE8] pt-1.5"></div>
+
+                                            <!-- Price Comparison -->
+                                            <div class="space-y-0.5">
+                                                <div class="flex items-baseline justify-between">
+                                                    <span class="text-[9.5px] text-[#5B6B85]">Regular fare today</span>
+                                                    <span class="text-[11px] line-through text-[#5B6B85] font-mono tabular-nums">₹21,400</span>
+                                                </div>
+                                                <div class="flex items-baseline justify-between">
+                                                    <span class="text-[11px] font-bold text-[#14295B]">AeroFill standby</span>
+                                                    <span class="text-[17px] font-bold text-[#14295B] font-mono tabular-nums leading-none">₹3,200</span>
+                                                </div>
+                                                <div class="text-[9.5px] text-[#5B6B85]">
+                                                    About 24 seats left on this flight
+                                                </div>
+                                            </div>
+
+                                            <!-- Operational Friction Notice -->
+                                            <div class="p-1.5 rounded-[8px] bg-[#F3F6FB] text-[9.5px] text-[#5B6B85] flex items-center gap-1.5">
+                                                <i data-lucide="info" class="w-3 h-3 text-[#14295B] shrink-0" stroke-width="1.5"></i>
+                                                <span>Middle seat (B or E) • 7 kg backpack only</span>
                                             </div>
                                         </div>
 
-                                        <!-- State 1C: Before Window Opens (17:55) -->
-                                        <div id="mockupGeoStateWin" class="space-y-4 hidden py-6">
-                                            <div class="bg-white rounded-[20px] p-6 space-y-3 text-center shadow-[0_4px_20px_rgba(15,27,51,0.06)]">
-                                                <div class="w-12 h-12 rounded-full bg-slate-100 text-[#14295B] flex items-center justify-center mx-auto">
-                                                    <i data-lucide="clock" class="w-6 h-6" stroke-width="1.5"></i>
-                                                </div>
-                                                <div class="text-[18px] font-semibold text-[#0F1B33]">
-                                                    Opens at 17:55
-                                                </div>
-                                                <p class="text-[14px] text-[#5B6B85] leading-relaxed">
-                                                    Standby seats open exactly 3 hours before departure. Check back at 17:55 IST.
-                                                </p>
-                                                <button onclick="setMockupGeofence('in')" class="w-full h-[56px] rounded-[14px] bg-white border-2 border-[#14295B] text-[#14295B] font-semibold text-[16px] flex items-center justify-center hover:bg-slate-50 transition-colors mt-2">
-                                                    Remind me
-                                                </button>
-                                            </div>
-                                        </div>
+                                        <!-- Dynamic Primary CTA -->
+                                        <button id="btnScreen1CTA" onclick="setMockupAbdmState('form')" class="w-full h-[38px] rounded-[10px] bg-[#14295B] text-white font-semibold text-[11.5px] flex items-center justify-center gap-1 hover:bg-[#0c1a3b] transition-colors shadow-2xs">
+                                            <i data-lucide="plus" class="w-3.5 h-3.5 text-white" stroke-width="2.5"></i>
+                                            <span>Continue as emergency — Priority</span>
+                                        </button>
 
                                     </div>
 
-                                    <!-- Bottom Tab Bar with Outline Icons (Home Active) -->
-                                    <div class="bg-white border-t border-[#D5DCE8]/70 px-8 py-3 flex items-center justify-between shrink-0 shadow-xs">
-                                        <div class="flex flex-col items-center text-[#14295B] cursor-pointer">
-                                            <i data-lucide="home" class="w-5 h-5" stroke-width="1.8"></i>
-                                            <span class="text-[12px] font-semibold mt-0.5">Home</span>
+                                    <!-- Bottom Tab Bar -->
+                                    <div class="h-[46px] border-t border-[#D5DCE8] bg-white px-4 flex items-center justify-between text-[9px] shrink-0">
+                                        <div class="flex flex-col items-center text-[#14295B] font-semibold cursor-pointer">
+                                            <i data-lucide="home" class="w-3.5 h-3.5" stroke-width="2"></i>
+                                            <span class="text-[8.5px] mt-0.5">Home</span>
                                         </div>
                                         <div class="flex flex-col items-center text-[#5B6B85] hover:text-[#0F1B33] cursor-pointer">
-                                            <i data-lucide="ticket" class="w-5 h-5" stroke-width="1.5"></i>
-                                            <span class="text-[12px] font-medium mt-0.5">My Passes</span>
+                                            <i data-lucide="compass" class="w-3.5 h-3.5" stroke-width="1.5"></i>
+                                            <span class="text-[8.5px] mt-0.5">My Trips</span>
                                         </div>
                                         <div class="flex flex-col items-center text-[#5B6B85] hover:text-[#0F1B33] cursor-pointer">
-                                            <i data-lucide="bell" class="w-5 h-5" stroke-width="1.5"></i>
-                                            <span class="text-[12px] font-medium mt-0.5">Alerts</span>
+                                            <i data-lucide="ticket" class="w-3.5 h-3.5" stroke-width="1.5"></i>
+                                            <span class="text-[8.5px] mt-0.5">Passes</span>
                                         </div>
                                         <div class="flex flex-col items-center text-[#5B6B85] hover:text-[#0F1B33] cursor-pointer">
-                                            <i data-lucide="user" class="w-5 h-5" stroke-width="1.5"></i>
-                                            <span class="text-[12px] font-medium mt-0.5">Profile</span>
+                                            <i data-lucide="user" class="w-3.5 h-3.5" stroke-width="1.5"></i>
+                                            <span class="text-[8.5px] mt-0.5">Profile</span>
                                         </div>
                                     </div>
 
                                     <!-- iOS Bottom Safe Area with Home Indicator -->
-                                    <div class="bg-white py-2 flex justify-center shrink-0">
-                                        <div class="w-36 h-1 bg-slate-300 rounded-full"></div>
+                                    <div class="bg-[#F3F6FB] py-1.5 flex justify-center shrink-0">
+                                        <div class="w-20 h-0.5 bg-slate-300 rounded-full"></div>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Screen Annotation Card -->
-                            <div class="p-3.5 rounded-[16px] bg-white border border-[#D5DCE8] shadow-2xs space-y-1.5 text-xs">
-                                <div class="font-bold text-[#0F1B33] flex items-center justify-between">
+                            <div class="p-2.5 rounded-[12px] bg-white border border-[#D5DCE8] shadow-2xs space-y-1 text-xs">
+                                <div class="font-bold text-[#0F1B33] flex items-center justify-between text-[11px]">
                                     <span>Seats near you</span>
-                                    <span class="text-[#14295B] font-mono text-[10px] font-bold">Screen 01</span>
+                                    <span class="text-[#14295B] font-mono text-[9.5px] font-bold">Screen 01</span>
                                 </div>
-                                <p class="text-[12px] text-[#5B6B85] leading-relaxed">
-                                    Sky gradient header with tab bar. Price anchoring: Rs 21,400 crossed out beside flat Rs 3,200 standby cap within 15 km geofence.
+                                <p class="text-[10px] text-[#5B6B85] leading-relaxed">
+                                    Sky gradient header. Price anchoring: ₹21,400 crossed out beside flat ₹3,200 standby cap within 15 km geofence.
                                 </p>
                             </div>
                         </div>
@@ -3264,133 +3196,133 @@
                         <!-- ==========================================
                              SCREEN 2: "Before you continue"
                              ========================================== -->
-                        <div class="flex flex-col space-y-3 w-[440px] min-w-[440px] max-w-[440px] shrink-0 snap-start">
+                        <div class="flex flex-col space-y-2 w-full max-w-[275px]">
                             <div class="flex items-center justify-between text-xs">
-                                <span class="font-bold font-mono text-[#0F1B33] uppercase tracking-wider text-[11px]">02 • Friction contract</span>
-                                <span class="text-[10px] font-mono text-[#5B6B85] font-semibold">Anti-leakage</span>
+                                <span class="font-bold font-mono text-[#0F1B33] uppercase tracking-wider text-[10px]">02 • Friction contract</span>
+                                <span class="text-[9.5px] font-mono text-[#5B6B85] font-semibold">Anti-leakage</span>
                             </div>
 
-                            <!-- iPhone 16 Pro Max Frame: 440 x 974 pt -->
-                            <div class="relative w-[440px] min-w-[440px] max-w-[440px] mx-auto rounded-[54px] p-[12px] bg-[#14295B] shadow-[0_22px_55px_-10px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
-                                <div class="rounded-[44px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[974px] relative text-[#0F1B33] select-none">
+                            <!-- Phone Frame (Proportional 440x974) -->
+                            <div class="relative w-full max-w-[275px] mx-auto rounded-[38px] p-[8px] bg-[#14295B] shadow-[0_16px_36px_-8px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
+                                <div class="rounded-[30px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[590px] relative text-[#0F1B33] select-none">
                                     
-                                    <!-- Sky Header Gradient Band (~210pt tall) -->
-                                    <div class="shrink-0 pt-4 pb-6 px-6 text-white" style="background: linear-gradient(180deg, #2A6FC9 0%, #76AEE7 55%, #BFDDF7 85%, #F3F6FB 100%);">
-                                        <!-- iOS Status Bar & Dynamic Island (440 pt width) -->
-                                        <div class="flex items-center justify-between text-[13px] font-semibold select-none pb-2">
+                                    <!-- Sky Header Gradient Band -->
+                                    <div class="shrink-0 pt-2 pb-3 px-3.5 text-white" style="background: linear-gradient(180deg, #2A6FC9 0%, #76AEE7 55%, #BFDDF7 85%, #F3F6FB 100%);">
+                                        <!-- iOS Status Bar & Dynamic Island -->
+                                        <div class="flex items-center justify-between text-[10px] font-semibold select-none pb-1">
                                             <span>9:41</span>
-                                            <div class="w-[108px] h-[28px] bg-black rounded-full mx-auto flex items-center justify-between px-3 shadow-sm">
-                                                <span class="w-2.5 h-2.5 rounded-full bg-[#1e293b]"></span>
-                                                <span class="w-2 h-2 rounded-full bg-[#0a1426]"></span>
+                                            <div class="w-[74px] h-[18px] bg-black rounded-full mx-auto flex items-center justify-between px-2 shadow-xs">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-[#1e293b]"></span>
+                                                <span class="w-1 h-1 rounded-full bg-[#0a1426]"></span>
                                             </div>
-                                            <div class="flex items-center gap-1.5 text-white">
-                                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M2 20h20L12 4 2 20z"/></svg>
-                                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4zm0 4c3.31 0 6.33 1.25 8.64 3.32L12 19.82 3.36 11.32C5.67 9.25 8.69 8 12 8z"/></svg>
-                                                <div class="w-4 h-2.5 rounded-xs border-1.5 border-white p-0.5 flex items-center">
-                                                    <div class="w-full h-full bg-white rounded-2xs"></div>
+                                            <div class="flex items-center gap-1 text-white">
+                                                <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24"><path d="M2 20h20L12 4 2 20z"/></svg>
+                                                <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4zm0 4c3.31 0 6.33 1.25 8.64 3.32L12 19.82 3.36 11.32C5.67 9.25 8.69 8 12 8z"/></svg>
+                                                <div class="w-3 h-2 rounded-2xs border border-white p-0.5 flex items-center">
+                                                    <div class="w-full h-full bg-white rounded-3xs"></div>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <!-- Top Navigation Row (Back Arrow & Step 1 of 3) -->
-                                        <div class="flex items-center gap-3 pt-1">
-                                            <button class="w-6 h-6 flex items-center justify-center text-white" aria-label="Back">
-                                                <i data-lucide="arrow-left" class="w-5 h-5" stroke-width="1.5"></i>
+                                        <!-- Top Navigation Row -->
+                                        <div class="flex items-center gap-2 pt-0.5">
+                                            <button class="w-5 h-5 flex items-center justify-center text-white" aria-label="Back">
+                                                <i data-lucide="arrow-left" class="w-4 h-4" stroke-width="1.5"></i>
                                             </button>
-                                            <h4 class="text-[18px] font-semibold tracking-tight text-white leading-tight">Step 1 of 3</h4>
+                                            <h4 class="text-[13px] font-semibold tracking-tight text-white leading-tight">Step 1 of 3</h4>
                                         </div>
                                     </div>
 
-                                    <!-- Screen Body (24pt Side Margins, 24pt Card Spacing) -->
-                                    <div class="px-6 -mt-3 space-y-6 flex-1 flex flex-col justify-between overflow-y-auto" style="scrollbar-width: thin;">
-                                        <div class="space-y-6 text-left">
+                                    <!-- Screen Body -->
+                                    <div class="px-3.5 -mt-2 space-y-2 flex-1 flex flex-col justify-between overflow-y-auto" style="scrollbar-width: thin;">
+                                        <div class="space-y-2 text-left">
                                             
-                                            <!-- White Card with Three Conditions -->
-                                            <div class="bg-white rounded-[20px] p-6 shadow-[0_4px_20px_rgba(15,27,51,0.06)] space-y-5">
-                                                <h4 class="text-[24px] font-semibold text-[#0F1B33] leading-tight">
+                                            <!-- White Card with Four Conditions -->
+                                            <div class="bg-white rounded-[14px] p-3 shadow-xs space-y-2">
+                                                <h4 class="text-[13px] font-semibold text-[#0F1B33] leading-tight">
                                                     Three conditions for standby
                                                 </h4>
 
                                                 <!-- Row 1: Seat is assigned -->
-                                                <div class="flex items-start gap-3 pt-1">
-                                                    <i data-lucide="armchair" class="w-5 h-5 text-[#14295B] shrink-0 mt-0.5" stroke-width="1.5"></i>
+                                                <div class="flex items-start gap-2 pt-0.5">
+                                                    <i data-lucide="armchair" class="w-3.5 h-3.5 text-[#14295B] shrink-0 mt-0.5" stroke-width="1.5"></i>
                                                     <div>
-                                                        <div class="font-semibold text-[16px] text-[#0F1B33]">Seat is assigned</div>
-                                                        <div class="text-[14px] text-[#5B6B85] leading-snug mt-0.5">You get a middle seat (B or E), confirmed at the gate.</div>
+                                                        <div class="font-semibold text-[11px] text-[#0F1B33]">Seat is assigned</div>
+                                                        <div class="text-[9.5px] text-[#5B6B85] leading-snug mt-0.5">Middle seat (B or E), confirmed at gate.</div>
                                                     </div>
                                                 </div>
 
-                                                <div class="border-t-2 border-dashed border-[#D5DCE8]"></div>
+                                                <div class="border-t border-dashed border-[#D5DCE8]"></div>
 
                                                 <!-- Row 2: Backpack only -->
-                                                <div class="flex items-start gap-3">
-                                                    <i data-lucide="briefcase" class="w-5 h-5 text-[#14295B] shrink-0 mt-0.5" stroke-width="1.5"></i>
+                                                <div class="flex items-start gap-2">
+                                                    <i data-lucide="briefcase" class="w-3.5 h-3.5 text-[#14295B] shrink-0 mt-0.5" stroke-width="1.5"></i>
                                                     <div>
-                                                        <div class="font-semibold text-[16px] text-[#0F1B33]">Backpack only</div>
-                                                        <div class="text-[14px] text-[#5B6B85] leading-snug mt-0.5">7 kg, no checked bags. It keeps the flight on time.</div>
+                                                        <div class="font-semibold text-[11px] text-[#0F1B33]">Backpack only</div>
+                                                        <div class="text-[9.5px] text-[#5B6B85] leading-snug mt-0.5">7 kg, no checked bags. Keeps flight on time.</div>
                                                     </div>
                                                 </div>
 
-                                                <div class="border-t-2 border-dashed border-[#D5DCE8]"></div>
+                                                <div class="border-t border-dashed border-[#D5DCE8]"></div>
 
                                                 <!-- Row 3: Flexible by 90 minutes -->
-                                                <div class="flex items-start gap-3">
-                                                    <i data-lucide="clock" class="w-5 h-5 text-[#14295B] shrink-0 mt-0.5" stroke-width="1.5"></i>
+                                                <div class="flex items-start gap-2">
+                                                    <i data-lucide="clock" class="w-3.5 h-3.5 text-[#14295B] shrink-0 mt-0.5" stroke-width="1.5"></i>
                                                     <div>
-                                                        <div class="font-semibold text-[16px] text-[#0F1B33]">Flexible by 90 minutes</div>
-                                                        <div class="text-[14px] text-[#5B6B85] leading-snug mt-0.5">Your flight is confirmed 45 minutes before departure.</div>
+                                                        <div class="font-semibold text-[11px] text-[#0F1B33]">Flexible by 90 minutes</div>
+                                                        <div class="text-[9.5px] text-[#5B6B85] leading-snug mt-0.5">Confirmed 45 minutes before departure.</div>
                                                     </div>
                                                 </div>
 
-                                                <div class="border-t-2 border-dashed border-[#D5DCE8]"></div>
+                                                <div class="border-t border-dashed border-[#D5DCE8]"></div>
 
                                                 <!-- Row 4: Priority Boarding (Emergency Lane) -->
-                                                <div class="flex items-start gap-3">
-                                                    <div class="w-5 h-5 rounded-md bg-[#FDECEA] text-[#B42318] flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
-                                                        <i data-lucide="plus" class="w-3.5 h-3.5" stroke-width="2"></i>
+                                                <div class="flex items-start gap-2">
+                                                    <div class="w-3.5 h-3.5 rounded bg-[#FDECEA] text-[#B42318] flex items-center justify-center font-bold text-[9px] shrink-0 mt-0.5">
+                                                        <i data-lucide="plus" class="w-2.5 h-2.5" stroke-width="2.5"></i>
                                                     </div>
                                                     <div>
-                                                        <div class="font-semibold text-[16px] text-[#0F1B33]">Priority boarding</div>
-                                                        <div class="text-[14px] text-[#5B6B85] leading-snug mt-0.5">You board first once verified.</div>
+                                                        <div class="font-semibold text-[11px] text-[#0F1B33]">Priority boarding</div>
+                                                        <div class="text-[9.5px] text-[#5B6B85] leading-snug mt-0.5">You board first once verified.</div>
                                                     </div>
                                                 </div>
 
                                             </div>
 
                                             <!-- Checkbox Card -->
-                                            <div class="bg-white rounded-[20px] p-4 shadow-[0_4px_20px_rgba(15,27,51,0.06)] flex items-center gap-3 cursor-pointer" onclick="toggleStandbyConditions()">
-                                                <input type="checkbox" id="acceptConditionsCheck" onclick="event.stopPropagation(); toggleStandbyConditions();" class="w-5 h-5 rounded border-2 border-[#14295B] text-[#14295B] focus:ring-0 cursor-pointer accent-[#14295B]">
-                                                <label for="acceptConditionsCheck" class="text-[14px] font-medium text-[#0F1B33] cursor-pointer select-none">
+                                            <div class="bg-white rounded-[10px] p-2.5 shadow-xs flex items-center gap-2 cursor-pointer" onclick="toggleStandbyConditions()">
+                                                <input type="checkbox" id="acceptConditionsCheck" onclick="event.stopPropagation(); toggleStandbyConditions();" class="w-4 h-4 rounded border border-[#14295B] text-[#14295B] focus:ring-0 cursor-pointer accent-[#14295B]">
+                                                <label for="acceptConditionsCheck" class="text-[10.5px] font-medium text-[#0F1B33] cursor-pointer select-none">
                                                     I accept these conditions.
                                                 </label>
                                             </div>
 
                                         </div>
 
-                                        <!-- Pinned Primary CTA (56pt tall, 14pt radius) -->
-                                        <div class="pb-4">
-                                            <button id="btnContinueStandby" disabled onclick="setMockupAbdmState('form')" class="w-full h-[56px] rounded-[14px] bg-[#D5DCE8] text-[#5B6B85] font-semibold text-[16px] flex items-center justify-center cursor-not-allowed transition-all">
+                                        <!-- Pinned Primary CTA -->
+                                        <div class="pb-1">
+                                            <button id="btnContinueStandby" disabled onclick="setMockupAbdmState('form')" class="w-full h-[38px] rounded-[10px] bg-[#D5DCE8] text-[#5B6B85] font-semibold text-[11.5px] flex items-center justify-center cursor-not-allowed transition-all shadow-2xs">
                                                 Continue
                                             </button>
                                         </div>
 
                                     </div>
 
-                                    <!-- iOS Bottom Safe Area with Home Indicator (34pt height) -->
-                                    <div class="bg-[#F3F6FB] py-3 flex justify-center shrink-0">
-                                        <div class="w-32 h-1 bg-slate-300 rounded-full"></div>
+                                    <!-- iOS Bottom Safe Area with Home Indicator -->
+                                    <div class="bg-[#F3F6FB] py-1.5 flex justify-center shrink-0">
+                                        <div class="w-20 h-0.5 bg-slate-300 rounded-full"></div>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Screen Annotation Card -->
-                            <div class="p-3.5 rounded-[16px] bg-white border border-[#D5DCE8] shadow-2xs space-y-1.5 text-xs">
-                                <div class="font-bold text-[#0F1B33] flex items-center justify-between">
+                            <div class="p-2.5 rounded-[12px] bg-white border border-[#D5DCE8] shadow-2xs space-y-1 text-xs">
+                                <div class="font-bold text-[#0F1B33] flex items-center justify-between text-[11px]">
                                     <span>Before you continue</span>
-                                    <span class="text-[#14295B] font-mono text-[10px] font-bold">Screen 02</span>
+                                    <span class="text-[#14295B] font-mono text-[9.5px] font-bold">Screen 02</span>
                                 </div>
-                                <p class="text-[12px] text-[#5B6B85] leading-relaxed">
-                                    Enforces the three operational frictions (middle seat, 7 kg bag, T-45 gate presence) before allowing hospital verification.
+                                <p class="text-[10px] text-[#5B6B85] leading-relaxed">
+                                    Enforces the three operational frictions (middle seat, 7 kg bag, T-45 presence) before allowing hospital check.
                                 </p>
                             </div>
                         </div>
@@ -3398,153 +3330,153 @@
                         <!-- ==========================================
                              SCREEN 3: "Confirm hospital admission"
                              ========================================== -->
-                        <div class="flex flex-col space-y-3 w-[440px] min-w-[440px] max-w-[440px] shrink-0 snap-start">
+                        <div class="flex flex-col space-y-2 w-full max-w-[275px]">
                             <div class="flex items-center justify-between text-xs">
-                                <span class="font-bold font-mono text-[#0F1B33] uppercase tracking-wider text-[11px]">03 • Admission verify</span>
+                                <span class="font-bold font-mono text-[#0F1B33] uppercase tracking-wider text-[10px]">03 • Admission verify</span>
                                 <!-- State Selector for Screen 3 -->
-                                <div class="flex items-center gap-1 bg-slate-200/90 p-0.5 rounded-lg border border-[#D5DCE8] text-[10px] font-medium">
-                                    <button id="abdmTabForm" onclick="setMockupAbdmState('form')" class="px-2 py-0.5 rounded font-bold transition-all bg-white text-[#14295B] shadow-xs">Form</button>
-                                    <button id="abdmTabVerify" onclick="setMockupAbdmState('verify')" class="px-2 py-0.5 rounded text-[#5B6B85] hover:text-[#0F1B33] transition-all">Verify</button>
-                                    <button id="abdmTabFail" onclick="setMockupAbdmState('fail')" class="px-2 py-0.5 rounded text-[#5B6B85] hover:text-[#0F1B33] transition-all">Fail</button>
-                                    <button id="abdmTabStudent" onclick="setMockupAbdmState('student')" class="px-2 py-0.5 rounded text-[#5B6B85] hover:text-[#0F1B33] transition-all">Student</button>
+                                <div class="flex items-center gap-0.5 bg-slate-200/90 p-0.5 rounded-lg border border-[#D5DCE8] text-[9px] font-medium">
+                                    <button id="abdmTabForm" onclick="setMockupAbdmState('form')" class="px-1.5 py-0.5 rounded font-bold transition-all bg-white text-[#14295B] shadow-xs">Form</button>
+                                    <button id="abdmTabVerify" onclick="setMockupAbdmState('verify')" class="px-1.5 py-0.5 rounded text-[#5B6B85] hover:text-[#0F1B33] transition-all">Verify</button>
+                                    <button id="abdmTabFail" onclick="setMockupAbdmState('fail')" class="px-1.5 py-0.5 rounded text-[#5B6B85] hover:text-[#0F1B33] transition-all">Fail</button>
+                                    <button id="abdmTabStudent" onclick="setMockupAbdmState('student')" class="px-1.5 py-0.5 rounded text-[#5B6B85] hover:text-[#0F1B33] transition-all">Student</button>
                                 </div>
                             </div>
 
-                            <!-- iPhone 16 Pro Max Frame: 440 x 974 pt -->
-                            <div class="relative w-[440px] min-w-[440px] max-w-[440px] mx-auto rounded-[54px] p-[12px] bg-[#14295B] shadow-[0_22px_55px_-10px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
-                                <div class="rounded-[44px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[974px] relative text-[#0F1B33] select-none">
+                            <!-- Phone Frame (Proportional 440x974) -->
+                            <div class="relative w-full max-w-[275px] mx-auto rounded-[38px] p-[8px] bg-[#14295B] shadow-[0_16px_36px_-8px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
+                                <div class="rounded-[30px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[590px] relative text-[#0F1B33] select-none">
                                     
-                                    <!-- Sky Header Gradient Band (~210pt tall) -->
-                                    <div class="shrink-0 pt-4 pb-6 px-6 text-white" style="background: linear-gradient(180deg, #2A6FC9 0%, #76AEE7 55%, #BFDDF7 85%, #F3F6FB 100%);">
-                                        <!-- iOS Status Bar & Dynamic Island (440 pt width) -->
-                                        <div class="flex items-center justify-between text-[13px] font-semibold select-none pb-2">
+                                    <!-- Sky Header Gradient Band -->
+                                    <div class="shrink-0 pt-2 pb-3 px-3.5 text-white" style="background: linear-gradient(180deg, #2A6FC9 0%, #76AEE7 55%, #BFDDF7 85%, #F3F6FB 100%);">
+                                        <!-- iOS Status Bar & Dynamic Island -->
+                                        <div class="flex items-center justify-between text-[10px] font-semibold select-none pb-1">
                                             <span>9:41</span>
-                                            <div class="w-[108px] h-[28px] bg-black rounded-full mx-auto flex items-center justify-between px-3 shadow-sm">
-                                                <span class="w-2.5 h-2.5 rounded-full bg-[#1e293b]"></span>
-                                                <span class="w-2 h-2 rounded-full bg-[#0a1426]"></span>
+                                            <div class="w-[74px] h-[18px] bg-black rounded-full mx-auto flex items-center justify-between px-2 shadow-xs">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-[#1e293b]"></span>
+                                                <span class="w-1 h-1 rounded-full bg-[#0a1426]"></span>
                                             </div>
-                                            <div class="flex items-center gap-1.5 text-white">
-                                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M2 20h20L12 4 2 20z"/></svg>
-                                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4zm0 4c3.31 0 6.33 1.25 8.64 3.32L12 19.82 3.36 11.32C5.67 9.25 8.69 8 12 8z"/></svg>
-                                                <div class="w-4 h-2.5 rounded-xs border-1.5 border-white p-0.5 flex items-center">
-                                                    <div class="w-full h-full bg-white rounded-2xs"></div>
+                                            <div class="flex items-center gap-1 text-white">
+                                                <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24"><path d="M2 20h20L12 4 2 20z"/></svg>
+                                                <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4zm0 4c3.31 0 6.33 1.25 8.64 3.32L12 19.82 3.36 11.32C5.67 9.25 8.69 8 12 8z"/></svg>
+                                                <div class="w-3 h-2 rounded-2xs border border-white p-0.5 flex items-center">
+                                                    <div class="w-full h-full bg-white rounded-3xs"></div>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <!-- Top Navigation Row -->
-                                        <div class="flex items-center gap-3 pt-1">
-                                            <button class="w-6 h-6 flex items-center justify-center text-white" aria-label="Back">
-                                                <i data-lucide="arrow-left" class="w-5 h-5" stroke-width="1.5"></i>
+                                        <div class="flex items-center gap-2 pt-0.5">
+                                            <button class="w-5 h-5 flex items-center justify-center text-white" aria-label="Back">
+                                                <i data-lucide="arrow-left" class="w-4 h-4" stroke-width="1.5"></i>
                                             </button>
-                                            <h4 class="text-[18px] font-semibold tracking-tight text-white leading-tight">Step 2 of 3</h4>
+                                            <h4 class="text-[13px] font-semibold tracking-tight text-white leading-tight">Step 2 of 3</h4>
                                         </div>
                                     </div>
 
-                                    <!-- Screen Body (24pt Side Margins, 24pt Card Spacing) -->
-                                    <div class="px-6 -mt-3 space-y-6 flex-1 flex flex-col justify-between overflow-y-auto" style="scrollbar-width: thin;">
+                                    <!-- Screen Body -->
+                                    <div class="px-3.5 -mt-2 space-y-2 flex-1 flex flex-col justify-between overflow-y-auto" style="scrollbar-width: thin;">
                                         
                                         <!-- State 3A: Idle Form View -->
-                                        <div id="mockupAbdmForm" class="space-y-4 text-left">
-                                            <div class="bg-white rounded-[20px] p-6 shadow-[0_4px_20px_rgba(15,27,51,0.06)] space-y-4">
-                                                <h4 class="text-[24px] font-semibold text-[#0F1B33] leading-tight">
+                                        <div id="mockupAbdmForm" class="space-y-2 text-left">
+                                            <div class="bg-white rounded-[14px] p-2.5 shadow-xs space-y-2">
+                                                <h4 class="text-[13px] font-semibold text-[#0F1B33] leading-tight">
                                                     Confirm hospital admission
                                                 </h4>
 
                                                 <!-- Field 1: Relationship to patient -->
-                                                <div class="space-y-1">
-                                                    <label class="block text-[14px] font-semibold text-[#0F1B33]">Relationship to patient</label>
+                                                <div class="space-y-0.5">
+                                                    <label class="block text-[10px] font-semibold text-[#0F1B33]">Relationship to patient</label>
                                                     <div class="relative">
-                                                        <select class="w-full h-[50px] px-4 pr-9 rounded-[14px] border border-[#D5DCE8] bg-white text-[#0F1B33] text-[16px] font-medium appearance-none">
+                                                        <select class="w-full h-[32px] px-2.5 pr-6 rounded-[8px] border border-[#D5DCE8] bg-white text-[#0F1B33] text-[10.5px] font-medium appearance-none">
                                                             <option>Mother (Savitri Sharma)</option>
                                                             <option>Father</option>
                                                             <option>Spouse</option>
                                                             <option>Child</option>
                                                         </select>
-                                                        <i data-lucide="chevron-down" class="w-4 h-4 text-[#5B6B85] absolute right-3.5 top-4 pointer-events-none" stroke-width="1.5"></i>
+                                                        <i data-lucide="chevron-down" class="w-3 h-3 text-[#5B6B85] absolute right-2.5 top-2.5 pointer-events-none" stroke-width="1.5"></i>
                                                     </div>
                                                 </div>
 
                                                 <!-- Field 2: Hospital name -->
-                                                <div class="space-y-1">
-                                                    <label class="block text-[14px] font-semibold text-[#0F1B33]">Hospital name</label>
-                                                    <input type="text" value="AIIMS New Delhi — ICU Ward 4B" class="w-full h-[50px] px-4 rounded-[14px] border border-[#D5DCE8] bg-white text-[#0F1B33] text-[16px] font-medium focus:outline-hidden">
+                                                <div class="space-y-0.5">
+                                                    <label class="block text-[10px] font-semibold text-[#0F1B33]">Hospital name</label>
+                                                    <input type="text" value="AIIMS New Delhi — ICU 4B" class="w-full h-[32px] px-2.5 rounded-[8px] border border-[#D5DCE8] bg-white text-[#0F1B33] text-[10.5px] font-medium focus:outline-hidden">
                                                 </div>
 
-                                                <!-- Field 3: ABHA number (formatted) -->
-                                                <div class="space-y-1">
-                                                    <label class="block text-[14px] font-semibold text-[#0F1B33]">ABHA number</label>
-                                                    <input type="text" value="12-3456-7890-1234" class="w-full h-[50px] px-4 rounded-[14px] border-2 border-[#14295B] bg-white text-[#0F1B33] font-mono tabular-nums text-[16px] font-semibold focus:outline-hidden">
-                                                    <div class="text-[12px] text-[#5B6B85] mt-1">ABHA number must be 14 digits</div>
+                                                <!-- Field 3: ABHA number -->
+                                                <div class="space-y-0.5">
+                                                    <label class="block text-[10px] font-semibold text-[#0F1B33]">ABHA number</label>
+                                                    <input type="text" value="12-3456-7890-1234" class="w-full h-[32px] px-2.5 rounded-[8px] border-2 border-[#14295B] bg-white text-[#0F1B33] font-mono tabular-nums text-[10.5px] font-semibold focus:outline-hidden">
+                                                    <div class="text-[9px] text-[#5B6B85] mt-0.5">ABHA number must be 14 digits</div>
                                                 </div>
 
-                                                <!-- Primary CTA (56pt tall, 14pt radius) -->
-                                                <button onclick="setMockupAbdmState('verify')" class="w-full h-[56px] rounded-[14px] bg-[#14295B] text-white font-semibold text-[16px] flex items-center justify-center hover:bg-[#0c1a3b] transition-colors mt-3">
+                                                <!-- Primary CTA -->
+                                                <button onclick="setMockupAbdmState('verify')" class="w-full h-[36px] rounded-[9px] bg-[#14295B] text-white font-semibold text-[11px] flex items-center justify-center hover:bg-[#0c1a3b] transition-colors mt-1 shadow-2xs">
                                                     Verify with ABHA
                                                 </button>
 
                                                 <!-- Text Link -->
-                                                <div class="text-center pt-1">
-                                                    <button onclick="setMockupAbdmState('verify')" class="text-[14px] font-medium text-[#14295B] hover:underline">
+                                                <div class="text-center pt-0.5">
+                                                    <button onclick="setMockupAbdmState('verify')" class="text-[10px] font-medium text-[#14295B] hover:underline">
                                                         Upload admission note instead
                                                     </button>
                                                 </div>
 
                                                 <!-- Privacy Text -->
-                                                <div class="text-[12px] text-[#5B6B85] text-center pt-2 border-t-2 border-dashed border-[#D5DCE8]">
-                                                    Your records are used only to confirm eligibility.
+                                                <div class="text-[8.5px] text-[#5B6B85] text-center pt-1 border-t border-dashed border-[#D5DCE8]">
+                                                    Records used only to confirm eligibility.
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <!-- State 3B: Verifying State (Under 90s) -->
-                                        <div id="mockupAbdmVerify" class="space-y-4 hidden py-6 text-left">
-                                            <div class="bg-white rounded-[20px] p-6 shadow-[0_4px_20px_rgba(15,27,51,0.06)] space-y-5">
-                                                <h4 class="text-[24px] font-semibold text-[#0F1B33] leading-tight">
+                                        <!-- State 3B: Verifying State -->
+                                        <div id="mockupAbdmVerify" class="space-y-3 hidden py-3 text-left">
+                                            <div class="bg-white rounded-[14px] p-3 shadow-xs space-y-3">
+                                                <h4 class="text-[13px] font-semibold text-[#0F1B33]">
                                                     Verifying emergency admission
                                                 </h4>
 
-                                                <!-- Thin Progress Bar -->
-                                                <div class="w-full h-1.5 bg-[#D5DCE8] rounded-full overflow-hidden">
+                                                <!-- Progress Bar -->
+                                                <div class="w-full h-1 bg-[#D5DCE8] rounded-full overflow-hidden">
                                                     <div class="h-full bg-[#14295B] w-2/3 rounded-full transition-all duration-700"></div>
                                                 </div>
 
-                                                <!-- 3-Step Checklist -->
-                                                <div class="space-y-3 pt-1">
-                                                    <div class="flex items-center gap-3">
-                                                        <i data-lucide="check-circle" class="w-5 h-5 text-[#067647]" stroke-width="1.5"></i>
-                                                        <span class="text-[14px] font-medium text-[#0F1B33]">Reading document</span>
+                                                <!-- Checklist -->
+                                                <div class="space-y-2 pt-0.5">
+                                                    <div class="flex items-center gap-2">
+                                                        <i data-lucide="check-circle" class="w-3.5 h-3.5 text-[#067647]" stroke-width="1.5"></i>
+                                                        <span class="text-[10.5px] font-medium text-[#0F1B33]">Reading document</span>
                                                     </div>
-                                                    <div class="flex items-center gap-3">
-                                                        <i data-lucide="check-circle" class="w-5 h-5 text-[#067647]" stroke-width="1.5"></i>
-                                                        <span class="text-[14px] font-medium text-[#0F1B33]">Checking hospital record</span>
+                                                    <div class="flex items-center gap-2">
+                                                        <i data-lucide="check-circle" class="w-3.5 h-3.5 text-[#067647]" stroke-width="1.5"></i>
+                                                        <span class="text-[10.5px] font-medium text-[#0F1B33]">Checking hospital record</span>
                                                     </div>
-                                                    <div class="flex items-center gap-3">
-                                                        <i data-lucide="loader-2" class="w-5 h-5 text-[#14295B] animate-spin" stroke-width="1.5"></i>
-                                                        <span class="text-[14px] font-medium text-[#0F1B33]">Clearing priority</span>
+                                                    <div class="flex items-center gap-2">
+                                                        <i data-lucide="loader-2" class="w-3.5 h-3.5 text-[#14295B] animate-spin" stroke-width="1.5"></i>
+                                                        <span class="text-[10.5px] font-medium text-[#0F1B33]">Clearing priority</span>
                                                     </div>
                                                 </div>
 
-                                                <div class="text-[12px] text-[#5B6B85] pt-2 border-t-2 border-dashed border-[#D5DCE8]">
+                                                <div class="text-[9.5px] text-[#5B6B85] pt-1.5 border-t border-dashed border-[#D5DCE8]">
                                                     Usually under 90 seconds
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <!-- State 3C: Failure / Gateway Timeout State -->
-                                        <div id="mockupAbdmFail" class="space-y-4 hidden py-6 text-left">
-                                            <div class="bg-[#FDECEA] rounded-[20px] p-6 space-y-4 shadow-[0_4px_20px_rgba(15,27,51,0.06)]">
-                                                <div class="text-[18px] font-semibold text-[#B42318]">
-                                                    We couldn't confirm this automatically
+                                        <!-- State 3C: Failure State -->
+                                        <div id="mockupAbdmFail" class="space-y-3 hidden py-3 text-left">
+                                            <div class="bg-[#FDECEA] rounded-[14px] p-3 space-y-2 shadow-xs">
+                                                <div class="text-[11.5px] font-semibold text-[#B42318]">
+                                                    Couldn't confirm automatically
                                                 </div>
-                                                <p class="text-[14px] text-[#5B6B85] leading-relaxed">
-                                                    The hospital server did not respond. Your standby seat is held for 15 minutes so you never lose your place.
+                                                <p class="text-[10px] text-[#5B6B85] leading-relaxed">
+                                                    Hospital server did not respond. Standby held 15 min.
                                                 </p>
-                                                <div class="space-y-3 pt-2">
-                                                    <button onclick="setMockupAbdmState('verify')" class="w-full h-[56px] rounded-[14px] bg-[#14295B] text-white font-semibold text-[16px] flex items-center justify-center hover:bg-[#0c1a3b] transition-colors">
+                                                <div class="space-y-1.5 pt-1">
+                                                    <button onclick="setMockupAbdmState('verify')" class="w-full h-[32px] rounded-[8px] bg-[#14295B] text-white font-semibold text-[10.5px] flex items-center justify-center hover:bg-[#0c1a3b] transition-colors">
                                                         Try again
                                                     </button>
-                                                    <button class="w-full h-[56px] rounded-[14px] bg-white border-2 border-[#14295B] text-[#14295B] font-semibold text-[16px] flex items-center justify-center hover:bg-slate-50 transition-colors">
+                                                    <button class="w-full h-[32px] rounded-[8px] bg-white border border-[#14295B] text-[#14295B] font-semibold text-[10.5px] flex items-center justify-center hover:bg-slate-50 transition-colors">
                                                         Call us now
                                                     </button>
                                                 </div>
@@ -3552,15 +3484,15 @@
                                         </div>
 
                                         <!-- State 3D: Student Lane Variant -->
-                                        <div id="mockupAbdmStudent" class="space-y-4 hidden py-6 text-left">
-                                            <div class="bg-white rounded-[20px] p-6 space-y-4 shadow-[0_4px_20px_rgba(15,27,51,0.06)]">
-                                                <div class="text-[24px] font-semibold text-[#0F1B33]">
+                                        <div id="mockupAbdmStudent" class="space-y-3 hidden py-3 text-left">
+                                            <div class="bg-white rounded-[14px] p-3 space-y-2 shadow-xs">
+                                                <div class="text-[13px] font-semibold text-[#0F1B33]">
                                                     Verify student ID
                                                 </div>
-                                                <p class="text-[14px] text-[#5B6B85] leading-relaxed">
-                                                    Fetch active university enrollment records directly from DigiLocker without submitting physical documents.
+                                                <p class="text-[10px] text-[#5B6B85] leading-relaxed">
+                                                    Fetch active enrollment records directly from DigiLocker.
                                                 </p>
-                                                <button class="w-full h-[56px] rounded-[14px] bg-[#14295B] text-white font-semibold text-[16px] flex items-center justify-center hover:bg-[#0c1a3b] transition-colors">
+                                                <button class="w-full h-[34px] rounded-[8px] bg-[#14295B] text-white font-semibold text-[10.5px] flex items-center justify-center hover:bg-[#0c1a3b] transition-colors">
                                                     Fetch from DigiLocker
                                                 </button>
                                             </div>
@@ -3568,21 +3500,21 @@
 
                                     </div>
 
-                                    <!-- iOS Bottom Safe Area with Home Indicator (34pt height) -->
-                                    <div class="bg-[#F3F6FB] py-3 flex justify-center shrink-0">
-                                        <div class="w-32 h-1 bg-slate-300 rounded-full"></div>
+                                    <!-- iOS Bottom Safe Area with Home Indicator -->
+                                    <div class="bg-[#F3F6FB] py-1.5 flex justify-center shrink-0">
+                                        <div class="w-20 h-0.5 bg-slate-300 rounded-full"></div>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Screen Annotation Card -->
-                            <div class="p-3.5 rounded-[16px] bg-white border border-[#D5DCE8] shadow-2xs space-y-1.5 text-xs">
-                                <div class="font-bold text-[#0F1B33] flex items-center justify-between">
+                            <div class="p-2.5 rounded-[12px] bg-white border border-[#D5DCE8] shadow-2xs space-y-1 text-xs">
+                                <div class="font-bold text-[#0F1B33] flex items-center justify-between text-[11px]">
                                     <span>Confirm admission</span>
-                                    <span class="text-[#14295B] font-mono text-[10px] font-bold">Screen 03</span>
+                                    <span class="text-[#14295B] font-mono text-[9.5px] font-bold">Screen 03</span>
                                 </div>
-                                <p class="text-[12px] text-[#5B6B85] leading-relaxed">
-                                    Simulated ABHA verification. 90-second automated check backed by a 15-minute phone hold so an emergency patient is never left stranded.
+                                <p class="text-[10px] text-[#5B6B85] leading-relaxed">
+                                    Simulated ABHA verification. 90-second check backed by a 15-minute phone hold.
                                 </p>
                             </div>
                         </div>
@@ -3590,166 +3522,158 @@
                         <!-- ==========================================
                              SCREEN 4: "Your standby pass" (Boarding Pass)
                              ========================================== -->
-                        <div class="flex flex-col space-y-3 w-[440px] min-w-[440px] max-w-[440px] shrink-0 snap-start">
+                        <div class="flex flex-col space-y-2 w-full max-w-[275px]">
                             <div class="flex items-center justify-between text-xs">
-                                <span class="font-bold font-mono text-[#0F1B33] uppercase tracking-wider text-[11px]">04 • Boarding pass</span>
-                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-[#E7F6EC] text-[#067647] font-mono">Digi Yatra</span>
+                                <span class="font-bold font-mono text-[#0F1B33] uppercase tracking-wider text-[10px]">04 • Boarding pass</span>
+                                <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-[#E7F6EC] text-[#067647] font-mono">Digi Yatra</span>
                             </div>
 
-                            <!-- iPhone 16 Pro Max Frame: 440 x 974 pt -->
-                            <div class="relative w-[440px] min-w-[440px] max-w-[440px] mx-auto rounded-[54px] p-[12px] bg-[#14295B] shadow-[0_22px_55px_-10px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
-                                <div class="rounded-[44px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[974px] relative text-[#0F1B33] select-none">
+                            <!-- Phone Frame (Proportional 440x974) -->
+                            <div class="relative w-full max-w-[275px] mx-auto rounded-[38px] p-[8px] bg-[#14295B] shadow-[0_16px_36px_-8px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
+                                <div class="rounded-[30px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[590px] relative text-[#0F1B33] select-none">
                                     
-                                    <!-- Sky Header Gradient Band (~210pt tall) -->
-                                    <div class="shrink-0 pt-4 pb-6 px-6 text-white" style="background: linear-gradient(180deg, #2A6FC9 0%, #76AEE7 55%, #BFDDF7 85%, #F3F6FB 100%);">
-                                        <!-- iOS Status Bar & Dynamic Island (440 pt width) -->
-                                        <div class="flex items-center justify-between text-[13px] font-semibold select-none pb-2">
+                                    <!-- Sky Header Gradient Band -->
+                                    <div class="shrink-0 pt-2 pb-3 px-3.5 text-white" style="background: linear-gradient(180deg, #2A6FC9 0%, #76AEE7 55%, #BFDDF7 85%, #F3F6FB 100%);">
+                                        <!-- iOS Status Bar & Dynamic Island -->
+                                        <div class="flex items-center justify-between text-[10px] font-semibold select-none pb-1">
                                             <span>9:41</span>
-                                            <div class="w-[108px] h-[28px] bg-black rounded-full mx-auto flex items-center justify-between px-3 shadow-sm">
-                                                <span class="w-2.5 h-2.5 rounded-full bg-[#1e293b]"></span>
-                                                <span class="w-2 h-2 rounded-full bg-[#0a1426]"></span>
+                                            <div class="w-[74px] h-[18px] bg-black rounded-full mx-auto flex items-center justify-between px-2 shadow-xs">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-[#1e293b]"></span>
+                                                <span class="w-1 h-1 rounded-full bg-[#0a1426]"></span>
                                             </div>
-                                            <div class="flex items-center gap-1.5 text-white">
-                                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M2 20h20L12 4 2 20z"/></svg>
-                                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4zm0 4c3.31 0 6.33 1.25 8.64 3.32L12 19.82 3.36 11.32C5.67 9.25 8.69 8 12 8z"/></svg>
-                                                <div class="w-4 h-2.5 rounded-xs border-1.5 border-white p-0.5 flex items-center">
-                                                    <div class="w-full h-full bg-white rounded-2xs"></div>
+                                            <div class="flex items-center gap-1 text-white">
+                                                <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24"><path d="M2 20h20L12 4 2 20z"/></svg>
+                                                <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4zm0 4c3.31 0 6.33 1.25 8.64 3.32L12 19.82 3.36 11.32C5.67 9.25 8.69 8 12 8z"/></svg>
+                                                <div class="w-3 h-2 rounded-2xs border border-white p-0.5 flex items-center">
+                                                    <div class="w-full h-full bg-white rounded-3xs"></div>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <!-- Top Navigation Row -->
-                                        <div class="flex items-center gap-3 pt-1">
-                                            <button class="w-6 h-6 flex items-center justify-center text-white" aria-label="Back">
-                                                <i data-lucide="arrow-left" class="w-5 h-5" stroke-width="1.5"></i>
+                                        <div class="flex items-center gap-2 pt-0.5">
+                                            <button class="w-5 h-5 flex items-center justify-center text-white" aria-label="Back">
+                                                <i data-lucide="arrow-left" class="w-4 h-4" stroke-width="1.5"></i>
                                             </button>
-                                            <h4 class="text-[18px] font-semibold tracking-tight text-white leading-tight">Boarding Pass</h4>
+                                            <h4 class="text-[13px] font-semibold tracking-tight text-white leading-tight">Boarding Pass</h4>
                                         </div>
 
-                                        <!-- Pill Segmented Control: Next flight | Last passes (Reference Style) -->
-                                        <div class="bg-white/20 p-1 rounded-full flex items-center text-[14px] font-semibold mt-3">
-                                            <button class="flex-1 py-1.5 rounded-full bg-white text-[#14295B] shadow-xs text-center">
+                                        <!-- Pill Segmented Control -->
+                                        <div class="bg-white/20 p-0.5 rounded-full flex items-center text-[9.5px] font-semibold mt-2">
+                                            <button class="flex-1 py-1 rounded-full bg-white text-[#14295B] shadow-xs text-center">
                                                 Next flight
                                             </button>
-                                            <button class="flex-1 py-1.5 rounded-full text-white/90 hover:text-white text-center">
+                                            <button class="flex-1 py-1 rounded-full text-white/90 hover:text-white text-center">
                                                 Last passes
                                             </button>
                                         </div>
                                     </div>
 
-                                    <!-- Screen Body (24pt Side Margins, 24pt Card Spacing) -->
-                                    <div class="px-6 -mt-3 space-y-5 flex-1 overflow-y-auto" style="scrollbar-width: thin;">
+                                    <!-- Screen Body -->
+                                    <div class="px-3.5 -mt-2 space-y-2 flex-1 overflow-y-auto" style="scrollbar-width: thin;">
                                         
-                                        <!-- Real Ticket Boarding Pass Card (Reference Style, White Surface) -->
-                                        <div class="bg-white rounded-[20px] shadow-[0_4px_20px_rgba(15,27,51,0.06)] overflow-hidden">
+                                        <!-- Real Ticket Boarding Pass Card -->
+                                        <div class="bg-white rounded-[14px] shadow-xs overflow-hidden">
                                             
-                                            <!-- Top Row: Monogram, Flight, Standby & Priority Tags -->
-                                            <div class="p-5 pb-2 flex items-center justify-between">
-                                                <div class="flex items-center gap-2">
-                                                    <div class="w-8 h-8 rounded-lg bg-[#EBF1F9] flex items-center justify-center text-[#14295B]">
-                                                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <!-- Top Row -->
+                                            <div class="p-2.5 pb-1 flex items-center justify-between">
+                                                <div class="flex items-center gap-1.5">
+                                                    <div class="w-6 h-6 rounded-md bg-[#EBF1F9] flex items-center justify-center text-[#14295B]">
+                                                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                                             <path d="M4 14l8-8 8 8M7 17l5-5 5 5"/>
                                                         </svg>
                                                     </div>
                                                     <div>
-                                                        <span class="font-bold text-[16px] text-[#0F1B33]">6E-205</span>
-                                                        <span class="text-[12px] text-[#5B6B85] block -mt-0.5">Airbus A321neo</span>
+                                                        <span class="font-bold text-[11.5px] text-[#0F1B33]">6E-205</span>
+                                                        <span class="text-[8.5px] text-[#5B6B85] block -mt-0.5">A321neo</span>
                                                     </div>
                                                 </div>
 
-                                                <div class="flex items-center gap-1.5">
-                                                    <!-- Only Gold Element on Pass (Dark text on Gold) -->
-                                                    <span class="bg-[#F2B84B] text-[#0F1B33] text-[12px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-2xs">
+                                                <div class="flex items-center gap-1">
+                                                    <!-- Gold Tag -->
+                                                    <span class="bg-[#F2B84B] text-[#0F1B33] text-[8.5px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full shadow-2xs">
                                                         STANDBY
                                                     </span>
-                                                    <span class="bg-[#14295B] text-white text-[12px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-2xs">
+                                                    <span class="bg-[#14295B] text-white text-[8.5px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full shadow-2xs">
                                                         Priority
                                                     </span>
                                                 </div>
                                             </div>
 
-                                            <!-- Route Row: BLR 20:55 --- DEL 23:40 (30pt route codes, 18pt times) -->
-                                            <div class="px-5 py-2.5 flex items-center justify-between">
+                                            <!-- Route Row -->
+                                            <div class="px-2.5 py-1.5 flex items-center justify-between">
                                                 <div>
-                                                    <div class="text-[30px] font-bold text-[#0F1B33] leading-none tracking-tight">BLR</div>
-                                                    <div class="text-[12px] text-[#5B6B85] mt-1">Bengaluru</div>
-                                                    <div class="text-[18px] font-mono tabular-nums font-semibold text-[#0F1B33] mt-0.5">20:55</div>
+                                                    <div class="text-[18px] font-bold text-[#0F1B33] leading-none tracking-tight">BLR</div>
+                                                    <div class="text-[8.5px] text-[#5B6B85]">Bengaluru</div>
+                                                    <div class="text-[11.5px] font-mono tabular-nums font-semibold text-[#0F1B33]">20:55</div>
                                                 </div>
 
-                                                <div class="flex-1 px-4 text-center">
+                                                <div class="flex-1 px-2 text-center">
                                                     <div class="flex items-center justify-center gap-1 text-[#D5DCE8]">
-                                                        <span class="w-1.5 h-1.5 rounded-full bg-[#D5DCE8]"></span>
-                                                        <div class="border-t-2 border-dashed border-[#D5DCE8] flex-1"></div>
-                                                        <i data-lucide="plane" class="w-4 h-4 text-[#14295B] rotate-90 shrink-0" stroke-width="1.5"></i>
-                                                        <div class="border-t-2 border-dashed border-[#D5DCE8] flex-1"></div>
-                                                        <span class="w-1.5 h-1.5 rounded-full bg-[#14295B]"></span>
+                                                        <span class="w-1 h-1 rounded-full bg-[#D5DCE8]"></span>
+                                                        <div class="border-t border-dashed border-[#D5DCE8] flex-1"></div>
+                                                        <i data-lucide="plane" class="w-3 h-3 text-[#14295B] rotate-90 shrink-0" stroke-width="1.5"></i>
+                                                        <div class="border-t border-dashed border-[#D5DCE8] flex-1"></div>
+                                                        <span class="w-1 h-1 rounded-full bg-[#14295B]"></span>
                                                     </div>
-                                                    <div class="text-[12px] font-mono text-[#5B6B85] mt-1">2h 45m</div>
+                                                    <div class="text-[8.5px] font-mono text-[#5B6B85] mt-0.5">2h 45m</div>
                                                 </div>
 
                                                 <div class="text-right">
-                                                    <div class="text-[30px] font-bold text-[#0F1B33] leading-none tracking-tight">DEL</div>
-                                                    <div class="text-[12px] text-[#5B6B85] mt-1">New Delhi</div>
-                                                    <div class="text-[18px] font-mono tabular-nums font-semibold text-[#0F1B33] mt-0.5">23:40</div>
+                                                    <div class="text-[18px] font-bold text-[#0F1B33] leading-none tracking-tight">DEL</div>
+                                                    <div class="text-[8.5px] text-[#5B6B85]">New Delhi</div>
+                                                    <div class="text-[11.5px] font-mono tabular-nums font-semibold text-[#0F1B33]">23:40</div>
                                                 </div>
                                             </div>
 
-                                            <!-- Dashed Divider with Bilateral Ticket Notches -->
-                                            <div class="relative flex items-center justify-between py-1 bg-white">
-                                                <div class="w-5 h-5 rounded-full bg-[#F3F6FB] -ml-2.5"></div>
-                                                <div class="border-t-2 border-dashed border-[#D5DCE8] flex-1 mx-2"></div>
-                                                <div class="w-5 h-5 rounded-full bg-[#F3F6FB] -mr-2.5"></div>
+                                            <!-- Dashed Divider with Notches -->
+                                            <div class="relative flex items-center justify-between py-0.5 bg-white">
+                                                <div class="w-3.5 h-3.5 rounded-full bg-[#F3F6FB] -ml-2"></div>
+                                                <div class="border-t border-dashed border-[#D5DCE8] flex-1 mx-1.5"></div>
+                                                <div class="w-3.5 h-3.5 rounded-full bg-[#F3F6FB] -mr-2"></div>
                                             </div>
 
-                                            <!-- Two-Column Field Grid (Reference Style, 12pt labels, 16pt values) -->
-                                            <div class="p-5 pt-1 grid grid-cols-2 gap-3.5 text-left">
+                                            <!-- Two-Column Field Grid -->
+                                            <div class="p-2.5 pt-0.5 grid grid-cols-2 gap-2 text-left">
                                                 <div>
-                                                    <span class="text-[12px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">NAME</span>
-                                                    <span class="text-[16px] font-semibold text-[#0F1B33] block mt-0.5 truncate">Ananya Sharma</span>
+                                                    <span class="text-[8.5px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">NAME</span>
+                                                    <span class="text-[10.5px] font-semibold text-[#0F1B33] block truncate">Ananya Sharma</span>
                                                 </div>
                                                 <div>
-                                                    <span class="text-[12px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">TICKET NUMBER</span>
-                                                    <span class="text-[16px] font-semibold font-mono tabular-nums text-[#0F1B33] block mt-0.5">AF 4821</span>
+                                                    <span class="text-[8.5px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">TICKET NUMBER</span>
+                                                    <span class="text-[10.5px] font-semibold font-mono tabular-nums text-[#0F1B33] block">AF 4821</span>
                                                 </div>
                                                 <div>
-                                                    <span class="text-[12px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">PASSENGER</span>
-                                                    <span class="text-[16px] font-semibold text-[#0F1B33] block mt-0.5">1 Adult</span>
+                                                    <span class="text-[8.5px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">SEAT</span>
+                                                    <span class="text-[11px] font-bold text-[#14295B] block">28B (middle)</span>
                                                 </div>
                                                 <div>
-                                                    <span class="text-[12px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">SEAT</span>
-                                                    <span class="text-[16px] font-bold text-[#14295B] block mt-0.5">28B (middle)</span>
+                                                    <span class="text-[8.5px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">BAGGAGE</span>
+                                                    <span class="text-[10.5px] font-semibold text-[#0F1B33] block">7 kg backpack</span>
                                                 </div>
                                                 <div>
-                                                    <span class="text-[12px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">CLASS</span>
-                                                    <span class="text-[16px] font-semibold text-[#0F1B33] block mt-0.5">Economy</span>
+                                                    <span class="text-[8.5px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">GATE</span>
+                                                    <span class="text-[12px] font-bold text-[#14295B] block">14A</span>
                                                 </div>
                                                 <div>
-                                                    <span class="text-[12px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">BAGGAGE</span>
-                                                    <span class="text-[16px] font-semibold text-[#0F1B33] block mt-0.5">7 kg backpack</span>
-                                                </div>
-                                                <div>
-                                                    <span class="text-[12px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">GATE</span>
-                                                    <span class="text-[18px] font-bold text-[#14295B] block mt-0.5">14A</span>
-                                                </div>
-                                                <div>
-                                                    <span class="text-[12px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">BOARDING</span>
-                                                    <span class="text-[18px] font-semibold font-mono tabular-nums text-[#0F1B33] block mt-0.5">20:15</span>
+                                                    <span class="text-[8.5px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">BOARDING</span>
+                                                    <span class="text-[12px] font-semibold font-mono tabular-nums text-[#0F1B33] block">20:15</span>
                                                 </div>
                                             </div>
 
-                                            <!-- Second Dashed Divider with Notches for Barcode -->
-                                            <div class="relative flex items-center justify-between py-1 bg-white">
-                                                <div class="w-5 h-5 rounded-full bg-[#F3F6FB] -ml-2.5"></div>
-                                                <div class="border-t-2 border-dashed border-[#D5DCE8] flex-1 mx-2"></div>
-                                                <div class="w-5 h-5 rounded-full bg-[#F3F6FB] -mr-2.5"></div>
+                                            <!-- Second Dashed Divider with Notches -->
+                                            <div class="relative flex items-center justify-between py-0.5 bg-white">
+                                                <div class="w-3.5 h-3.5 rounded-full bg-[#F3F6FB] -ml-2"></div>
+                                                <div class="border-t border-dashed border-[#D5DCE8] flex-1 mx-1.5"></div>
+                                                <div class="w-3.5 h-3.5 rounded-full bg-[#F3F6FB] -mr-2"></div>
                                             </div>
 
-                                            <!-- Large Vector Barcode Section -->
-                                            <div class="p-5 pt-2 text-center bg-white">
-                                                <svg class="w-full h-11 text-[#0F1B33]" viewBox="0 0 160 32" fill="currentColor">
+                                            <!-- Vector Barcode Section -->
+                                            <div class="p-2.5 pt-1 text-center bg-white">
+                                                <svg class="w-full h-7 text-[#0F1B33]" viewBox="0 0 160 32" fill="currentColor">
                                                     <rect x="0" y="0" width="3" height="32"/><rect x="5" y="0" width="1" height="32"/><rect x="8" y="0" width="4" height="32"/><rect x="15" y="0" width="2" height="32"/><rect x="19" y="0" width="1" height="32"/><rect x="22" y="0" width="5" height="32"/><rect x="29" y="0" width="2" height="32"/><rect x="33" y="0" width="3" height="32"/><rect x="38" y="0" width="1" height="32"/><rect x="41" y="0" width="4" height="32"/><rect x="47" y="0" width="2" height="32"/><rect x="51" y="0" width="1" height="32"/><rect x="54" y="0" width="5" height="32"/><rect x="61" y="0" width="2" height="32"/><rect x="65" y="0" width="4" height="32"/><rect x="71" y="0" width="1" height="32"/><rect x="74" y="0" width="3" height="32"/><rect x="79" y="0" width="2" height="32"/><rect x="83" y="0" width="4" height="32"/><rect x="89" y="0" width="1" height="32"/><rect x="92" y="0" width="5" height="32"/><rect x="99" y="0" width="2" height="32"/><rect x="103" y="0" width="3" height="32"/><rect x="108" y="0" width="2" height="32"/><rect x="112" y="0" width="4" height="32"/><rect x="118" y="0" width="1" height="32"/><rect x="121" y="0" width="3" height="32"/><rect x="126" y="0" width="2" height="32"/><rect x="130" y="0" width="5" height="32"/><rect x="137" y="0" width="1" height="32"/><rect x="140" y="0" width="3" height="32"/><rect x="145" y="0" width="2" height="32"/><rect x="149" y="0" width="4" height="32"/><rect x="155" y="0" width="2" height="32"/>
                                                 </svg>
-                                                <div class="text-[12px] font-mono tabular-nums text-[#0F1B33] font-semibold tracking-wider mt-1.5">
+                                                <div class="text-[9px] font-mono tabular-nums text-[#0F1B33] font-semibold tracking-wider mt-1">
                                                     AF-6E-205-DEL-EMG
                                                 </div>
                                             </div>
@@ -3757,70 +3681,70 @@
                                         </div>
 
                                         <!-- Elements Below the Pass -->
-                                        <div class="space-y-2.5 text-left">
-                                            <!-- Success Row: Seat Confirmed -->
-                                            <div class="bg-[#E7F6EC] rounded-[14px] p-3.5 flex items-center gap-2.5 text-[#067647]">
-                                                <i data-lucide="check-circle" class="w-5 h-5 shrink-0" stroke-width="1.5"></i>
-                                                <span class="text-[16px] font-semibold">Seat confirmed</span>
+                                        <div class="space-y-1.5 text-left">
+                                            <!-- Success Row -->
+                                            <div class="bg-[#E7F6EC] rounded-[8px] p-2 flex items-center gap-1.5 text-[#067647]">
+                                                <i data-lucide="check-circle" class="w-3.5 h-3.5 shrink-0" stroke-width="1.5"></i>
+                                                <span class="text-[11px] font-semibold">Seat confirmed</span>
                                             </div>
 
                                             <!-- Clear Instruction -->
-                                            <div class="text-[14px] font-medium text-[#0F1B33] leading-snug">
-                                                Go to Gate 14A and scan your face at the Digi Yatra gate.
+                                            <div class="text-[9.5px] font-medium text-[#0F1B33] leading-snug">
+                                                Go to Gate 14A and scan face at Digi Yatra gate.
                                             </div>
 
-                                            <!-- Bottom Sheet Policy Trigger Link -->
-                                            <div class="pt-0.5">
-                                                <button onclick="toggleStandbyPassModal()" class="text-[14px] font-medium text-[#14295B] underline hover:text-[#0c1a3b]">
+                                            <!-- Trigger Link -->
+                                            <div>
+                                                <button onclick="toggleStandbyPassModal()" class="text-[9.5px] font-medium text-[#14295B] underline hover:text-[#0c1a3b]">
                                                     What if my seat isn't cleared?
                                                 </button>
                                             </div>
 
-                                            <!-- Bottom Sheet Frame (Expandable Policy) -->
-                                            <div id="standbyPassModal" class="bg-white rounded-[16px] p-4 space-y-1 shadow-[0_4px_20px_rgba(15,27,51,0.06)]">
-                                                <div class="text-[14px] font-semibold text-[#0F1B33]">Guaranteed Standby Policy</div>
-                                                <p class="text-[14px] text-[#5B6B85] leading-snug">
-                                                    You get a full automatic refund or move to the next flight. No fees.
+                                            <!-- Modal -->
+                                            <div id="standbyPassModal" class="bg-white rounded-[10px] p-2.5 space-y-0.5 shadow-xs">
+                                                <div class="text-[10px] font-semibold text-[#0F1B33]">Guaranteed Standby Policy</div>
+                                                <p class="text-[9.5px] text-[#5B6B85] leading-snug">
+                                                    Full automatic refund or move to next flight. No fees.
                                                 </p>
                                             </div>
                                         </div>
 
-                                        <!-- Two Buttons at Bottom (56pt tall each, 14pt radius) -->
-                                        <div class="grid grid-cols-2 gap-3 pt-1 pb-4">
-                                            <button class="h-[56px] rounded-[14px] bg-white border-2 border-[#14295B] text-[#14295B] font-semibold text-[16px] flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors">
-                                                <i data-lucide="share-2" class="w-4 h-4" stroke-width="1.5"></i>
+                                        <!-- Two Buttons at Bottom -->
+                                        <div class="grid grid-cols-2 gap-2 pt-0.5 pb-1">
+                                            <button class="h-[36px] rounded-[9px] bg-white border border-[#14295B] text-[#14295B] font-semibold text-[11px] flex items-center justify-center gap-1 hover:bg-slate-50 transition-colors shadow-2xs">
+                                                <i data-lucide="share-2" class="w-3 h-3" stroke-width="1.5"></i>
                                                 <span>Share</span>
                                             </button>
-                                            <button class="h-[56px] rounded-[14px] bg-[#14295B] text-white font-semibold text-[16px] flex items-center justify-center gap-2 hover:bg-[#0c1a3b] transition-colors">
-                                                <i data-lucide="wallet" class="w-4 h-4" stroke-width="1.5"></i>
-                                                <span>Add to Wallet</span>
+                                            <button class="h-[36px] rounded-[9px] bg-[#14295B] text-white font-semibold text-[11px] flex items-center justify-center gap-1 hover:bg-[#0c1a3b] transition-colors shadow-2xs">
+                                                <i data-lucide="wallet" class="w-3 h-3" stroke-width="1.5"></i>
+                                                <span>Wallet</span>
                                             </button>
                                         </div>
 
                                     </div>
 
-                                    <!-- iOS Bottom Safe Area with Home Indicator (34pt height) -->
-                                    <div class="bg-[#F3F6FB] py-3 flex justify-center shrink-0">
-                                        <div class="w-32 h-1 bg-slate-300 rounded-full"></div>
+                                    <!-- iOS Bottom Safe Area with Home Indicator -->
+                                    <div class="bg-[#F3F6FB] py-1.5 flex justify-center shrink-0">
+                                        <div class="w-20 h-0.5 bg-slate-300 rounded-full"></div>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Screen Annotation Card -->
-                            <div class="p-3.5 rounded-[16px] bg-white border border-[#D5DCE8] shadow-2xs space-y-1.5 text-xs">
-                                <div class="font-bold text-[#0F1B33] flex items-center justify-between">
+                            <div class="p-2.5 rounded-[12px] bg-white border border-[#D5DCE8] shadow-2xs space-y-1 text-xs">
+                                <div class="font-bold text-[#0F1B33] flex items-center justify-between text-[11px]">
                                     <span>Boarding pass</span>
-                                    <span class="text-[#14295B] font-mono text-[10px] font-bold">Screen 04</span>
+                                    <span class="text-[#14295B] font-mono text-[9.5px] font-bold">Screen 04</span>
                                 </div>
-                                <p class="text-[12px] text-[#5B6B85] leading-relaxed">
-                                    White pass card with bilateral notches, dashed dividers, two-column field grid, vector barcode, and Digi Yatra facial verification.
+                                <p class="text-[10px] text-[#5B6B85] leading-relaxed">
+                                    White pass card with bilateral notches, dashed dividers, field grid, and Digi Yatra facial boarding.
                                 </p>
                             </div>
                         </div>
 
                     </div>
 
-                    <!-- ==========================================
+<!-- ==========================================
                          DELIVERABLE: Component Library & Design Tokens
                          ========================================== -->
                     <div class="mt-6 p-5 sm:p-6 rounded-[20px] bg-white shadow-[0_4px_20px_rgba(15,27,51,0.06)] space-y-5">
