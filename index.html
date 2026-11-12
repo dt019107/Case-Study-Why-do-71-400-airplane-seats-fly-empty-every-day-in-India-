@@ -3018,12 +3018,12 @@
                             <div class="relative w-full max-w-[360px] mx-auto rounded-[54px] p-[10px] bg-[#14295B] shadow-[0_22px_55px_-10px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
                                 <div class="rounded-[44px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[796px] relative text-[#0F1B33] select-none">
                                     
-                                    <!-- Sky Header Gradient Band (~200pt tall) -->
-                                    <div class="shrink-0 pt-3 pb-4 px-5 text-white" style="background: linear-gradient(180deg, #2A6FC9 0%, #76AEE7 55%, #BFDDF7 85%, #F3F6FB 100%);">
+                                    <!-- Sky Header Gradient Band (~210pt tall) -->
+                                    <div class="shrink-0 pt-4 pb-6 px-6 text-white" style="background: linear-gradient(180deg, #2A6FC9 0%, #76AEE7 55%, #BFDDF7 85%, #F3F6FB 100%);">
                                         <!-- iOS Status Bar (9:41, Dynamic Island, Signal, Wi-Fi, Battery) -->
                                         <div class="flex items-center justify-between text-[12px] font-semibold select-none pb-2">
                                             <span>9:41</span>
-                                            <div class="w-[104px] h-[26px] bg-black rounded-full mx-auto flex items-center justify-between px-3 shadow-sm">
+                                            <div class="w-[108px] h-[28px] bg-black rounded-full mx-auto flex items-center justify-between px-3 shadow-sm">
                                                 <span class="w-2 h-2 rounded-full bg-[#1e293b]"></span>
                                                 <span class="w-1.5 h-1.5 rounded-full bg-[#0a1426]"></span>
                                             </div>
@@ -3036,70 +3036,70 @@
                                             </div>
                                         </div>
 
-                                        <!-- Greeting and Header Row -->
+                                        <!-- Greeting and Header Row (24pt side margin) -->
                                         <div class="flex items-center justify-between pt-1">
                                             <div>
                                                 <div class="text-[13px] font-normal text-white/90">Hello Ananya</div>
-                                                <h4 class="text-[22px] font-semibold tracking-tight text-white leading-tight">Seats near you</h4>
+                                                <h4 class="text-[24px] font-semibold tracking-tight text-white leading-tight">Seats near you</h4>
                                             </div>
-                                            <div class="relative w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white cursor-pointer hover:bg-white/30 transition-colors">
-                                                <i data-lucide="bell" class="w-4 h-4 text-white" stroke-width="1.5"></i>
+                                            <div class="relative w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white cursor-pointer hover:bg-white/30 transition-colors">
+                                                <i data-lucide="bell" class="w-5 h-5 text-white" stroke-width="1.5"></i>
                                                 <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-rose-500 ring-2 ring-white"></span>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!-- Screen Body (Scrollable) -->
-                                    <div class="px-4 -mt-2 space-y-3 flex-1 overflow-y-auto" style="scrollbar-width: thin;">
+                                    <!-- Screen Body (24pt Side Margins & 24pt Spacing) -->
+                                    <div class="px-6 -mt-2 space-y-6 flex-1 overflow-y-auto" style="scrollbar-width: thin;">
                                         
                                         <!-- Search-Style Card with Location & Segmented Control -->
-                                        <div class="bg-white rounded-[20px] p-3.5 shadow-[0_4px_20px_rgba(15,27,51,0.06)] space-y-2.5">
+                                        <div class="bg-white rounded-[20px] p-4 shadow-[0_4px_20px_rgba(15,27,51,0.06)] space-y-3">
                                             <!-- Verified Location Line -->
-                                            <div id="mockupGeoBar" class="flex items-center justify-between text-[13px] font-medium text-[#0F1B33]">
+                                            <div id="mockupGeoBar" class="flex items-center justify-between text-[14px] font-medium text-[#0F1B33]">
                                                 <div class="flex items-center gap-2 truncate">
                                                     <i id="mockupGeoIcon" data-lucide="check-circle" class="w-4 h-4 text-[#067647] shrink-0" stroke-width="1.5"></i>
                                                     <span id="mockupGeoText" class="truncate">BLR Terminal 1 • 1.2 km away</span>
                                                 </div>
-                                                <span id="mockupGeoBadge" class="text-[11px] font-semibold text-[#067647] bg-[#E7F6EC] px-2 py-0.5 rounded-full shrink-0">Verified</span>
+                                                <span id="mockupGeoBadge" class="text-[12px] font-semibold text-[#067647] bg-[#E7F6EC] px-2.5 py-0.5 rounded-full shrink-0">Verified</span>
                                             </div>
 
                                             <!-- Pill-shaped Segmented Control (Reference Style) -->
-                                            <div class="bg-[#EBF1F9] p-1 rounded-full flex items-center text-xs font-semibold">
-                                                <button id="laneTabStandby" onclick="setScreen1Lane('standby')" class="flex-1 py-1.5 rounded-full bg-white text-[#14295B] shadow-xs transition-all text-center">
+                                            <div class="bg-[#EBF1F9] p-1 rounded-full flex items-center text-[13px] font-semibold">
+                                                <button id="laneTabStandby" onclick="setScreen1Lane('standby')" class="flex-1 py-2 rounded-full bg-white text-[#14295B] shadow-xs transition-all text-center">
                                                     Standby
                                                 </button>
-                                                <button id="laneTabMedical" onclick="setScreen1Lane('medical')" class="flex-1 py-1.5 rounded-full text-[#5B6B85] hover:text-[#0F1B33] transition-all text-center flex items-center justify-center gap-1">
-                                                    <i data-lucide="plus" class="w-3 h-3 text-[#B42318]" stroke-width="2"></i>
+                                                <button id="laneTabMedical" onclick="setScreen1Lane('medical')" class="flex-1 py-2 rounded-full text-[#5B6B85] hover:text-[#0F1B33] transition-all text-center flex items-center justify-center gap-1.5">
+                                                    <i data-lucide="plus" class="w-3.5 h-3.5 text-[#B42318]" stroke-width="2"></i>
                                                     <span>Medical emergency</span>
                                                 </button>
                                             </div>
                                         </div>
 
                                         <!-- State 1A: In-Range View -->
-                                        <div id="mockupGeoStateIn" class="space-y-3">
+                                        <div id="mockupGeoStateIn" class="space-y-4">
                                             <!-- White Rounded Flight Ticket Card (Reference Style) -->
                                             <div class="bg-white rounded-[20px] shadow-[0_4px_20px_rgba(15,27,51,0.06)] overflow-hidden">
                                                 
                                                 <!-- Card Header: Monogram, Flight, Cabin -->
-                                                <div class="p-4 pb-2 flex items-center justify-between">
-                                                    <div class="flex items-center gap-2">
+                                                <div class="p-5 pb-2 flex items-center justify-between">
+                                                    <div class="flex items-center gap-2.5">
                                                         <!-- Neutral Monogram Vector -->
-                                                        <div class="w-7 h-7 rounded-lg bg-[#EBF1F9] flex items-center justify-center text-[#14295B]">
-                                                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <div class="w-8 h-8 rounded-lg bg-[#EBF1F9] flex items-center justify-center text-[#14295B]">
+                                                            <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                                                 <path d="M4 14l8-8 8 8M7 17l5-5 5 5"/>
                                                             </svg>
                                                         </div>
-                                                        <span class="font-bold text-[15px] text-[#0F1B33]">6E-205</span>
+                                                        <span class="font-bold text-[16px] text-[#0F1B33]">6E-205</span>
                                                     </div>
-                                                    <span class="text-[13px] font-medium text-[#5B6B85]">Economy Class</span>
+                                                    <span class="text-[14px] font-medium text-[#5B6B85]">Economy Class</span>
                                                 </div>
 
-                                                <!-- Route Row (BLR ---plane--- DEL) with large times -->
-                                                <div class="px-4 py-2 flex items-center justify-between">
+                                                <!-- Route Row (BLR ---plane--- DEL) with 30px numerals -->
+                                                <div class="px-5 py-3 flex items-center justify-between">
                                                     <div>
-                                                        <div class="text-[28px] font-bold text-[#0F1B33] leading-none tracking-tight">BLR</div>
+                                                        <div class="text-[30px] font-bold text-[#0F1B33] leading-none tracking-tight">BLR</div>
                                                         <div class="text-[12px] text-[#5B6B85] mt-1">Bengaluru</div>
-                                                        <div class="text-[15px] font-mono tabular-nums font-semibold text-[#0F1B33] mt-0.5">20:55</div>
+                                                        <div class="text-[18px] font-mono tabular-nums font-semibold text-[#0F1B33] mt-0.5">20:55</div>
                                                     </div>
 
                                                     <div class="flex-1 px-4 text-center">
@@ -3110,13 +3110,13 @@
                                                             <div class="border-t-2 border-dashed border-[#D5DCE8] flex-1"></div>
                                                             <span class="w-1.5 h-1.5 rounded-full bg-[#14295B]"></span>
                                                         </div>
-                                                        <div class="text-[11px] font-mono text-[#5B6B85] mt-1">2h 45m</div>
+                                                        <div class="text-[12px] font-mono text-[#5B6B85] mt-1">2h 45m</div>
                                                     </div>
 
                                                     <div class="text-right">
-                                                        <div class="text-[28px] font-bold text-[#0F1B33] leading-none tracking-tight">DEL</div>
+                                                        <div class="text-[30px] font-bold text-[#0F1B33] leading-none tracking-tight">DEL</div>
                                                         <div class="text-[12px] text-[#5B6B85] mt-1">New Delhi</div>
-                                                        <div class="text-[15px] font-mono tabular-nums font-semibold text-[#0F1B33] mt-0.5">23:40</div>
+                                                        <div class="text-[18px] font-mono tabular-nums font-semibold text-[#0F1B33] mt-0.5">23:40</div>
                                                     </div>
                                                 </div>
 
@@ -3128,8 +3128,8 @@
                                                 </div>
 
                                                 <!-- Flight Footer: Time, Luggage, and Price Comparison -->
-                                                <div class="p-4 pt-1 space-y-3">
-                                                    <div class="flex items-center justify-between text-[13px] text-[#5B6B85]">
+                                                <div class="p-5 pt-1 space-y-3">
+                                                    <div class="flex items-center justify-between text-[14px] text-[#5B6B85]">
                                                         <div class="flex items-center gap-1.5">
                                                             <i data-lucide="clock" class="w-4 h-4 text-[#14295B]" stroke-width="1.5"></i>
                                                             <span>Leaves in 2 h 20 min</span>
@@ -3140,14 +3140,14 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="bg-[#F8FAFD] rounded-[14px] p-3 space-y-1">
-                                                        <div class="flex justify-between items-center text-[13px] text-[#5B6B85]">
+                                                    <div class="bg-[#F8FAFD] rounded-[14px] p-3.5 space-y-1">
+                                                        <div class="flex justify-between items-center text-[14px] text-[#5B6B85]">
                                                             <span>Regular fare today</span>
                                                             <span class="line-through font-mono tabular-nums">Rs 21,400</span>
                                                         </div>
                                                         <div class="flex justify-between items-baseline pt-0.5">
-                                                            <span class="text-[15px] font-semibold text-[#0F1B33]">AeroFill standby</span>
-                                                            <span class="text-[22px] font-bold text-[#14295B] font-mono tabular-nums">Rs 3,200</span>
+                                                            <span class="text-[16px] font-semibold text-[#0F1B33]">AeroFill standby</span>
+                                                            <span class="text-[24px] font-bold text-[#14295B] font-mono tabular-nums">Rs 3,200</span>
                                                         </div>
                                                         <div class="text-[12px] text-[#5B6B85] pt-0.5">
                                                             About 24 seats open
@@ -3158,29 +3158,31 @@
                                             </div>
 
                                             <!-- Warning-tint Note -->
-                                            <div class="bg-[#FEF0C7] text-[#B54708] rounded-[14px] p-3 text-[12px] font-medium leading-snug">
+                                            <div class="bg-[#FEF0C7] text-[#B54708] rounded-[14px] p-3.5 text-[12px] font-medium leading-snug">
                                                 Standby is not guaranteed. If no seat clears, you get a full refund.
                                             </div>
 
-                                            <!-- Primary Navy CTA (54pt tall) -->
-                                            <button id="btnScreen1CTA" onclick="setMockupAbdmState('form')" class="w-full h-[54px] rounded-[14px] bg-[#14295B] text-white font-semibold text-[15px] flex items-center justify-center shadow-xs hover:bg-[#0c1a3b] transition-colors">
-                                                Continue with standby
-                                            </button>
+                                            <!-- Primary Navy CTA (56pt tall, 14pt radius) -->
+                                            <div class="pt-1">
+                                                <button id="btnScreen1CTA" onclick="setMockupAbdmState('form')" class="w-full h-[56px] rounded-[14px] bg-[#14295B] text-white font-semibold text-[16px] flex items-center justify-center shadow-xs hover:bg-[#0c1a3b] transition-colors">
+                                                    Continue with standby
+                                                </button>
+                                            </div>
                                         </div>
 
                                         <!-- State 1B: 26 km Out of Range -->
                                         <div id="mockupGeoStateOut" class="space-y-4 hidden py-6">
-                                            <div class="bg-white rounded-[20px] p-5 space-y-3 text-center shadow-[0_4px_20px_rgba(15,27,51,0.06)]">
+                                            <div class="bg-white rounded-[20px] p-6 space-y-3 text-center shadow-[0_4px_20px_rgba(15,27,51,0.06)]">
                                                 <div class="w-12 h-12 rounded-full bg-[#FEF0C7] text-[#B54708] flex items-center justify-center mx-auto">
                                                     <i data-lucide="map-pin-off" class="w-6 h-6" stroke-width="1.5"></i>
                                                 </div>
-                                                <div class="text-[17px] font-semibold text-[#0F1B33]">
+                                                <div class="text-[18px] font-semibold text-[#0F1B33]">
                                                     Standby opens within 15 km of the airport
                                                 </div>
-                                                <p class="text-[13px] text-[#5B6B85] leading-relaxed">
+                                                <p class="text-[14px] text-[#5B6B85] leading-relaxed">
                                                     You are currently 26 km away. To prevent remote booking from offices, you must be positioned near BLR airport.
                                                 </p>
-                                                <button onclick="setMockupGeofence('in')" class="w-full h-[54px] rounded-[14px] bg-[#14295B] text-white font-semibold text-[15px] flex items-center justify-center hover:bg-[#0c1a3b] transition-colors">
+                                                <button onclick="setMockupGeofence('in')" class="w-full h-[56px] rounded-[14px] bg-[#14295B] text-white font-semibold text-[16px] flex items-center justify-center hover:bg-[#0c1a3b] transition-colors mt-2">
                                                     Get directions
                                                 </button>
                                             </div>
@@ -3188,17 +3190,17 @@
 
                                         <!-- State 1C: Before Window Opens (17:55) -->
                                         <div id="mockupGeoStateWin" class="space-y-4 hidden py-6">
-                                            <div class="bg-white rounded-[20px] p-5 space-y-3 text-center shadow-[0_4px_20px_rgba(15,27,51,0.06)]">
+                                            <div class="bg-white rounded-[20px] p-6 space-y-3 text-center shadow-[0_4px_20px_rgba(15,27,51,0.06)]">
                                                 <div class="w-12 h-12 rounded-full bg-slate-100 text-[#14295B] flex items-center justify-center mx-auto">
                                                     <i data-lucide="clock" class="w-6 h-6" stroke-width="1.5"></i>
                                                 </div>
-                                                <div class="text-[17px] font-semibold text-[#0F1B33]">
+                                                <div class="text-[18px] font-semibold text-[#0F1B33]">
                                                     Opens at 17:55
                                                 </div>
-                                                <p class="text-[13px] text-[#5B6B85] leading-relaxed">
+                                                <p class="text-[14px] text-[#5B6B85] leading-relaxed">
                                                     Standby seats open exactly 3 hours before departure. Check back at 17:55 IST.
                                                 </p>
-                                                <button onclick="setMockupGeofence('in')" class="w-full h-[54px] rounded-[14px] bg-white border-2 border-[#14295B] text-[#14295B] font-semibold text-[15px] flex items-center justify-center hover:bg-slate-50 transition-colors">
+                                                <button onclick="setMockupGeofence('in')" class="w-full h-[56px] rounded-[14px] bg-white border-2 border-[#14295B] text-[#14295B] font-semibold text-[16px] flex items-center justify-center hover:bg-slate-50 transition-colors mt-2">
                                                     Remind me
                                                 </button>
                                             </div>
@@ -3207,28 +3209,28 @@
                                     </div>
 
                                     <!-- Bottom Tab Bar with Outline Icons (Home Active) -->
-                                    <div class="bg-white border-t border-[#D5DCE8]/70 px-6 py-2.5 flex items-center justify-between shrink-0 shadow-xs">
+                                    <div class="bg-white border-t border-[#D5DCE8]/70 px-8 py-3 flex items-center justify-between shrink-0 shadow-xs">
                                         <div class="flex flex-col items-center text-[#14295B] cursor-pointer">
                                             <i data-lucide="home" class="w-5 h-5" stroke-width="1.8"></i>
-                                            <span class="text-[11px] font-semibold mt-0.5">Home</span>
+                                            <span class="text-[12px] font-semibold mt-0.5">Home</span>
                                         </div>
                                         <div class="flex flex-col items-center text-[#5B6B85] hover:text-[#0F1B33] cursor-pointer">
                                             <i data-lucide="ticket" class="w-5 h-5" stroke-width="1.5"></i>
-                                            <span class="text-[11px] font-medium mt-0.5">My Passes</span>
+                                            <span class="text-[12px] font-medium mt-0.5">My Passes</span>
                                         </div>
                                         <div class="flex flex-col items-center text-[#5B6B85] hover:text-[#0F1B33] cursor-pointer">
                                             <i data-lucide="bell" class="w-5 h-5" stroke-width="1.5"></i>
-                                            <span class="text-[11px] font-medium mt-0.5">Alerts</span>
+                                            <span class="text-[12px] font-medium mt-0.5">Alerts</span>
                                         </div>
                                         <div class="flex flex-col items-center text-[#5B6B85] hover:text-[#0F1B33] cursor-pointer">
                                             <i data-lucide="user" class="w-5 h-5" stroke-width="1.5"></i>
-                                            <span class="text-[11px] font-medium mt-0.5">Profile</span>
+                                            <span class="text-[12px] font-medium mt-0.5">Profile</span>
                                         </div>
                                     </div>
 
                                     <!-- iOS Bottom Safe Area with Home Indicator -->
-                                    <div class="bg-white py-1 flex justify-center shrink-0">
-                                        <div class="w-32 h-1 bg-slate-300 rounded-full"></div>
+                                    <div class="bg-white py-2 flex justify-center shrink-0">
+                                        <div class="w-36 h-1 bg-slate-300 rounded-full"></div>
                                     </div>
                                 </div>
                             </div>
@@ -3258,14 +3260,14 @@
                             <div class="relative w-full max-w-[360px] mx-auto rounded-[54px] p-[10px] bg-[#14295B] shadow-[0_22px_55px_-10px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
                                 <div class="rounded-[44px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[796px] relative text-[#0F1B33] select-none">
                                     
-                                    <!-- Sky Header Gradient Band -->
-                                    <div class="shrink-0 pt-3 pb-4 px-5 text-white" style="background: linear-gradient(180deg, #2A6FC9 0%, #76AEE7 55%, #BFDDF7 85%, #F3F6FB 100%);">
-                                        <!-- iOS Status Bar -->
-                                        <div class="flex items-center justify-between text-[12px] font-semibold select-none pb-2">
+                                    <!-- Sky Header Gradient Band (~210pt tall) -->
+                                    <div class="shrink-0 pt-4 pb-6 px-6 text-white" style="background: linear-gradient(180deg, #2A6FC9 0%, #76AEE7 55%, #BFDDF7 85%, #F3F6FB 100%);">
+                                        <!-- iOS Status Bar & Dynamic Island (440 pt width) -->
+                                        <div class="flex items-center justify-between text-[13px] font-semibold select-none pb-2">
                                             <span>9:41</span>
-                                            <div class="w-[104px] h-[26px] bg-black rounded-full mx-auto flex items-center justify-between px-3 shadow-sm">
-                                                <span class="w-2 h-2 rounded-full bg-[#1e293b]"></span>
-                                                <span class="w-1.5 h-1.5 rounded-full bg-[#0a1426]"></span>
+                                            <div class="w-[108px] h-[28px] bg-black rounded-full mx-auto flex items-center justify-between px-3 shadow-sm">
+                                                <span class="w-2.5 h-2.5 rounded-full bg-[#1e293b]"></span>
+                                                <span class="w-2 h-2 rounded-full bg-[#0a1426]"></span>
                                             </div>
                                             <div class="flex items-center gap-1.5 text-white">
                                                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M2 20h20L12 4 2 20z"/></svg>
@@ -3281,17 +3283,17 @@
                                             <button class="w-6 h-6 flex items-center justify-center text-white" aria-label="Back">
                                                 <i data-lucide="arrow-left" class="w-5 h-5" stroke-width="1.5"></i>
                                             </button>
-                                            <h4 class="text-[17px] font-semibold tracking-tight text-white leading-tight">Step 1 of 3</h4>
+                                            <h4 class="text-[18px] font-semibold tracking-tight text-white leading-tight">Step 1 of 3</h4>
                                         </div>
                                     </div>
 
-                                    <!-- Screen Body -->
-                                    <div class="px-4 -mt-2 space-y-4 flex-1 flex flex-col justify-between overflow-y-auto" style="scrollbar-width: thin;">
-                                        <div class="space-y-3.5 text-left">
+                                    <!-- Screen Body (24pt Side Margins, 24pt Card Spacing) -->
+                                    <div class="px-6 -mt-3 space-y-6 flex-1 flex flex-col justify-between overflow-y-auto" style="scrollbar-width: thin;">
+                                        <div class="space-y-6 text-left">
                                             
                                             <!-- White Card with Three Conditions -->
-                                            <div class="bg-white rounded-[20px] p-5 shadow-[0_4px_20px_rgba(15,27,51,0.06)] space-y-4">
-                                                <h4 class="text-[22px] font-semibold text-[#0F1B33] leading-tight">
+                                            <div class="bg-white rounded-[20px] p-6 shadow-[0_4px_20px_rgba(15,27,51,0.06)] space-y-5">
+                                                <h4 class="text-[24px] font-semibold text-[#0F1B33] leading-tight">
                                                     Three conditions for standby
                                                 </h4>
 
@@ -3299,8 +3301,8 @@
                                                 <div class="flex items-start gap-3 pt-1">
                                                     <i data-lucide="armchair" class="w-5 h-5 text-[#14295B] shrink-0 mt-0.5" stroke-width="1.5"></i>
                                                     <div>
-                                                        <div class="font-semibold text-[15px] text-[#0F1B33]">Seat is assigned</div>
-                                                        <div class="text-[13px] text-[#5B6B85] leading-snug mt-0.5">You get a middle seat (B or E), confirmed at the gate.</div>
+                                                        <div class="font-semibold text-[16px] text-[#0F1B33]">Seat is assigned</div>
+                                                        <div class="text-[14px] text-[#5B6B85] leading-snug mt-0.5">You get a middle seat (B or E), confirmed at the gate.</div>
                                                     </div>
                                                 </div>
 
@@ -3310,8 +3312,8 @@
                                                 <div class="flex items-start gap-3">
                                                     <i data-lucide="briefcase" class="w-5 h-5 text-[#14295B] shrink-0 mt-0.5" stroke-width="1.5"></i>
                                                     <div>
-                                                        <div class="font-semibold text-[15px] text-[#0F1B33]">Backpack only</div>
-                                                        <div class="text-[13px] text-[#5B6B85] leading-snug mt-0.5">7 kg, no checked bags. It keeps the flight on time.</div>
+                                                        <div class="font-semibold text-[16px] text-[#0F1B33]">Backpack only</div>
+                                                        <div class="text-[14px] text-[#5B6B85] leading-snug mt-0.5">7 kg, no checked bags. It keeps the flight on time.</div>
                                                     </div>
                                                 </div>
 
@@ -3321,8 +3323,8 @@
                                                 <div class="flex items-start gap-3">
                                                     <i data-lucide="clock" class="w-5 h-5 text-[#14295B] shrink-0 mt-0.5" stroke-width="1.5"></i>
                                                     <div>
-                                                        <div class="font-semibold text-[15px] text-[#0F1B33]">Flexible by 90 minutes</div>
-                                                        <div class="text-[13px] text-[#5B6B85] leading-snug mt-0.5">Your flight is confirmed 45 minutes before departure.</div>
+                                                        <div class="font-semibold text-[16px] text-[#0F1B33]">Flexible by 90 minutes</div>
+                                                        <div class="text-[14px] text-[#5B6B85] leading-snug mt-0.5">Your flight is confirmed 45 minutes before departure.</div>
                                                     </div>
                                                 </div>
 
@@ -3334,8 +3336,8 @@
                                                         <i data-lucide="plus" class="w-3.5 h-3.5" stroke-width="2"></i>
                                                     </div>
                                                     <div>
-                                                        <div class="font-semibold text-[15px] text-[#0F1B33]">Priority boarding</div>
-                                                        <div class="text-[13px] text-[#5B6B85] leading-snug mt-0.5">You board first once verified.</div>
+                                                        <div class="font-semibold text-[16px] text-[#0F1B33]">Priority boarding</div>
+                                                        <div class="text-[14px] text-[#5B6B85] leading-snug mt-0.5">You board first once verified.</div>
                                                     </div>
                                                 </div>
 
@@ -3344,24 +3346,24 @@
                                             <!-- Checkbox Card -->
                                             <div class="bg-white rounded-[20px] p-4 shadow-[0_4px_20px_rgba(15,27,51,0.06)] flex items-center gap-3 cursor-pointer" onclick="toggleStandbyConditions()">
                                                 <input type="checkbox" id="acceptConditionsCheck" onclick="event.stopPropagation(); toggleStandbyConditions();" class="w-5 h-5 rounded border-2 border-[#14295B] text-[#14295B] focus:ring-0 cursor-pointer accent-[#14295B]">
-                                                <label for="acceptConditionsCheck" class="text-[13px] font-medium text-[#0F1B33] cursor-pointer select-none">
+                                                <label for="acceptConditionsCheck" class="text-[14px] font-medium text-[#0F1B33] cursor-pointer select-none">
                                                     I accept these conditions.
                                                 </label>
                                             </div>
 
                                         </div>
 
-                                        <!-- Pinned Primary CTA (54pt tall) -->
-                                        <div class="pb-3">
-                                            <button id="btnContinueStandby" disabled onclick="setMockupAbdmState('form')" class="w-full h-[54px] rounded-[14px] bg-[#D5DCE8] text-[#5B6B85] font-semibold text-[15px] flex items-center justify-center cursor-not-allowed transition-all">
+                                        <!-- Pinned Primary CTA (56pt tall, 14pt radius) -->
+                                        <div class="pb-4">
+                                            <button id="btnContinueStandby" disabled onclick="setMockupAbdmState('form')" class="w-full h-[56px] rounded-[14px] bg-[#D5DCE8] text-[#5B6B85] font-semibold text-[16px] flex items-center justify-center cursor-not-allowed transition-all">
                                                 Continue
                                             </button>
                                         </div>
 
                                     </div>
 
-                                    <!-- iOS Bottom Safe Area with Home Indicator -->
-                                    <div class="bg-[#F3F6FB] py-2 flex justify-center shrink-0">
+                                    <!-- iOS Bottom Safe Area with Home Indicator (34pt height) -->
+                                    <div class="bg-[#F3F6FB] py-3 flex justify-center shrink-0">
                                         <div class="w-32 h-1 bg-slate-300 rounded-full"></div>
                                     </div>
                                 </div>
@@ -3398,14 +3400,14 @@
                             <div class="relative w-full max-w-[360px] mx-auto rounded-[54px] p-[10px] bg-[#14295B] shadow-[0_22px_55px_-10px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
                                 <div class="rounded-[44px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[796px] relative text-[#0F1B33] select-none">
                                     
-                                    <!-- Sky Header Gradient Band -->
-                                    <div class="shrink-0 pt-3 pb-4 px-5 text-white" style="background: linear-gradient(180deg, #2A6FC9 0%, #76AEE7 55%, #BFDDF7 85%, #F3F6FB 100%);">
-                                        <!-- iOS Status Bar -->
-                                        <div class="flex items-center justify-between text-[12px] font-semibold select-none pb-2">
+                                    <!-- Sky Header Gradient Band (~210pt tall) -->
+                                    <div class="shrink-0 pt-4 pb-6 px-6 text-white" style="background: linear-gradient(180deg, #2A6FC9 0%, #76AEE7 55%, #BFDDF7 85%, #F3F6FB 100%);">
+                                        <!-- iOS Status Bar & Dynamic Island (440 pt width) -->
+                                        <div class="flex items-center justify-between text-[13px] font-semibold select-none pb-2">
                                             <span>9:41</span>
-                                            <div class="w-[104px] h-[26px] bg-black rounded-full mx-auto flex items-center justify-between px-3 shadow-sm">
-                                                <span class="w-2 h-2 rounded-full bg-[#1e293b]"></span>
-                                                <span class="w-1.5 h-1.5 rounded-full bg-[#0a1426]"></span>
+                                            <div class="w-[108px] h-[28px] bg-black rounded-full mx-auto flex items-center justify-between px-3 shadow-sm">
+                                                <span class="w-2.5 h-2.5 rounded-full bg-[#1e293b]"></span>
+                                                <span class="w-2 h-2 rounded-full bg-[#0a1426]"></span>
                                             </div>
                                             <div class="flex items-center gap-1.5 text-white">
                                                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M2 20h20L12 4 2 20z"/></svg>
@@ -3421,25 +3423,25 @@
                                             <button class="w-6 h-6 flex items-center justify-center text-white" aria-label="Back">
                                                 <i data-lucide="arrow-left" class="w-5 h-5" stroke-width="1.5"></i>
                                             </button>
-                                            <h4 class="text-[17px] font-semibold tracking-tight text-white leading-tight">Step 2 of 3</h4>
+                                            <h4 class="text-[18px] font-semibold tracking-tight text-white leading-tight">Step 2 of 3</h4>
                                         </div>
                                     </div>
 
-                                    <!-- Screen Body -->
-                                    <div class="px-4 -mt-2 space-y-4 flex-1 flex flex-col justify-between overflow-y-auto" style="scrollbar-width: thin;">
+                                    <!-- Screen Body (24pt Side Margins, 24pt Card Spacing) -->
+                                    <div class="px-6 -mt-3 space-y-6 flex-1 flex flex-col justify-between overflow-y-auto" style="scrollbar-width: thin;">
                                         
                                         <!-- State 3A: Idle Form View -->
-                                        <div id="mockupAbdmForm" class="space-y-3.5 text-left">
-                                            <div class="bg-white rounded-[20px] p-5 shadow-[0_4px_20px_rgba(15,27,51,0.06)] space-y-3.5">
-                                                <h4 class="text-[22px] font-semibold text-[#0F1B33] leading-tight">
+                                        <div id="mockupAbdmForm" class="space-y-4 text-left">
+                                            <div class="bg-white rounded-[20px] p-6 shadow-[0_4px_20px_rgba(15,27,51,0.06)] space-y-4">
+                                                <h4 class="text-[24px] font-semibold text-[#0F1B33] leading-tight">
                                                     Confirm hospital admission
                                                 </h4>
 
                                                 <!-- Field 1: Relationship to patient -->
                                                 <div class="space-y-1">
-                                                    <label class="block text-[13px] font-semibold text-[#0F1B33]">Relationship to patient</label>
+                                                    <label class="block text-[14px] font-semibold text-[#0F1B33]">Relationship to patient</label>
                                                     <div class="relative">
-                                                        <select class="w-full h-[48px] px-3.5 pr-8 rounded-[14px] border border-[#D5DCE8] bg-white text-[#0F1B33] text-[15px] font-medium appearance-none">
+                                                        <select class="w-full h-[50px] px-4 pr-9 rounded-[14px] border border-[#D5DCE8] bg-white text-[#0F1B33] text-[16px] font-medium appearance-none">
                                                             <option>Mother (Savitri Sharma)</option>
                                                             <option>Father</option>
                                                             <option>Spouse</option>
@@ -3451,27 +3453,27 @@
 
                                                 <!-- Field 2: Hospital name -->
                                                 <div class="space-y-1">
-                                                    <label class="block text-[13px] font-semibold text-[#0F1B33]">Hospital name</label>
-                                                    <input type="text" value="AIIMS New Delhi — ICU Ward 4B" class="w-full h-[48px] px-3.5 rounded-[14px] border border-[#D5DCE8] bg-white text-[#0F1B33] text-[15px] font-medium focus:outline-hidden">
+                                                    <label class="block text-[14px] font-semibold text-[#0F1B33]">Hospital name</label>
+                                                    <input type="text" value="AIIMS New Delhi — ICU Ward 4B" class="w-full h-[50px] px-4 rounded-[14px] border border-[#D5DCE8] bg-white text-[#0F1B33] text-[16px] font-medium focus:outline-hidden">
                                                 </div>
 
                                                 <!-- Field 3: ABHA number (formatted) -->
                                                 <div class="space-y-1">
-                                                    <label class="block text-[13px] font-semibold text-[#0F1B33]">ABHA number</label>
-                                                    <input type="text" value="12-3456-7890-1234" class="w-full h-[48px] px-3.5 rounded-[14px] border-2 border-[#14295B] bg-white text-[#0F1B33] font-mono tabular-nums text-[15px] font-semibold focus:outline-hidden">
-                                                    <div class="text-[12px] text-[#5B6B85] mt-0.5">ABHA number must be 14 digits</div>
+                                                    <label class="block text-[14px] font-semibold text-[#0F1B33]">ABHA number</label>
+                                                    <input type="text" value="12-3456-7890-1234" class="w-full h-[50px] px-4 rounded-[14px] border-2 border-[#14295B] bg-white text-[#0F1B33] font-mono tabular-nums text-[16px] font-semibold focus:outline-hidden">
+                                                    <div class="text-[12px] text-[#5B6B85] mt-1">ABHA number must be 14 digits</div>
                                                 </div>
 
-                                                <!-- Primary CTA (54pt tall) -->
-                                                <button onclick="setMockupAbdmState('verify')" class="w-full h-[54px] rounded-[14px] bg-[#14295B] text-white font-semibold text-[15px] flex items-center justify-center hover:bg-[#0c1a3b] transition-colors mt-2">
+                                                <!-- Primary CTA (56pt tall, 14pt radius) -->
+                                                <button onclick="setMockupAbdmState('verify')" class="w-full h-[56px] rounded-[14px] bg-[#14295B] text-white font-semibold text-[16px] flex items-center justify-center hover:bg-[#0c1a3b] transition-colors mt-3">
                                                     Verify with ABHA
                                                 </button>
 
                                                 <!-- Text Link -->
                                                 <div class="text-center pt-1">
-                                                    <a href="javascript:void(0)" class="text-[13px] font-semibold text-[#14295B] underline hover:text-[#0c1a3b]">
+                                                    <button onclick="setMockupAbdmState('verify')" class="text-[14px] font-medium text-[#14295B] hover:underline">
                                                         Upload admission note instead
-                                                    </a>
+                                                    </button>
                                                 </div>
 
                                                 <!-- Privacy Text -->
@@ -3482,14 +3484,14 @@
                                         </div>
 
                                         <!-- State 3B: Verifying State (Under 90s) -->
-                                        <div id="mockupAbdmVerify" class="space-y-4 hidden py-8 text-left">
-                                            <div class="bg-white rounded-[20px] p-6 shadow-[0_4px_20px_rgba(15,27,51,0.06)] space-y-4">
-                                                <h4 class="text-[17px] font-semibold text-[#0F1B33]">
+                                        <div id="mockupAbdmVerify" class="space-y-4 hidden py-6 text-left">
+                                            <div class="bg-white rounded-[20px] p-6 shadow-[0_4px_20px_rgba(15,27,51,0.06)] space-y-5">
+                                                <h4 class="text-[24px] font-semibold text-[#0F1B33] leading-tight">
                                                     Verifying emergency admission
                                                 </h4>
 
                                                 <!-- Thin Progress Bar -->
-                                                <div class="w-full h-1 bg-[#D5DCE8] rounded-full overflow-hidden">
+                                                <div class="w-full h-1.5 bg-[#D5DCE8] rounded-full overflow-hidden">
                                                     <div class="h-full bg-[#14295B] w-2/3 rounded-full transition-all duration-700"></div>
                                                 </div>
 
@@ -3497,19 +3499,19 @@
                                                 <div class="space-y-3 pt-1">
                                                     <div class="flex items-center gap-3">
                                                         <i data-lucide="check-circle" class="w-5 h-5 text-[#067647]" stroke-width="1.5"></i>
-                                                        <span class="text-[15px] font-medium text-[#0F1B33]">Reading document</span>
+                                                        <span class="text-[14px] font-medium text-[#0F1B33]">Reading document</span>
                                                     </div>
                                                     <div class="flex items-center gap-3">
                                                         <i data-lucide="check-circle" class="w-5 h-5 text-[#067647]" stroke-width="1.5"></i>
-                                                        <span class="text-[15px] font-medium text-[#0F1B33]">Checking hospital record</span>
+                                                        <span class="text-[14px] font-medium text-[#0F1B33]">Checking hospital record</span>
                                                     </div>
                                                     <div class="flex items-center gap-3">
                                                         <i data-lucide="loader-2" class="w-5 h-5 text-[#14295B] animate-spin" stroke-width="1.5"></i>
-                                                        <span class="text-[15px] font-medium text-[#0F1B33]">Clearing priority</span>
+                                                        <span class="text-[14px] font-medium text-[#0F1B33]">Clearing priority</span>
                                                     </div>
                                                 </div>
 
-                                                <div class="text-[13px] text-[#5B6B85] pt-2 border-t-2 border-dashed border-[#D5DCE8]">
+                                                <div class="text-[12px] text-[#5B6B85] pt-2 border-t-2 border-dashed border-[#D5DCE8]">
                                                     Usually under 90 seconds
                                                 </div>
                                             </div>
@@ -3517,18 +3519,18 @@
 
                                         <!-- State 3C: Failure / Gateway Timeout State -->
                                         <div id="mockupAbdmFail" class="space-y-4 hidden py-6 text-left">
-                                            <div class="bg-[#FDECEA] rounded-[20px] p-6 space-y-3 shadow-[0_4px_20px_rgba(15,27,51,0.06)]">
-                                                <div class="text-[17px] font-semibold text-[#B42318]">
+                                            <div class="bg-[#FDECEA] rounded-[20px] p-6 space-y-4 shadow-[0_4px_20px_rgba(15,27,51,0.06)]">
+                                                <div class="text-[18px] font-semibold text-[#B42318]">
                                                     We couldn't confirm this automatically
                                                 </div>
-                                                <p class="text-[13px] text-[#5B6B85] leading-relaxed">
+                                                <p class="text-[14px] text-[#5B6B85] leading-relaxed">
                                                     The hospital server did not respond. Your standby seat is held for 15 minutes so you never lose your place.
                                                 </p>
-                                                <div class="space-y-2 pt-2">
-                                                    <button onclick="setMockupAbdmState('verify')" class="w-full h-[54px] rounded-[14px] bg-[#14295B] text-white font-semibold text-[15px] flex items-center justify-center hover:bg-[#0c1a3b] transition-colors">
+                                                <div class="space-y-3 pt-2">
+                                                    <button onclick="setMockupAbdmState('verify')" class="w-full h-[56px] rounded-[14px] bg-[#14295B] text-white font-semibold text-[16px] flex items-center justify-center hover:bg-[#0c1a3b] transition-colors">
                                                         Try again
                                                     </button>
-                                                    <button class="w-full h-[54px] rounded-[14px] bg-white border-2 border-[#14295B] text-[#14295B] font-semibold text-[15px] flex items-center justify-center hover:bg-slate-50 transition-colors">
+                                                    <button class="w-full h-[56px] rounded-[14px] bg-white border-2 border-[#14295B] text-[#14295B] font-semibold text-[16px] flex items-center justify-center hover:bg-slate-50 transition-colors">
                                                         Call us now
                                                     </button>
                                                 </div>
@@ -3537,14 +3539,14 @@
 
                                         <!-- State 3D: Student Lane Variant -->
                                         <div id="mockupAbdmStudent" class="space-y-4 hidden py-6 text-left">
-                                            <div class="bg-white rounded-[20px] p-6 space-y-3 shadow-[0_4px_20px_rgba(15,27,51,0.06)]">
-                                                <div class="text-[17px] font-semibold text-[#0F1B33]">
+                                            <div class="bg-white rounded-[20px] p-6 space-y-4 shadow-[0_4px_20px_rgba(15,27,51,0.06)]">
+                                                <div class="text-[24px] font-semibold text-[#0F1B33]">
                                                     Verify student ID
                                                 </div>
-                                                <p class="text-[13px] text-[#5B6B85] leading-relaxed">
+                                                <p class="text-[14px] text-[#5B6B85] leading-relaxed">
                                                     Fetch active university enrollment records directly from DigiLocker without submitting physical documents.
                                                 </p>
-                                                <button class="w-full h-[54px] rounded-[14px] bg-[#14295B] text-white font-semibold text-[15px] flex items-center justify-center hover:bg-[#0c1a3b] transition-colors">
+                                                <button class="w-full h-[56px] rounded-[14px] bg-[#14295B] text-white font-semibold text-[16px] flex items-center justify-center hover:bg-[#0c1a3b] transition-colors">
                                                     Fetch from DigiLocker
                                                 </button>
                                             </div>
@@ -3552,8 +3554,8 @@
 
                                     </div>
 
-                                    <!-- iOS Bottom Safe Area with Home Indicator -->
-                                    <div class="bg-[#F3F6FB] py-2 flex justify-center shrink-0">
+                                    <!-- iOS Bottom Safe Area with Home Indicator (34pt height) -->
+                                    <div class="bg-[#F3F6FB] py-3 flex justify-center shrink-0">
                                         <div class="w-32 h-1 bg-slate-300 rounded-full"></div>
                                     </div>
                                 </div>
@@ -3584,14 +3586,14 @@
                             <div class="relative w-full max-w-[360px] mx-auto rounded-[54px] p-[10px] bg-[#14295B] shadow-[0_22px_55px_-10px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
                                 <div class="rounded-[44px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[796px] relative text-[#0F1B33] select-none">
                                     
-                                    <!-- Sky Header Gradient Band -->
-                                    <div class="shrink-0 pt-3 pb-4 px-5 text-white" style="background: linear-gradient(180deg, #2A6FC9 0%, #76AEE7 55%, #BFDDF7 85%, #F3F6FB 100%);">
-                                        <!-- iOS Status Bar -->
-                                        <div class="flex items-center justify-between text-[12px] font-semibold select-none pb-2">
+                                    <!-- Sky Header Gradient Band (~210pt tall) -->
+                                    <div class="shrink-0 pt-4 pb-6 px-6 text-white" style="background: linear-gradient(180deg, #2A6FC9 0%, #76AEE7 55%, #BFDDF7 85%, #F3F6FB 100%);">
+                                        <!-- iOS Status Bar & Dynamic Island (440 pt width) -->
+                                        <div class="flex items-center justify-between text-[13px] font-semibold select-none pb-2">
                                             <span>9:41</span>
-                                            <div class="w-[104px] h-[26px] bg-black rounded-full mx-auto flex items-center justify-between px-3 shadow-sm">
-                                                <span class="w-2 h-2 rounded-full bg-[#1e293b]"></span>
-                                                <span class="w-1.5 h-1.5 rounded-full bg-[#0a1426]"></span>
+                                            <div class="w-[108px] h-[28px] bg-black rounded-full mx-auto flex items-center justify-between px-3 shadow-sm">
+                                                <span class="w-2.5 h-2.5 rounded-full bg-[#1e293b]"></span>
+                                                <span class="w-2 h-2 rounded-full bg-[#0a1426]"></span>
                                             </div>
                                             <div class="flex items-center gap-1.5 text-white">
                                                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M2 20h20L12 4 2 20z"/></svg>
@@ -3607,11 +3609,11 @@
                                             <button class="w-6 h-6 flex items-center justify-center text-white" aria-label="Back">
                                                 <i data-lucide="arrow-left" class="w-5 h-5" stroke-width="1.5"></i>
                                             </button>
-                                            <h4 class="text-[17px] font-semibold tracking-tight text-white leading-tight">Boarding Pass</h4>
+                                            <h4 class="text-[18px] font-semibold tracking-tight text-white leading-tight">Boarding Pass</h4>
                                         </div>
 
                                         <!-- Pill Segmented Control: Next flight | Last passes (Reference Style) -->
-                                        <div class="bg-white/20 p-1 rounded-full flex items-center text-xs font-semibold mt-3">
+                                        <div class="bg-white/20 p-1 rounded-full flex items-center text-[14px] font-semibold mt-3">
                                             <button class="flex-1 py-1.5 rounded-full bg-white text-[#14295B] shadow-xs text-center">
                                                 Next flight
                                             </button>
@@ -3621,43 +3623,43 @@
                                         </div>
                                     </div>
 
-                                    <!-- Screen Body -->
-                                    <div class="px-4 -mt-2 space-y-3 flex-1 overflow-y-auto" style="scrollbar-width: thin;">
+                                    <!-- Screen Body (24pt Side Margins, 24pt Card Spacing) -->
+                                    <div class="px-6 -mt-3 space-y-5 flex-1 overflow-y-auto" style="scrollbar-width: thin;">
                                         
                                         <!-- Real Ticket Boarding Pass Card (Reference Style, White Surface) -->
                                         <div class="bg-white rounded-[20px] shadow-[0_4px_20px_rgba(15,27,51,0.06)] overflow-hidden">
                                             
                                             <!-- Top Row: Monogram, Flight, Standby & Priority Tags -->
-                                            <div class="p-4 pb-2 flex items-center justify-between">
+                                            <div class="p-5 pb-2 flex items-center justify-between">
                                                 <div class="flex items-center gap-2">
-                                                    <div class="w-7 h-7 rounded-lg bg-[#EBF1F9] flex items-center justify-center text-[#14295B]">
+                                                    <div class="w-8 h-8 rounded-lg bg-[#EBF1F9] flex items-center justify-center text-[#14295B]">
                                                         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                                             <path d="M4 14l8-8 8 8M7 17l5-5 5 5"/>
                                                         </svg>
                                                     </div>
                                                     <div>
-                                                        <span class="font-bold text-[15px] text-[#0F1B33]">6E-205</span>
-                                                        <span class="text-[11px] text-[#5B6B85] block -mt-0.5">Airbus A321neo</span>
+                                                        <span class="font-bold text-[16px] text-[#0F1B33]">6E-205</span>
+                                                        <span class="text-[12px] text-[#5B6B85] block -mt-0.5">Airbus A321neo</span>
                                                     </div>
                                                 </div>
 
                                                 <div class="flex items-center gap-1.5">
                                                     <!-- Only Gold Element on Pass (Dark text on Gold) -->
-                                                    <span class="bg-[#F2B84B] text-[#0F1B33] text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-2xs">
+                                                    <span class="bg-[#F2B84B] text-[#0F1B33] text-[12px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-2xs">
                                                         STANDBY
                                                     </span>
-                                                    <span class="bg-[#14295B] text-white text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full shadow-2xs">
+                                                    <span class="bg-[#14295B] text-white text-[12px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-2xs">
                                                         Priority
                                                     </span>
                                                 </div>
                                             </div>
 
-                                            <!-- Route Row: BLR 20:55 --- DEL 23:40 -->
-                                            <div class="px-4 py-2 flex items-center justify-between">
+                                            <!-- Route Row: BLR 20:55 --- DEL 23:40 (30pt route codes, 18pt times) -->
+                                            <div class="px-5 py-2.5 flex items-center justify-between">
                                                 <div>
-                                                    <div class="text-[28px] font-bold text-[#0F1B33] leading-none tracking-tight">BLR</div>
+                                                    <div class="text-[30px] font-bold text-[#0F1B33] leading-none tracking-tight">BLR</div>
                                                     <div class="text-[12px] text-[#5B6B85] mt-1">Bengaluru</div>
-                                                    <div class="text-[15px] font-mono tabular-nums font-semibold text-[#0F1B33] mt-0.5">20:55</div>
+                                                    <div class="text-[18px] font-mono tabular-nums font-semibold text-[#0F1B33] mt-0.5">20:55</div>
                                                 </div>
 
                                                 <div class="flex-1 px-4 text-center">
@@ -3668,13 +3670,13 @@
                                                         <div class="border-t-2 border-dashed border-[#D5DCE8] flex-1"></div>
                                                         <span class="w-1.5 h-1.5 rounded-full bg-[#14295B]"></span>
                                                     </div>
-                                                    <div class="text-[11px] font-mono text-[#5B6B85] mt-1">2h 45m</div>
+                                                    <div class="text-[12px] font-mono text-[#5B6B85] mt-1">2h 45m</div>
                                                 </div>
 
                                                 <div class="text-right">
-                                                    <div class="text-[28px] font-bold text-[#0F1B33] leading-none tracking-tight">DEL</div>
+                                                    <div class="text-[30px] font-bold text-[#0F1B33] leading-none tracking-tight">DEL</div>
                                                     <div class="text-[12px] text-[#5B6B85] mt-1">New Delhi</div>
-                                                    <div class="text-[15px] font-mono tabular-nums font-semibold text-[#0F1B33] mt-0.5">23:40</div>
+                                                    <div class="text-[18px] font-mono tabular-nums font-semibold text-[#0F1B33] mt-0.5">23:40</div>
                                                 </div>
                                             </div>
 
@@ -3685,39 +3687,39 @@
                                                 <div class="w-5 h-5 rounded-full bg-[#F3F6FB] -mr-2.5"></div>
                                             </div>
 
-                                            <!-- Two-Column Field Grid (Reference Style) -->
-                                            <div class="p-4 pt-1 grid grid-cols-2 gap-3 text-left">
+                                            <!-- Two-Column Field Grid (Reference Style, 12pt labels, 16pt values) -->
+                                            <div class="p-5 pt-1 grid grid-cols-2 gap-3.5 text-left">
                                                 <div>
-                                                    <span class="text-[11px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">NAME</span>
-                                                    <span class="text-[15px] font-semibold text-[#0F1B33] block mt-0.5 truncate">Ananya Sharma</span>
+                                                    <span class="text-[12px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">NAME</span>
+                                                    <span class="text-[16px] font-semibold text-[#0F1B33] block mt-0.5 truncate">Ananya Sharma</span>
                                                 </div>
                                                 <div>
-                                                    <span class="text-[11px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">TICKET NUMBER</span>
-                                                    <span class="text-[15px] font-semibold font-mono tabular-nums text-[#0F1B33] block mt-0.5">AF 4821</span>
+                                                    <span class="text-[12px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">TICKET NUMBER</span>
+                                                    <span class="text-[16px] font-semibold font-mono tabular-nums text-[#0F1B33] block mt-0.5">AF 4821</span>
                                                 </div>
                                                 <div>
-                                                    <span class="text-[11px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">PASSENGER</span>
-                                                    <span class="text-[15px] font-semibold text-[#0F1B33] block mt-0.5">1 Adult</span>
+                                                    <span class="text-[12px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">PASSENGER</span>
+                                                    <span class="text-[16px] font-semibold text-[#0F1B33] block mt-0.5">1 Adult</span>
                                                 </div>
                                                 <div>
-                                                    <span class="text-[11px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">SEAT</span>
-                                                    <span class="text-[15px] font-bold text-[#14295B] block mt-0.5">28B <span class="text-[12px] font-normal text-[#5B6B85]">(middle)</span></span>
+                                                    <span class="text-[12px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">SEAT</span>
+                                                    <span class="text-[16px] font-bold text-[#14295B] block mt-0.5">28B (middle)</span>
                                                 </div>
                                                 <div>
-                                                    <span class="text-[11px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">CLASS</span>
-                                                    <span class="text-[15px] font-semibold text-[#0F1B33] block mt-0.5">Economy</span>
+                                                    <span class="text-[12px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">CLASS</span>
+                                                    <span class="text-[16px] font-semibold text-[#0F1B33] block mt-0.5">Economy</span>
                                                 </div>
                                                 <div>
-                                                    <span class="text-[11px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">BAGGAGE</span>
-                                                    <span class="text-[15px] font-semibold text-[#0F1B33] block mt-0.5">7 kg backpack</span>
+                                                    <span class="text-[12px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">BAGGAGE</span>
+                                                    <span class="text-[16px] font-semibold text-[#0F1B33] block mt-0.5">7 kg backpack</span>
                                                 </div>
                                                 <div>
-                                                    <span class="text-[11px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">GATE</span>
-                                                    <span class="text-[22px] font-bold font-mono tabular-nums text-[#0F1B33] block mt-0.5">14A</span>
+                                                    <span class="text-[12px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">GATE</span>
+                                                    <span class="text-[18px] font-bold text-[#14295B] block mt-0.5">14A</span>
                                                 </div>
                                                 <div>
-                                                    <span class="text-[11px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">BOARDING</span>
-                                                    <span class="text-[17px] font-semibold font-mono tabular-nums text-[#0F1B33] block mt-0.5">20:15</span>
+                                                    <span class="text-[12px] uppercase font-mono text-[#5B6B85] font-semibold tracking-wider block">BOARDING</span>
+                                                    <span class="text-[18px] font-semibold font-mono tabular-nums text-[#0F1B33] block mt-0.5">20:15</span>
                                                 </div>
                                             </div>
 
@@ -3729,7 +3731,7 @@
                                             </div>
 
                                             <!-- Large Vector Barcode Section -->
-                                            <div class="p-4 pt-2 text-center bg-white">
+                                            <div class="p-5 pt-2 text-center bg-white">
                                                 <svg class="w-full h-11 text-[#0F1B33]" viewBox="0 0 160 32" fill="currentColor">
                                                     <rect x="0" y="0" width="3" height="32"/><rect x="5" y="0" width="1" height="32"/><rect x="8" y="0" width="4" height="32"/><rect x="15" y="0" width="2" height="32"/><rect x="19" y="0" width="1" height="32"/><rect x="22" y="0" width="5" height="32"/><rect x="29" y="0" width="2" height="32"/><rect x="33" y="0" width="3" height="32"/><rect x="38" y="0" width="1" height="32"/><rect x="41" y="0" width="4" height="32"/><rect x="47" y="0" width="2" height="32"/><rect x="51" y="0" width="1" height="32"/><rect x="54" y="0" width="5" height="32"/><rect x="61" y="0" width="2" height="32"/><rect x="65" y="0" width="4" height="32"/><rect x="71" y="0" width="1" height="32"/><rect x="74" y="0" width="3" height="32"/><rect x="79" y="0" width="2" height="32"/><rect x="83" y="0" width="4" height="32"/><rect x="89" y="0" width="1" height="32"/><rect x="92" y="0" width="5" height="32"/><rect x="99" y="0" width="2" height="32"/><rect x="103" y="0" width="3" height="32"/><rect x="108" y="0" width="2" height="32"/><rect x="112" y="0" width="4" height="32"/><rect x="118" y="0" width="1" height="32"/><rect x="121" y="0" width="3" height="32"/><rect x="126" y="0" width="2" height="32"/><rect x="130" y="0" width="5" height="32"/><rect x="137" y="0" width="1" height="32"/><rect x="140" y="0" width="3" height="32"/><rect x="145" y="0" width="2" height="32"/><rect x="149" y="0" width="4" height="32"/><rect x="155" y="0" width="2" height="32"/>
                                                 </svg>
@@ -3741,50 +3743,50 @@
                                         </div>
 
                                         <!-- Elements Below the Pass -->
-                                        <div class="space-y-2 text-left">
+                                        <div class="space-y-2.5 text-left">
                                             <!-- Success Row: Seat Confirmed -->
-                                            <div class="bg-[#E7F6EC] rounded-[14px] p-3 flex items-center gap-2.5 text-[#067647]">
+                                            <div class="bg-[#E7F6EC] rounded-[14px] p-3.5 flex items-center gap-2.5 text-[#067647]">
                                                 <i data-lucide="check-circle" class="w-5 h-5 shrink-0" stroke-width="1.5"></i>
-                                                <span class="text-[15px] font-semibold">Seat confirmed</span>
+                                                <span class="text-[16px] font-semibold">Seat confirmed</span>
                                             </div>
 
                                             <!-- Clear Instruction -->
-                                            <div class="text-[13px] font-medium text-[#0F1B33] leading-snug">
+                                            <div class="text-[14px] font-medium text-[#0F1B33] leading-snug">
                                                 Go to Gate 14A and scan your face at the Digi Yatra gate.
                                             </div>
 
                                             <!-- Bottom Sheet Policy Trigger Link -->
                                             <div class="pt-0.5">
-                                                <button onclick="toggleStandbyPassModal()" class="text-[13px] font-medium text-[#14295B] underline hover:text-[#0c1a3b]">
+                                                <button onclick="toggleStandbyPassModal()" class="text-[14px] font-medium text-[#14295B] underline hover:text-[#0c1a3b]">
                                                     What if my seat isn't cleared?
                                                 </button>
                                             </div>
 
                                             <!-- Bottom Sheet Frame (Expandable Policy) -->
-                                            <div id="standbyPassModal" class="bg-white rounded-[16px] p-3.5 space-y-1 shadow-[0_4px_20px_rgba(15,27,51,0.06)]">
-                                                <div class="text-[13px] font-semibold text-[#0F1B33]">Guaranteed Standby Policy</div>
-                                                <p class="text-[13px] text-[#5B6B85] leading-snug">
+                                            <div id="standbyPassModal" class="bg-white rounded-[16px] p-4 space-y-1 shadow-[0_4px_20px_rgba(15,27,51,0.06)]">
+                                                <div class="text-[14px] font-semibold text-[#0F1B33]">Guaranteed Standby Policy</div>
+                                                <p class="text-[14px] text-[#5B6B85] leading-snug">
                                                     You get a full automatic refund or move to the next flight. No fees.
                                                 </p>
                                             </div>
                                         </div>
 
-                                        <!-- Two Buttons at Bottom (54pt tall each, like reference) -->
-                                        <div class="grid grid-cols-2 gap-3 pt-1 pb-3">
-                                            <button class="h-[54px] rounded-[14px] bg-white border-2 border-[#14295B] text-[#14295B] font-semibold text-[15px] flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors">
+                                        <!-- Two Buttons at Bottom (56pt tall each, 14pt radius) -->
+                                        <div class="grid grid-cols-2 gap-3 pt-1 pb-4">
+                                            <button class="h-[56px] rounded-[14px] bg-white border-2 border-[#14295B] text-[#14295B] font-semibold text-[16px] flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors">
                                                 <i data-lucide="share-2" class="w-4 h-4" stroke-width="1.5"></i>
                                                 <span>Share</span>
                                             </button>
-                                            <button class="h-[54px] rounded-[14px] bg-[#14295B] text-white font-semibold text-[15px] flex items-center justify-center gap-2 hover:bg-[#0c1a3b] transition-colors">
+                                            <button class="h-[56px] rounded-[14px] bg-[#14295B] text-white font-semibold text-[16px] flex items-center justify-center gap-2 hover:bg-[#0c1a3b] transition-colors">
                                                 <i data-lucide="wallet" class="w-4 h-4" stroke-width="1.5"></i>
-                                                <span>Download</span>
+                                                <span>Add to Wallet</span>
                                             </button>
                                         </div>
 
                                     </div>
 
-                                    <!-- iOS Bottom Safe Area with Home Indicator -->
-                                    <div class="bg-[#F3F6FB] py-2 flex justify-center shrink-0">
+                                    <!-- iOS Bottom Safe Area with Home Indicator (34pt height) -->
+                                    <div class="bg-[#F3F6FB] py-3 flex justify-center shrink-0">
                                         <div class="w-32 h-1 bg-slate-300 rounded-full"></div>
                                     </div>
                                 </div>
@@ -3878,7 +3880,7 @@
                                 
                                 <!-- Button Variants -->
                                 <div class="p-4 rounded-[16px] bg-[#F3F6FB] space-y-2">
-                                    <span class="font-bold text-[#0F1B33] block text-[11px] font-mono">BUTTON STATES (54px height, radius 14)</span>
+                                    <span class="font-bold text-[#0F1B33] block text-[11px] font-mono">BUTTON STATES (56px height, radius 14)</span>
                                     <button class="w-full h-[44px] rounded-[14px] bg-[#14295B] text-white font-semibold text-[13px] flex items-center justify-center">Primary Navy</button>
                                     <button class="w-full h-[44px] rounded-[14px] bg-white border-2 border-[#14295B] text-[#14295B] font-semibold text-[13px] flex items-center justify-center">Secondary Outline</button>
                                     <button class="w-full h-[44px] rounded-[14px] bg-[#D5DCE8] text-[#5B6B85] font-semibold text-[13px] flex items-center justify-center cursor-not-allowed">Disabled State</button>
@@ -3886,7 +3888,7 @@
 
                                 <!-- Input States -->
                                 <div class="p-4 rounded-[16px] bg-[#F3F6FB] space-y-2">
-                                    <span class="font-bold text-[#0F1B33] block text-[11px] font-mono">INPUT STATES (48px height, radius 14)</span>
+                                    <span class="font-bold text-[#0F1B33] block text-[11px] font-mono">INPUT STATES (50px height, radius 14)</span>
                                     <div>
                                         <label class="text-[11px] font-medium text-[#5B6B85] block mb-0.5">Default Input</label>
                                         <input type="text" value="Kempegowda T1" readonly class="w-full h-[40px] px-3 rounded-[12px] border border-[#D5DCE8] bg-white text-[#0F1B33] text-[12px]">
