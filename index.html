@@ -18,11 +18,11 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <!-- Google Fonts: Roboto & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Lucide Icons -->
@@ -41,63 +41,100 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-                        serif: ['"Newsreader"', 'Georgia', 'serif'],
-                        heading: ['"Newsreader"', 'Georgia', 'serif'],
+                        sans: ['"Roboto"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        display: ['"Roboto"', 'sans-serif'],
+                        heading: ['"Roboto"', 'sans-serif'],
+                        serif: ['"Roboto"', 'sans-serif'],
                         mono: ['"JetBrains Mono"', 'monospace'],
                     },
                     colors: {
+                        primary: {
+                            DEFAULT: '#FF6300',
+                            hover: '#E05700',
+                            50: '#FFF7ED',
+                            100: '#FFEDD5',
+                            200: '#FED7AA',
+                            300: '#FDBA74',
+                            400: '#FB923C',
+                            500: '#FF6300',
+                            600: '#E05700',
+                            700: '#C2410C',
+                        },
+                        secondary: '#6B6F76',
+                        tertiary: '#5B22D6',
+                        neutral: '#333333',
+                        surface: '#FFFFFF',
+                        mutedSurface: '#F3F4F6',
+                        accentSoft: '#EFE6FF',
+                        border: '#E5E7EB',
                         brand: {
-                            50: '#FFF1F2',
-                            100: '#FFE4E6',
-                            200: '#FECDD3',
-                            300: '#FDA4AF',
-                            400: '#FB7185',
-                            500: '#F43F5E',
-                            600: '#E11D48',
-                            700: '#BE123C',
-                            800: '#9F1239',
-                            900: '#881337',
+                            50: '#FFF7ED',
+                            100: '#FFEDD5',
+                            200: '#FED7AA',
+                            300: '#FDBA74',
+                            400: '#FB923C',
+                            500: '#FF6300',
+                            600: '#E05700',
+                            700: '#C2410C',
+                            800: '#9A3412',
+                            900: '#7C2D12',
                         },
                         slate: {
-                            50: '#F8FAFC',
-                            100: '#F1F4F9',
-                            200: '#E2E7F0',
-                            300: '#CBD4E1',
-                            400: '#939EB0',
-                            500: '#636F84',
-                            600: '#464E61',
-                            700: '#334155',
-                            800: '#1E2538',
-                            850: '#151928',
-                            900: '#0F1320',
-                            950: '#080A12',
+                            50: '#F3F4F6',
+                            100: '#E5E7EB',
+                            200: '#D1D5DB',
+                            300: '#9CA3AF',
+                            400: '#6B6F76',
+                            500: '#6B6F76',
+                            600: '#4B5563',
+                            700: '#374151',
+                            800: '#333333',
+                            850: '#262626',
+                            900: '#1F2937',
+                            950: '#111827',
                         },
                         indigoAirline: {
-                            50: '#F0F5FF',
-                            100: '#E0EBFF',
-                            500: '#02529C',
-                            600: '#004380',
-                            700: '#003366',
+                            50: '#FFF7ED',
+                            100: '#FFEDD5',
+                            500: '#FF6300',
+                            600: '#E05700',
+                            700: '#C2410C',
                         },
                         airIndia: {
-                            50: '#FFF1F2',
-                            100: '#FFE4E6',
-                            500: '#ED1B24',
-                            600: '#C9141D',
+                            50: '#F3F4F6',
+                            100: '#E5E7EB',
+                            500: '#333333',
+                            600: '#1F2937',
                         },
                         emergency: {
                             50: '#FEF2F2',
                             100: '#FEE2E2',
-                            500: '#EF4444',
-                            600: '#DC2626',
-                            700: '#B91C1C',
+                            500: '#D92D20',
+                            600: '#B42318',
+                            700: '#912018',
                         }
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        'md': '8px',
+                        'lg': '12px',
+                        'xl': '16px',
+                        '2xl': '16px',
+                        '3xl': '20px',
+                        'full': '9999px',
+                    },
+                    spacing: {
+                        'xs': '4px',
+                        'sm': '12px',
+                        'md': '20px',
+                        'lg': '32px',
+                        'xl': '80px',
                     },
                     boxShadow: {
                         'soft': '0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03)',
-                        'card': '0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.03)',
-                        'dropdown': '0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.03)',
+                        'card': '0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03)',
+                        'dropdown': '0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04)',
                         'modal': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04)',
                     },
                     keyframes: {
@@ -119,61 +156,78 @@
         /* HUMAN-AUTHORED EDITORIAL POLISH (REMOVING AI-GENERATED ARTIFACTS)         */
         /* ========================================================================= */
 
-        /* 1. Eliminate cartoon card-in-card nesting */
+        /* ========================================================================= */
+        /* AKASA AIR DESIGN SYSTEM FOUNDATIONS                                       */
+        /* ========================================================================= */
+
+        /* 1. Akasa Air Clean Card Borders & 8px Radius */
         .rounded-2xl .rounded-xl,
         .rounded-2xl .rounded-2xl {
-            border-color: #E2E8F0 !important;
+            border-color: #E5E7EB !important;
+            border-radius: 8px !important;
             box-shadow: none !important;
         }
 
-        /* 2. Natural human editorial typography for story headers */
+        /* 2. Akasa Air Roboto Typography Scale */
         h1,
-        h2,
-        .story-chapter > div h2,
-        .story-chapter > div h3,
+        .headline-display,
         .editorial-heading {
-            color: #0F172A !important;
-            font-family: 'Newsreader', Georgia, serif;
-            letter-spacing: -0.02em;
+            color: #333333 !important;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif !important;
+            font-size: 30px !important;
+            font-weight: 700 !important;
+            line-height: 32px !important;
+            letter-spacing: 0px !important;
         }
 
-        /* Enforce clean Inter sans-serif on all UI components, mobile phone mockups, inputs and buttons */
+        h2,
+        .headline-lg,
+        .story-chapter > div h2 {
+            color: #333333 !important;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif !important;
+            font-size: 25px !important;
+            font-weight: 700 !important;
+            line-height: 32px !important;
+            letter-spacing: 0px !important;
+        }
+
+        h3,
+        .headline-md,
+        .story-chapter > div h3 {
+            color: #333333 !important;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif !important;
+            font-size: 20px !important;
+            font-weight: 400 !important;
+            line-height: 32px !important;
+            letter-spacing: 0px !important;
+        }
+
+        h4,
+        h5,
+        h6,
+        .headline-sm {
+            color: #333333 !important;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif !important;
+            font-size: 17px !important;
+            font-weight: 400 !important;
+            line-height: 32px !important;
+            letter-spacing: 0px !important;
+        }
+
+        /* Roboto for UI controls, inputs, and components */
         .font-sans,
-        .font-sans h1,
-        .font-sans h2,
-        .font-sans h3,
-        .font-sans h4,
-        [class*="rounded-[38px]"] h1,
-        [class*="rounded-[38px]"] h2,
-        [class*="rounded-[38px]"] h3,
-        [class*="rounded-[38px]"] h4,
-        .ui-component h1,
-        .ui-component h2,
-        .ui-component h3,
-        .ui-component h4,
+        body,
         button,
         input,
         select {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif !important;
         }
 
-        /* Ensure white text inside dark retrospective and dark panels */
-        #retrospective h1,
-        #retrospective h2,
-        #retrospective h3,
-        #retrospective h4,
-        .bg-slate-900 h1,
-        .bg-slate-900 h2,
-        .bg-slate-900 h3,
-        .bg-slate-900 h4 {
-            color: #FFFFFF !important;
-        }
-
-        /* 3. Authentic chip badges without loud pill bubbles */
+        /* 3. Akasa Air Chips & Pills */
         span[class*="rounded-full"],
-        span[class*="rounded"] {
-            border-radius: 4px !important;
-            box-shadow: none !important;
+        .chip,
+        .pill-badge {
+            border-radius: 9999px !important;
         }
 
         /* 4. Remove fake gradient glow effects */
@@ -200,57 +254,57 @@
 
 
         /* ========================================================================= */
-        /* PREMIUM 6 GUARDRAIL CARDS & CORPORATE DEFENSE ARCHITECTURE                */
+        /* AKASA AIR 6 GUARDRAIL CARDS & DEFENSE ARCHITECTURE                        */
         /* ========================================================================= */
         .guardrail-card {
             background-color: #FFFFFF !important;
-            border: 1px solid #CBD5E1 !important;
-            border-radius: 18px !important;
-            padding: 1.75rem !important;
-            box-shadow: 0 1px 3px rgba(11, 16, 32, 0.05), 0 1px 2px rgba(11, 16, 32, 0.03) !important;
+            border: 1px solid #E5E7EB !important;
+            border-radius: 8px !important;
+            padding: 16px !important;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03) !important;
             transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease !important;
         }
 
         .guardrail-card:hover {
-            border-color: #94A3B8 !important;
-            box-shadow: 0 6px 16px -2px rgba(11, 16, 32, 0.08) !important;
+            border-color: #D1D5DB !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08) !important;
             transform: translateY(-2px);
         }
 
         .guardrail-card.check-active {
-            border-color: #E11D48 !important;
-            box-shadow: 0 0 0 2px #E11D48, 0 8px 24px -4px rgba(225, 29, 72, 0.25) !important;
-            transform: translateY(-4px) !important;
+            border-color: #FF6300 !important;
+            box-shadow: 0 0 0 2px #FF6300, 0 4px 12px rgba(255, 99, 0, 0.25) !important;
+            transform: translateY(-2px) !important;
         }
 
         /* Number Watermark (Clean, visible, elegant) */
         .guardrail-card span.font-mono.font-black {
-            color: #E2E8F0 !important;
-            font-size: 2.5rem !important;
-            font-weight: 800 !important;
+            color: #E5E7EB !important;
+            font-size: 2.2rem !important;
+            font-weight: 700 !important;
             opacity: 0.8 !important;
         }
 
         /* Card Titles & Body */
         .guardrail-card h3 {
-            color: #020617 !important;
-            font-size: 1.18rem !important;
+            color: #333333 !important;
+            font-size: 17px !important;
             font-weight: 700 !important;
-            letter-spacing: -0.02em !important;
-            line-height: 1.35 !important;
+            letter-spacing: 0px !important;
+            line-height: 24px !important;
         }
 
         .guardrail-card p {
-            color: #334155 !important;
+            color: #6B6F76 !important;
             font-size: 14px !important;
-            line-height: 1.6 !important;
+            line-height: 20px !important;
         }
 
         /* Mini Telemetry Visual Inside Card */
         .guardrail-card .my-2 {
-            background-color: #F8FAFC !important;
-            border: 1px solid #E2E8F0 !important;
-            border-radius: 12px !important;
+            background-color: #F3F4F6 !important;
+            border: 1px solid #E5E7EB !important;
+            border-radius: 8px !important;
             padding: 0.65rem 0.85rem !important;
         }
 
@@ -258,19 +312,19 @@
         .defense-box {
             min-height: 96px;
             position: relative;
-            border-radius: 12px;
+            border-radius: 8px;
             overflow: hidden;
         }
 
         .defense-front {
-            background-color: #F1F5F9 !important;
-            border: 1px solid #CBD5E1 !important;
-            border-radius: 12px !important;
+            background-color: #F3F4F6 !important;
+            border: 1px solid #E5E7EB !important;
+            border-radius: 8px !important;
             padding: 0.85rem 1rem !important;
         }
 
         .defense-front p {
-            color: #1E293B !important;
+            color: #333333 !important;
             font-size: 12.5px !important;
             line-height: 1.5 !important;
         }
@@ -278,7 +332,7 @@
         .defense-back {
             background-color: var(--ink) !important;
             border: 1px solid var(--critical) !important;
-            border-radius: 12px !important;
+            border-radius: 8px !important;
             padding: 0.85rem 1rem !important;
             color: var(--dark-text) !important;
         }
@@ -301,30 +355,27 @@
 
 
         /* ========================================================================= */
-        /* TASK SCOPE: UNIFIED SEMANTIC COLOR SYSTEM & WCAG AA CONTRAST TOKENS       */
+        /* AKASA AIR SEMANTIC COLOR TOKENS & SYSTEM VARIABLES                        */
         /* ========================================================================= */
         :root {
             color-scheme: only light;
-            --ink: #0B1020;
-            --ink-muted: #4B5563;
-            /* Passes 4.5:1 on white and surface */
-            --surface: #F8F9FB;
+            --ink: #333333;
+            --ink-muted: #6B6F76;
+            --surface: #FFFFFF;
+            --surface-muted: #F3F4F6;
+            --tertiary: #5B22D6;
+            --accent-soft: #EFE6FF;
             --card: #FFFFFF;
-            --border: #D5D9E2;
-            --brand: #E11D48;
-            /* CTAs, active states, key headline figures ONLY */
-            --positive: #0B7564;
-            /* All teal and green unified */
-            --warning: #B45309;
-            /* Hook / caution */
-            --critical: #9F1239;
-            /* Blocked, emergency, Project Sanjeevani only */
-            --neutral-bar: #475569;
-            /* Costs, negative values, neutral chart series */
-            --dark-text: #E5E9F2;
-            /* Primary text on dark panels */
-            --dark-text-muted: #A7B0C2;
-            /* Secondary text on dark panels, 4.5:1 on --ink */
+            --border: #E5E7EB;
+            --brand: #FF6300;
+            --brand-hover: #E05700;
+            --secondary: #6B6F76;
+            --positive: #0F9D58;
+            --warning: #FFB366;
+            --critical: #D92D20;
+            --neutral-bar: #6B6F76;
+            --dark-text: #FFFFFF;
+            --dark-text-muted: #9CA3AF;
         }
 
         /* 1. Global Reset & High Contrast Typography */
@@ -334,15 +385,18 @@
         body.dark {
             background-color: var(--surface) !important;
             color: var(--ink) !important;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif !important;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
         p,
         li {
-            color: #1E293B !important;
-            /* 12.6:1 against #F8F9FB */
-            line-height: 1.7;
+            color: #333333 !important;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
         }
 
         h1,
@@ -352,8 +406,32 @@
         h5,
         h6 {
             color: var(--ink) !important;
-            font-family: 'Newsreader', Georgia, serif;
-            letter-spacing: -0.02em;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif !important;
+            letter-spacing: 0px;
+        }
+
+        h1 {
+            font-size: 30px !important;
+            font-weight: 700 !important;
+            line-height: 32px !important;
+        }
+
+        h2 {
+            font-size: 25px !important;
+            font-weight: 700 !important;
+            line-height: 32px !important;
+        }
+
+        h3 {
+            font-size: 20px !important;
+            font-weight: 400 !important;
+            line-height: 32px !important;
+        }
+
+        h4 {
+            font-size: 17px !important;
+            font-weight: 400 !important;
+            line-height: 32px !important;
         }
 
         .text-slate-600,
@@ -361,6 +439,10 @@
         .text-slate-400 {
             color: var(--ink-muted) !important;
             /* Passes >= 4.5:1 on white and surface */
+        }
+
+        a:not([class*="btn"]):not([class*="bg-"]):not([id^="nav-item-"]) {
+            color: #5B22D6;
         }
 
         /* 2. Floating Nav Contrast */
@@ -387,48 +469,52 @@
             background-color: var(--brand) !important;
         }
 
-        /* 3. Consistent Label Chips Across All Stories */
-        /* Hook / Challenge = --warning */
+        /* 3. Consistent Label Chips Across All Stories (Akasa Air Tokens) */
+        /* Hook / Challenge = --warning #FFB366 with dark #333 text */
         .story-hook-label,
         .chip-hook,
         span.chip-hook,
         [class*="bg-amber-500"],
         span[class*="bg-[#B45309]"] {
             background-color: var(--warning) !important;
-            color: #FFFFFF !important;
+            color: #333333 !important;
+            border-radius: 4px !important;
         }
 
-        /* Before / Initial Attempt = #475569 */
+        /* Before / Initial Attempt = #6B6F76 (Akasa Secondary) */
         .story-before-label,
         .chip-before,
         span.chip-before,
         span[class*="bg-[#475569]"] {
-            background-color: var(--neutral-bar) !important;
+            background-color: var(--secondary) !important;
             color: #FFFFFF !important;
+            border-radius: 4px !important;
         }
 
-        /* Decision / Core Decision = --ink */
+        /* Decision / Core Decision = #5B22D6 (Akasa Tertiary Purple) */
         .story-decision-label,
         .chip-decision,
         span.chip-decision,
         span[class*="bg-[#0B1020]"] {
-            background-color: var(--ink) !important;
+            background-color: var(--tertiary) !important;
             color: #FFFFFF !important;
+            border-radius: 4px !important;
         }
 
-        /* After / Prototype = outline in --brand, text --brand, background transparent */
+        /* After / Prototype = outline in #FF6300, text #FF6300, background #FFF7ED */
         .story-after-label,
         .chip-after,
         span.chip-after,
         span.prototype-badge,
         span[class*="border-[#E11D48]"] {
-            background-color: transparent !important;
-            border: 1.5px solid var(--brand) !important;
-            color: #BE123C !important;
-            font-weight: 700 !important;
+            background-color: #FFF7ED !important;
+            border: 1px solid var(--brand) !important;
+            color: #FF6300 !important;
+            font-weight: 600 !important;
+            border-radius: 4px !important;
         }
 
-        /* Result / Outcome = --positive */
+        /* Result / Outcome = #0F9D58 (Akasa Success) */
         .story-result-label,
         .chip-result,
         span.chip-result,
@@ -436,18 +522,19 @@
         span[class*="bg-[#0F8A78]"]:not([class*="/"]) {
             background-color: var(--positive) !important;
             color: #FFFFFF !important;
+            border-radius: 4px !important;
         }
 
-        /* 4. Tinted Card Backgrounds (8-10% tint of role color) */
-        /* Hook card tint: 8% warning */
+        /* 4. Tinted Card Backgrounds (Akasa Air Clean & Minimal Tokens) */
+        /* Hook card tint: subtle orange/amber */
         :is(.bg-amber-50, [class*="bg-amber-50/"]) {
-            background-color: rgba(180, 83, 9, 0.08) !important;
-            border-color: rgba(180, 83, 9, 0.25) !important;
+            background-color: rgba(255, 99, 0, 0.05) !important;
+            border-color: rgba(255, 99, 0, 0.2) !important;
         }
 
         :is(.bg-amber-50, [class*="bg-amber-50/"]) p,
         :is(.bg-amber-50, [class*="bg-amber-50/"]) span {
-            color: #78350F !important;
+            color: #333333 !important;
         }
 
         :is(.bg-amber-50, [class*="bg-amber-50/"]) strong,
@@ -456,18 +543,18 @@
             color: var(--ink) !important;
         }
 
-        /* Result / Positive card tint: 8% positive */
+        /* Result / Positive card tint: 8% positive #0F9D58 */
         :is(.bg-emerald-50, [class*="bg-emerald-50/"]),
         :is(.bg-teal-50, [class*="bg-teal-50/"]) {
-            background-color: rgba(15, 138, 120, 0.08) !important;
-            border-color: rgba(15, 138, 120, 0.25) !important;
+            background-color: rgba(15, 157, 88, 0.07) !important;
+            border-color: rgba(15, 157, 88, 0.22) !important;
         }
 
         :is(.bg-emerald-50, [class*="bg-emerald-50/"]) p,
         :is(.bg-emerald-50, [class*="bg-emerald-50/"]) span,
         :is(.bg-teal-50, [class*="bg-teal-50/"]) p,
         :is(.bg-teal-50, [class*="bg-teal-50/"]) span {
-            color: #064E3B !important;
+            color: #1F2937 !important;
         }
 
         :is(.bg-emerald-50, [class*="bg-emerald-50/"]) strong,
@@ -479,15 +566,15 @@
             color: var(--ink) !important;
         }
 
-        /* Sanjeevani / Emergency card tint: 8% critical */
+        /* Sanjeevani / Emergency card tint: 8% critical #D92D20 */
         :is(.bg-rose-50, [class*="bg-rose-50/"]) {
-            background-color: rgba(159, 18, 57, 0.08) !important;
-            border-color: rgba(159, 18, 57, 0.25) !important;
+            background-color: rgba(217, 45, 32, 0.07) !important;
+            border-color: rgba(217, 45, 32, 0.22) !important;
         }
 
         :is(.bg-rose-50, [class*="bg-rose-50/"]) p,
         :is(.bg-rose-50, [class*="bg-rose-50/"]) span {
-            color: #4C0519 !important;
+            color: #333333 !important;
         }
 
         :is(.bg-rose-50, [class*="bg-rose-50/"]) strong,
@@ -687,22 +774,149 @@
             color: var(--ink) !important;
         }
 
-        /* 13. Clean Button Contrast */
+        /* 13. Akasa Air Button Contrast & 8px Dimensions */
         button.bg-indigo-600,
         a.bg-indigo-600,
         button.bg-\[\#e11d48\],
         a.bg-\[\#e11d48\],
-        a#navPrimaryCta {
-            background-color: var(--brand) !important;
+        a#navPrimaryCta,
+        .btn-primary {
+            background-color: #FF6300 !important;
             color: #FFFFFF !important;
+            border-radius: 8px !important;
+            font-family: 'Roboto', sans-serif !important;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            line-height: 20px !important;
+            padding: 12px 32px !important;
+            min-height: 48px !important;
+            border: none !important;
+            box-shadow: 0 1px 3px rgba(255, 99, 0, 0.2) !important;
+            transition: background-color 0.15s ease, transform 0.15s ease !important;
         }
 
         button.bg-indigo-600:hover,
         a.bg-indigo-600:hover,
         button.bg-\[\#e11d48\]:hover,
         a.bg-\[\#e11d48\]:hover,
-        a#navPrimaryCta:hover {
-            background-color: #BE123C !important;
+        a#navPrimaryCta:hover,
+        .btn-primary:hover {
+            background-color: #E05700 !important;
+            color: #FFFFFF !important;
+        }
+
+        .btn-secondary {
+            background-color: #FFFFFF !important;
+            color: #333333 !important;
+            border: 1px solid #E5E7EB !important;
+            border-radius: 8px !important;
+            font-family: 'Roboto', sans-serif !important;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            line-height: 20px !important;
+            padding: 12px 32px !important;
+            min-height: 48px !important;
+            transition: background-color 0.15s ease !important;
+        }
+
+        .btn-secondary:hover {
+            background-color: #F3F4F6 !important;
+        }
+
+        .btn-tertiary {
+            background-color: transparent !important;
+            color: #333333 !important;
+            border: none !important;
+            font-family: 'Roboto', sans-serif !important;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+            padding: 0px !important;
+            height: auto !important;
+        }
+
+        /* Akasa Air Inputs */
+        input:not([type="range"]),
+        select {
+            background-color: #FFFFFF !important;
+            color: #333333 !important;
+            border: 1px solid #E5E7EB !important;
+            border-radius: 4px !important;
+            padding: 12px 16px !important;
+            min-height: 48px !important;
+            font-family: 'Roboto', sans-serif !important;
+            font-size: 14px !important;
+        }
+
+        input:not([type="range"]):focus,
+        select:focus {
+            border-color: #FF6300 !important;
+            outline: none !important;
+            box-shadow: 0 0 0 2px rgba(255, 99, 0, 0.2) !important;
+        }
+
+        /* Akasa Air Chips & Promo Panels */
+        .chip {
+            background-color: #F3F4F6 !important;
+            color: #6B6F76 !important;
+            border-radius: 9999px !important;
+            padding: 8px 12px !important;
+            font-family: 'Roboto', sans-serif !important;
+            font-size: 12px !important;
+            font-weight: 500 !important;
+        }
+
+        .promo-panel {
+            background-color: #5B22D6 !important;
+            color: #FFFFFF !important;
+            border-radius: 8px !important;
+            padding: 12px 16px !important;
+        }
+
+        /* Akasa Air Badge & Active Tab Tokens */
+        .badge-new,
+        span.badge-new {
+            background-color: #333333 !important;
+            color: #FFFFFF !important;
+            font-family: 'Roboto', sans-serif !important;
+            font-size: 12px !important;
+            font-weight: 500 !important;
+            border-radius: 4px !important;
+            padding: 4px 8px !important;
+        }
+
+        .tab-active,
+        button[role="tab"][aria-selected="true"],
+        .tutorial-tab-btn[aria-selected="true"] {
+            color: #FF6300 !important;
+            border-bottom: 2px solid #FF6300 !important;
+            background-color: transparent !important;
+            font-weight: 600 !important;
+            border-radius: 0px !important;
+        }
+
+        /* Global Geometry Normalization: Akasa Air 8px Cards & 4px Controls */
+        .rounded-3xl,
+        .rounded-2xl,
+        .rounded-xl,
+        .rounded-lg,
+        [class*="rounded-[20px]"],
+        [class*="rounded-[24px]"],
+        [class*="rounded-[28px]"],
+        [class*="rounded-[32px]"] {
+            border-radius: 8px !important;
+        }
+
+        .rounded-md {
+            border-radius: 8px !important;
+        }
+
+        .rounded-sm {
+            border-radius: 4px !important;
+        }
+
+        .rounded-full,
+        [class*="rounded-full"] {
+            border-radius: 9999px !important;
         }
 
         /* 14. Reveal Animations End State & Reduced Motion */
@@ -727,60 +941,68 @@
         }
 
         /* ========================================================================= */
-        /* DESIGN SYSTEM TOKENS (Shared 8px Scale, Radii, Per-Act Accent Colors)    */
+        /* AKASA AIR DESIGN SYSTEM TOKENS (Radii, Spacing, Service-First Elevation) */
         /* ========================================================================= */
         :root {
-            /* Shared Spacing Scale (8px base) */
-            --space-1: 8px;
-            --space-2: 16px;
-            --space-3: 24px;
-            --space-4: 32px;
-            --space-5: 40px;
-            --space-6: 48px;
-            --space-8: 64px;
-            --space-12: 96px;
-            /* 96px Section Rhythm */
+            /* Akasa Air Spacing Scale */
+            --space-xs: 4px;
+            --space-sm: 12px;
+            --space-md: 20px;
+            --space-lg: 32px;
+            --space-xl: 80px;
 
-            /* Radius Scale */
-            --radius-sm: 12px;
-            --radius-md: 20px;
-            --radius-lg: 28px;
+            /* Akasa Air Radius Scale */
+            --radius-none: 0px;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --radius-full: 9999px;
 
-            /* Per-Act Accent Colors via CSS Variables */
-            /* Act III: Indigo */
-            --act3-accent: #4F46E5;
-            --act3-accent-light: #6366F1;
-            --act3-tint: rgba(79, 70, 229, 0.08);
-            --act3-border: rgba(79, 70, 229, 0.25);
+            /* Accent Colors via CSS Variables */
+            --act3-accent: #FF6300;
+            --act3-accent-light: #E05700;
+            --act3-tint: rgba(255, 99, 0, 0.08);
+            --act3-border: rgba(255, 99, 0, 0.25);
 
-            /* Sanjeevani (Act IV): Crimson */
-            --sanjeevani-accent: #E11D48;
-            --sanjeevani-accent-light: #F43F5E;
-            --sanjeevani-tint: rgba(225, 29, 72, 0.08);
-            --sanjeevani-border: rgba(225, 29, 72, 0.25);
+            --sanjeevani-accent: #D92D20;
+            --sanjeevani-accent-light: #EF4444;
+            --sanjeevani-tint: rgba(217, 45, 32, 0.08);
+            --sanjeevani-border: rgba(217, 45, 32, 0.25);
 
-            /* Act V Flight School: Cyan */
-            --act5-accent: #06B6D4;
-            --act5-accent-light: #22D3EE;
-            --act5-tint: rgba(6, 182, 212, 0.08);
-            --act5-border: rgba(6, 182, 212, 0.25);
+            --act5-accent: #5B22D6;
+            --act5-accent-light: #7E47EB;
+            --act5-tint: rgba(91, 34, 214, 0.08);
+            --act5-border: rgba(91, 34, 214, 0.25);
         }
 
-        /* Strict Typography Rule: Inter for all text; JetBrains Mono ONLY for numbers, IDs, logs */
+        /* Typography Hierarchy: Roboto across all text */
         body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
         p,
         span,
         button,
         a,
         div,
         figcaption {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        h1,
+        .headline-display {
+            font-family: 'Roboto', sans-serif !important;
+            font-size: 30px !important;
+            font-weight: 700 !important;
+            line-height: 32px !important;
+            letter-spacing: 0px !important;
+        }
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Roboto', sans-serif !important;
+            letter-spacing: 0px !important;
         }
 
         .font-mono,
@@ -792,49 +1014,24 @@
             font-family: 'JetBrains Mono', monospace !important;
         }
 
-        /* 96px Desktop / 64px Mobile Section Rhythm (Item 10) */
-        .section-rhythm {
-            padding-top: 48px !important;
-            padding-bottom: 48px !important;
-        }
-
-        @media (max-width: 768px) {
-            .section-rhythm {
-                padding-top: 32px !important;
-                padding-bottom: 32px !important;
-            }
-        }
-
-        /* Subtle Act Divider Between Sections (Item 10) */
-        .act-divider {
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(203, 213, 225, 0.75), transparent);
-            margin: 0 auto;
-        }
-
-        html.dark .act-divider {
-            background: linear-gradient(90deg, transparent, rgba(51, 65, 85, 0.75), transparent);
-        }
-
         /* Reusable Card Elevation Levels */
         .ds-card-base {
             background-color: #FFFFFF;
-            border: 1px solid #E2E8F0;
+            border: 1px solid #E5E7EB;
             border-radius: var(--radius-md);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
             transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
         }
 
         html.dark .ds-card-base {
-            background-color: #0F172A;
-            border-color: #1E293B;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            background-color: #FFFFFF;
+            border-color: #E5E7EB;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .ds-card-raised {
             background-color: #FFFFFF;
-            border: 1px solid #E2E8F0;
+            border: 1px solid #E5E7EB;
             border-radius: var(--radius-md);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
@@ -842,26 +1039,27 @@
 
         .ds-card-raised:hover,
         .ds-card-raised:focus-within {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 30px -6px rgba(15, 23, 42, 0.1);
+            transform: translateY(-2px);
+            border-color: #D1D5DB;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
         }
 
         html.dark .ds-card-raised {
-            background-color: #0F172A;
-            border-color: #1E293B;
+            background-color: #FFFFFF;
+            border-color: #E5E7EB;
         }
 
         html.dark .ds-card-raised:hover,
         html.dark .ds-card-raised:focus-within {
-            box-shadow: 0 16px 30px -6px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
         }
 
         .ds-card-dark-demo {
-            background-color: #020617;
-            border: 1px solid #1E293B;
-            border-radius: var(--radius-lg);
-            box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.5);
-            color: #F8FAFC;
+            background-color: #111111;
+            border: 1px solid #333333;
+            border-radius: var(--radius-xl);
+            box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.25);
+            color: #FFFFFF;
         }
 
         /* Corporate Defense Box Interactive Flip / Stamp */
@@ -900,7 +1098,7 @@
         }
 
         .guardrail-card.check-active {
-            box-shadow: 0 0 0 3px #4F46E5, 0 12px 28px -4px rgba(79, 70, 229, 0.35) !important;
+            box-shadow: 0 0 0 3px #FF6300, 0 12px 28px -4px rgba(255, 99, 0, 0.35) !important;
             transform: translateY(-6px) scale(1.02) !important;
         }
 
@@ -1002,13 +1200,12 @@
             bottom: 0;
             left: 0;
             height: 3px;
-            background: linear-gradient(90deg, #4F46E5, #06B6D4, #E11D48);
+            background: #FF6300;
             transition: width 0.08s ease-out;
             z-index: 50;
             pointer-events: none;
         }
 
-        /* Navbar Sizing, Blur & Scroll State Compression */
         /* Navbar Sizing, Blur & Scroll State Compression */
         #site-header {
             transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
@@ -1038,14 +1235,14 @@
             position: absolute;
             bottom: -2px;
             height: 2px;
-            background-color: #4F46E5;
+            background-color: #FF6300;
             border-radius: 9999px;
             transition: left 0.25s cubic-bezier(0.4, 0, 0.2, 1), width 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
             pointer-events: none;
         }
 
         html.dark #navSliderUnderline {
-            background-color: #818CF8;
+            background-color: #FF6300;
         }
 
         /* Dark / Light Theme Icon Toggling */
@@ -1255,7 +1452,7 @@
         button:focus-visible,
         input:focus-visible,
         [tabindex="0"]:focus-visible {
-            outline: 2px solid #4F46E5 !important;
+            outline: 2px solid #FF6300 !important;
             outline-offset: 2px !important;
         }
 
@@ -1487,12 +1684,12 @@
 </head>
 
 <body
-    class="bg-[#F8FAFC] text-slate-800 font-sans antialiased flex flex-col min-h-screen selection:bg-brand-500 selection:text-white"
+    class="bg-[#FFFFFF] text-[#333333] font-sans antialiased flex flex-col min-h-screen selection:bg-[#FF6300] selection:text-white"
     id="page-body">
 
     <!-- Accessibility Skip Link -->
     <a href="#main-content"
-        class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-slate-900 text-white font-semibold rounded-lg shadow-xs ring-2 ring-brand-500">
+        class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-[#333333] text-white font-semibold rounded-md shadow-xs ring-2 ring-[#FF6300]">
         Skip directly to main content
     </a>
 
@@ -1500,68 +1697,63 @@
     <!-- TOP NAVIGATION BAR (SINGLE ROW, 64PX, SCROLL-COMPRESSED & ACCESSIBLE) -->
     <!-- ========================================================================= -->
     <header id="site-header"
-        class="sticky top-0 z-40 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-[12px] border-b border-transparent select-none">
+        class="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-[8px] border-b border-[#E5E7EB] select-none">
         <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
             <div id="navInnerRow" class="flex items-center justify-between h-[68px] whitespace-nowrap">
 
                 <!-- ZONE 1 (LEFT): Logo (icon + wordmark) + UX Case Study Indicator -->
                 <div class="flex items-center gap-3 flex-shrink-0">
                     <a href="#prologue"
-                        class="flex items-center gap-2.5 rounded-lg group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e11d48] focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
+                        class="flex items-center gap-2.5 rounded-md group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6300] focus-visible:ring-offset-2"
                         aria-label="AeroFill Home">
                         <div class="w-6 h-6 flex items-center justify-center shrink-0">
-                            <svg class="w-4 h-4 text-white -rotate-45" viewBox="0 0 24 24" fill="none"
+                            <svg class="w-4 h-4 text-[#FF6300] -rotate-45" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path
                                     d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z" />
                             </svg>
                         </div>
                         <span
-                            class="text-lg font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">AeroFill</span>
+                            class="text-lg font-bold tracking-tight text-[#333333] group-hover:text-[#FF6300] transition-colors">AeroFill</span>
                     </a>
 
                     <!-- Reusable UX Case Study Indicator Pill -->
-                    <div class="hidden md:flex flex-col text-left border-l border-[#D5D9E2] pl-3">
-                        <span class="text-xs font-bold text-[#0B1020]">Deepak Tiwari</span>
-                        <span class="text-[10px] text-[#4B5563] font-mono">Solo UX Designer &amp; Researcher</span>
+                    <div class="hidden md:flex flex-col text-left border-l border-[#E5E7EB] pl-3">
+                        <span class="text-xs font-bold text-[#333333]">Deepak Tiwari</span>
+                        <span class="text-[10px] text-[#6B6F76] font-mono">Solo UX Designer &amp; Researcher</span>
                     </div>
                     <div id="actIndicatorPill"
-                        class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-[#F8F9FB] text-[#0B1020] border border-[#D5D9E2] shadow-2xs transition-all duration-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-[#E11D48]" id="actIndicatorDot"></span>
-                        <span id="actIndicatorText" class="font-mono text-[11px] font-bold text-[#0B1020]">Case
-                            Study</span>
+                        class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-[#F3F4F6] text-[#333333] border border-[#E5E7EB] transition-all duration-300">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#FF6300]" id="actIndicatorDot"></span>
+                        <span id="actIndicatorText" class="font-mono text-[11px] font-bold text-[#333333]">Case Study</span>
                     </div>
                 </div>
 
                 <!-- ZONE 2 (CENTER): ONE Unified Nav Config (8 Real Sections) with Sliding Active Indicator -->
                 <nav id="desktopNav" aria-label="Primary Navigation"
-                    class="desktop-nav-center relative items-center gap-3.5 lg:gap-5 xl:gap-6 text-xs lg:text-[13px] font-medium text-slate-600 dark:text-slate-300">
+                    class="desktop-nav-center relative items-center gap-3.5 lg:gap-5 xl:gap-6 text-xs lg:text-[13px] font-medium text-[#6B6F76]">
                     <a href="#summary" id="nav-item-summary"
-                        class="nav-link-item py-1.5 px-1 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e11d48] whitespace-nowrap">Summary</a>
+                        class="nav-link-item py-1.5 px-2 text-[#6B6F76] hover:text-[#FF6300] transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6300] whitespace-nowrap">Summary</a>
                     <a href="#story-1" id="nav-item-story-1"
-                        class="nav-link-item py-1.5 px-1 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e11d48] whitespace-nowrap">Story
-                        1</a>
+                        class="nav-link-item py-1.5 px-2 text-[#6B6F76] hover:text-[#FF6300] transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6300] whitespace-nowrap">Story 1</a>
                     <a href="#story-2" id="nav-item-story-2"
-                        class="nav-link-item py-1.5 px-1 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e11d48] whitespace-nowrap">Story
-                        2</a>
+                        class="nav-link-item py-1.5 px-2 text-[#6B6F76] hover:text-[#FF6300] transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6300] whitespace-nowrap">Story 2</a>
                     <a href="#story-3" id="nav-item-story-3"
-                        class="nav-link-item py-1.5 px-1 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e11d48] whitespace-nowrap">Story
-                        3</a>
+                        class="nav-link-item py-1.5 px-2 text-[#6B6F76] hover:text-[#FF6300] transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6300] whitespace-nowrap">Story 3</a>
                     <a href="#story-4" id="nav-item-story-4"
-                        class="nav-link-item py-1.5 px-1 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e11d48] whitespace-nowrap">Story
-                        4</a>
+                        class="nav-link-item py-1.5 px-2 text-[#6B6F76] hover:text-[#FF6300] transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6300] whitespace-nowrap">Story 4</a>
                     <a href="#appendix" id="nav-item-appendix"
-                        class="nav-link-item py-1.5 px-1 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e11d48] whitespace-nowrap">Appendix</a>
+                        class="nav-link-item py-1.5 px-2 text-[#6B6F76] hover:text-[#FF6300] transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6300] whitespace-nowrap">Appendix</a>
 
                     <!-- Sliding 2px Underline Indicator -->
-                    <div id="navSliderUnderline" style="left: 0; width: 0; opacity: 0;"></div>
+                    <div id="navSliderUnderline" style="left: 0; width: 0; opacity: 0; background-color: #FF6300;"></div>
                 </nav>
 
                 <!-- ZONE 3 (RIGHT): Secondary Link ("Login") + Primary CTA ("Book a Pilot") + Theme Toggle -->
                 <div class="flex items-center gap-2.5 sm:gap-3 flex-shrink-0">
                     <div class="desktop-nav-right hidden items-center gap-2.5">
                         <a href="mailto:dt019107@gmail.com" id="navPrimaryCta"
-                            class="magnetic-btn inline-flex items-center justify-center px-3.5 py-1.5 rounded-[10px] bg-[#e11d48] hover:bg-[#be123c] text-white text-xs font-semibold shadow-xs active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e11d48] whitespace-nowrap">
+                            class="magnetic-btn inline-flex items-center justify-center px-8 py-2.5 rounded-md bg-[#FF6300] hover:bg-[#E05700] text-white text-sm font-semibold shadow-xs active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6300] whitespace-nowrap min-h-[48px]">
                             Contact me
                         </a>
                     </div>
@@ -1742,130 +1934,130 @@
                 <div class="flex items-center gap-3">
                     <span class="tabular-nums">11:42 PM IST</span>
                     <span class="text-slate-300">&bull;</span>
-                    <span class="inline-flex items-center gap-1.5 text-rose-700 font-medium">
-                        <span class="w-1.5 h-1.5 rounded-full bg-rose-600"></span>
+                    <span class="inline-flex items-center gap-1.5 text-[#FF6300] font-medium">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#FF6300]"></span>
                         Doors Closed &bull; 24 Empty Seats
                     </span>
                 </div>
             </div>
 
-            <!-- 2. Typography Hero (Restrained, Editorial, Striking) -->
-            <div class="pt-8 pb-10 space-y-5">
-                <span class="text-xs font-mono uppercase tracking-widest text-slate-400 font-semibold block">
+            <!-- 2. Typography Hero (Akasa Air Bold Utilitarian Typography) -->
+            <div class="pt-8 pb-10 space-y-4">
+                <span class="text-xs font-mono uppercase tracking-wider text-[#6B6F76] font-semibold block">
                     UX Systems &bull; Aviation Yield Economics
                 </span>
 
                 <h1
-                    class="text-4xl sm:text-6xl lg:text-[70px] font-normal text-slate-950 font-serif tracking-[-0.03em] leading-[1.05]">
+                    class="text-2xl sm:text-[30px] font-bold text-[#333333] tracking-[0px] leading-[32px]">
                     Why do 71,400 airplane seats fly empty every day in India?
                 </h1>
 
                 <p
-                    class="text-lg sm:text-2xl text-slate-600 font-normal leading-relaxed max-w-3xl pt-2 font-serif italic">
+                    class="text-base sm:text-lg text-[#6B6F76] font-normal leading-[24px] max-w-3xl pt-1">
                     71,400 airplane seats fly empty every day in India. At the same time, people facing sudden family emergencies are locked out because last-minute tickets cost ₹20,000+. Here is how we can fill those empty seats at ₹3,200 without hurting airline profits.
                 </p>
             </div>
 
-            <!-- 3. The Human Story & Problem Definition (Clean, Elegant Borderless Layout) -->
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pt-8 pb-12 border-t border-b border-slate-200/90">
+            <!-- 3. The Human Story & Problem Definition (Clean, Service-First Layout) -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pt-8 pb-12 border-t border-b border-[#E5E7EB]">
 
                 <!-- Left: The Story of Ananya (7 Cols) -->
                 <div class="md:col-span-7 space-y-4">
-                    <span class="text-xs font-mono uppercase tracking-wider text-rose-700 font-bold block">
+                    <span class="text-xs font-mono uppercase tracking-wider text-[#FF6300] font-bold block">
                         The Human Scenario
                     </span>
 
-                    <p class="text-base sm:text-lg text-slate-900 leading-relaxed font-normal">
+                    <p class="text-base text-[#333333] leading-[22px] font-normal">
                         At 11:42 PM in Bengaluru, 22-year-old engineering student Ananya receives an urgent call:
                         <strong>her mother has suffered an emergency brain hemorrhage in Delhi.</strong>
                     </p>
 
-                    <p class="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
-                        The next ticket costs <strong class="text-slate-950 font-bold tabular-nums">₹21,400</strong>.
+                    <p class="text-base text-[#6B6F76] leading-[22px] font-normal">
+                        The next ticket costs <strong class="text-[#333333] font-bold tabular-nums">₹21,400</strong>.
                         Her savings account has exactly <strong
-                            class="text-slate-950 font-bold tabular-nums">₹4,800</strong>. Six hours later, Flight
+                            class="text-[#333333] font-bold tabular-nums">₹4,800</strong>. Six hours later, Flight
                         6E-205 takes off toward Delhi with <strong
-                            class="text-rose-700 font-semibold underline decoration-rose-300 underline-offset-4">24
+                            class="text-[#FF6300] font-semibold underline decoration-[#FF6300]/40 underline-offset-4">24
                             empty seats</strong>.
                     </p>
 
-                    <div class="pt-2 flex items-center gap-3 text-xs font-mono text-slate-500">
+                    <div class="pt-2 flex items-center gap-3 text-xs font-mono text-[#6B6F76]">
                         <span>Emergency Ticket: ₹21,400</span>
                         <span>/</span>
                         <span>Savings: ₹4,800</span>
                         <span>/</span>
-                        <span class="text-rose-700 font-bold">78% Shortfall</span>
+                        <span class="text-[#FF6300] font-bold">78% Shortfall</span>
                     </div>
                 </div>
 
                 <!-- Right: The Economic Reality (5 Cols) -->
                 <div
-                    class="md:col-span-5 md:pl-6 md:border-l md:border-slate-200/90 space-y-4 flex flex-col justify-between">
+                    class="md:col-span-5 md:pl-6 md:border-l md:border-[#E5E7EB] space-y-4 flex flex-col justify-between">
                     <div class="space-y-3">
-                        <span class="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold block">
+                        <span class="text-xs font-mono uppercase tracking-wider text-[#6B6F76] font-bold block">
                             The Structural Failure
                         </span>
 
-                        <p class="text-sm sm:text-base text-slate-800 leading-relaxed font-normal">
+                        <p class="text-sm sm:text-base text-[#6B6F76] leading-[22px] font-normal">
                             Airlines don't discount empty seats because they worry business travelers on company expense cards will buy cheap tickets instead of paying full price. So airlines let the seats fly empty—earning ₹0.00 once the flight takes off.
                         </p>
                     </div>
 
-                    <div class="p-3.5 rounded-lg bg-slate-100/70 text-xs font-mono text-slate-700 space-y-1">
-                        <div class="flex justify-between font-bold text-slate-950">
+                    <div class="p-3.5 rounded-md bg-[#F3F4F6] border border-[#E5E7EB] text-xs font-mono text-[#6B6F76] space-y-1">
+                        <div class="flex justify-between font-bold text-[#333333]">
                             <span>FLIGHT DEPARTED</span>
-                            <span class="text-rose-700">RESIDUAL VALUE: ₹0.00</span>
+                            <span class="text-[#FF6300]">RESIDUAL VALUE: ₹0.00</span>
                         </div>
-                        <p class="text-[11px] text-slate-500 leading-normal">Airbus A320neo &bull; 186 Seats &bull;
+                        <p class="text-[11px] text-[#6B6F76] leading-normal">Airbus A320neo &bull; 186 Seats &bull;
                             Typical Load: 162</p>
                     </div>
                 </div>
             </div>
 
-            <!-- 4. Four Key Metrics (Minimalist Typographic Grid, Zero Clutter) -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 pb-10">
-                <div class="space-y-1.5">
-                    <div class="text-xs font-mono uppercase tracking-wider text-slate-400">Empty seats / day</div>
-                    <div class="text-3xl sm:text-4xl font-light text-rose-700 font-serif tabular-nums">
+            <!-- 4. Four Key Metrics (Akasa Air 8px Cards & High-Contrast Visuals) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-10 pb-10">
+                <div class="p-4 rounded-md bg-white border border-[#E5E7EB] shadow-xs space-y-1.5">
+                    <div class="text-xs font-mono uppercase tracking-wider text-[#6B6F76]">Empty seats / day</div>
+                    <div class="text-2xl sm:text-3xl font-bold text-[#FF6300] tabular-nums">
                         <span class="hero-stat-number" data-target="71400" data-suffix="+"
                             data-format="comma">71,400+</span>
                     </div>
-                    <div class="text-xs text-slate-500 font-normal">About 1 in every 7 seats flies empty</div>
+                    <div class="text-xs text-[#6B6F76]">About 1 in every 7 seats flies empty</div>
                 </div>
 
-                <div class="space-y-1.5">
-                    <div class="text-xs font-mono uppercase tracking-wider text-slate-400">Annual lost value</div>
-                    <div class="text-3xl sm:text-4xl font-light text-slate-950 font-serif tabular-nums">
+                <div class="p-4 rounded-md bg-white border border-[#E5E7EB] shadow-xs space-y-1.5">
+                    <div class="text-xs font-mono uppercase tracking-wider text-[#6B6F76]">Annual lost value</div>
+                    <div class="text-2xl sm:text-3xl font-bold text-[#333333] tabular-nums">
                         <span class="hero-stat-number" data-target="9800" data-prefix="₹" data-suffix=" Cr"
                             data-format="comma">₹9,800 Cr</span>
                     </div>
-                    <div class="text-xs text-slate-500 font-normal">Lost forever once flights depart</div>
+                    <div class="text-xs text-[#6B6F76]">Lost forever once flights depart</div>
                 </div>
 
-                <div class="space-y-1.5">
-                    <div class="text-xs font-mono uppercase tracking-wider text-slate-400">Standby fare</div>
-                    <div class="text-3xl sm:text-4xl font-light text-slate-950 font-serif tabular-nums">
+                <div class="p-4 rounded-md bg-white border border-[#E5E7EB] shadow-xs space-y-1.5">
+                    <div class="text-xs font-mono uppercase tracking-wider text-[#6B6F76]">Standby fare</div>
+                    <div class="text-2xl sm:text-3xl font-bold text-[#5B22D6] tabular-nums">
                         <span class="hero-stat-number" data-target="3200" data-prefix="₹"
                             data-format="comma">₹3,200</span>
                     </div>
-                    <div class="text-xs text-slate-500 font-normal">Fixed price for students &amp; emergencies</div>
+                    <div class="text-xs text-[#6B6F76]">Fixed price for students &amp; emergencies</div>
                 </div>
 
-                <div class="space-y-1.5">
-                    <div class="text-xs font-mono uppercase tracking-wider text-slate-400">Airline contribution</div>
-                    <div class="text-3xl sm:text-4xl font-light text-slate-950 font-serif tabular-nums">
+                <div class="p-4 rounded-md bg-white border border-[#E5E7EB] shadow-xs space-y-1.5">
+                    <div class="text-xs font-mono uppercase tracking-wider text-[#6B6F76]">Airline contribution</div>
+                    <div class="text-2xl sm:text-3xl font-bold text-[#0F9D58] tabular-nums">
                         <span class="hero-stat-number" data-target="68" data-prefix="+" data-suffix="%"
                             data-format="integer">+68%</span>
                     </div>
-                    <div class="text-xs text-slate-500 font-normal">Extra profit for the airline on every seat</div>
+                    <div class="text-xs text-[#6B6F76]">Extra profit for the airline on every seat</div>
                 </div>
             </div>
 
-            <!-- 5. Minimalist Navigation Anchor -->
-            <div class="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-slate-200/90 text-xs">
+            <!-- 5. Navigation Anchor -->
+            <div class="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-[#E5E7EB] text-xs">
                 <div class="flex items-center gap-3">
                     <a href="#summary"
-                        class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-slate-950 hover:bg-slate-800 text-white font-medium transition-colors">
+                        class="inline-flex items-center gap-1.5 px-6 py-3 rounded-md bg-[#FF6300] hover:bg-[#E05700] text-white font-semibold transition-colors min-h-[48px]">
                         <span>Read Executive Brief</span>
                         <span class="font-mono">&darr;</span>
                     </a>
@@ -1921,42 +2113,42 @@
 
                 <!-- 1. Header & Identity Block -->
                 <div
-                    class="flex flex-col md:flex-row md:items-start justify-between gap-6 border-b border-slate-200 pb-6">
+                    class="flex flex-col md:flex-row md:items-start justify-between gap-6 border-b border-[#E5E7EB] pb-6">
                     <div class="space-y-3 max-w-3xl">
                         <div
-                            class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono font-medium tracking-wide bg-rose-50 text-rose-800 border border-rose-200 font-mono">
-                            <span class="w-2 h-2 rounded-full bg-rose-600 "></span>
+                            class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono font-medium tracking-wide bg-[#EFE6FF] text-[#5B22D6] border border-[#5B22D6]/30 rounded-sm">
+                            <span class="w-2 h-2 rounded-full bg-[#5B22D6]"></span>
                             <span>Executive Summary • 60-Second Recruiter Brief</span>
                         </div>
                         <h2
-                            class="text-2xl sm:text-4xl font-bold tracking-tight text-slate-950 font-serif leading-tight">
+                            class="text-2xl sm:text-4xl font-bold tracking-tight text-[#333333] leading-tight">
                             AeroFill: Making 71,400 Empty Airline Seats Accessible
                         </h2>
-                        <p class="text-base text-slate-700 leading-relaxed max-w-2xl">
+                        <p class="text-base text-[#6B6F76] leading-relaxed max-w-2xl">
                             How might we help students and families in emergencies buy unsold flight seats at a fair price (₹3,200)—without letting business travelers take advantage of cheap fares, and without delaying flights?
                         </p>
                     </div>
 
                     <div
-                        class="bg-slate-50 border border-slate-200 rounded-xl p-4 self-start md:self-auto font-mono text-xs space-y-1 shrink-0">
-                        <div class="text-slate-950 font-bold text-sm font-sans">Deepak Tiwari</div>
-                        <div class="text-slate-600 font-sans text-xs">Lead Product &amp; Systems Designer</div>
-                        <div class="text-rose-700 font-semibold pt-1 text-[11px]">Self-Initiated Case Study</div>
+                        class="bg-[#F3F4F6] border border-[#E5E7EB] rounded-md p-4 self-start md:self-auto font-mono text-xs space-y-1 shrink-0">
+                        <div class="text-[#333333] font-bold text-sm font-sans">Deepak Tiwari</div>
+                        <div class="text-[#6B6F76] font-sans text-xs">Lead Product &amp; Systems Designer</div>
+                        <div class="text-[#FF6300] font-semibold pt-1 text-[11px]">Self-Initiated Case Study</div>
                     </div>
                 </div>
 
                 <!-- Recruiter Quick-Action Banner (Immediate 60-Second Scan) -->
-                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/90 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 font-sans">
+                <div class="p-4 rounded-md bg-[#F3F4F6] border border-[#E5E7EB] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 font-sans">
                     <div class="flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-lg bg-[#0B1E36] text-white flex items-center justify-center shrink-0">
+                        <div class="w-9 h-9 rounded-md bg-[#FF6300] text-white flex items-center justify-center shrink-0">
                             <i data-lucide="smartphone" class="w-4 h-4"></i>
                         </div>
                         <div>
-                            <div class="text-xs font-bold text-slate-900">Evaluating for a Product Design role?</div>
-                            <div class="text-[11px] text-slate-600">Skip directly to Ananya's 4-screen standby mobile flow (gate rules, ABHA OCR &amp; digital pass).</div>
+                            <div class="text-xs font-bold text-[#333333]">Evaluating for a Product Design role?</div>
+                            <div class="text-[11px] text-[#6B6F76]">Skip directly to Ananya's 4-screen standby mobile flow (gate rules, ABHA OCR &amp; digital pass).</div>
                         </div>
                     </div>
-                    <a href="#story-1" class="px-3.5 py-1.5 rounded-lg bg-[#0B1E36] hover:bg-[#122b4d] text-white text-xs font-semibold whitespace-nowrap transition-colors flex items-center gap-1.5 self-end sm:self-auto shadow-xs">
+                    <a href="#story-1" class="px-4 py-2 rounded-md bg-[#FF6300] hover:bg-[#E05700] text-white text-xs font-semibold whitespace-nowrap transition-colors flex items-center gap-1.5 self-end sm:self-auto shadow-xs">
                         <span>Jump to Prototype</span>
                         <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                     </a>
@@ -1964,35 +2156,35 @@
 
                 <!-- 2. Project Metadata Grid (Role, Timeline, Data Foundation) -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-                    <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
-                        <span class="text-slate-500 uppercase text-[11px] font-bold tracking-wider font-mono block">My
+                    <div class="p-5 rounded-md bg-[#F3F4F6] border border-[#E5E7EB] space-y-2">
+                        <span class="text-[#6B6F76] uppercase text-[11px] font-bold tracking-wider font-mono block">My
                             Role</span>
-                        <div class="text-base font-bold text-slate-950 font-sans">Solo Product Designer &amp; Researcher
+                        <div class="text-base font-bold text-[#333333] font-sans">Solo Product Designer &amp; Researcher
                         </div>
-                        <p class="text-slate-700 text-xs font-sans leading-relaxed">
+                        <p class="text-[#6B6F76] text-xs font-sans leading-relaxed">
                             End-to-end design: user research, revenue cannibalization modeling, mobile interface
                             architecture, and interactive code prototypes.
                         </p>
                     </div>
 
-                    <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                    <div class="p-5 rounded-md bg-[#F3F4F6] border border-[#E5E7EB] space-y-2">
                         <span
-                            class="text-slate-500 uppercase text-[11px] font-bold tracking-wider font-mono block">Sprint
+                            class="text-[#6B6F76] uppercase text-[11px] font-bold tracking-wider font-mono block">Sprint
                             Timeline</span>
-                        <div class="text-base font-bold text-slate-950 font-sans">3-Week Execution Sprint</div>
-                        <p class="text-slate-700 text-xs font-sans leading-relaxed">
+                        <div class="text-base font-bold text-[#333333] font-sans">3-Week Execution Sprint</div>
+                        <p class="text-[#6B6F76] text-xs font-sans leading-relaxed">
                             <strong>Week 1:</strong> DGCA data analysis &amp; airline economics. <strong>Week
                                 2:</strong> 6 friction guardrails &amp; emergency ID flow. <strong>Week 3:</strong> Live
                             cabin &amp; CFO simulators.
                         </p>
                     </div>
 
-                    <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                    <div class="p-5 rounded-md bg-[#F3F4F6] border border-[#E5E7EB] space-y-2">
                         <span
-                            class="text-slate-500 uppercase text-[11px] font-bold tracking-wider font-mono block">Evidence
+                            class="text-[#6B6F76] uppercase text-[11px] font-bold tracking-wider font-mono block">Evidence
                             &amp; Constraints</span>
-                        <div class="text-base font-bold text-slate-950 font-sans">Public DGCA Data &amp; India DPI</div>
-                        <p class="text-slate-700 text-xs font-sans leading-relaxed">
+                        <div class="text-base font-bold text-[#333333] font-sans">Public DGCA Data &amp; India DPI</div>
+                        <p class="text-[#6B6F76] text-xs font-sans leading-relaxed">
                             Strictly based on public DGCA aviation filings and India's open digital architecture
                             (DigiLocker, ABHA health records, Digi Yatra).
                         </p>
@@ -2001,90 +2193,90 @@
 
                 <!-- 3. The 3 Core Architectural Decisions -->
                 <div class="space-y-4 pt-2">
-                    <div class="flex items-center justify-between border-b border-slate-200 pb-2.5">
+                    <div class="flex items-center justify-between border-b border-[#E5E7EB] pb-2.5">
                         <h3
-                            class="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-slate-900"></span>
+                            class="text-xs font-bold uppercase tracking-wider text-[#333333] font-mono flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-[#FF6300]"></span>
                             <span>The 3 Strategic Design Decisions</span>
                         </h3>
-                        <span class="text-xs text-slate-500 font-mono">Click any card to read deep-dive</span>
+                        <span class="text-xs text-[#6B6F76] font-mono">Click any card to read deep-dive</span>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <!-- Decision 1 -->
                         <a href="#story-1"
-                            class="group p-5 rounded-xl bg-white hover:bg-slate-50/80 border border-slate-200 hover:border-slate-400 transition-all flex flex-col justify-between space-y-3 shadow-xs">
+                            class="group p-5 rounded-md bg-white hover:bg-[#F3F4F6] border border-[#E5E7EB] hover:border-[#FF6300]/40 transition-all flex flex-col justify-between space-y-3 shadow-xs">
                             <div class="space-y-2">
                                 <div class="flex items-center justify-between text-xs font-mono">
                                     <span
-                                        class="font-bold text-rose-700 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">Decision
+                                        class="font-bold text-[#5B22D6] bg-[#EFE6FF] px-2 py-0.5 rounded-sm border border-[#5B22D6]/30">Decision
                                         01</span>
-                                    <span class="text-slate-500 group-hover:text-slate-900 transition">Explore
+                                    <span class="text-[#6B6F76] group-hover:text-[#FF6300] transition">Explore
                                         &rarr;</span>
                                 </div>
                                 <h4
-                                    class="text-base font-bold text-slate-950 group-hover:text-rose-700 transition leading-snug">
+                                    class="text-base font-bold text-[#333333] group-hover:text-[#FF6300] transition leading-snug">
                                     Physical Friction Instead of Price Discounts
                                 </h4>
-                                <p class="text-xs text-slate-600 leading-relaxed">
+                                <p class="text-xs text-[#6B6F76] leading-relaxed">
                                     If an airline simply drops ticket prices, business travelers buy them and the airline loses money. Instead, we add 6 strict travel rules (like middle seats only and small backpacks) that business travelers refuse to accept.
                                 </p>
                             </div>
                             <div
-                                class="pt-2 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono text-slate-700 font-medium">
-                                <span class="text-emerald-700 font-bold">&check; Result:</span>
+                                class="pt-2 border-t border-[#E5E7EB] flex items-center gap-1.5 text-[11px] font-mono text-[#333333] font-medium">
+                                <span class="text-[#0F9D58] font-bold">&check; Result:</span>
                                 <span>Zero airline cannibalization</span>
                             </div>
                         </a>
 
                         <!-- Decision 2 -->
                         <a href="#story-2"
-                            class="group p-5 rounded-xl bg-white hover:bg-slate-50/80 border border-slate-200 hover:border-slate-400 transition-all flex flex-col justify-between space-y-3 shadow-xs">
+                            class="group p-5 rounded-md bg-white hover:bg-[#F3F4F6] border border-[#E5E7EB] hover:border-[#FF6300]/40 transition-all flex flex-col justify-between space-y-3 shadow-xs">
                             <div class="space-y-2">
                                 <div class="flex items-center justify-between text-xs font-mono">
                                     <span
-                                        class="font-bold text-rose-700 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">Decision
+                                        class="font-bold text-[#5B22D6] bg-[#EFE6FF] px-2 py-0.5 rounded-sm border border-[#5B22D6]/30">Decision
                                         02</span>
-                                    <span class="text-slate-500 group-hover:text-slate-900 transition">Explore
+                                    <span class="text-[#6B6F76] group-hover:text-[#FF6300] transition">Explore
                                         &rarr;</span>
                                 </div>
                                 <h4
-                                    class="text-base font-bold text-slate-950 group-hover:text-rose-700 transition leading-snug">
+                                    class="text-base font-bold text-[#333333] group-hover:text-[#FF6300] transition leading-snug">
                                     Dedicated Medical Emergency Standby Tier
                                 </h4>
-                                <p class="text-xs text-slate-600 leading-relaxed">
+                                <p class="text-xs text-[#6B6F76] leading-relaxed">
                                     We hold about 3 middle seats per flight for verified hospital emergencies at a flat ₹3,200 price. Eligibility is checked digitally in seconds, with a phone desk backup so families are never left stranded.
                                 </p>
                             </div>
                             <div
-                                class="pt-2 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono text-slate-700 font-medium">
-                                <span class="text-emerald-700 font-bold">&check; Result:</span>
+                                class="pt-2 border-t border-[#E5E7EB] flex items-center gap-1.5 text-[11px] font-mono text-[#333333] font-medium">
+                                <span class="text-[#0F9D58] font-bold">&check; Result:</span>
                                 <span>85% savings during emergencies</span>
                             </div>
                         </a>
 
                         <!-- Decision 3 -->
                         <a href="#story-3"
-                            class="group p-5 rounded-xl bg-white hover:bg-slate-50/80 border border-slate-200 hover:border-slate-400 transition-all flex flex-col justify-between space-y-3 shadow-xs">
+                            class="group p-5 rounded-md bg-white hover:bg-[#F3F4F6] border border-[#E5E7EB] hover:border-[#FF6300]/40 transition-all flex flex-col justify-between space-y-3 shadow-xs">
                             <div class="space-y-2">
                                 <div class="flex items-center justify-between text-xs font-mono">
                                     <span
-                                        class="font-bold text-rose-700 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">Decision
+                                        class="font-bold text-[#5B22D6] bg-[#EFE6FF] px-2 py-0.5 rounded-sm border border-[#5B22D6]/30">Decision
                                         03</span>
-                                    <span class="text-slate-500 group-hover:text-slate-900 transition">Explore
+                                    <span class="text-[#6B6F76] group-hover:text-[#FF6300] transition">Explore
                                         &rarr;</span>
                                 </div>
                                 <h4
-                                    class="text-base font-bold text-slate-950 group-hover:text-rose-700 transition leading-snug">
+                                    class="text-base font-bold text-[#333333] group-hover:text-[#FF6300] transition leading-snug">
                                     Human-Centered Constraints Over Abstract Load Factors
                                 </h4>
-                                <p class="text-xs text-slate-600 leading-relaxed">
+                                <p class="text-xs text-[#6B6F76] leading-relaxed">
                                     We designed the rules by contrasting Ananya (a student with ₹4,800 savings) against Priya (a corporate consultant with an expense card). The rules make standby a lifesaver for Ananya, but completely impractical for Priya.
                                 </p>
                             </div>
                             <div
-                                class="pt-2 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-mono text-slate-700 font-medium">
-                                <span class="text-emerald-700 font-bold">&check; Result:</span>
+                                class="pt-2 border-t border-[#E5E7EB] flex items-center gap-1.5 text-[11px] font-mono text-[#333333] font-medium">
+                                <span class="text-[#0F9D58] font-bold">&check; Result:</span>
                                 <span>Human context before system logic</span>
                             </div>
                         </a>
@@ -2094,63 +2286,63 @@
                 <!-- 4. Key UX & Interaction Choices (6 Micro-Decisions) -->
                 <div class="space-y-3 pt-2">
                     <h3
-                        class="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-slate-900"></span>
+                        class="text-xs font-bold uppercase tracking-wider text-[#333333] font-mono flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-[#5B22D6]"></span>
                         <span>Key UX &amp; Interaction Choices Built Into This Prototype</span>
                     </h3>
 
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
-                            <div class="font-bold text-slate-900 flex items-center gap-1.5 font-mono text-[11px]">
-                                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                        <div class="p-3.5 rounded-md bg-[#F3F4F6] border border-[#E5E7EB] space-y-1.5">
+                            <div class="font-bold text-[#333333] flex items-center gap-1.5 font-mono text-[11px]">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#FFB366]"></span>
                                 <span>Perishable Triad</span>
                             </div>
-                            <p class="text-[11px] text-slate-600 leading-normal">Compared seats to hotel rooms and fruit
+                            <p class="text-[11px] text-[#6B6F76] leading-normal">Compared seats to hotel rooms and fruit
                                 to explain zero residual value without jargon.</p>
                         </div>
 
-                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
-                            <div class="font-bold text-slate-900 flex items-center gap-1.5 font-mono text-[11px]">
-                                <span class="w-1.5 h-1.5 rounded-full bg-rose-600"></span>
+                        <div class="p-3.5 rounded-md bg-[#F3F4F6] border border-[#E5E7EB] space-y-1.5">
+                            <div class="font-bold text-[#333333] flex items-center gap-1.5 font-mono text-[11px]">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#FF6300]"></span>
                                 <span>Cannibalization Toggle</span>
                             </div>
-                            <p class="text-[11px] text-slate-600 leading-normal">Live simulator toggle proving why open
+                            <p class="text-[11px] text-[#6B6F76] leading-normal">Live simulator toggle proving why open
                                 discounts ruin airline profit models.</p>
                         </div>
 
-                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
-                            <div class="font-bold text-slate-900 flex items-center gap-1.5 font-mono text-[11px]">
-                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                        <div class="p-3.5 rounded-md bg-[#F3F4F6] border border-[#E5E7EB] space-y-1.5">
+                            <div class="font-bold text-[#333333] flex items-center gap-1.5 font-mono text-[11px]">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#0F9D58]"></span>
                                 <span>Corporate Defense</span>
                             </div>
-                            <p class="text-[11px] text-slate-600 leading-normal">Clear 'Blocked' feedback showing how
+                            <p class="text-[11px] text-[#6B6F76] leading-normal">Clear 'Blocked' feedback showing how
                                 business flyers are automatically filtered out.</p>
                         </div>
 
-                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
-                            <div class="font-bold text-slate-900 flex items-center gap-1.5 font-mono text-[11px]">
-                                <span class="w-1.5 h-1.5 rounded-full bg-slate-700"></span>
+                        <div class="p-3.5 rounded-md bg-[#F3F4F6] border border-[#E5E7EB] space-y-1.5">
+                            <div class="font-bold text-[#333333] flex items-center gap-1.5 font-mono text-[11px]">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#5B22D6]"></span>
                                 <span>1-Click Test Button</span>
                             </div>
-                            <p class="text-[11px] text-slate-600 leading-normal">Single trigger to simulate all 6
+                            <p class="text-[11px] text-[#6B6F76] leading-normal">Single trigger to simulate all 6
                                 anti-fraud friction checks in real-time.</p>
                         </div>
 
-                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
-                            <div class="font-bold text-slate-900 flex items-center gap-1.5 font-mono text-[11px]">
-                                <span class="w-1.5 h-1.5 rounded-full bg-slate-700"></span>
+                        <div class="p-3.5 rounded-md bg-[#F3F4F6] border border-[#E5E7EB] space-y-1.5">
+                            <div class="font-bold text-[#333333] flex items-center gap-1.5 font-mono text-[11px]">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#6B6F76]"></span>
                                 <span>Middle Seats Only</span>
                             </div>
-                            <p class="text-[11px] text-slate-600 leading-normal">Restricted to seats B &amp; E as a
+                            <p class="text-[11px] text-[#6B6F76] leading-normal">Restricted to seats B &amp; E as a
                                 natural physical constraint business flyers avoid.</p>
                         </div>
 
-                        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
-                            <div class="font-bold text-slate-900 flex items-center gap-1.5 font-mono text-[11px]">
-                                <span class="w-1.5 h-1.5 rounded-full bg-rose-600"></span>
+                        <div class="p-3.5 rounded-md bg-[#F3F4F6] border border-[#E5E7EB] space-y-1.5">
+                            <div class="font-bold text-[#333333] flex items-center gap-1.5 font-mono text-[11px]">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#FF6300]"></span>
                                 <span>&lt; 90s Audit Target</span>
                             </div>
-                            <p class="text-[11px] text-slate-600 leading-normal">Fast medical verification so standby
+                            <p class="text-[11px] text-[#6B6F76] leading-normal">Fast medical verification so standby
                                 never causes gate turnaround delays.</p>
                         </div>
                     </div>
@@ -2158,14 +2350,14 @@
 
                 <!-- 5. Editorial Footnote / Disclosure -->
                 <div
-                    class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-slate-600">
+                    class="pt-4 border-t border-[#E5E7EB] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-[#6B6F76]">
                     <div class="flex items-center gap-2">
-                        <span class="font-semibold text-slate-800">Disclosure:</span>
+                        <span class="font-semibold text-[#333333]">Disclosure:</span>
                         <span>Self-initiated conceptual UX project. Independent research using public DGCA aviation
                             filings.</span>
                     </div>
                     <a href="#story-4"
-                        class="text-rose-700 hover:text-rose-800 font-mono font-medium whitespace-nowrap transition">
+                        class="text-[#5B22D6] hover:text-[#FF6300] font-mono font-medium whitespace-nowrap transition">
                         Explore Interactive Simulators &rarr;
                     </a>
                 </div>
@@ -6009,17 +6201,17 @@
         <!-- RETROSPECTIVE: WHAT I LEARNED & WHAT I WOULD DO NEXT                      -->
         <!-- ========================================================================= -->
         <section id="retrospective" class="story-chapter scroll-mt-24 py-8 space-y-6" data-chapter-name="Retrospective">
-            <div class="rounded-[28px] bg-slate-900 text-white p-6 sm:p-10 border border-slate-800 shadow-sm space-y-8">
+            <div class="rounded-md bg-white text-[#333333] p-6 sm:p-10 border border-[#E5E7EB] shadow-xs space-y-8">
                 <div class="max-w-3xl space-y-2">
                     <div
-                        class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono font-medium tracking-wide bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 font-mono">
-                        <i data-lucide="book-open" class="w-3.5 h-3.5 text-indigo-400"></i>
+                        class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono font-medium tracking-wide bg-[#EFE6FF] text-[#5B22D6] border border-[#5B22D6]/30 rounded-sm">
+                        <i data-lucide="book-open" class="w-3.5 h-3.5 text-[#5B22D6]"></i>
                         <span>UX Case Study Synthesis</span>
                     </div>
-                    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+                    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-[#333333]">
                         What I Learned &amp; What I Would Do Next
                     </h2>
-                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    <p class="text-xs sm:text-sm text-[#6B6F76] leading-relaxed">
                         Reflections from designing a high-stakes aviation systems interface balancing razor-thin
                         commercial margins against civic access.
                     </p>
@@ -6028,48 +6220,48 @@
                 <!-- 2-Column Grid: What I Learned vs What I Would Do Next -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- Column 1: What I Learned -->
-                    <div class="p-6 rounded-2xl bg-slate-800/50 border border-slate-700/60 space-y-4">
+                    <div class="p-6 rounded-md bg-[#F3F4F6] border border-[#E5E7EB] space-y-4">
                         <div class="flex items-center gap-2">
-                            <div class="w-6 h-6 flex items-center justify-center shrink-0">
+                            <div class="w-6 h-6 rounded-sm bg-[#5B22D6] text-white text-xs font-bold flex items-center justify-center shrink-0">
                                 01
                             </div>
-                            <h3 class="text-base font-bold text-white">What I Learned</h3>
+                            <h3 class="text-base font-bold text-[#333333]">What I Learned</h3>
                         </div>
-                        <ul class="space-y-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        <ul class="space-y-3 text-xs sm:text-sm text-[#333333] leading-relaxed">
                             <li class="flex items-start gap-2.5">
-                                <i data-lucide="check" class="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5"></i>
+                                <i data-lucide="check" class="w-4 h-4 text-[#0F9D58] flex-shrink-0 mt-0.5"></i>
                                 <span><strong>Inconvenience can be a powerful design tool:</strong> When corporate executives and budget students both want flight tickets, you can't just lower the price. You have to make the conditions inconvenient for business travelers (middle seats, small bags) so seats go to people who genuinely need them.</span>
                             </li>
                             <li class="flex items-start gap-2.5">
-                                <i data-lucide="check" class="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5"></i>
+                                <i data-lucide="check" class="w-4 h-4 text-[#0F9D58] flex-shrink-0 mt-0.5"></i>
                                 <span><strong>Digital systems remove paperwork and protect privacy:</strong> Using existing government systems (DigiLocker, ABHA, Digi Yatra) lets airlines verify students and medical emergencies automatically in seconds without handling physical paperwork at the counter.</span>
                             </li>
                             <li class="flex items-start gap-2.5">
-                                <i data-lucide="check" class="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5"></i>
+                                <i data-lucide="check" class="w-4 h-4 text-[#0F9D58] flex-shrink-0 mt-0.5"></i>
                                 <span><strong>On-time departures matter more than ticket sales:</strong> A passenger who delays a flight by even 2 minutes costs the airline more money than their ticket is worth. That is why small carry-on bags only and instant facial scan boarding are non-negotiable.</span>
                             </li>
                         </ul>
                     </div>
 
                     <!-- Column 2: What I Would Do Next -->
-                    <div class="p-6 rounded-2xl bg-slate-800/50 border border-slate-700/60 space-y-4">
+                    <div class="p-6 rounded-md bg-[#F3F4F6] border border-[#E5E7EB] space-y-4">
                         <div class="flex items-center gap-2">
-                            <div class="w-6 h-6 flex items-center justify-center shrink-0">
+                            <div class="w-6 h-6 rounded-sm bg-[#FF6300] text-white text-xs font-bold flex items-center justify-center shrink-0">
                                 02
                             </div>
-                            <h3 class="text-base font-bold text-white">What I Would Do Next</h3>
+                            <h3 class="text-base font-bold text-[#333333]">What I Would Do Next</h3>
                         </div>
-                        <ul class="space-y-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        <ul class="space-y-3 text-xs sm:text-sm text-[#333333] leading-relaxed">
                             <li class="flex items-start gap-2.5">
-                                <i data-lucide="arrow-right" class="w-4 h-4 text-indigo-400 flex-shrink-0 mt-0.5"></i>
+                                <i data-lucide="arrow-right" class="w-4 h-4 text-[#FF6300] flex-shrink-0 mt-0.5"></i>
                                 <span><strong>Shadow airport boarding agents:</strong> Spend time watching gate staff at Bangalore and Delhi airports during final boarding to observe how standby queues work in the real terminal.</span>
                             </li>
                             <li class="flex items-start gap-2.5">
-                                <i data-lucide="arrow-right" class="w-4 h-4 text-indigo-400 flex-shrink-0 mt-0.5"></i>
+                                <i data-lucide="arrow-right" class="w-4 h-4 text-[#FF6300] flex-shrink-0 mt-0.5"></i>
                                 <span><strong>Study airport security flow:</strong> Verify that standby travelers arriving 2 hours early can pass smoothly through airport security checkpoints without causing any bottlenecks.</span>
                             </li>
                             <li class="flex items-start gap-2.5">
-                                <i data-lucide="arrow-right" class="w-4 h-4 text-indigo-400 flex-shrink-0 mt-0.5"></i>
+                                <i data-lucide="arrow-right" class="w-4 h-4 text-[#FF6300] flex-shrink-0 mt-0.5"></i>
                                 <span><strong>Run a pilot with a regional airline:</strong> Partner with a smaller domestic airline on regional routes to test standby seat clearance with real passengers before expanding to major metro flights.</span>
                             </li>
                         </ul>
@@ -6078,10 +6270,10 @@
 
                 <!-- Closing Signature -->
                 <div
-                    class="pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
+                    class="pt-4 border-t border-[#E5E7EB] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#6B6F76]">
                     <div>Designed &amp; coded by Deepak Tiwari • Bangalore, India</div>
                     <div class="flex items-center gap-3">
-                        <a href="#summary" class="text-indigo-400 hover:text-indigo-300 transition">Back to Top ➔</a>
+                        <a href="#summary" class="text-[#5B22D6] hover:text-[#FF6300] font-semibold transition">Back to Top ➔</a>
                     </div>
                 </div>
             </div>
@@ -6467,9 +6659,9 @@
                                             fill-opacity="0.85" />
 
                                         <!-- Cockpit Crew Seats & Center Pedestal -->
-                                        <rect x="122" y="204" width="7" height="9" rx="1.5" fill="#6366F1"
+                                        <rect x="122" y="204" width="7" height="9" rx="1.5" fill="#5B22D6"
                                             opacity="0.9" />
-                                        <rect x="122" y="227" width="7" height="9" rx="1.5" fill="#6366F1"
+                                        <rect x="122" y="227" width="7" height="9" rx="1.5" fill="#5B22D6"
                                             opacity="0.9" />
                                         <line x1="142" y1="193" x2="142" y2="247" stroke="#475569" stroke-width="2"
                                             stroke-dasharray="2 2" />
@@ -6686,24 +6878,24 @@
 
                                         <!-- ================= 5. INTERACTIVE COLOR-CODED HOTSPOTS ================= -->
 
-                                        <!-- Hotspot 1: Flight Deck (Cockpit) -> Indigo -->
+                                        <!-- Hotspot 1: Flight Deck (Cockpit) -> Purple -->
                                         <g id="hotspot-1" class="aircraft-hotspot is-active" role="button" tabindex="0"
                                             onclick="inspectAircraftZone('cockpit')"
                                             onkeydown="handleHotspotKey(event, 'cockpit')"
                                             aria-label="Hotspot 1: Flight Deck Cockpit">
-                                            <circle cx="125" cy="220" r="24" fill="#6366F1" opacity="0.25"
+                                            <circle cx="125" cy="220" r="24" fill="#5B22D6" opacity="0.25"
                                                 class="hotspot-halo" />
-                                            <circle cx="125" cy="220" r="16" fill="#4F46E5" stroke="#FFFFFF"
+                                            <circle cx="125" cy="220" r="16" fill="#5B22D6" stroke="#FFFFFF"
                                                 stroke-width="2.5" />
                                             <text x="125" y="224" fill="#FFFFFF" font-size="11"
-                                                font-family="Inter, sans-serif" font-weight="700"
+                                                font-family="Roboto, sans-serif" font-weight="700"
                                                 text-anchor="middle">1</text>
                                             <!-- Hover Tooltip -->
                                             <g class="hotspot-tooltip">
-                                                <rect x="75" y="172" width="100" height="22" rx="6" fill="#0F172A"
-                                                    stroke="#6366F1" stroke-width="1" />
-                                                <text x="125" y="187" fill="#E0E7FF" font-size="10"
-                                                    font-family="Inter, sans-serif" font-weight="600"
+                                                <rect x="75" y="172" width="100" height="22" rx="4" fill="#0F172A"
+                                                    stroke="#5B22D6" stroke-width="1" />
+                                                <text x="125" y="187" fill="#EFE6FF" font-size="10"
+                                                    font-family="Roboto, sans-serif" font-weight="600"
                                                     text-anchor="middle">Flight Deck</text>
                                             </g>
                                         </g>
@@ -8508,8 +8700,8 @@
                     datasets: [{
                         label: 'Estimated Daily Empty Seats',
                         data: [46000, 19500, 4000, 2000],
-                        backgroundColor: ['#B45309', '#D97706', '#F59E0B', '#CBD5E1'],
-                        borderRadius: 6,
+                        backgroundColor: ['#FF6300', '#5B22D6', '#6B6F76', '#E5E7EB'],
+                        borderRadius: 4,
                         borderSkipped: false
                     }]
                 },
@@ -8545,11 +8737,11 @@
                                     }
                                     return null;
                                 },
-                                color: '#94A3B8',
+                                color: '#9CA3AF',
                                 font: { family: "'JetBrains Mono', monospace", size: 11 }
                             },
                             grid: {
-                                color: (ctx) => (ctx.tick && ctx.tick.value <= 50000 ? 'rgba(226, 232, 240, 0.7)' : 'transparent'),
+                                color: (ctx) => (ctx.tick && ctx.tick.value <= 50000 ? 'rgba(229, 231, 235, 0.8)' : 'transparent'),
                                 drawBorder: false
                             },
                             title: { display: false }
@@ -8557,8 +8749,8 @@
                         x: {
                             grid: { display: false },
                             ticks: {
-                                color: '#1E293B',
-                                font: { family: "'Inter', sans-serif", size: 12, weight: '600' }
+                                color: '#333333',
+                                font: { family: "'Roboto', sans-serif", size: 12, weight: '500' }
                             }
                         }
                     }
@@ -8607,7 +8799,7 @@
                     labels: ['Airline Profit (42.7%)', 'Extra Fuel Burn (25.6%)', 'Airport & CISF Fees (19.7%)', 'Platform Fee (12.0%)'],
                     datasets: [{
                         data: [1366, 820, 630, 384],
-                        backgroundColor: ['#0F8A78', '#475569', '#5B6475', '#94A3B8'],
+                        backgroundColor: ['#FF6300', '#5B22D6', '#6B6F76', '#D1D5DB'],
                         borderWidth: 2,
                         borderColor: '#FFFFFF',
                         hoverOffset: 10
@@ -8631,8 +8823,8 @@
                             labels: {
                                 boxWidth: 10,
                                 boxHeight: 10,
-                                color: '#475569',
-                                font: { family: "'Inter', sans-serif", size: 11, weight: '500' },
+                                color: '#6B6F76',
+                                font: { family: "'Roboto', sans-serif", size: 11, weight: '500' },
                                 padding: 12
                             }
                         },
@@ -8810,8 +9002,8 @@
                     datasets: [{
                         label: 'Standby Per-Flight Economics',
                         data: [54400, 22950, 31450],
-                        backgroundColor: ['#0F8A78', '#475569', '#0F8A78'],
-                        borderRadius: 8,
+                        backgroundColor: ['#FF6300', '#6B6F76', '#5B22D6'],
+                        borderRadius: 4,
                         borderSkipped: false
                     }]
                 },
@@ -8840,13 +9032,13 @@
                         x: {
                             grid: { display: false },
                             ticks: {
-                                color: '#1E293B',
-                                font: { family: "'Inter', sans-serif", size: 11, weight: '600' }
+                                color: '#333333',
+                                font: { family: "'Roboto', sans-serif", size: 11, weight: '500' }
                             }
                         },
                         y: {
                             beginAtZero: true,
-                            grid: { color: 'rgba(226, 232, 240, 0.7)' },
+                            grid: { color: 'rgba(229, 231, 235, 0.8)' },
                             ticks: {
                                 color: '#64748B',
                                 font: { family: "'JetBrains Mono', monospace", size: 11 },
@@ -8986,14 +9178,14 @@
 
         function initScrollSpy() {
             const sections = [
-                { id: 'act-1', navId: 'nav-item-act-1', actNum: 1, text: `Act 1 of ${TOTAL_ACTS}`, color: '#EA580C' },
-                { id: 'act-2', navId: 'nav-item-act-2', actNum: 2, text: `Act 2 of ${TOTAL_ACTS}`, color: '#475569' },
-                { id: 'act-3', navId: 'nav-item-act-3', actNum: 3, text: `Act 3 of ${TOTAL_ACTS}`, color: '#4F46E5' },
-                { id: 'act-4', navId: 'nav-item-act-4', actNum: 4, text: `Act 4 of ${TOTAL_ACTS}`, color: '#E11D48' },
-                { id: 'aviation-school', navId: 'nav-item-aviation-school', actNum: 5, text: `Act 5 of ${TOTAL_ACTS}`, color: '#06B6D4' },
-                { id: 'cabin-seatmap-section', navId: 'nav-item-cabin-seatmap-section', actNum: 6, text: `Act 6 of ${TOTAL_ACTS}`, color: '#059669' },
-                { id: 'cfo-simulator', navId: 'nav-item-cfo-simulator', actNum: 7, text: `Act 7 of ${TOTAL_ACTS}`, color: '#0D9488' },
-                { id: 'pitch-deck', navId: 'nav-item-pitch-deck', actNum: 8, text: `Act 8 of ${TOTAL_ACTS}`, color: '#4F46E5' }
+                { id: 'act-1', navId: 'nav-item-act-1', actNum: 1, text: `Act 1 of ${TOTAL_ACTS}`, color: '#FF6300' },
+                { id: 'act-2', navId: 'nav-item-act-2', actNum: 2, text: `Act 2 of ${TOTAL_ACTS}`, color: '#6B6F76' },
+                { id: 'act-3', navId: 'nav-item-act-3', actNum: 3, text: `Act 3 of ${TOTAL_ACTS}`, color: '#5B22D6' },
+                { id: 'act-4', navId: 'nav-item-act-4', actNum: 4, text: `Act 4 of ${TOTAL_ACTS}`, color: '#D92D20' },
+                { id: 'aviation-school', navId: 'nav-item-aviation-school', actNum: 5, text: `Act 5 of ${TOTAL_ACTS}`, color: '#FF6300' },
+                { id: 'cabin-seatmap-section', navId: 'nav-item-cabin-seatmap-section', actNum: 6, text: `Act 6 of ${TOTAL_ACTS}`, color: '#0F9D58' },
+                { id: 'cfo-simulator', navId: 'nav-item-cfo-simulator', actNum: 7, text: `Act 7 of ${TOTAL_ACTS}`, color: '#5B22D6' },
+                { id: 'pitch-deck', navId: 'nav-item-pitch-deck', actNum: 8, text: `Act 8 of ${TOTAL_ACTS}`, color: '#FF6300' }
             ];
 
             const header = document.getElementById('site-header');

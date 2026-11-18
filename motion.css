@@ -40,14 +40,14 @@
 }
 
 .flight-track-path {
-    stroke: rgba(99, 102, 241, 0.22);
+    stroke: rgba(255, 99, 0, 0.22);
     stroke-width: 1.5;
     stroke-dasharray: 4 6;
     fill: none;
 }
 
 .flight-track-fill {
-    stroke: #6366F1;
+    stroke: #FF6300;
     stroke-width: 2;
     fill: none;
     stroke-linecap: round;
@@ -63,7 +63,7 @@
     transform: translate(-50%, -50%);
     will-change: transform;
     pointer-events: auto;
-    filter: drop-shadow(0 2px 6px rgba(99, 102, 241, 0.45));
+    filter: drop-shadow(0 2px 6px rgba(255, 99, 0, 0.45));
     transition: transform 80ms linear;
 }
 
@@ -134,7 +134,7 @@
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background: radial-gradient(circle 220px at var(--spotlight-x) var(--spotlight-y), rgba(99, 102, 241, 0.12), transparent 75%);
+    background: radial-gradient(circle 220px at var(--spotlight-x) var(--spotlight-y), rgba(255, 99, 0, 0.12), transparent 75%);
     opacity: var(--spotlight-opacity);
     transition: opacity var(--motion-duration-normal) var(--motion-ease-standard);
     pointer-events: none;
@@ -142,7 +142,7 @@
 }
 
 .dark .guardrail-card::after {
-    background: radial-gradient(circle 220px at var(--spotlight-x) var(--spotlight-y), rgba(129, 140, 248, 0.14), transparent 75%);
+    background: radial-gradient(circle 220px at var(--spotlight-x) var(--spotlight-y), rgba(255, 99, 0, 0.14), transparent 75%);
 }
 
 /* ========================================================================= */
@@ -156,11 +156,11 @@
 @keyframes gentleCtaPulse {
     0%, 100% {
         transform: scale(1);
-        box-shadow: 0 1px 3px rgba(99, 102, 241, 0.2);
+        box-shadow: 0 1px 3px rgba(255, 99, 0, 0.2);
     }
     50% {
-        transform: scale(1.035);
-        box-shadow: 0 8px 20px rgba(99, 102, 241, 0.45);
+        transform: scale(1.02);
+        box-shadow: 0 4px 14px rgba(255, 99, 0, 0.35);
     }
 }
 
