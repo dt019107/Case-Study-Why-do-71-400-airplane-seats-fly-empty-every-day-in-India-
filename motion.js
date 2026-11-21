@@ -18,7 +18,7 @@
     // Global Motion Configuration
     window.AeroFillMotionConfig = {
         reducedMotion: false,
-        flightPath: false, // Disabled toy margin tracker for clean professional portfolio
+        flightPath: true, // Enabled with real uploaded aircraft & path arrow
         sectionReveal: true,
         cardLiftSpotlight: false,
         magneticCta: false,
@@ -98,14 +98,93 @@
     }
 
     // =========================================================================
-    // 1. SCROLL-LINKED FLIGHT PATH & JET AIRLINER TRACKER (Disabled)
+    // 1. SCROLL-LINKED FLIGHT PATH & JET AIRLINER TRACKER (Real Uploaded Assets)
     // =========================================================================
     function initFlightPath() {
-        const tracker = document.getElementById('flightPathMarginTracker');
-        if (tracker) {
-            tracker.remove();
+        if (!cfg.flightPath || isReducedMotionActive()) {
+            const existing = document.getElementById('flightPathMarginTracker');
+            if (existing) existing.remove();
+            return;
         }
-        return;
+
+        let tracker = document.getElementById('flightPathMarginTracker');
+        if (!tracker) {
+            tracker = document.createElement('aside');
+            tracker.id = 'flightPathMarginTracker';
+            tracker.setAttribute('aria-label', 'Flight Route Progress Tracker');
+            tracker.innerHTML = `
+                <div class="flight-track-rail">
+                    <div id="flightTrackFill" class="flight-track-fill" style="height: 0%;"></div>
+                    <img src="assets/flight-path-arrow.png" alt="Flight Path End" class="flight-tracker-arrow-bottom">
+                    <div id="flightTrackerPlane" class="flight-tracker-plane" role="button" aria-label="Flight 6E-205 status">
+                        <img src="assets/flight-airplane.png" alt="Flight 6E-205 Aircraft" loading="eager">
+                        <div id="flightTrackerBadge" class="flight-tracker-badge">Flight 6E-205 • BLR</div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(tracker);
+        }
+
+        const planeEl = document.getElementById('flightTrackerPlane');
+        const fillEl = document.getElementById('flightTrackFill');
+        const badgeEl = document.getElementById('flightTrackerBadge');
+        const railEl = tracker.querySelector('.flight-track-rail');
+
+        if (!planeEl || !fillEl || !railEl) return;
+
+        let ticking = false;
+        let hideBadgeTimer = null;
+
+        function updatePosition() {
+            const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+            const maxScroll = (document.documentElement.scrollHeight - window.innerHeight) || 1;
+            const pct = Math.max(0, Math.min(1, scrollY / maxScroll));
+
+            const railHeight = railEl.clientHeight;
+            const planeTop = pct * railHeight;
+
+            planeEl.style.top = planeTop + 'px';
+            fillEl.style.height = planeTop + 'px';
+
+            // Dynamic status waypoint updates
+            if (badgeEl) {
+                if (pct < 0.12) {
+                    badgeEl.innerText = 'BLR • Terminal 1 (11:42 PM)';
+                } else if (pct < 0.35) {
+                    badgeEl.innerText = 'Climbing • Standby Queue';
+                } else if (pct < 0.65) {
+                    badgeEl.innerText = 'Cruising FL360 • BLR ✈ DEL';
+                } else if (pct < 0.88) {
+                    badgeEl.innerText = 'Descent • T-45m Standby Lock';
+                } else {
+                    badgeEl.innerText = 'DEL • Gate 14A Arrived';
+                }
+            }
+
+            // Show badge temporarily during active scroll
+            tracker.classList.add('is-active');
+            clearTimeout(hideBadgeTimer);
+            hideBadgeTimer = setTimeout(() => {
+                tracker.classList.remove('is-active');
+            }, 1200);
+
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updatePosition);
+                ticking = true;
+            }
+        }, { passive: true });
+
+        // Click on plane scrolls to top or next section
+        planeEl.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Initial paint
+        updatePosition();
     }
 
     // =========================================================================

@@ -1799,14 +1799,65 @@
                 </div>
             </div>
 
-            <!-- 2. Typography Hero (Clean, Bold Two-Tone Title) -->
-            <div class="max-w-4xl space-y-4">
-                <h1 class="text-3xl sm:text-5xl lg:text-[54px] font-bold text-[#111827] tracking-tight leading-[1.12]">
-                    Turning 71,400 Empty Seats into <span class="text-[#FF6300]">Lifesaving Standby Flights</span>
-                </h1>
-                <p class="text-base sm:text-xl text-[#4B5563] font-normal leading-relaxed max-w-3xl">
-                    Every day across India, 71,400 airplane seats fly empty while passengers in urgent family emergencies are locked out by ₹20,000+ surge pricing. AeroFill unlocks unsold seats at flat ₹3,200 standby fares using operational friction to protect airline yield.
-                </p>
+            <!-- 2. Typography Hero & Visual Composition -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-2">
+                <div class="lg:col-span-7 space-y-5">
+                    <h1 class="text-3xl sm:text-5xl lg:text-[52px] font-bold text-[#111827] tracking-tight leading-[1.12]">
+                        Turning 71,400 Empty Seats into <span class="text-[#FF6300]">Lifesaving Standby Flights</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-[#4B5563] font-normal leading-relaxed max-w-2xl">
+                        Every day across India, 71,400 airline seats fly empty while passengers in urgent family emergencies are locked out by ₹20,000+ surge pricing. AeroFill unlocks unsold seats at flat ₹3,200 standby fares using operational friction to protect airline revenue.
+                    </p>
+
+                    <!-- Key Spec Pills -->
+                    <div class="flex flex-wrap items-center gap-2 pt-1 font-mono text-xs">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-800 font-semibold">Bengaluru (BLR) &rarr; Delhi (DEL)</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-[#FFF7ED] text-[#FF6300] font-semibold border border-[#FFEDD5]">Flat ₹3,200 Fare</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-[#E7F6EC] text-[#067647] font-semibold border border-[#067647]/20">+68% Contribution</span>
+                    </div>
+                </div>
+
+                <!-- Right Visual Hero Card: Real Aircraft & Route Spotlight -->
+                <div class="lg:col-span-5 relative flex items-center justify-center">
+                    <div class="w-full max-w-[380px] p-6 rounded-3xl bg-gradient-to-b from-[#F3F6FB] to-white border border-[#D5DCE8] shadow-[0_20px_40px_-15px_rgba(20,41,91,0.12)] relative overflow-hidden text-center space-y-4">
+                        <!-- Route & Flight Status -->
+                        <div class="flex items-center justify-between text-xs font-mono">
+                            <span class="font-bold text-[#14295B] bg-[#EBF1F9] px-2.5 py-1 rounded-md">Flight 6E-205</span>
+                            <span class="text-[#067647] font-semibold flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-[#067647] animate-pulse"></span>
+                                Standby Active
+                            </span>
+                        </div>
+
+                        <!-- Real Top-Down Commercial Jet Aircraft Image -->
+                        <div class="relative py-2 flex items-center justify-center">
+                            <img src="assets/flight-airplane.png" alt="AeroFill Standby Commercial Jet" class="w-48 h-48 object-contain filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.18)] transition-transform hover:scale-105 duration-300">
+                        </div>
+
+                        <!-- Flight Route Row -->
+                        <div class="flex items-center justify-between text-left pt-2 border-t border-dashed border-[#D5DCE8]">
+                            <div>
+                                <div class="text-xl font-bold text-[#0F1B33] leading-none">BLR</div>
+                                <div class="text-[11px] text-[#5B6B85] mt-0.5">20:55 IST</div>
+                            </div>
+                            <div class="flex-1 px-3 text-center">
+                                <div class="text-[10px] font-mono text-[#5B6B85]">2h 45m</div>
+                                <div class="w-full border-t border-dashed border-[#D5DCE8] my-1"></div>
+                                <div class="text-[10px] text-[#FF6300] font-semibold">24 Empty Seats</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xl font-bold text-[#0F1B33] leading-none">DEL</div>
+                                <div class="text-[11px] text-[#5B6B85] mt-0.5">23:40 IST</div>
+                            </div>
+                        </div>
+
+                        <!-- Fare Comparison Bar -->
+                        <div class="p-3 rounded-xl bg-[#14295B] text-white flex items-center justify-between text-xs">
+                            <span class="text-white/80">Regular: <span class="line-through text-white/60">₹21,400</span></span>
+                            <span class="font-bold text-sm text-[#FF8C38]">Standby: ₹3,200</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- 3. Four Core Metric Bento Cards -->

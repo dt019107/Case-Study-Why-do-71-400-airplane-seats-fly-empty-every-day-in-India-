@@ -20,10 +20,108 @@
 }
 
 /* ========================================================================= */
-/* 1. SCROLL-LINKED FLIGHT PATH & JET AIRLINER TRACKER (Disabled)             */
+/* 1. SCROLL-LINKED FLIGHT PATH & JET AIRLINER TRACKER (Real Uploaded Assets)*/
 /* ========================================================================= */
 #flightPathMarginTracker {
-    display: none !important;
+    position: fixed;
+    top: 90px;
+    right: 24px;
+    width: 60px;
+    height: calc(100vh - 140px);
+    pointer-events: none;
+    z-index: 50;
+    display: none;
+}
+
+@media (min-width: 1180px) {
+    #flightPathMarginTracker {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.flight-track-rail {
+    position: relative;
+    width: 4px;
+    height: 100%;
+    background: rgba(229, 231, 235, 0.85);
+    border-radius: 9999px;
+    display: flex;
+    justify-content: center;
+}
+
+.flight-track-fill {
+    position: absolute;
+    top: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #FF6300 0%, #FF8C38 75%, #5B22D6 100%);
+    border-radius: 9999px;
+    box-shadow: 0 0 10px rgba(255, 99, 0, 0.4);
+    will-change: height;
+}
+
+.flight-tracker-arrow-bottom {
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: auto;
+    filter: drop-shadow(0 2px 4px rgba(91, 34, 214, 0.35));
+    pointer-events: none;
+}
+
+.flight-tracker-plane {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 46px;
+    height: 46px;
+    transform: translate(-50%, -50%);
+    will-change: top;
+    pointer-events: auto;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.28));
+    cursor: pointer;
+    transition: transform 150ms ease;
+}
+
+.flight-tracker-plane:hover {
+    transform: translate(-50%, -50%) scale(1.12);
+}
+
+.flight-tracker-plane img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: rotate(180deg); /* Head pointing downward along scroll path */
+    display: block;
+}
+
+.flight-tracker-badge {
+    position: absolute;
+    right: 56px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #111827;
+    color: #FFFFFF;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 180ms ease, transform 180ms ease;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    pointer-events: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.flight-tracker-plane:hover .flight-tracker-badge,
+#flightPathMarginTracker.is-active .flight-tracker-badge {
+    opacity: 1;
+    transform: translateY(-50%) translateX(-4px);
 }
 
 /* ========================================================================= */
