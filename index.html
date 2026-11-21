@@ -1908,89 +1908,150 @@
         <!-- ACT 2: THE CORE CHALLENGE (PROBLEM VS SOLUTION BENTO CONTRAST)            -->
         <!-- ========================================================================= -->
         <section id="challenge" class="story-chapter scroll-mt-24 space-y-8">
-            <div class="space-y-3">
-                <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono font-semibold tracking-wide bg-[#EFE6FF] text-[#5B22D6] rounded">
-                    <span>Act 2 • The Core Dilemma</span>
+            <!-- Header with Clean Behance Two-Tone Title -->
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E5E7EB] pb-5">
+                <div class="space-y-2 max-w-3xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono font-semibold tracking-wide bg-[#FFF7ED] text-[#FF6300] rounded-md border border-[#FFEDD5]">
+                        <span>Act 2 • The Core Dilemma</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl font-bold text-[#111827] tracking-tight">
+                        The Perishable Crisis: <span class="text-[#FF6300]">Empty Seats vs Stranded Families</span>
+                    </h2>
+                    <p class="text-base text-[#6B6F76]">
+                        Airplane seats are the ultimate perishable commodity. The moment the cabin door locks, any empty seat perishes to ₹0.00 forever.
+                    </p>
                 </div>
-                <h2 class="text-2xl sm:text-4xl font-bold text-[#111827] tracking-tight">
-                    The Perishable Crisis: <span class="text-[#FF6300]">Empty Seats vs Stranded Families</span>
-                </h2>
-                <p class="text-base text-[#6B6F76] max-w-3xl">
-                    Airplane seats are the ultimate perishable commodity. The moment the cabin door locks, any empty seat loses 100% of its value forever.
-                </p>
+
+                <!-- Two State Indicator Pills (Inspired by Page 4 of Avare Behance) -->
+                <div class="flex items-center gap-2 shrink-0">
+                    <span class="px-3 py-1 rounded-md bg-rose-50 border border-rose-200 text-rose-700 font-mono text-xs font-bold flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+                        Booking Challenge
+                    </span>
+                    <span class="px-3 py-1 rounded-md bg-emerald-50 border border-emerald-200 text-emerald-800 font-mono text-xs font-bold flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                        Booking Solution
+                    </span>
+                </div>
             </div>
 
             <!-- Two High-Contrast Bento Cards (Inspired by Page 4 of Avare Behance) -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
-                <!-- Card 1: The Spoilage Crisis (Dark Charcoal / Slate) -->
-                <div class="p-8 rounded-2xl bg-[#0B1020] text-white border border-slate-800 flex flex-col justify-between space-y-6 shadow-sm">
-                    <div class="space-y-4">
+                <!-- Card 1: The Spoilage Crisis (Dark Charcoal / Midnight Slate) -->
+                <div class="p-7 sm:p-8 rounded-3xl bg-[#0B1020] text-white border border-slate-800/80 flex flex-col justify-between space-y-6 shadow-sm relative overflow-hidden group">
+                    <!-- Subtle Background Flight Aura -->
+                    <div class="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-rose-500/10 blur-3xl pointer-events-none"></div>
+
+                    <div class="space-y-4 relative z-10">
                         <div class="flex items-center justify-between">
-                            <span class="px-2.5 py-1 rounded text-xs font-mono font-bold uppercase tracking-wider bg-rose-500/20 text-rose-300 border border-rose-500/30">
-                                The Spoilage Problem
+                            <span class="px-2.5 py-1 rounded text-xs font-mono font-bold uppercase tracking-wider bg-rose-500/20 text-rose-300 border border-rose-500/30 flex items-center gap-1.5">
+                                <i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-rose-400"></i>
+                                <span>The Spoilage Problem</span>
                             </span>
-                            <span class="text-xs font-mono text-slate-400">Flight 6E-205 • 11:42 PM</span>
+                            <span class="text-xs font-mono text-slate-400">Flight 6E-205 • 11:42 PM IST</span>
                         </div>
                         <h3 class="text-2xl font-bold text-white tracking-tight">
                             Ananya’s Midnight Emergency in Bengaluru
                         </h3>
-                        <p class="text-sm text-slate-300 leading-relaxed">
+                        <p class="text-sm text-slate-300 leading-relaxed font-normal">
                             At 11:42 PM, 22-year-old student Ananya receives an urgent call: <strong>her mother has suffered an emergency brain hemorrhage in Delhi.</strong>
                         </p>
-                        <p class="text-sm text-slate-300 leading-relaxed">
-                            The next commercial flight ticket costs <strong class="text-white">₹21,400</strong>. Her savings account has exactly <strong class="text-white">₹4,800</strong> (a 78% shortfall). Six hours later, Flight 6E-205 takes off toward Delhi with <strong class="text-rose-400">24 empty seats</strong>.
+                        <p class="text-sm text-slate-300 leading-relaxed font-normal">
+                            The next commercial flight ticket costs <strong class="text-white">₹21,400</strong>. Her savings account has exactly <strong class="text-white">₹4,800</strong> (a 78% shortfall). Six hours later, Flight 6E-205 takes off toward Delhi with <strong class="text-rose-400 underline decoration-rose-500/50 underline-offset-4">24 empty seats</strong>.
                         </p>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 text-xs font-mono space-y-2">
+                    <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 text-xs font-mono space-y-2.5 relative z-10">
                         <div class="flex justify-between text-slate-300">
                             <span>Emergency Surge Fare:</span>
-                            <span class="text-rose-400 font-bold">₹21,400</span>
+                            <span class="text-rose-400 font-bold tabular-nums">₹21,400</span>
                         </div>
                         <div class="flex justify-between text-slate-300">
-                            <span>Ananya's Savings:</span>
-                            <span class="text-white font-bold">₹4,800</span>
+                            <span>Ananya's Total Savings:</span>
+                            <span class="text-white font-bold tabular-nums">₹4,800</span>
                         </div>
-                        <div class="flex justify-between border-t border-slate-800 pt-1.5 text-slate-400">
+                        <div class="flex justify-between border-t border-slate-800 pt-2 text-slate-400">
                             <span>Takeoff Residual Value:</span>
-                            <span class="text-rose-400 font-bold">₹0.00 (Total Loss)</span>
+                            <span class="text-rose-400 font-bold tabular-nums">₹0.00 (Total Perishable Loss)</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 2: The Standby Solution (Clean White with Orange/Purple Accents) -->
-                <div class="p-8 rounded-2xl bg-white text-[#111827] border-2 border-[#FF6300]/30 flex flex-col justify-between space-y-6 shadow-sm">
-                    <div class="space-y-4">
+                <!-- Card 2: The Standby Solution (Clean White with Akasa Warm Orange Accent) -->
+                <div class="p-7 sm:p-8 rounded-3xl bg-white text-[#111827] border-2 border-[#FF6300]/30 flex flex-col justify-between space-y-6 shadow-sm relative overflow-hidden group">
+                    <!-- Subtle Warm Aura -->
+                    <div class="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-[#FF6300]/10 blur-3xl pointer-events-none"></div>
+
+                    <div class="space-y-4 relative z-10">
                         <div class="flex items-center justify-between">
-                            <span class="px-2.5 py-1 rounded text-xs font-mono font-bold uppercase tracking-wider bg-[#FFF7ED] text-[#FF6300] border border-[#FFEDD5]">
-                                The AeroFill Breakthrough
+                            <span class="px-2.5 py-1 rounded text-xs font-mono font-bold uppercase tracking-wider bg-[#FFF7ED] text-[#FF6300] border border-[#FFEDD5] flex items-center gap-1.5">
+                                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-[#FF6300]"></i>
+                                <span>The AeroFill Breakthrough</span>
                             </span>
-                            <span class="text-xs font-mono text-[#6B6F76]">Standby Architecture</span>
+                            <span class="text-xs font-mono text-[#067647] font-semibold">Protected Standby</span>
                         </div>
                         <h3 class="text-2xl font-bold text-[#111827] tracking-tight">
                             Flat ₹3,200 Standby Unlocked by Friction
                         </h3>
-                        <p class="text-sm text-[#4B5563] leading-relaxed">
+                        <p class="text-sm text-[#4B5563] leading-relaxed font-normal">
                             Airlines cannot discount seats openly because corporate flyers with expense cards will buy cheap tickets instead of full-fare ₹16,500 seats.
                         </p>
-                        <p class="text-sm text-[#4B5563] leading-relaxed">
+                        <p class="text-sm text-[#4B5563] leading-relaxed font-normal">
                             AeroFill solves this not through discount sales, but through <strong>6 intentional physical frictions</strong>: middle seats only, 7kg backpack limit, ±90 min departure window, and GPS geofence within 15 km of the airport. Everyday travelers in emergencies happily accept these rules; corporate executives refuse them every time.
                         </p>
                     </div>
 
-                    <div class="p-4 rounded-xl bg-[#F8F9FA] border border-[#E5E7EB] text-xs font-mono space-y-2">
+                    <div class="p-4 rounded-2xl bg-[#F8F9FA] border border-[#E5E7EB] text-xs font-mono space-y-2.5 relative z-10">
                         <div class="flex justify-between text-[#4B5563]">
                             <span>Standby Ticket Price:</span>
-                            <span class="text-[#FF6300] font-bold">₹3,200 (Fixed)</span>
+                            <span class="text-[#FF6300] font-bold tabular-nums">₹3,200 (Fixed)</span>
                         </div>
                         <div class="flex justify-between text-[#4B5563]">
-                            <span>Variable Costs (Fuel + CISF):</span>
-                            <span class="text-[#111827] font-bold">₹1,450</span>
+                            <span>Variable Fuel &amp; CISF Fees:</span>
+                            <span class="text-[#111827] font-bold tabular-nums">₹1,450</span>
                         </div>
-                        <div class="flex justify-between border-t border-[#E5E7EB] pt-1.5 text-[#6B6F76]">
-                            <span>Net Airline Marginal Margin:</span>
-                            <span class="text-[#0F9D58] font-bold">+₹1,750 per Seat (+68%)</span>
+                        <div class="flex justify-between border-t border-[#E5E7EB] pt-2 text-[#6B6F76]">
+                            <span>Net Airline Contribution:</span>
+                            <span class="text-[#0F9D58] font-bold tabular-nums">+₹1,750 per Seat (+68% Margin)</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Takeoff Cliff Timeline (Visualizing the 3-Hour Perishable Window) -->
+            <div class="p-6 rounded-2xl bg-white border border-[#E5E7EB] shadow-xs space-y-4">
+                <div class="flex items-center justify-between text-xs font-mono">
+                    <span class="font-bold text-[#111827] uppercase tracking-wider">The Takeoff Cliff • Seat Perishability Timeline</span>
+                    <span class="text-[#FF6300] font-semibold">T-3h Standby Window</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs">
+                    <!-- Phase 1 -->
+                    <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                        <div class="text-[10px] font-mono font-bold text-slate-500 uppercase">T-24h to T-3h</div>
+                        <div class="font-bold text-[#111827]">Scheduled Bookings</div>
+                        <p class="text-[11px] text-[#6B6F76] leading-relaxed">Full commercial fares (₹16,500–₹21,400) booked by corporate and planned travelers.</p>
+                    </div>
+
+                    <!-- Phase 2 -->
+                    <div class="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200/80 space-y-1">
+                        <div class="text-[10px] font-mono font-bold text-amber-700 uppercase">T-3 Hours (Lock)</div>
+                        <div class="font-bold text-[#111827]">Commercial Plateau</div>
+                        <p class="text-[11px] text-[#6B6F76] leading-relaxed">Paid bookings stop. 24 remaining seats face imminent expiration at ₹0 value.</p>
+                    </div>
+
+                    <!-- Phase 3 -->
+                    <div class="p-3.5 rounded-xl bg-[#FFF7ED] border border-[#FED7AA] space-y-1">
+                        <div class="text-[10px] font-mono font-bold text-[#FF6300] uppercase">T-3h to T-45m</div>
+                        <div class="font-bold text-[#111827]">AeroFill Standby Unlocks</div>
+                        <p class="text-[11px] text-[#6B6F76] leading-relaxed">Seats unlock within 15km geofence for passengers who accept the 6 friction rules.</p>
+                    </div>
+
+                    <!-- Phase 4 -->
+                    <div class="p-3.5 rounded-xl bg-[#E7F6EC] border border-[#067647]/30 space-y-1">
+                        <div class="text-[10px] font-mono font-bold text-[#067647] uppercase">T-0m (Takeoff)</div>
+                        <div class="font-bold text-[#111827]">Doors Lock</div>
+                        <p class="text-[11px] text-[#067647] font-semibold leading-relaxed">Zero empty seats wasted. Airline captures +68% profit contribution per standby.</p>
                     </div>
                 </div>
             </div>
