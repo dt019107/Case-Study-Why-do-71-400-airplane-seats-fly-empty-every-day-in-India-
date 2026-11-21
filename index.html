@@ -4138,608 +4138,439 @@
         <!-- ========================================================================= -->
         <section id="simulators" class="story-chapter scroll-mt-24 space-y-8">
             <div class="space-y-3">
-                <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono font-semibold tracking-wide bg-[#EFE6FF] text-[#5B22D6] rounded">
+                <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono font-semibold tracking-wide bg-[#EFE6FF] text-[#5B22D6] rounded border border-purple-200">
                     <span>Act 8 • Working Interactive Simulators</span>
                 </div>
                 <h2 class="text-2xl sm:text-4xl font-bold text-[#111827] tracking-tight">
                     Proving the Feasibility: <span class="text-[#FF6300]">Cabin Map &amp; CFO Yield Simulator</span>
                 </h2>
                 <p class="text-base text-[#6B6F76] max-w-3xl">
-                    Airlines require operational proof. Interact with the working Airbus A320neo seatmap and the live CFO Waterfall Profit Simulator below.
+                    Airlines require operational proof before adopting new inventory models. Interact with the live 186-passenger Airbus A320neo cabin fuselage and the real-time CFO Waterfall Profit Simulator below.
                 </p>
             </div>
-                    <!-- Cabin Seatmap Component -->
-                    <!-- Interactive Airbus A320neo Cabin Seatmap (Collapsed by default, Part 4) -->
-                    <details open
-                        class="group bg-white dark:bg-slate-900 rounded-[28px] border border-slate-200/80 dark:border-slate-800 shadow-card p-5 sm:p-7 space-y-4">
-                        <summary class="cursor-pointer list-none flex items-center justify-between select-none">
-                            <div class="flex items-center gap-3">
-                                <div class="w-6 h-6 flex items-center justify-center shrink-0">
-                                    <i data-lucide="plane" class="w-4 h-4 text-indigo-500"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
-                                        Interactive Airbus A320neo Cabin Seatmap</h3>
-                                    <p class="text-xs text-slate-500 dark:text-slate-400">24 empty middle seats (columns
-                                        B &amp; E) • 3 medical tier (red) • 21 standby (green)</p>
-                                </div>
+
+            <!-- Bento Container for Simulators -->
+            <div class="space-y-8">
+
+                <!-- SIMULATOR 1: Airbus A320neo Cabin Seatmap Bento Card -->
+                <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-5 sm:p-7 space-y-5">
+                    <!-- Header Row -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 pb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-600 flex items-center justify-center shrink-0">
+                                <i data-lucide="plane" class="w-5 h-5"></i>
                             </div>
-                            <span
-                                class="px-3 py-1.5 rounded-xl text-xs font-mono font-semibold bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-950/60 dark:hover:bg-indigo-900/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200/80 dark:border-indigo-800/60 group-open:hidden">
-                                Open interactive simulator ➔
-                            </span>
-                            <span
-                                class="px-3 py-1.5 rounded-xl text-xs font-mono font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hidden group-open:inline-block">
-                                Collapse simulator ▴
-                            </span>
-                        </summary>
-                        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-4">
-                            <span id="cockpit-simulator" class="invisible absolute -top-24"></span>
-
-                            <div class="max-w-3xl space-y-1.5">
-                                <div
-                                    class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 text-xs font-semibold font-mono">
-                                    <i data-lucide="plane"
-                                        class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400"></i>
-                                    ACT 6 OF 8 • THE INTERACTIVE CABIN SIMULATOR
-                                </div>
-
-                                <p
-                                    class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
-                                    Here is an authentic 186-passenger Airbus A320neo cabin (Rows 1 to 31, 3-3
-                                    configuration). Click any
-                                    seat to inspect its passenger persona and fare, or trigger <strong>"Activate
-                                        AeroFill
-                                        Standby"</strong> to watch empty seats fill with verified passengers!
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 tracking-tight">
+                                    Interactive Airbus A320neo Cabin Seatmap
+                                </h3>
+                                <p class="text-xs text-slate-500 font-normal">
+                                    Flight 6E-205 • BLR ➔ DEL • 186 Seats • Click any seat to inspect passenger telemetry
                                 </p>
                             </div>
+                        </div>
 
-                            <!-- Seatmap Simulation Deck (30% Container Scaffolding) -->
-                            <div
-                                class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/80 dark:border-slate-800 p-5 sm:p-7 space-y-5 shadow-card">
+                        <!-- Action Buttons -->
+                        <div class="flex items-center gap-2">
+                            <button id="fillCabinBtn" onclick="toggleCabinFill()"
+                                class="px-4 py-2.5 rounded-xl bg-[#0F8A78] hover:bg-[#0D7A6A] text-white font-semibold text-xs font-mono transition shadow-2xs flex items-center gap-1.5">
+                                <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+                                <span id="fillCabinBtnLabel">Activate AeroFill Algorithm</span>
+                            </button>
+                            <button onclick="resetCabinSeats()"
+                                class="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 border border-slate-200 transition"
+                                title="Reset Cabin">
+                                <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </div>
 
-                                <!-- Seatmap Top Controls -->
-                                <div
-                                    class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3.5 border-b border-slate-100 dark:border-slate-800 pb-4">
-                                    <!-- Seat Legends -->
-                                    <div class="flex flex-wrap items-center gap-3 text-xs font-mono font-medium">
-                                        <div class="flex items-center gap-1.5">
-                                            <span
-                                                class="w-3.5 h-3.5 rounded bg-[#0B1020] border border-[#0B1020]"></span>
-                                            <span class="text-[#0B1020]">Corporate Full Fare (₹16,500)</span>
-                                        </div>
-                                        <div class="flex items-center gap-1.5">
-                                            <span
-                                                class="w-3.5 h-3.5 rounded bg-[#FEF3C7] border border-[#B45309]"></span>
-                                            <span class="text-[#78350F] font-semibold">Unsold Empty Seat (₹0)</span>
-                                        </div>
-                                        <div class="flex items-center gap-1.5">
-                                            <span
-                                                class="w-3.5 h-3.5 rounded bg-[#0F8A78] border border-[#0F8A78]"></span>
-                                            <span class="text-[#0F8A78] font-semibold">AeroFill Standby (₹3,200)</span>
-                                        </div>
-                                        <div class="flex items-center gap-1.5">
-                                            <span
-                                                class="w-3.5 h-3.5 rounded bg-[#9F1239] border border-[#9F1239]"></span>
-                                            <span class="text-[#9F1239] font-semibold">Medical Emergency Tier</span>
-                                        </div>
-                                    </div>
+                    <!-- Seat Legend Bar -->
+                    <div class="flex flex-wrap items-center gap-3.5 text-xs font-mono font-medium p-3 rounded-xl bg-slate-50 border border-slate-200">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-3.5 h-3.5 rounded bg-[#0B1020] border border-[#0B1020]"></span>
+                            <span class="text-slate-800">Corporate Full Fare (₹16,500)</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-3.5 h-3.5 rounded bg-[#FEF3C7] border border-[#B45309]"></span>
+                            <span class="text-amber-800 font-semibold">Unsold Empty Seat (₹0)</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-3.5 h-3.5 rounded bg-[#0F8A78] border border-[#0F8A78]"></span>
+                            <span class="text-emerald-700 font-semibold">AeroFill Standby (₹3,200)</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-3.5 h-3.5 rounded bg-[#9F1239] border border-[#9F1239]"></span>
+                            <span class="text-rose-800 font-semibold">Medical Tier (Sanjeevani)</span>
+                        </div>
+                    </div>
 
-                                    <!-- Action Trigger Buttons -->
-                                    <div class="flex items-center gap-2">
-                                        <button id="fillCabinBtn" onclick="toggleCabinFill()"
-                                            class="px-4 py-2 rounded-lg bg-[#0F8A78] hover:bg-[#0D7A6A] text-white font-semibold text-xs font-mono transition shadow-soft flex items-center gap-1.5">
-                                            <i data-lucide="zap" class="w-3.5 h-3.5"></i>
-                                            <span id="fillCabinBtnLabel">Activate AeroFill Algorithm</span>
-                                        </button>
-                                        <button onclick="resetCabinSeats()"
-                                            class="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 transition"
-                                            title="Reset Cabin">
-                                            <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
-                                        </button>
-                                    </div>
+                    <!-- 2-Column: Left Aircraft Fuselage, Right Live Seat Telemetry -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+                        <!-- Left: Authentic HTML Aircraft Fuselage -->
+                        <div class="lg:col-span-8 bg-slate-50 p-4 sm:p-5 rounded-2xl border border-slate-200 overflow-x-auto">
+
+                            <!-- Cabin Section Quick Jump Bar -->
+                            <div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b border-slate-200 text-xs">
+                                <span class="font-semibold text-slate-700 font-sans">Cabin Section:</span>
+                                <div class="inline-flex p-1 rounded-lg bg-slate-200/80 text-xs font-mono" role="tablist">
+                                    <button type="button" onclick="filterCabinRows('all')" id="cabinJumpAll"
+                                        class="px-2.5 py-1 rounded bg-white text-slate-900 font-semibold shadow-xs transition">All (1–31)</button>
+                                    <button type="button" onclick="filterCabinRows('fwd')" id="cabinJumpFwd"
+                                        class="px-2.5 py-1 rounded text-slate-600 hover:text-slate-900 transition">Forward (1–10)</button>
+                                    <button type="button" onclick="filterCabinRows('mid')" id="cabinJumpMid"
+                                        class="px-2.5 py-1 rounded text-slate-600 hover:text-slate-900 transition">Overwing (11–20)</button>
+                                    <button type="button" onclick="filterCabinRows('aft')" id="cabinJumpAft"
+                                        class="px-2.5 py-1 rounded text-slate-600 hover:text-slate-900 transition">Aft (21–31)</button>
                                 </div>
+                            </div>
 
-                                <!-- 2-Column: Left Aircraft Cabin Responsive Fuselage, Right Live Seat Telemetry -->
-                                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-
-                                    <!-- Left: Authentic HTML Aircraft Fuselage (Without Nested Inner Scroll) -->
-                                    <div
-                                        class="lg:col-span-8 bg-slate-50 dark:bg-slate-800/40 p-4 sm:p-5 rounded-xl border border-slate-200 dark:border-slate-800 overflow-x-auto">
-
-                                        <!-- Cabin Section Quick Jump Bar (Item 13: Eliminates inner scroll) -->
-                                        <div
-                                            class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b border-slate-200 dark:border-slate-700/80 text-xs">
-                                            <span
-                                                class="font-semibold text-slate-700 dark:text-slate-300 font-sans">Cabin
-                                                Section Jump:</span>
-                                            <div class="inline-flex p-1 rounded-lg bg-slate-200/80 dark:bg-slate-700/60 text-xs font-mono"
-                                                role="tablist">
-                                                <button type="button" onclick="filterCabinRows('all')" id="cabinJumpAll"
-                                                    class="px-2.5 py-1 rounded bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-semibold shadow-xs transition">All
-                                                    (1–31)</button>
-                                                <button type="button" onclick="filterCabinRows('fwd')" id="cabinJumpFwd"
-                                                    class="px-2.5 py-1 rounded text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">Forward
-                                                    (1–10)</button>
-                                                <button type="button" onclick="filterCabinRows('mid')" id="cabinJumpMid"
-                                                    class="px-2.5 py-1 rounded text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">Overwing
-                                                    (11–20)</button>
-                                                <button type="button" onclick="filterCabinRows('aft')" id="cabinJumpAft"
-                                                    class="px-2.5 py-1 rounded text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">Aft
-                                                    (21–31)</button>
-                                            </div>
-                                        </div>
-
-                                        <!-- Aircraft Nose & Cockpit -->
-                                        <div
-                                            class="w-full flex flex-col items-center justify-center pb-3 border-b border-slate-200 dark:border-slate-700">
-                                            <div
-                                                class="w-24 h-10 rounded-t-full bg-slate-900 text-white border border-slate-700 flex items-center justify-center text-[10px] font-mono font-bold">
-                                                👨‍✈️ COCKPIT
-                                            </div>
-                                            <div class="text-[10px] text-slate-500 font-mono mt-0.5">FORWARD GALLEY
-                                                &amp; LAVATORY</div>
-                                        </div>
-
-                                        <!-- Rows Header (A B C — AISLE — D E F) -->
-                                        <div
-                                            class="flex items-center justify-center gap-2 font-mono text-xs text-slate-600 dark:text-slate-400 py-2.5 border-b border-slate-200 dark:border-slate-700 font-semibold">
-                                            <div class="flex gap-2 w-36 sm:w-40 justify-between px-2">
-                                                <span>A</span>
-                                                <span>B</span>
-                                                <span>C</span>
-                                            </div>
-                                            <div class="w-8 text-center text-[10px] text-slate-400">AISLE</div>
-                                            <div class="flex gap-2 w-36 sm:w-40 justify-between px-2">
-                                                <span>D</span>
-                                                <span>E</span>
-                                                <span>F</span>
-                                            </div>
-                                        </div>
-
-                                        <!-- Dynamic Cabin Rows Container (No nested scrollbox) -->
-                                        <div id="cabinSeatmapContainer" class="py-3 space-y-1.5">
-                                            <!-- Populated via JavaScript (31 Rows x 6 Seats = 186 Seats) -->
-                                        </div>
-
-                                        <!-- Aircraft Tail & Aft Galley -->
-                                        <div
-                                            class="w-full flex flex-col items-center justify-center pt-3 border-t border-slate-200 dark:border-slate-700">
-                                            <div class="text-[10px] text-slate-500 font-mono">AFT GALLEY &amp; REAR
-                                                EMERGENCY DOORS</div>
-                                            <div
-                                                class="w-28 h-5 rounded-b-full bg-slate-900 border-b border-slate-700 mt-0.5">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Right: Seat Telemetry Inspector Card -->
-                                    <div
-                                        class="lg:col-span-4 bg-white p-5 rounded-xl border border-slate-200 shadow-soft space-y-4 sticky top-24">
-                                        <div class="border-b border-slate-100 pb-2.5 flex items-center justify-between">
-                                            <span class="text-xs font-mono font-semibold text-[#4B5563] uppercase">Seat
-                                                Telemetry</span>
-                                            <span id="inspectSeatBadge"
-                                                class="text-xs font-mono font-semibold px-2 py-0.5 rounded bg-[#F8F9FB] text-[#4B5563] border border-[#D5D9E2]">
-                                                Click Any Seat
-                                            </span>
-                                        </div>
-
-                                        <div id="seatInspectorContent" class="space-y-3.5 text-xs font-mono">
-                                            <div class="text-slate-500 leading-relaxed font-normal">
-                                                Click on any seat in the cabin to inspect passenger profile, fare
-                                                breakdown,
-                                                verification method, and airline unit economics.
-                                            </div>
-                                            <div
-                                                class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
-                                                <div class="text-slate-900 font-bold">FLIGHT 6E-205 CAPACITY:</div>
-                                                <div class="flex justify-between text-slate-600">
-                                                    <span>Total Capacity:</span>
-                                                    <span class="font-bold text-slate-900">186 Seats</span>
-                                                </div>
-                                                <div class="flex justify-between text-slate-600">
-                                                    <span>Confirmed Sold:</span>
-                                                    <span class="font-bold text-slate-900" id="statBookedCount">162
-                                                        Seats (87%)</span>
-                                                </div>
-                                                <div class="flex justify-between text-amber-700 font-semibold">
-                                                    <span>Empty / Unsold:</span>
-                                                    <span id="statEmptyCount">24 Seats (13%)</span>
-                                                </div>
-                                                <div class="flex justify-between text-emerald-700 font-semibold">
-                                                    <span>AeroFill Cleared:</span>
-                                                    <span id="statStandbyCount">0 Seats</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Live Incremental Revenue Meter -->
-                                        <div
-                                            class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 space-y-1.5 font-mono text-xs">
-                                            <div class="flex justify-between text-emerald-900 font-bold">
-                                                <span>EXTRA PROFIT TODAY:</span>
-                                                <span id="statExtraProfit"
-                                                    class="text-emerald-700 font-bold text-sm">₹0</span>
-                                            </div>
-                                            <p class="text-[11px] text-slate-500 leading-tight">
-                                                Incremental revenue that would have evaporated the moment doors closed.
-                                            </p>
-                                        </div>
-                                    </div>
-
+                            <!-- Aircraft Nose & Cockpit -->
+                            <div class="w-full flex flex-col items-center justify-center pb-3 border-b border-slate-200">
+                                <div class="w-24 h-9 rounded-t-full bg-slate-900 text-white border border-slate-700 flex items-center justify-center text-[10px] font-mono font-bold">
+                                    👨‍✈️ COCKPIT
                                 </div>
+                                <div class="text-[10px] text-slate-500 font-mono mt-0.5">FORWARD GALLEY &amp; LAVATORY</div>
+                            </div>
 
+                            <!-- Rows Header (A B C — AISLE — D E F) -->
+                            <div class="flex items-center justify-center gap-2 font-mono text-xs text-slate-600 py-2.5 border-b border-slate-200 font-semibold">
+                                <div class="flex gap-2 w-36 sm:w-40 justify-between px-2">
+                                    <span>A</span>
+                                    <span>B</span>
+                                    <span>C</span>
+                                </div>
+                                <div class="w-8 text-center text-[10px] text-slate-400">AISLE</div>
+                                <div class="flex gap-2 w-36 sm:w-40 justify-between px-2">
+                                    <span>D</span>
+                                    <span>E</span>
+                                    <span>F</span>
+                                </div>
+                            </div>
+
+                            <!-- Dynamic Cabin Rows Container -->
+                            <div id="cabinSeatmapContainer" class="py-3 space-y-1.5">
+                                <!-- Populated via JavaScript (31 Rows x 6 Seats = 186 Seats) -->
+                            </div>
+
+                            <!-- Aircraft Tail & Aft Galley -->
+                            <div class="w-full flex flex-col items-center justify-center pt-3 border-t border-slate-200">
+                                <div class="text-[10px] text-slate-500 font-mono">AFT GALLEY &amp; REAR EMERGENCY DOORS</div>
+                                <div class="w-28 h-4 rounded-b-full bg-slate-900 border-b border-slate-700 mt-0.5"></div>
                             </div>
                         </div>
-                    </details>
-                    <!-- CFO Calculator Component -->
-                    <!-- Interactive CFO Flight Yield Calculator (Collapsed by default, Part 4) -->
-                    <details open
-                        class="group bg-white dark:bg-slate-900 rounded-[28px] border border-slate-200/80 dark:border-slate-800 shadow-card p-5 sm:p-7 space-y-4"
-                        ontoggle="if(this.open && window.yieldChartObj) setTimeout(() => window.yieldChartObj.resize(), 50)">
-                        <summary class="cursor-pointer list-none flex items-center justify-between select-none">
-                            <div class="flex items-center gap-3">
-                                <div class="w-6 h-6 flex items-center justify-center shrink-0">
-                                    <i data-lucide="calculator" class="w-4 h-4"></i>
+
+                        <!-- Right: Seat Telemetry Inspector Card -->
+                        <div class="lg:col-span-4 bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs space-y-4 sticky top-24">
+                            <div class="border-b border-slate-200 pb-2.5 flex items-center justify-between">
+                                <span class="text-xs font-mono font-semibold text-slate-600 uppercase tracking-wider">Seat Telemetry</span>
+                                <span id="inspectSeatBadge" class="text-xs font-mono font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200">
+                                    Click Any Seat
+                                </span>
+                            </div>
+
+                            <div id="seatInspectorContent" class="space-y-3.5 text-xs font-mono">
+                                <div class="text-slate-500 leading-relaxed font-normal">
+                                    Click on any seat in the cabin to inspect passenger profile, fare breakdown, verification method, and airline unit economics.
                                 </div>
-                                <div>
-                                    <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
-                                        Live Airline Profit Simulator</h3>
-                                    <p class="text-xs text-slate-500 dark:text-slate-400">Calculate the exact extra profit generated per flight by filling empty seats at ₹3,200</p>
+                                <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                                    <div class="text-slate-900 font-bold">FLIGHT 6E-205 CAPACITY:</div>
+                                    <div class="flex justify-between text-slate-600">
+                                        <span>Total Capacity:</span>
+                                        <span class="font-bold text-slate-900">186 Seats</span>
+                                    </div>
+                                    <div class="flex justify-between text-slate-600">
+                                        <span>Confirmed Sold:</span>
+                                        <span class="font-bold text-slate-900" id="statBookedCount">162 Seats (87%)</span>
+                                    </div>
+                                    <div class="flex justify-between text-amber-700 font-semibold">
+                                        <span>Empty / Unsold:</span>
+                                        <span id="statEmptyCount">24 Seats (13%)</span>
+                                    </div>
+                                    <div class="flex justify-between text-emerald-700 font-semibold">
+                                        <span>AeroFill Cleared:</span>
+                                        <span id="statStandbyCount">0 Seats</span>
+                                    </div>
                                 </div>
                             </div>
-                            <span
-                                class="px-3 py-1.5 rounded-xl text-xs font-mono font-semibold bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/60 dark:hover:bg-emerald-900/60 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 group-open:hidden">
-                                Open interactive simulator ➔
-                            </span>
-                            <span
-                                class="px-3 py-1.5 rounded-xl text-xs font-mono font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hidden group-open:inline-block">
-                                Collapse simulator ▴
-                            </span>
-                        </summary>
-                        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-4">
-                            <div class="max-w-3xl space-y-1.5">
-                                <div
-                                    class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 text-xs font-semibold font-mono">
-                                    <i data-lucide="calculator"
-                                        class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400"></i>
-                                    ACT 7 OF 8 • AIRLINE PROFIT SIMULATOR
-                                </div>
 
-                                <p
-                                    class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
-                                    Test the numbers yourself. Adjust the sliders below to see how plane size, percentage of seats already booked, and standby ticket prices change the airline's daily profits.
+                            <!-- Live Incremental Revenue Meter -->
+                            <div class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 space-y-1.5 font-mono text-xs">
+                                <div class="flex justify-between text-emerald-900 font-bold">
+                                    <span>EXTRA PROFIT TODAY:</span>
+                                    <span id="statExtraProfit" class="text-emerald-700 font-bold text-sm">₹0</span>
+                                </div>
+                                <p class="text-[11px] text-slate-500 leading-tight">
+                                    Incremental revenue captured before gate departure that would have evaporated at takeoff.
                                 </p>
                             </div>
-
-                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-
-                                <!-- Sliders Control Panel (30% Container Scaffolding) -->
-                                <div
-                                    class="lg:col-span-5 bg-white dark:bg-slate-900 p-5 sm:p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-card space-y-5">
-                                    <h3
-                                        class="text-sm sm:text-base font-bold text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800 pb-2.5 flex items-center gap-2">
-                                        <i data-lucide="sliders" class="w-4 h-4 text-brand-600"></i>
-                                        <span>Flight Model Parameters</span>
-                                    </h3>
-
-                                    <!-- Quick Fleet Preset Buttons (Hick's Law: Reduced Decision Friction) -->
-                                    <div class="space-y-1.5 pb-1">
-                                        <div
-                                            class="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider font-mono">
-                                            Quick Route Scenarios
-                                        </div>
-                                        <div class="grid grid-cols-3 gap-1.5 text-[11px] font-mono" role="group"
-                                            aria-label="CFO simulation route scenarios">
-                                            <button type="button" onclick="applyCfoPreset('trunk')" id="cfoPresetTrunk"
-                                                class="p-2 rounded-lg bg-[#e11d48] text-white font-semibold text-center shadow-xs transition hover:bg-[#be123c]">
-                                                Metro Trunk
-                                            </button>
-                                            <button type="button" onclick="applyCfoPreset('regional')"
-                                                id="cfoPresetRegional"
-                                                class="p-2 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-medium text-center transition hover:bg-slate-100 dark:hover:bg-slate-800">
-                                                Regional
-                                            </button>
-                                            <button type="button" onclick="applyCfoPreset('peak')" id="cfoPresetPeak"
-                                                class="p-2 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-medium text-center transition hover:bg-slate-100 dark:hover:bg-slate-800">
-                                                Holiday Peak
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <!-- Persistent Labels above inputs (Never rely on placeholder alone) -->
-                                    <!-- Slider 1: Aircraft Gauge -->
-                                    <div class="space-y-1 font-mono text-xs">
-                                        <div class="flex justify-between font-semibold text-[#0B1020]">
-                                            <label for="input-gauge">Airplane Size (Total Seats)</label>
-                                            <span id="lbl-gauge" class="text-[#0B1020] font-bold">186 Seats</span>
-                                        </div>
-                                        <input type="range" id="input-gauge" min="150" max="232" step="6" value="186"
-                                            oninput="updateYieldSim()"
-                                            class="w-full accent-[#0F8A78] h-2 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer">
-                                        <div class="flex justify-between text-[11px] text-[#4B5563]">
-                                            <span>150 (A319)</span>
-                                            <span>186 (A320neo)</span>
-                                            <span>232 (A321neo)</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- Slider 2: Passenger Load Factor -->
-                                    <div class="space-y-1 font-mono text-xs">
-                                        <div class="flex justify-between font-semibold text-[#0B1020]">
-                                            <label for="input-plf">Seats Already Sold (Normal Load Factor)</label>
-                                            <span id="lbl-plf" class="text-[#0B1020] font-bold">87%</span>
-                                        </div>
-                                        <input type="range" id="input-plf" min="72" max="96" step="1" value="87"
-                                            oninput="updateYieldSim()"
-                                            class="w-full accent-[#0F8A78] h-2 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer">
-                                        <div class="flex justify-between text-[11px] text-[#4B5563]">
-                                            <span>72% (Off-Peak)</span>
-                                            <span>87% (DGCA Avg)</span>
-                                            <span>96% (Diwali)</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- Slider 3: Standby Ticket Price -->
-                                    <div class="space-y-1 font-mono text-xs">
-                                        <div class="flex justify-between font-semibold text-[#0B1020]">
-                                            <label for="input-fare">Standby Ticket Price</label>
-                                            <span id="lbl-fare" class="text-[#0F8A78] font-bold">₹3,200</span>
-                                        </div>
-                                        <input type="range" id="input-fare" min="2500" max="5000" step="100"
-                                            value="3200" oninput="updateYieldSim()"
-                                            class="w-full accent-[#0F8A78] h-2 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer">
-                                        <div class="flex justify-between text-[11px] text-[#4B5563]">
-                                            <span>₹2,500</span>
-                                            <span>₹3,200 (Optimal)</span>
-                                            <span>₹5,000</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- Slider 4: Meal & Snack Purchases -->
-                                    <div class="space-y-1 font-mono text-xs">
-                                        <div class="flex justify-between font-semibold text-[#0B1020]">
-                                            <label for="input-ancillary">Passengers Buying Meals &amp; Drinks</label>
-                                            <span id="lbl-ancillary" class="text-[#0B1020] font-bold">35%</span>
-                                        </div>
-                                        <input type="range" id="input-ancillary" min="10" max="60" step="5" value="35"
-                                            oninput="updateYieldSim()"
-                                            class="w-full accent-[#0F8A78] h-2 bg-slate-200 dark:bg-slate-700 rounded-lg cursor-pointer">
-                                        <div class="flex justify-between text-[11px] text-[#4B5563]">
-                                            <span>10% (Low)</span>
-                                            <span>35% (Avg)</span>
-                                            <span>60% (High)</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- Progressive Disclosure: Advanced Yield Settings Accordion -->
-                                    <div class="border-t border-slate-100 dark:border-slate-800 pt-3">
-                                        <button onclick="toggleAccordion('advYieldSettings')"
-                                            class="flex items-center justify-between w-full text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">
-                                            <span>How the Profit is Calculated (Formula)</span>
-                                            <i data-lucide="chevron-down" id="advYieldIcon"
-                                                class="w-3.5 h-3.5 text-slate-400"></i>
-                                        </button>
-                                        <div id="advYieldSettings"
-                                            class="hidden mt-2 p-4 bg-slate-50 dark:bg-slate-800/60 rounded-xl border border-slate-200 dark:border-slate-700 text-[11px] text-slate-600 dark:text-slate-300 font-mono space-y-2">
-                                            <div
-                                                class="font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider text-[10px] text-indigo-600 dark:text-indigo-400">
-                                                Profit Formula per Flight:</div>
-                                            <div
-                                                class="p-2 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[10px] leading-relaxed">
-                                                Extra Profit = Filled Standby Seats × [(Standby Ticket Price × 0.88) − ₹1,450 Variable Costs + (Meal Sales × ₹1,100)]
-                                            </div>
-                                            <div
-                                                class="space-y-0.5 text-[10px] text-slate-500 dark:text-slate-400 pt-1">
-                                                <div>• Extra jet fuel burned: ₹820 per passenger</div>
-                                                <div>• Airport security and entry fees: ₹630 per passenger</div>
-                                                <div>• Technology platform fee: 12% of ticket price</div>
-                                                <div>• Average fill rate: 72% of empty seats filled before takeoff</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Calculated Output & Charts Card -->
-                                <div
-                                    class="lg:col-span-7 bg-white dark:bg-slate-900 p-5 sm:p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-card space-y-5">
-                                    <h3
-                                        class="text-sm sm:text-base font-bold text-slate-900 dark:text-white flex items-center justify-between">
-                                        <span>Extra Profit Breakdown (Per Flight)</span>
-                                        <span
-                                            class="text-xs font-mono font-semibold text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-800">
-                                            Extra profit generated
-                                        </span>
-                                    </h3>
-
-                                    <!-- High-Impact Extra Profit Callout with Count-up (Item 12) -->
-                                    <div
-                                        class="p-4 sm:p-5 rounded-2xl bg-[#0F8A78]/10 border border-[#0F8A78]/25 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                                        <div>
-                                            <span
-                                                class="text-xs font-bold uppercase tracking-wider text-[#0B1020] block font-mono">
-                                                Extra Pure Profit Per Flight
-                                            </span>
-                                            <div class="text-[clamp(1.75rem,3vw,2.5rem)] font-extrabold text-[#0F8A78] font-mono tabular-nums tracking-tight leading-none my-1"
-                                                id="cfoBigExtraProfit">
-                                                +₹31,450
-                                            </div>
-                                            <span class="text-[11px] text-[#4B5563] font-medium">
-                                                New profit from seats that would have otherwise flown completely empty at ₹0
-                                            </span>
-                                        </div>
-                                        <div class="text-left sm:text-right sm:self-center">
-                                            <span
-                                                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#0F8A78]/10 text-[#0F8A78] border border-[#0F8A78]/30">
-                                                <span class="w-2 h-2 rounded-full bg-[#0F8A78]"></span>
-                                                +Pure extra profit
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    <!-- 4 Live Metrics Cards -->
-                                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono">
-                                        <div
-                                            class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-xl border border-slate-200 dark:border-slate-700">
-                                            <span class="text-[10px] font-semibold uppercase text-[#4B5563]">Empty
-                                                Seats</span>
-                                            <div id="res-vacant"
-                                                class="text-base sm:text-lg font-bold text-[#B45309] mt-0.5">24 Seats
-                                            </div>
-                                        </div>
-
-                                        <div
-                                            class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-xl border border-slate-200 dark:border-slate-700">
-                                            <span class="text-[10px] font-semibold uppercase text-[#4B5563]">Seats
-                                                Filled</span>
-                                            <div id="res-cleared"
-                                                class="text-base sm:text-lg font-bold text-[#0F8A78] mt-0.5">17 Seats
-                                            </div>
-                                        </div>
-
-                                        <div
-                                            class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-xl border border-slate-200 dark:border-slate-700">
-                                            <span class="text-[10px] font-semibold uppercase text-[#4B5563]">Profit /
-                                                Leg (Modelled)</span>
-                                            <div id="res-margin"
-                                                class="text-base sm:text-lg font-bold text-[#0F8A78] mt-0.5">₹31,450
-                                            </div>
-                                        </div>
-
-                                        <div
-                                            class="bg-slate-50 dark:bg-slate-800/50 p-3 rounded-xl border border-slate-200 dark:border-slate-700">
-                                            <span class="text-[10px] font-semibold uppercase text-[#4B5563]">Route
-                                                Cluster ROI (Modelled)</span>
-                                            <div id="res-annual"
-                                                class="text-base sm:text-lg font-bold text-[#0B1020] mt-0.5">₹45.9 Cr/yr
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Standby Financial Waterfall Chart (Item 12: Zoomed Delta View) -->
-                                    <div class="chart-container h-64 sm:h-72">
-                                        <canvas id="yieldChart"></canvas>
-                                    </div>
-
-                                    <!-- Mid-page Contextual CTA for Airline Leadership (Item 18) -->
-                                    <div
-                                        class="p-4 sm:p-5 rounded-2xl bg-slate-900 dark:bg-slate-950 text-white flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs border border-slate-800">
-                                        <div class="space-y-0.5 text-center sm:text-left">
-                                            <div
-                                                class="text-xs font-bold text-[#0F8A78] font-mono uppercase tracking-wider">
-                                                Airline CFO Fleet Analysis</div>
-                                            <div class="text-sm font-semibold text-[#E5E9F2]">See your airline's
-                                                specific fleet &amp; route network yield model</div>
-                                        </div>
-                                        <a href="mailto:leadership-pilot@aerofill.in?subject=Custom%20Fleet%20Yield%20Analysis%20Request"
-                                            class="px-4 py-2.5 rounded-xl bg-[#0F8A78] hover:bg-[#0D7A6A] text-white font-bold text-xs font-mono transition shadow-sm whitespace-nowrap flex items-center gap-1.5">
-                                            <span>See your airline's numbers</span>
-                                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                                        </a>
-                                    </div>
-
-                                    <!-- Sources & Assumptions Expandable Drawer (CFO Calculator - Priority 3) -->
-                                    <div class="pt-2 border-t border-slate-100 dark:border-slate-800">
-                                        <button onclick="toggleAccordion('cfoSourcesAssumptions')"
-                                            class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-colors py-1 group"
-                                            aria-expanded="false" aria-controls="cfoSourcesAssumptions">
-                                            <i data-lucide="info"
-                                                class="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400"></i>
-                                            <span>Financial Model Sources &amp; Assumption Disclosures</span>
-                                            <i data-lucide="chevron-down" id="cfoSourcesAssumptions-icon"
-                                                class="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-600 transition-transform"></i>
-                                        </button>
-                                        <div id="cfoSourcesAssumptions"
-                                            class="hidden mt-2 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700/80 text-xs text-slate-600 dark:text-slate-300 space-y-2">
-                                            <div
-                                                class="font-semibold text-slate-900 dark:text-slate-100 flex items-center justify-between">
-                                                <span>CFO Financial Model Reconciliation (Illustrative)</span>
-                                                <span
-                                                    class="text-[10px] font-mono uppercase bg-emerald-100 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 px-2 py-0.5 rounded border border-emerald-300 dark:border-emerald-800">Unit
-                                                    Economics</span>
-                                            </div>
-                                            <ul class="list-disc pl-4 space-y-1.5 text-[11px] leading-relaxed">
-                                                <li><strong>Route Cluster vs. Fleet ROI Reconciliation:</strong> The CFO
-                                                    calculator simulates a single 40-flight route cluster (~₹46 Cr/yr
-                                                    network ROI). In contrast, the Executive Pitch card shows +₹380
-                                                    Cr/yr Net Profit, which models a carrier-wide fleet deployment
-                                                    across ~1,600 daily sectors operated by major carriers.</li>
-                                                <li><strong>Marginal Costs Deducted:</strong> ₹820 extra jet fuel burn
-                                                    (78kg pax + 7kg bag at current ₹98/L ATF price) + ₹630 airport
-                                                    UDF/PSF/CISF passenger fees. Aircraft lease, flight crew salaries, and airport
-                                                    gate slots are already fully paid for by regular ticket sales.</li>
-                                                <li><strong>Platform Fee:</strong> 12% AeroFill technology clearing fee
-                                                    deducted automatically.</li>
-                                                <li><strong>Sample Scenarios:</strong> All figures shown are
-                                                    illustrative models designed for airline commercial calibration.
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
                         </div>
+
+                    </div>
                 </div>
-                </details>
-                
-                <div
-                    class="p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-xs space-y-2">
+
+                <!-- SIMULATOR 2: Live Airline CFO Profit & Waterfall Yield Simulator -->
+                <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-5 sm:p-7 space-y-5">
+                    <!-- Header Row -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 pb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center shrink-0">
+                                <i data-lucide="calculator" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 tracking-tight">
+                                    Live Airline CFO Profit &amp; Yield Simulator
+                                </h3>
+                                <p class="text-xs text-slate-500 font-normal">
+                                    Model fleet seat capacity, passenger load factor, and standby pricing to calculate net route contributions
+                                </p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-mono font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+                            Dynamic Waterfall Model
+                        </span>
+                    </div>
+
+                    <!-- 2-Column: Left Sliders Control Panel, Right Live Charts & Output -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+                        <!-- Sliders Control Panel (5 cols) -->
+                        <div class="lg:col-span-5 bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-5">
+                            <div class="flex items-center justify-between border-b border-slate-200 pb-2.5">
+                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-800 font-mono flex items-center gap-1.5">
+                                    <i data-lucide="sliders" class="w-3.5 h-3.5 text-orange-600"></i>
+                                    <span>Flight Model Parameters</span>
+                                </h4>
+                                <span class="text-[10px] font-mono text-slate-500">Real-Time Input</span>
+                            </div>
+
+                            <!-- Quick Fleet Preset Buttons -->
+                            <div class="space-y-1.5">
+                                <div class="text-[11px] font-semibold text-slate-600 uppercase tracking-wider font-mono">
+                                    Quick Route Scenarios
+                                </div>
+                                <div class="grid grid-cols-3 gap-1.5 text-[11px] font-mono" role="group" aria-label="CFO simulation route scenarios">
+                                    <button type="button" onclick="applyCfoPreset('trunk')" id="cfoPresetTrunk"
+                                        class="p-2 rounded-lg bg-orange-600 text-white font-semibold text-center shadow-xs transition hover:bg-orange-700">
+                                        Metro Trunk
+                                    </button>
+                                    <button type="button" onclick="applyCfoPreset('regional')" id="cfoPresetRegional"
+                                        class="p-2 rounded-lg bg-white border border-slate-200 text-slate-700 font-medium text-center transition hover:bg-slate-100">
+                                        Regional
+                                    </button>
+                                    <button type="button" onclick="applyCfoPreset('peak')" id="cfoPresetPeak"
+                                        class="p-2 rounded-lg bg-white border border-slate-200 text-slate-700 font-medium text-center transition hover:bg-slate-100">
+                                        Holiday Peak
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Slider 1: Aircraft Gauge -->
+                            <div class="space-y-1 font-mono text-xs">
+                                <div class="flex justify-between font-semibold text-slate-900">
+                                    <label for="input-gauge">Airplane Size (Total Seats)</label>
+                                    <span id="lbl-gauge" class="text-slate-900 font-bold">186 Seats</span>
+                                </div>
+                                <input type="range" id="input-gauge" min="150" max="232" step="6" value="186"
+                                    oninput="updateYieldSim()"
+                                    class="w-full accent-[#FF6300] h-2 bg-slate-200 rounded-lg cursor-pointer">
+                                <div class="flex justify-between text-[11px] text-slate-500">
+                                    <span>150 (A319)</span>
+                                    <span>186 (A320neo)</span>
+                                    <span>232 (A321neo)</span>
+                                </div>
+                            </div>
+
+                            <!-- Slider 2: Passenger Load Factor -->
+                            <div class="space-y-1 font-mono text-xs">
+                                <div class="flex justify-between font-semibold text-slate-900">
+                                    <label for="input-plf">Seats Already Sold (Normal PLF)</label>
+                                    <span id="lbl-plf" class="text-slate-900 font-bold">87%</span>
+                                </div>
+                                <input type="range" id="input-plf" min="72" max="96" step="1" value="87"
+                                    oninput="updateYieldSim()"
+                                    class="w-full accent-[#FF6300] h-2 bg-slate-200 rounded-lg cursor-pointer">
+                                <div class="flex justify-between text-[11px] text-slate-500">
+                                    <span>72% (Off-Peak)</span>
+                                    <span>87% (DGCA Avg)</span>
+                                    <span>96% (Diwali)</span>
+                                </div>
+                            </div>
+
+                            <!-- Slider 3: Standby Ticket Price -->
+                            <div class="space-y-1 font-mono text-xs">
+                                <div class="flex justify-between font-semibold text-slate-900">
+                                    <label for="input-fare">Standby Ticket Price</label>
+                                    <span id="lbl-fare" class="text-orange-600 font-bold">₹3,200</span>
+                                </div>
+                                <input type="range" id="input-fare" min="2500" max="5000" step="100"
+                                    value="3200" oninput="updateYieldSim()"
+                                    class="w-full accent-[#FF6300] h-2 bg-slate-200 rounded-lg cursor-pointer">
+                                <div class="flex justify-between text-[11px] text-slate-500">
+                                    <span>₹2,500</span>
+                                    <span>₹3,200 (Optimal)</span>
+                                    <span>₹5,000</span>
+                                </div>
+                            </div>
+
+                            <!-- Slider 4: Meal & Snack Purchases -->
+                            <div class="space-y-1 font-mono text-xs">
+                                <div class="flex justify-between font-semibold text-slate-900">
+                                    <label for="input-ancillary">Ancillary Purchase Rate</label>
+                                    <span id="lbl-ancillary" class="text-slate-900 font-bold">35%</span>
+                                </div>
+                                <input type="range" id="input-ancillary" min="10" max="60" step="5" value="35"
+                                    oninput="updateYieldSim()"
+                                    class="w-full accent-[#FF6300] h-2 bg-slate-200 rounded-lg cursor-pointer">
+                                <div class="flex justify-between text-[11px] text-slate-500">
+                                    <span>10% (Low)</span>
+                                    <span>35% (Avg)</span>
+                                    <span>60% (High)</span>
+                                </div>
+                            </div>
+
+                            <!-- Transparent Formula Breakdown Box -->
+                            <div class="p-3.5 rounded-xl bg-white border border-slate-200 text-xs font-mono space-y-1.5">
+                                <div class="font-bold text-slate-900 uppercase text-[10px] text-indigo-700">Profit Formula per Flight:</div>
+                                <div class="p-2 rounded bg-slate-50 border border-slate-200 text-[10px] leading-relaxed text-slate-700">
+                                    Extra Profit = Cleared Seats × [(Fare × 0.88) − ₹1,450 Variable Costs + Ancillaries]
+                                </div>
+                                <div class="space-y-0.5 text-[10px] text-slate-500 pt-1">
+                                    <div>• Extra jet fuel burned: ₹820 per passenger</div>
+                                    <div>• Airport security and CISF fees: ₹630 per passenger</div>
+                                    <div>• Technology platform fee: 12% of ticket price</div>
+                                    <div>• Modeled fill rate: 72% of empty seats filled</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Output & Charts Card (7 cols) -->
+                        <div class="lg:col-span-7 bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 space-y-5">
+                            <!-- High-Impact Extra Profit Callout -->
+                            <div class="p-5 rounded-2xl bg-emerald-50 border border-emerald-200 shadow-2xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                                <div>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-slate-700 block font-mono">
+                                        Extra Pure Profit Per Flight Leg
+                                    </span>
+                                    <div class="text-3xl sm:text-4xl font-extrabold text-emerald-700 font-mono tabular-nums tracking-tight leading-none my-1"
+                                        id="cfoBigExtraProfit">
+                                        +₹31,450
+                                    </div>
+                                    <span class="text-[11px] text-slate-600 font-medium">
+                                        Pure margin from seats that would have flown completely empty at ₹0
+                                    </span>
+                                </div>
+                                <div class="text-left sm:text-right sm:self-center">
+                                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                                        <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                                        +Pure Extra Margin
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- 4 Live Metrics Cards -->
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono">
+                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+                                    <span class="text-[10px] font-semibold uppercase text-slate-500">Empty Seats</span>
+                                    <div id="res-vacant" class="text-base sm:text-lg font-bold text-amber-700 mt-0.5">24 Seats</div>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+                                    <span class="text-[10px] font-semibold uppercase text-slate-500">Seats Filled</span>
+                                    <div id="res-cleared" class="text-base sm:text-lg font-bold text-emerald-700 mt-0.5">17 Seats</div>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+                                    <span class="text-[10px] font-semibold uppercase text-slate-500">Profit / Leg</span>
+                                    <div id="res-margin" class="text-base sm:text-lg font-bold text-emerald-700 mt-0.5">₹31,450</div>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+                                    <span class="text-[10px] font-semibold uppercase text-slate-500">Route ROI</span>
+                                    <div id="res-annual" class="text-base sm:text-lg font-bold text-slate-900 mt-0.5">₹45.9 Cr/yr</div>
+                                </div>
+                            </div>
+
+                            <!-- Standby Financial Waterfall Chart Canvas -->
+                            <div class="chart-container h-64 sm:h-72">
+                                <canvas id="yieldChart"></canvas>
+                            </div>
+
+                            <!-- Contextual CTA for Airline Commercial Leadership -->
+                            <div class="p-4 sm:p-5 rounded-2xl bg-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-4 border border-slate-800 shadow-2xs">
+                                <div class="space-y-0.5 text-center sm:text-left">
+                                    <div class="text-xs font-bold text-orange-400 font-mono uppercase tracking-wider">Airline Commercial Analysis</div>
+                                    <div class="text-sm font-semibold text-slate-200">See your airline's specific fleet &amp; route network yield model</div>
+                                </div>
+                                <a href="mailto:leadership-pilot@aerofill.in?subject=Custom%20Fleet%20Yield%20Analysis%20Request"
+                                    class="px-4 py-2.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs font-mono transition shadow-sm whitespace-nowrap flex items-center gap-1.5">
+                                    <span>Request Custom Fleet Model</span>
+                                    <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                                </a>
+                            </div>
+
+                            <!-- Financial Model Sources & Assumptions Accordion -->
+                            <div class="pt-2 border-t border-slate-200">
+                                <button onclick="toggleAccordion('cfoSourcesAssumptions')"
+                                    class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-colors py-1 group"
+                                    aria-expanded="false" aria-controls="cfoSourcesAssumptions">
+                                    <i data-lucide="info" class="w-3.5 h-3.5 text-indigo-600"></i>
+                                    <span>Financial Model Sources &amp; Assumption Disclosures</span>
+                                    <i data-lucide="chevron-down" id="cfoSourcesAssumptions-icon" class="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-600 transition-transform"></i>
+                                </button>
+                                <div id="cfoSourcesAssumptions" class="hidden mt-2 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 space-y-2">
+                                    <div class="font-semibold text-slate-900 flex items-center justify-between">
+                                        <span>CFO Financial Model Reconciliation</span>
+                                        <span class="text-[10px] font-mono uppercase bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded border border-emerald-300">Unit Economics</span>
+                                    </div>
+                                    <ul class="list-disc pl-4 space-y-1.5 text-[11px] leading-relaxed text-slate-600">
+                                        <li><strong>Route Cluster vs. Fleet ROI Reconciliation:</strong> The CFO calculator simulates a single 40-flight route cluster (~₹46 Cr/yr network ROI). In contrast, the Executive Pitch models carrier-wide deployment across ~1,600 daily domestic sectors (+₹380 Cr/yr).</li>
+                                        <li><strong>Marginal Costs Deducted:</strong> ₹820 extra jet fuel burn (78kg pax + 7kg bag at current ₹98/L ATF price) + ₹630 airport statutory security/UDF/PSF fees. Aircraft lease, crew salaries, and airport gate slots are already covered by regular ticket sales.</li>
+                                        <li><strong>Platform Fee:</strong> 12% AeroFill technology clearing fee deducted automatically.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Outcome Banner: Proof Through Exploration -->
+                <div class="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-2xs space-y-2">
                     <div class="flex items-center gap-2">
                         <span class="px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-800 border border-emerald-200 font-mono">Outcome</span>
-                        <span class="text-xs font-semibold text-emerald-800 dark:text-emerald-300 font-mono">Proof
-                            Through Exploration</span>
+                        <span class="text-xs font-semibold text-emerald-800 font-mono">Proof Through Exploration</span>
                     </div>
-                    <p class="text-base sm:text-lg font-bold text-emerald-950 dark:text-emerald-200 leading-snug">
-                        I tested the model myself across 3 route scenarios (metro trunk, regional, holiday peak). The
-                        simulator demonstrates that standby yield generates <span id="story4LiveProfit"
-                            class="font-mono font-bold">+₹31,450</span> (Modelled) net incremental contribution per
-                        flight leg from otherwise spoiled inventory.
+                    <p class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
+                        I tested the model myself across 3 route scenarios (metro trunk, regional, holiday peak). The simulator demonstrates that standby yield generates <span id="story4LiveProfit" class="font-mono font-bold text-emerald-700">+₹31,450</span> net incremental contribution per flight leg from otherwise spoiled inventory.
                     </p>
-                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
-                        By replacing static slides with an interactive model, I was able to verify that standby yield
-                        operates strictly on excess perishable capacity without eroding prime fare yield.
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                        By replacing static slides with an interactive model, I was able to verify that standby yield operates strictly on excess perishable capacity without eroding prime fare yield.
                     </p>
                 </div>
 
-                <!-- What I rejected and why box -->
-                <div
-                    class="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-3">
+                <!-- What I Rejected and Why Grid -->
+                <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
                     <div class="flex items-center gap-2">
                         <i data-lucide="x-circle" class="w-4 h-4 text-rose-500"></i>
-                        <h4
-                            class="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-800 dark:text-slate-200 font-mono">
-                            What I rejected and why</h4>
+                        <h4 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-800 font-mono">
+                            What I Rejected and Why
+                        </h4>
                     </div>
-                    <div
-                        class="grid grid-cols-1 md:grid-cols-3 gap-3.5 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                        <div
-                            class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 space-y-1">
-                            <div class="font-bold text-slate-800 dark:text-slate-200">1. Clickable Prototype Slides
-                                (InVision/PDF)</div>
-                            <p class="text-[11px] text-slate-500 dark:text-slate-400">Rejected because passive slide
-                                decks cannot dynamically calculate multi-variable formulas when airline dispatchers
-                                challenge seat counts or fuel burn numbers.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 text-xs text-slate-600 leading-relaxed">
+                        <div class="p-3.5 rounded-xl bg-white border border-slate-200 space-y-1">
+                            <div class="font-bold text-slate-900">1. Clickable Prototype Slides (InVision/PDF)</div>
+                            <p class="text-[11px] text-slate-500">Rejected because passive slide decks cannot dynamically calculate multi-variable formulas when airline dispatchers challenge seat counts or fuel burn numbers.</p>
                         </div>
-                        <div
-                            class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 space-y-1">
-                            <div class="font-bold text-slate-800 dark:text-slate-200">2. Black-Box AI Price Predictors
-                            </div>
-                            <p class="text-[11px] text-slate-500 dark:text-slate-400">Rejected because airline revenue
-                                management teams demand 100% transparent arithmetic formulas before trusting new
-                                inventory tools.</p>
+                        <div class="p-3.5 rounded-xl bg-white border border-slate-200 space-y-1">
+                            <div class="font-bold text-slate-900">2. Black-Box AI Price Predictors</div>
+                            <p class="text-[11px] text-slate-500">Rejected because airline revenue management teams demand 100% transparent arithmetic formulas before trusting new inventory tools.</p>
                         </div>
-                        <div
-                            class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 space-y-1">
-                            <div class="font-bold text-slate-800 dark:text-slate-200">3. Unconstrained Multi-Class
-                                Sandbox</div>
-                            <p class="text-[11px] text-slate-500 dark:text-slate-400">Rejected because allowing users to
-                                simulate business-class standby or unchecked baggage creates unrealistic operational
-                                scenarios that violate airline safety constraints.</p>
+                        <div class="p-3.5 rounded-xl bg-white border border-slate-200 space-y-1">
+                            <div class="font-bold text-slate-900">3. Unconstrained Multi-Class Sandbox</div>
+                            <p class="text-[11px] text-slate-500">Rejected because allowing users to simulate business-class standby or unchecked baggage creates unrealistic operational scenarios that violate airline safety constraints.</p>
                         </div>
                     </div>
                 </div>
+
             </div>
 
         </section>
