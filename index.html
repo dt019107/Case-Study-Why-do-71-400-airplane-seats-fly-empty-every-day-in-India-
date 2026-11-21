@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Lucide Icons -->
@@ -169,49 +169,66 @@
         }
 
         /* 2. Akasa Air Roboto Typography Scale */
+        :root {
+            --brand: #F65700;
+            --brand-hover: #E04E00;
+            --brand-tint: #FFF4ED;
+            --brand-border: #FED7C2;
+            --text-primary: #2B2523;
+            --text-secondary: #635B58;
+            --text-muted: #8A817E;
+            --border-warm: #EAE4E0;
+            --surface-warm: #FAF8F6;
+            --surface-card: #FFFFFF;
+        }
+
+        body {
+            background-color: var(--surface-warm) !important;
+            color: #333333 !important;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif !important;
+        }
+
         h1,
         .headline-display,
         .editorial-heading {
-            color: #333333 !important;
-            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif !important;
-            font-size: 30px !important;
+            color: var(--text-primary) !important;
+            font-family: 'Barlow', -apple-system, BlinkMacSystemFont, sans-serif !important;
+            font-size: 34px !important;
             font-weight: 700 !important;
-            line-height: 32px !important;
-            letter-spacing: 0px !important;
+            line-height: 1.15 !important;
+            letter-spacing: -0.02em !important;
         }
 
         h2,
         .headline-lg,
         .story-chapter > div h2 {
-            color: #333333 !important;
-            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif !important;
-            font-size: 25px !important;
+            color: var(--text-primary) !important;
+            font-family: 'Barlow', -apple-system, BlinkMacSystemFont, sans-serif !important;
+            font-size: 26px !important;
             font-weight: 700 !important;
-            line-height: 32px !important;
-            letter-spacing: 0px !important;
+            line-height: 1.2 !important;
+            letter-spacing: -0.01em !important;
         }
 
         h3,
         .headline-md,
         .story-chapter > div h3 {
-            color: #333333 !important;
-            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif !important;
+            color: var(--text-primary) !important;
+            font-family: 'Barlow', -apple-system, BlinkMacSystemFont, sans-serif !important;
             font-size: 20px !important;
-            font-weight: 400 !important;
-            line-height: 32px !important;
-            letter-spacing: 0px !important;
+            font-weight: 700 !important;
+            line-height: 1.25 !important;
         }
 
         h4,
         h5,
         h6,
         .headline-sm {
-            color: #333333 !important;
-            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif !important;
-            font-size: 17px !important;
-            font-weight: 400 !important;
-            line-height: 32px !important;
-            letter-spacing: 0px !important;
+            color: var(--text-primary) !important;
+            font-family: 'Barlow', -apple-system, BlinkMacSystemFont, sans-serif !important;
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            line-height: 1.3 !important;
         }
 
         /* Roboto for UI controls, inputs, and components */
@@ -1802,9 +1819,7 @@
             <!-- 2. Typography Hero & Visual Composition -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-2">
                 <div class="lg:col-span-7 space-y-5">
-                    <h1 class="text-3xl sm:text-5xl lg:text-[52px] font-bold text-[#111827] tracking-tight leading-[1.12]">
-                        Turning 71,400 Empty Seats into <span class="text-[#FF6300]">Lifesaving Standby Flights</span>
-                    </h1>
+                    <h1 class="text-3xl sm:text-5xl lg:text-[52px] font-bold text-[#111827] tracking-tight leading-[1.12]">Turning 71,400 Empty Seats into Lifesaving Standby Flights</h1>
                     <p class="text-base sm:text-lg text-[#4B5563] font-normal leading-relaxed max-w-2xl">
                         Every day across India, 71,400 airline seats fly empty while passengers in urgent family emergencies are locked out by ₹20,000+ surge pricing. AeroFill unlocks unsold seats at flat ₹3,200 standby fares using operational friction to protect airline revenue.
                     </p>
@@ -1817,70 +1832,92 @@
                     </div>
                 </div>
 
-                <!-- Right Visual Hero Card: Real Aircraft & Route Spotlight -->
+                <!-- Right Visual Hero Card: Real Product Screenshot & Flight Telemetry -->
                 <div class="lg:col-span-5 relative flex items-center justify-center">
-                    <div class="w-full max-w-[380px] p-6 rounded-3xl bg-gradient-to-b from-[#F3F6FB] to-white border border-[#D5DCE8] shadow-[0_20px_40px_-15px_rgba(20,41,91,0.12)] relative overflow-hidden text-center space-y-4">
+                    <div class="w-full max-w-[420px] p-5 sm:p-6 rounded-3xl bg-white border border-[#EAE4E0] shadow-[0_12px_28px_-8px_rgba(0,0,0,0.08)] relative overflow-hidden space-y-4">
                         <!-- Route & Flight Status -->
                         <div class="flex items-center justify-between text-xs font-mono">
-                            <span class="font-bold text-[#14295B] bg-[#EBF1F9] px-2.5 py-1 rounded-md">Flight 6E-205</span>
+                            <span class="font-bold text-[#14295B] bg-[#FAF8F6] border border-[#EAE4E0] px-2.5 py-1 rounded-md">Flight 6E-205</span>
                             <span class="text-[#067647] font-semibold flex items-center gap-1.5">
-                                <span class="w-2 h-2 rounded-full bg-[#067647] animate-pulse"></span>
+                                <span class="w-2 h-2 rounded-full bg-[#067647]"></span>
                                 Standby Active
                             </span>
                         </div>
 
-                        <!-- Real Top-Down Commercial Jet Aircraft Image -->
-                        <div class="relative py-2 flex items-center justify-center">
-                            <img src="assets/flight-airplane.png" alt="AeroFill Standby Commercial Jet" class="w-48 h-48 object-contain filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.18)] transition-transform hover:scale-105 duration-300">
+                        <!-- Real Product Screenshot Composition -->
+                        <div class="py-1 flex items-center justify-center gap-4">
+                            <!-- Real Product Interface Screenshot (assets/standby-screen-4-boarding-pass.jpg) -->
+                            <div class="relative w-36 sm:w-40 rounded-xl overflow-hidden border border-[#EAE4E0] shadow-sm bg-slate-900 shrink-0">
+                                <img src="assets/standby-screen-4-boarding-pass.jpg" alt="AeroFill Live Standby Boarding Pass Interface" class="w-full h-auto object-cover" loading="eager">
+                            </div>
+
+                            <!-- Flight Telemetry Column -->
+                            <div class="space-y-2.5 text-left flex-1">
+                                <div class="p-2.5 rounded-xl bg-[#FAF8F6] border border-[#EAE4E0] space-y-0.5">
+                                    <div class="text-[10px] font-mono text-[#8A817E] uppercase">Origin Radar</div>
+                                    <div class="text-xs font-bold text-[#2B2523] font-mono">Kempegowda T1</div>
+                                    <div class="text-[10px] text-[#067647] font-semibold">15km Geofence OK</div>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-[#FAF8F6] border border-[#EAE4E0] space-y-0.5">
+                                    <div class="text-[10px] font-mono text-[#8A817E] uppercase">Seat Assigned</div>
+                                    <div class="text-xs font-bold text-[#2B2523] font-mono">Seat 12B (Middle)</div>
+                                    <div class="text-[10px] text-[#635B58]">Digi Yatra Biometric Token</div>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-[#FAF8F6] border border-[#EAE4E0] space-y-0.5">
+                                    <div class="text-[10px] font-mono text-[#8A817E] uppercase">Statutory Cap</div>
+                                    <div class="text-sm font-bold text-[#F65700] font-mono">₹3,200 Flat</div>
+                                    <div class="text-[10px] text-[#8A817E]">Fuel + CISF Fee Included</div>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Flight Route Row -->
-                        <div class="flex items-center justify-between text-left pt-2 border-t border-dashed border-[#D5DCE8]">
+                        <div class="flex items-center justify-between text-left pt-2 border-t border-dashed border-[#EAE4E0]">
                             <div>
-                                <div class="text-xl font-bold text-[#0F1B33] leading-none">BLR</div>
-                                <div class="text-[11px] text-[#5B6B85] mt-0.5">20:55 IST</div>
+                                <div class="text-xl font-bold text-[#2B2523] leading-none">BLR</div>
+                                <div class="text-[11px] text-[#635B58] mt-0.5 font-mono">20:55 IST</div>
                             </div>
                             <div class="flex-1 px-3 text-center">
-                                <div class="text-[10px] font-mono text-[#5B6B85]">2h 45m</div>
-                                <div class="w-full border-t border-dashed border-[#D5DCE8] my-1"></div>
-                                <div class="text-[10px] text-[#FF6300] font-semibold">24 Empty Seats</div>
+                                <div class="text-[10px] font-mono text-[#635B58]">2h 45m Direct</div>
+                                <div class="w-full border-t border-dashed border-[#EAE4E0] my-1"></div>
+                                <div class="text-[10px] text-[#F65700] font-semibold font-mono">24 Empty Seats</div>
                             </div>
                             <div class="text-right">
-                                <div class="text-xl font-bold text-[#0F1B33] leading-none">DEL</div>
-                                <div class="text-[11px] text-[#5B6B85] mt-0.5">23:40 IST</div>
+                                <div class="text-xl font-bold text-[#2B2523] leading-none">DEL</div>
+                                <div class="text-[11px] text-[#635B58] mt-0.5 font-mono">23:40 IST</div>
                             </div>
                         </div>
 
                         <!-- Fare Comparison Bar -->
-                        <div class="p-3 rounded-xl bg-[#14295B] text-white flex items-center justify-between text-xs">
-                            <span class="text-white/80">Regular: <span class="line-through text-white/60">₹21,400</span></span>
+                        <div class="p-2.5 rounded-xl bg-[#14295B] text-white flex items-center justify-between text-xs font-mono">
+                            <span class="text-white/80">Commercial Spot: <span class="line-through text-white/50">₹21,400</span></span>
                             <span class="font-bold text-sm text-[#FF8C38]">Standby: ₹3,200</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 3. Four Core Metric Bento Cards -->
+            <!-- 3. Four Core Metric Bento Cards (Sourced with Units & Dates) -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5">
-                <div class="p-5 rounded-xl bg-white border border-[#E5E7EB] shadow-xs space-y-1.5">
-                    <span class="text-[11px] font-mono uppercase tracking-wider text-[#6B6F76] font-semibold block">Daily Spoilage</span>
-                    <div class="text-2xl sm:text-4xl font-bold text-[#FF6300] tabular-nums">71,400+</div>
-                    <p class="text-xs text-[#6B6F76]">Empty seats across domestic flights</p>
+                <div class="p-5 rounded-xl bg-white border border-[#EAE4E0] shadow-sm space-y-1.5">
+                    <span class="text-[11px] font-mono uppercase tracking-wider text-[#635B58] font-semibold block">Daily Spoilage (DGCA Dec 2024)</span>
+                    <div class="text-2xl sm:text-3xl font-bold text-[#F65700] tabular-nums font-mono">71,400 seats</div>
+                    <p class="text-xs text-[#635B58] leading-relaxed">~13.6% unsold capacity on 525k daily domestic seats</p>
                 </div>
-                <div class="p-5 rounded-xl bg-white border border-[#E5E7EB] shadow-xs space-y-1.5">
-                    <span class="text-[11px] font-mono uppercase tracking-wider text-[#6B6F76] font-semibold block">Annual Perished Value</span>
-                    <div class="text-2xl sm:text-4xl font-bold text-[#111827] tabular-nums">₹9,800 Cr</div>
-                    <p class="text-xs text-[#6B6F76]">Lost forever once flights depart</p>
+                <div class="p-5 rounded-xl bg-white border border-[#EAE4E0] shadow-sm space-y-1.5">
+                    <span class="text-[11px] font-mono uppercase tracking-wider text-[#635B58] font-semibold block">Annual Perished Value (MoCA)</span>
+                    <div class="text-2xl sm:text-3xl font-bold text-[#2B2523] tabular-nums font-mono">₹9,800 Cr/yr</div>
+                    <p class="text-xs text-[#635B58] leading-relaxed">Lost forever once flight doors lock at gate</p>
                 </div>
-                <div class="p-5 rounded-xl bg-white border border-[#E5E7EB] shadow-xs space-y-1.5">
-                    <span class="text-[11px] font-mono uppercase tracking-wider text-[#6B6F76] font-semibold block">Fixed Standby Fare</span>
-                    <div class="text-2xl sm:text-4xl font-bold text-[#5B22D6] tabular-nums">₹3,200</div>
-                    <p class="text-xs text-[#6B6F76]">Covers fuel &amp; fees with zero gouging</p>
+                <div class="p-5 rounded-xl bg-white border border-[#EAE4E0] shadow-sm space-y-1.5">
+                    <span class="text-[11px] font-mono uppercase tracking-wider text-[#635B58] font-semibold block">Statutory Standby Cap</span>
+                    <div class="text-2xl sm:text-3xl font-bold text-[#14295B] tabular-nums font-mono">₹3,200 flat</div>
+                    <p class="text-xs text-[#635B58] leading-relaxed">₹820 jet fuel + ₹630 CISF fee + 12% tech fee</p>
                 </div>
-                <div class="p-5 rounded-xl bg-white border border-[#E5E7EB] shadow-xs space-y-1.5">
-                    <span class="text-[11px] font-mono uppercase tracking-wider text-[#6B6F76] font-semibold block">Net Contribution</span>
-                    <div class="text-2xl sm:text-4xl font-bold text-[#0F9D58] tabular-nums">+68%</div>
-                    <p class="text-xs text-[#6B6F76]">Profit contribution per standby seat</p>
+                <div class="p-5 rounded-xl bg-white border border-[#EAE4E0] shadow-sm space-y-1.5">
+                    <span class="text-[11px] font-mono uppercase tracking-wider text-[#635B58] font-semibold block">Net Marginal Margin</span>
+                    <div class="text-2xl sm:text-3xl font-bold text-[#067647] tabular-nums font-mono">+68% margin</div>
+                    <p class="text-xs text-[#635B58] leading-relaxed">+₹1,366 contribution per cleared seat above costs</p>
                 </div>
             </div>
 
@@ -1888,7 +1925,7 @@
             <div class="p-4 sm:p-5 rounded-xl bg-[#FFF7ED] border border-[#FED7AA] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-lg bg-[#FF6300] text-white flex items-center justify-center shrink-0 shadow-xs">
-                        <i data-lucide="smartphone" class="w-5 h-5"></i>
+                        
                     </div>
                     <div>
                         <div class="text-sm font-bold text-[#111827]">Recruiter 60-Second Fast Track</div>
@@ -1897,7 +1934,7 @@
                 </div>
                 <a href="#mobile-experience" class="px-5 py-2.5 rounded-lg bg-[#FF6300] hover:bg-[#E05700] text-white text-xs font-semibold whitespace-nowrap transition-colors flex items-center gap-1.5 self-end sm:self-auto shadow-xs">
                     <span>Jump to Prototype</span>
-                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    
                 </a>
             </div>
         </section>
@@ -1914,9 +1951,7 @@
                     <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono font-semibold tracking-wide bg-[#FFF7ED] text-[#FF6300] rounded-md border border-[#FFEDD5]">
                         <span>Act 2 • The Core Dilemma</span>
                     </div>
-                    <h2 class="text-2xl sm:text-4xl font-bold text-[#111827] tracking-tight">
-                        The Perishable Crisis: <span class="text-[#FF6300]">Empty Seats vs Stranded Families</span>
-                    </h2>
+                    <h2 class="text-2xl sm:text-4xl font-bold text-[#111827] tracking-tight">The Perishable Crisis: Empty Seats vs Stranded Families</h2>
                     <p class="text-base text-[#6B6F76]">
                         Airplane seats are the ultimate perishable commodity. The moment the cabin door locks, any empty seat perishes to ₹0.00 forever.
                     </p>
@@ -1940,7 +1975,7 @@
                 <!-- Card 1: The Spoilage Crisis (Dark Charcoal / Midnight Slate) -->
                 <div class="p-7 sm:p-8 rounded-3xl bg-[#0B1020] text-white border border-slate-800/80 flex flex-col justify-between space-y-6 shadow-sm relative overflow-hidden group">
                     <!-- Subtle Background Flight Aura -->
-                    <div class="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-rose-500/10 blur-3xl pointer-events-none"></div>
+                    <div class="absolute -right-12 -top-12 hidden"></div>
 
                     <div class="space-y-4 relative z-10">
                         <div class="flex items-center justify-between">
@@ -1980,7 +2015,7 @@
                 <!-- Card 2: The Standby Solution (Clean White with Akasa Warm Orange Accent) -->
                 <div class="p-7 sm:p-8 rounded-3xl bg-white text-[#111827] border-2 border-[#FF6300]/30 flex flex-col justify-between space-y-6 shadow-sm relative overflow-hidden group">
                     <!-- Subtle Warm Aura -->
-                    <div class="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-[#FF6300]/10 blur-3xl pointer-events-none"></div>
+                    <div class="absolute -right-12 -top-12 hidden"></div>
 
                     <div class="space-y-4 relative z-10">
                         <div class="flex items-center justify-between">
@@ -2382,9 +2417,7 @@
                     <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono font-semibold tracking-wide bg-[#FFF7ED] text-[#FF6300] rounded-md border border-[#FFEDD5]">
                         <span>Act 4 • Operational Friction by Design</span>
                     </div>
-                    <h2 class="text-2xl sm:text-4xl font-bold text-[#111827] tracking-tight">
-                        The 6 Travel Rules: <span class="text-[#FF6300]">Friction That Defends Yield</span>
-                    </h2>
+                    <h2 class="text-2xl sm:text-4xl font-bold text-[#111827] tracking-tight">The 6 Travel Rules: Non-Monetary Friction That Defends Yield</h2>
                     <p class="text-base text-[#6B6F76]">
                         Instead of asking for salary slips or income proof, we introduce 6 physical friction hurdles. Students and distressed travelers happily accept them; corporate travelers expensed by their firms refuse them 100% of the time.
                     </p>
@@ -2424,159 +2457,163 @@
                 </div>
             </div>
 
-            <!-- 6 Guardrail Bento Cards (3x2 Grid with Behance Aesthetic) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                <!-- Rule 1: Geofence -->
-                <article id="guardrail-card-1"
-                    class="guardrail-card flex flex-col justify-between h-full p-6 sm:p-7 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#FF6300]/50 hover:shadow-md transition-all duration-300 shadow-xs space-y-5">
-                    <div class="space-y-3.5">
-                        <div class="flex items-center justify-between">
-                            <div class="w-10 h-10 rounded-xl bg-[#FFF7ED] text-[#FF6300] flex items-center justify-center shadow-2xs">
-                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+            <!-- Operational Friction Parameter Specification (Real Numbers Matrix) -->
+            <div class="rounded-2xl bg-white border border-[#EAE4E0] shadow-sm overflow-hidden divide-y divide-[#EAE4E0]">
+                <!-- Item 1: Geofence -->
+                <div id="guardrail-card-1" class="p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-[#FAF8F6] transition-colors">
+                    <div class="flex items-start gap-4">
+                        <span class="w-8 h-8 rounded-lg bg-[#FAF8F6] border border-[#EAE4E0] text-[#2B2523] flex items-center justify-center font-mono text-xs font-bold shrink-0">01</span>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 class="text-base font-bold text-[#2B2523]">15.0 km Terminal Geofence</h3>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase bg-slate-100 text-[#2B2523]">Physical Radar</span>
                             </div>
-                            <span class="inline-flex items-center px-2.5 py-1 rounded text-xs font-bold font-mono tracking-wide bg-[#EFE6FF] text-[#5B22D6]">
-                                Rule 01
-                            </span>
+                            <p class="text-xs text-[#635B58] mt-1 max-w-xl">
+                                Standby inventory unlocks strictly when the traveler's GPS device is verified within 15.0 km of the departure airport.
+                            </p>
                         </div>
-                        <h3 class="text-lg font-bold text-[#111827] tracking-tight">
-                            15 km Airport Perimeter
-                        </h3>
-                        <p class="text-xs sm:text-sm leading-relaxed text-[#4B5563]">
-                            Standby fares unlock strictly when the traveler's GPS is verified within 15 km of the departure airport.
-                        </p>
                     </div>
-                    <div class="pt-3 border-t border-[#F3F4F6] text-xs text-[#6B6F76] space-y-1">
-                        <span class="font-bold text-[#111827] block text-[11px] uppercase tracking-wider font-mono">Revenue Protection</span>
-                        <p>Prevents corporate procurement desks from booking discounted standby tickets from downtown office towers.</p>
+                    <div class="flex items-center gap-6 shrink-0 text-xs font-mono">
+                        <div>
+                            <span class="text-[10px] text-[#8A817E] uppercase block">Parameter</span>
+                            <span class="font-bold text-[#2B2523]">&le; 15.0 km</span>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-[#8A817E] uppercase block">Yield Protection</span>
+                            <span class="font-bold text-[#F65700]">Blocks remote corporate bookings</span>
+                        </div>
                     </div>
-                </article>
+                </div>
 
-                <!-- Rule 2: Time Gate -->
-                <article id="guardrail-card-2"
-                    class="guardrail-card flex flex-col justify-between h-full p-6 sm:p-7 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#FF6300]/50 hover:shadow-md transition-all duration-300 shadow-xs space-y-5">
-                    <div class="space-y-3.5">
-                        <div class="flex items-center justify-between">
-                            <div class="w-10 h-10 rounded-xl bg-[#FFF7ED] text-[#FF6300] flex items-center justify-center shadow-2xs">
-                                <i data-lucide="clock" class="w-5 h-5"></i>
+                <!-- Item 2: Time Gate -->
+                <div id="guardrail-card-2" class="p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-[#FAF8F6] transition-colors">
+                    <div class="flex items-start gap-4">
+                        <span class="w-8 h-8 rounded-lg bg-[#FAF8F6] border border-[#EAE4E0] text-[#2B2523] flex items-center justify-center font-mono text-xs font-bold shrink-0">02</span>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 class="text-base font-bold text-[#2B2523]">180 min (T-3h) Departure Lock</h3>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase bg-slate-100 text-[#2B2523]">Temporal Gate</span>
                             </div>
-                            <span class="inline-flex items-center px-2.5 py-1 rounded text-xs font-bold font-mono tracking-wide bg-[#EFE6FF] text-[#5B22D6]">
-                                Rule 02
-                            </span>
+                            <p class="text-xs text-[#635B58] mt-1 max-w-xl">
+                                Standby inventory unlocks exactly 180 minutes prior to pushback, long after commercial business booking plateau.
+                            </p>
                         </div>
-                        <h3 class="text-lg font-bold text-[#111827] tracking-tight">
-                            T-Minus 3 Hour Gate
-                        </h3>
-                        <p class="text-xs sm:text-sm leading-relaxed text-[#4B5563]">
-                            Standby inventory unlocks exactly 180 minutes before takeoff, long after scheduled commercial sales peak.
-                        </p>
                     </div>
-                    <div class="pt-3 border-t border-[#F3F4F6] text-xs text-[#6B6F76] space-y-1">
-                        <span class="font-bold text-[#111827] block text-[11px] uppercase tracking-wider font-mono">Revenue Protection</span>
-                        <p>Executives require advance calendar certainty days prior and cannot gamble on last-minute gate uncertainty.</p>
+                    <div class="flex items-center gap-6 shrink-0 text-xs font-mono">
+                        <div>
+                            <span class="text-[10px] text-[#8A817E] uppercase block">Parameter</span>
+                            <span class="font-bold text-[#2B2523]">T-180 to T-45 min</span>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-[#8A817E] uppercase block">Yield Protection</span>
+                            <span class="font-bold text-[#F65700]">Corporate flyers require advance schedule</span>
+                        </div>
                     </div>
-                </article>
+                </div>
 
-                <!-- Rule 3: Time Band -->
-                <article id="guardrail-card-3"
-                    class="guardrail-card flex flex-col justify-between h-full p-6 sm:p-7 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#FF6300]/50 hover:shadow-md transition-all duration-300 shadow-xs space-y-5">
-                    <div class="space-y-3.5">
-                        <div class="flex items-center justify-between">
-                            <div class="w-10 h-10 rounded-xl bg-[#FFF7ED] text-[#FF6300] flex items-center justify-center shadow-2xs">
-                                <i data-lucide="shuffle" class="w-5 h-5"></i>
+                <!-- Item 3: Flex Window -->
+                <div id="guardrail-card-3" class="p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-[#FAF8F6] transition-colors">
+                    <div class="flex items-start gap-4">
+                        <span class="w-8 h-8 rounded-lg bg-[#FAF8F6] border border-[#EAE4E0] text-[#2B2523] flex items-center justify-center font-mono text-xs font-bold shrink-0">03</span>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 class="text-base font-bold text-[#2B2523]">&plusmn;90 min Flight Flex Window</h3>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase bg-slate-100 text-[#2B2523]">Schedule Flex</span>
                             </div>
-                            <span class="inline-flex items-center px-2.5 py-1 rounded text-xs font-bold font-mono tracking-wide bg-[#EFE6FF] text-[#5B22D6]">
-                                Rule 03
-                            </span>
+                            <p class="text-xs text-[#635B58] mt-1 max-w-xl">
+                                Travelers commit to a 3-hour departure band; dispatch algorithm dynamically reallocates passengers across flights.
+                            </p>
                         </div>
-                        <h3 class="text-lg font-bold text-[#111827] tracking-tight">
-                            Flexible ±90m Window
-                        </h3>
-                        <p class="text-xs sm:text-sm leading-relaxed text-[#4B5563]">
-                            Travelers select a 3-hour departure band rather than a specific flight; the airline balances seats across flights.
-                        </p>
                     </div>
-                    <div class="pt-3 border-t border-[#F3F4F6] text-xs text-[#6B6F76] space-y-1">
-                        <span class="font-bold text-[#111827] block text-[11px] uppercase tracking-wider font-mono">Revenue Protection</span>
-                        <p>Corporate travelers with tight executive meetings and client presentations cannot accept flexible flight assignments.</p>
+                    <div class="flex items-center gap-6 shrink-0 text-xs font-mono">
+                        <div>
+                            <span class="text-[10px] text-[#8A817E] uppercase block">Parameter</span>
+                            <span class="font-bold text-[#2B2523]">&plusmn;90 min (3h band)</span>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-[#8A817E] uppercase block">Yield Protection</span>
+                            <span class="font-bold text-[#F65700]">Executives cannot accept uncertain arrival</span>
+                        </div>
                     </div>
-                </article>
+                </div>
 
-                <!-- Rule 4: Middle Seat Only -->
-                <article id="guardrail-card-4"
-                    class="guardrail-card flex flex-col justify-between h-full p-6 sm:p-7 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#FF6300]/50 hover:shadow-md transition-all duration-300 shadow-xs space-y-5">
-                    <div class="space-y-3.5">
-                        <div class="flex items-center justify-between">
-                            <div class="w-10 h-10 rounded-xl bg-[#FFF7ED] text-[#FF6300] flex items-center justify-center shadow-2xs">
-                                <i data-lucide="armchair" class="w-5 h-5"></i>
+                <!-- Item 4: Middle Seat -->
+                <div id="guardrail-card-4" class="p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-[#FAF8F6] transition-colors">
+                    <div class="flex items-start gap-4">
+                        <span class="w-8 h-8 rounded-lg bg-[#FAF8F6] border border-[#EAE4E0] text-[#2B2523] flex items-center justify-center font-mono text-xs font-bold shrink-0">04</span>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 class="text-base font-bold text-[#2B2523]">100% Middle Seats Only</h3>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase bg-slate-100 text-[#2B2523]">Cabin Constraint</span>
                             </div>
-                            <span class="inline-flex items-center px-2.5 py-1 rounded text-xs font-bold font-mono tracking-wide bg-[#EFE6FF] text-[#5B22D6]">
-                                Rule 04
-                            </span>
+                            <p class="text-xs text-[#635B58] mt-1 max-w-xl">
+                                Inflexible assignment to unsold middle seats (columns B &amp; E only). Commercial window and aisle seats remain untouched.
+                            </p>
                         </div>
-                        <h3 class="text-lg font-bold text-[#111827] tracking-tight">
-                            Middle Seats Only (Row B &amp; E)
-                        </h3>
-                        <p class="text-xs sm:text-sm leading-relaxed text-[#4B5563]">
-                            Standby travelers receive rear unselected middle seats only, leaving coveted window and aisle seats for commercial fliers.
-                        </p>
                     </div>
-                    <div class="pt-3 border-t border-[#F3F4F6] text-xs text-[#6B6F76] space-y-1">
-                        <span class="font-bold text-[#111827] block text-[11px] uppercase tracking-wider font-mono">Revenue Protection</span>
-                        <p>Physical seating comfort is the decisive psychological barrier that prevents corporate travelers from downgrading.</p>
+                    <div class="flex items-center gap-6 shrink-0 text-xs font-mono">
+                        <div>
+                            <span class="text-[10px] text-[#8A817E] uppercase block">Parameter</span>
+                            <span class="font-bold text-[#2B2523]">Row B &amp; E Only</span>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-[#8A817E] uppercase block">Yield Protection</span>
+                            <span class="font-bold text-[#F65700]">Primary psychological deterrent</span>
+                        </div>
                     </div>
-                </article>
+                </div>
 
-                <!-- Rule 5: DigiLocker Verification -->
-                <article id="guardrail-card-5"
-                    class="guardrail-card flex flex-col justify-between h-full p-6 sm:p-7 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#FF6300]/50 hover:shadow-md transition-all duration-300 shadow-xs space-y-5">
-                    <div class="space-y-3.5">
-                        <div class="flex items-center justify-between">
-                            <div class="w-10 h-10 rounded-xl bg-[#FFF7ED] text-[#FF6300] flex items-center justify-center shadow-2xs">
-                                <i data-lucide="badge-check" class="w-5 h-5"></i>
+                <!-- Item 5: Identity Check -->
+                <div id="guardrail-card-5" class="p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-[#FAF8F6] transition-colors">
+                    <div class="flex items-start gap-4">
+                        <span class="w-8 h-8 rounded-lg bg-[#FAF8F6] border border-[#EAE4E0] text-[#2B2523] flex items-center justify-center font-mono text-xs font-bold shrink-0">05</span>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 class="text-base font-bold text-[#2B2523]">&lt; 90s ABHA / DigiLocker Verification</h3>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase bg-slate-100 text-[#2B2523]">DPI Handshake</span>
                             </div>
-                            <span class="inline-flex items-center px-2.5 py-1 rounded text-xs font-bold font-mono tracking-wide bg-[#EFE6FF] text-[#5B22D6]">
-                                Rule 05
-                            </span>
+                            <p class="text-xs text-[#635B58] mt-1 max-w-xl">
+                                Government health record or student identity verified instantly via Ayushman Bharat &amp; DigiLocker public APIs.
+                            </p>
                         </div>
-                        <h3 class="text-lg font-bold text-[#111827] tracking-tight">
-                            Instant Digital ID Verification
-                        </h3>
-                        <p class="text-xs sm:text-sm leading-relaxed text-[#4B5563]">
-                            Students and emergency travelers verify eligibility in seconds through DigiLocker and India's ABHA health record network.
-                        </p>
                     </div>
-                    <div class="pt-3 border-t border-[#F3F4F6] text-xs text-[#6B6F76] space-y-1">
-                        <span class="font-bold text-[#111827] block text-[11px] uppercase tracking-wider font-mono">Revenue Protection</span>
-                        <p>Tickets are strictly non-transferable and tied to verified Aadhaar/ABHA tokens, completely preventing black-market scalping.</p>
+                    <div class="flex items-center gap-6 shrink-0 text-xs font-mono">
+                        <div>
+                            <span class="text-[10px] text-[#8A817E] uppercase block">Parameter</span>
+                            <span class="font-bold text-[#2B2523]">&lt; 90 seconds</span>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-[#8A817E] uppercase block">Yield Protection</span>
+                            <span class="font-bold text-[#F65700]">Non-transferable ticket prevents scalping</span>
+                        </div>
                     </div>
-                </article>
+                </div>
 
-                <!-- Rule 6: Backpack Only -->
-                <article id="guardrail-card-6"
-                    class="guardrail-card flex flex-col justify-between h-full p-6 sm:p-7 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#FF6300]/50 hover:shadow-md transition-all duration-300 shadow-xs space-y-5">
-                    <div class="space-y-3.5">
-                        <div class="flex items-center justify-between">
-                            <div class="w-10 h-10 rounded-xl bg-[#FFF7ED] text-[#FF6300] flex items-center justify-center shadow-2xs">
-                                <i data-lucide="backpack" class="w-5 h-5"></i>
+                <!-- Item 6: Baggage Limit -->
+                <div id="guardrail-card-6" class="p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-[#FAF8F6] transition-colors">
+                    <div class="flex items-start gap-4">
+                        <span class="w-8 h-8 rounded-lg bg-[#FAF8F6] border border-[#EAE4E0] text-[#2B2523] flex items-center justify-center font-mono text-xs font-bold shrink-0">06</span>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h3 class="text-base font-bold text-[#2B2523]">7.0 kg Single Backpack Limit</h3>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase bg-slate-100 text-[#2B2523]">Turnaround SLA</span>
                             </div>
-                            <span class="inline-flex items-center px-2.5 py-1 rounded text-xs font-bold font-mono tracking-wide bg-[#EFE6FF] text-[#5B22D6]">
-                                Rule 06
-                            </span>
+                            <p class="text-xs text-[#635B58] mt-1 max-w-xl">
+                                Strict single carry-on backpack under 7.0 kg with zero hold luggage. Eliminates cargo-loading turnaround delays.
+                            </p>
                         </div>
-                        <h3 class="text-lg font-bold text-[#111827] tracking-tight">
-                            7kg Backpack Only (Zero Check-in)
-                        </h3>
-                        <p class="text-xs sm:text-sm leading-relaxed text-[#4B5563]">
-                            Strict carry-on backpack only. Checked baggage is prohibited to guarantee zero baggage-hold handling delays at departure.
-                        </p>
                     </div>
-                    <div class="pt-3 border-t border-[#F3F4F6] text-xs text-[#6B6F76] space-y-1">
-                        <span class="font-bold text-[#111827] block text-[11px] uppercase tracking-wider font-mono">Revenue Protection</span>
-                        <p>Multi-day business executives who carry suit trolleys and garment bags cannot travel on standby rules.</p>
+                    <div class="flex items-center gap-6 shrink-0 text-xs font-mono">
+                        <div>
+                            <span class="text-[10px] text-[#8A817E] uppercase block">Parameter</span>
+                            <span class="font-bold text-[#2B2523]">&le; 7.0 kg (0kg Hold)</span>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-[#8A817E] uppercase block">Yield Protection</span>
+                            <span class="font-bold text-[#F65700]">Corporate suit luggage refused</span>
+                        </div>
                     </div>
-                </article>
-
+                </div>
             </div>
 
             <!-- Recruiter Summary Takeaway Banner -->
@@ -2686,7 +2723,7 @@
                             </div>
 
                             <!-- Phone Frame (Proportional 440x974) -->
-                            <div class="relative w-full max-w-[275px] mx-auto rounded-[38px] p-[8px] bg-[#14295B] shadow-[0_16px_36px_-8px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
+                            <div class="relative w-full max-w-[275px] mx-auto rounded-[38px] p-[8px] bg-[#14295B] shadow-[0_12px_24px_-6px_rgba(0,0,0,0.14)] border border-[#EAE4E0] ring-1 ring-slate-900/40">
                                 <div class="rounded-[30px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[590px] relative text-[#0F1B33] select-none">
                                     
                                     <!-- Sky Header Gradient Band -->
@@ -2860,7 +2897,7 @@
                             </div>
 
                             <!-- Phone Frame (Proportional 440x974) -->
-                            <div class="relative w-full max-w-[275px] mx-auto rounded-[38px] p-[8px] bg-[#14295B] shadow-[0_16px_36px_-8px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
+                            <div class="relative w-full max-w-[275px] mx-auto rounded-[38px] p-[8px] bg-[#14295B] shadow-[0_12px_24px_-6px_rgba(0,0,0,0.14)] border border-[#EAE4E0] ring-1 ring-slate-900/40">
                                 <div class="rounded-[30px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[590px] relative text-[#0F1B33] select-none">
                                     
                                     <!-- Sky Header Gradient Band -->
@@ -3000,7 +3037,7 @@
                             </div>
 
                             <!-- Phone Frame (Proportional 440x974) -->
-                            <div class="relative w-full max-w-[275px] mx-auto rounded-[38px] p-[8px] bg-[#14295B] shadow-[0_16px_36px_-8px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
+                            <div class="relative w-full max-w-[275px] mx-auto rounded-[38px] p-[8px] bg-[#14295B] shadow-[0_12px_24px_-6px_rgba(0,0,0,0.14)] border border-[#EAE4E0] ring-1 ring-slate-900/40">
                                 <div class="rounded-[30px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[590px] relative text-[#0F1B33] select-none">
                                     
                                     <!-- Sky Header Gradient Band -->
@@ -3186,7 +3223,7 @@
                             </div>
 
                             <!-- Phone Frame (Proportional 440x974) -->
-                            <div class="relative w-full max-w-[275px] mx-auto rounded-[38px] p-[8px] bg-[#14295B] shadow-[0_16px_36px_-8px_rgba(20,41,91,0.35),0_0_0_1px_rgba(255,255,255,0.15)_inset] ring-1 ring-slate-900/40">
+                            <div class="relative w-full max-w-[275px] mx-auto rounded-[38px] p-[8px] bg-[#14295B] shadow-[0_12px_24px_-6px_rgba(0,0,0,0.14)] border border-[#EAE4E0] ring-1 ring-slate-900/40">
                                 <div class="rounded-[30px] overflow-hidden bg-[#F3F6FB] flex flex-col h-[590px] relative text-[#0F1B33] select-none">
                                     
                                     <!-- Sky Header Gradient Band -->
@@ -3413,9 +3450,7 @@
                 <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono font-semibold tracking-wide bg-rose-50 text-rose-700 rounded border border-rose-200">
                     <span>Act 6 • Priority Medical Care</span>
                 </div>
-                <h2 class="text-2xl sm:text-4xl font-bold text-[#111827] tracking-tight">
-                    Project Sanjeevani: <span class="text-rose-600">Dignity in Acute Crisis</span>
-                </h2>
+                <h2 class="text-2xl sm:text-4xl font-bold text-[#111827] tracking-tight">Project Sanjeevani: Dignity in Acute Crisis</h2>
                 <p class="text-base text-[#6B6F76] max-w-3xl">
                     Holding 3 dedicated emergency standby seats per flight for acute medical crises at a statutory flat ₹3,200 cap. Verified in under 90 seconds through ABHA digital health records with automated airside escort.
                 </p>
@@ -3787,9 +3822,7 @@
                 <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono font-semibold tracking-wide bg-[#FFF7ED] text-[#FF6300] rounded border border-orange-200">
                     <span>Act 7 • Design System &amp; Component Anatomy</span>
                 </div>
-                <h2 class="text-2xl sm:text-4xl font-bold text-[#111827] tracking-tight">
-                    Design Tokens &amp; <span class="text-[#FF6300]">Micro-Component Anatomy</span>
-                </h2>
+                <h2 class="text-2xl sm:text-4xl font-bold text-[#111827] tracking-tight">Design Tokens &amp; Micro-Component Anatomy</h2>
                 <p class="text-base text-[#6B6F76] max-w-3xl">
                     Engineered on an 8-pt atomic spatial grid with WCAG AAA accessible contrasts (minimum 7:1 for text, 4.5:1 for UI components), tactile micro-interactions built for high-stress travel, and production Figma token variables.
                 </p>
@@ -4141,9 +4174,7 @@
                 <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono font-semibold tracking-wide bg-[#EFE6FF] text-[#5B22D6] rounded border border-purple-200">
                     <span>Act 8 • Working Interactive Simulators</span>
                 </div>
-                <h2 class="text-2xl sm:text-4xl font-bold text-[#111827] tracking-tight">
-                    Proving the Feasibility: <span class="text-[#FF6300]">Cabin Map &amp; CFO Yield Simulator</span>
-                </h2>
+                <h2 class="text-2xl sm:text-4xl font-bold text-[#111827] tracking-tight">Proving the Feasibility: Cabin Map &amp; CFO Yield Simulator</h2>
                 <p class="text-base text-[#6B6F76] max-w-3xl">
                     Airlines require operational proof before adopting new inventory models. Interact with the live 186-passenger Airbus A320neo cabin fuselage and the real-time CFO Waterfall Profit Simulator below.
                 </p>
@@ -4585,9 +4616,7 @@
                 <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono font-semibold tracking-wide bg-[#FFF7ED] text-[#FF6300] rounded border border-orange-200">
                     <span>Act 9 • Verified Outcomes &amp; Impact</span>
                 </div>
-                <h2 class="text-2xl sm:text-4xl font-bold text-[#111827] tracking-tight">
-                    Business Results: <span class="text-[#FF6300]">Yield Recovery Without Cannibalization</span>
-                </h2>
+                <h2 class="text-2xl sm:text-4xl font-bold text-[#111827] tracking-tight">Business Results: Yield Recovery Without Cannibalization</h2>
                 <p class="text-base text-[#6B6F76] max-w-3xl">
                     How AeroFill creates a sustainable win-win: unlocking +₹380 Cr annual incremental margin for Indian carriers while providing 85% emergency cost relief to everyday citizens with zero operational delays.
                 </p>
