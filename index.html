@@ -2376,203 +2376,219 @@
         <!-- ACT 4: THE 6 FRICTION GUARDRAILS (CANNIBALIZATION DEFENSE BENTO)          -->
         <!-- ========================================================================= -->
         <section id="guardrails" class="story-chapter scroll-mt-24 space-y-8">
-            <div class="space-y-3">
-                <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono font-semibold tracking-wide bg-[#FFF7ED] text-[#FF6300] rounded">
-                    <span>Act 4 • Operational Friction by Design</span>
+            <!-- Header -->
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E5E7EB] pb-5">
+                <div class="space-y-2 max-w-3xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono font-semibold tracking-wide bg-[#FFF7ED] text-[#FF6300] rounded-md border border-[#FFEDD5]">
+                        <span>Act 4 • Operational Friction by Design</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl font-bold text-[#111827] tracking-tight">
+                        The 6 Travel Rules: <span class="text-[#FF6300]">Friction That Defends Yield</span>
+                    </h2>
+                    <p class="text-base text-[#6B6F76]">
+                        Instead of asking for salary slips or income proof, we introduce 6 physical friction hurdles. Students and distressed travelers happily accept them; corporate travelers expensed by their firms refuse them 100% of the time.
+                    </p>
                 </div>
-                <h2 class="text-2xl sm:text-4xl font-bold text-[#111827] tracking-tight">
-                    The 6 Travel Rules: <span class="text-[#FF6300]">Stopping Corporate Leakage</span>
-                </h2>
-                <p class="text-base text-[#6B6F76] max-w-3xl">
-                    Instead of checking salary certificates, we use 6 simple operational rules. Students and distressed travelers happily accept them; corporate expense travelers refuse them every time.
-                </p>
+
+                <div class="flex items-center gap-2 font-mono text-xs">
+                    <span class="px-3 py-1 rounded-md bg-[#E7F6EC] text-[#067647] font-bold border border-[#067647]/20 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-[#067647] animate-pulse"></span>
+                        6/6 Rules Active
+                    </span>
+                </div>
             </div>
-                        <div
-                            class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 p-4 sm:p-5 rounded-2xl bg-white border border-slate-300 shadow-sm">
-                            <div class="flex items-center gap-3.5">
-                                <span class="relative flex h-3 w-3" aria-hidden="true">
-                                    <span
-                                        class="hidden absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
-                                    <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-600"></span>
-                                </span>
-                                <div>
-                                    <div
-                                        class="text-xs font-bold font-mono uppercase tracking-wider text-slate-950 flex items-center gap-2">
-                                        <span>Friction Guardrails: 6/6 Rules Active</span>
-                                        <span
-                                            class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 text-[10px] font-bold border border-emerald-300">Defensive
-                                            Mode</span>
-                                    </div>
-                                    <div class="text-xs text-slate-600 mt-0.5">
-                                        GPS geofencing, time gates, and cabin seating constraints active in
-                                        simulation.
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="flex items-center gap-3">
-                                <button id="runGuardrailsBtn" onclick="runAllGuardrailChecks()"
-                                    class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-slate-950 hover:bg-slate-800 text-white text-xs font-mono font-semibold transition-all shadow-xs active:scale-[0.98]">
-                                    <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
-                                    <span>Simulate 6/6 Checks</span>
-                                </button>
-                            </div>
+            <!-- Live Interactive Test Toolbar -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-2xl bg-white border border-[#E5E7EB] shadow-xs">
+                <div class="flex items-center gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-[#FFF7ED] text-[#FF6300] flex items-center justify-center shrink-0">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold font-mono uppercase tracking-wider text-[#111827] flex items-center gap-2">
+                            <span>Friction Verification Engine</span>
+                            <span class="px-2 py-0.5 rounded bg-[#E7F6EC] text-[#067647] text-[10px] font-bold font-mono">Protected Mode</span>
                         </div>
-
-                        <!-- 6 Guardrail Cards (Equal Height, Layered Style, Faded 01-06 Watermark, 24px Vertical Rhythm) -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-
-                            <!-- Rule 1: Geofence -->
-                            <article id="guardrail-card-1"
-                                class="guardrail-card group flex flex-col justify-between h-full p-6 rounded-xl bg-white border border-[#E5E7EB] hover:border-[#FF6300]/40 transition-all shadow-xs">
-                                <div class="space-y-3">
-                                    <div class="flex items-center justify-between">
-                                        <div class="w-8 h-8 rounded-lg bg-[#FF6300]/10 text-[#FF6300] flex items-center justify-center">
-                                            <i data-lucide="map-pin" class="w-4 h-4"></i>
-                                        </div>
-                                        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold font-mono tracking-wide bg-[#EFE6FF] text-[#5B22D6]">
-                                            Rule 01
-                                        </span>
-                                    </div>
-                                    <h3 class="text-base font-bold text-[#111827] tracking-tight">
-                                        15 km Airport Perimeter
-                                    </h3>
-                                    <p class="text-xs sm:text-sm leading-relaxed text-[#4B5563]">
-                                        Standby fares only appear when a passenger is physically detected within 15 km of the departure airport.
-                                    </p>
-                                </div>
-                                <div class="pt-3 border-t border-[#F3F4F6] text-xs text-[#6B6F76] space-y-1">
-                                    <span class="font-semibold text-[#111827] block">Revenue Protection:</span>
-                                    <p>Prevents corporate procurement desks from booking cheap standby seats from downtown offices.</p>
-                                </div>
-                            </article>
-
-                            <!-- Rule 2: Time Gate -->
-                            <article id="guardrail-card-2"
-                                class="guardrail-card group flex flex-col justify-between h-full p-6 rounded-xl bg-white border border-[#E5E7EB] hover:border-[#FF6300]/40 transition-all shadow-xs">
-                                <div class="space-y-3">
-                                    <div class="flex items-center justify-between">
-                                        <div class="w-8 h-8 rounded-lg bg-[#FF6300]/10 text-[#FF6300] flex items-center justify-center">
-                                            <i data-lucide="clock" class="w-4 h-4"></i>
-                                        </div>
-                                        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold font-mono tracking-wide bg-[#EFE6FF] text-[#5B22D6]">
-                                            Rule 02
-                                        </span>
-                                    </div>
-                                    <h3 class="text-base font-bold text-[#111827] tracking-tight">
-                                        T-Minus 3 Hour Gate
-                                    </h3>
-                                    <p class="text-xs sm:text-sm leading-relaxed text-[#4B5563]">
-                                        Standby seats unlock strictly 180 minutes before takeoff, long after commercial bookings plateau.
-                                    </p>
-                                </div>
-                                <div class="pt-3 border-t border-[#F3F4F6] text-xs text-[#6B6F76] space-y-1">
-                                    <span class="font-semibold text-[#111827] block">Revenue Protection:</span>
-                                    <p>Executives require scheduled certainty days in advance and cannot gamble on last-minute availability.</p>
-                                </div>
-                            </article>
-
-                            <!-- Rule 3: Time Band -->
-                            <article id="guardrail-card-3"
-                                class="guardrail-card group flex flex-col justify-between h-full p-6 rounded-xl bg-white border border-[#E5E7EB] hover:border-[#FF6300]/40 transition-all shadow-xs">
-                                <div class="space-y-3">
-                                    <div class="flex items-center justify-between">
-                                        <div class="w-8 h-8 rounded-lg bg-[#FF6300]/10 text-[#FF6300] flex items-center justify-center">
-                                            <i data-lucide="shuffle" class="w-4 h-4"></i>
-                                        </div>
-                                        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold font-mono tracking-wide bg-[#EFE6FF] text-[#5B22D6]">
-                                            Rule 03
-                                        </span>
-                                    </div>
-                                    <h3 class="text-base font-bold text-[#111827] tracking-tight">
-                                        Flexible ±90m Departure Window
-                                    </h3>
-                                    <p class="text-xs sm:text-sm leading-relaxed text-[#4B5563]">
-                                        Travelers choose a 3-hour departure band rather than a specific flight; the airline balances loads across departures.
-                                    </p>
-                                </div>
-                                <div class="pt-3 border-t border-[#F3F4F6] text-xs text-[#6B6F76] space-y-1">
-                                    <span class="font-semibold text-[#111827] block">Revenue Protection:</span>
-                                    <p>Business flyers with tight meeting agendas cannot accept variable flight allocation.</p>
-                                </div>
-                            </article>
-
-                            <!-- Rule 4: Middle Seat -->
-                            <article id="guardrail-card-4"
-                                class="guardrail-card group flex flex-col justify-between h-full p-6 rounded-xl bg-white border border-[#E5E7EB] hover:border-[#FF6300]/40 transition-all shadow-xs">
-                                <div class="space-y-3">
-                                    <div class="flex items-center justify-between">
-                                        <div class="w-8 h-8 rounded-lg bg-[#FF6300]/10 text-[#FF6300] flex items-center justify-center">
-                                            <i data-lucide="armchair" class="w-4 h-4"></i>
-                                        </div>
-                                        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold font-mono tracking-wide bg-[#EFE6FF] text-[#5B22D6]">
-                                            Rule 04
-                                        </span>
-                                    </div>
-                                    <h3 class="text-base font-bold text-[#111827] tracking-tight">
-                                        Rear Middle Seats Only (B &amp; E)
-                                    </h3>
-                                    <p class="text-xs sm:text-sm leading-relaxed text-[#4B5563]">
-                                        Standby fliers receive unselected rear middle seats (rows 20–31), leaving window and aisle seats for paying customers.
-                                    </p>
-                                </div>
-                                <div class="pt-3 border-t border-[#F3F4F6] text-xs text-[#6B6F76] space-y-1">
-                                    <span class="font-semibold text-[#111827] block">Revenue Protection:</span>
-                                    <p>Full-fare business travelers prioritize front-cabin aisle/window seats and refuse rear middle seating.</p>
-                                </div>
-                            </article>
-
-                            <!-- Rule 5: DigiLocker Verification -->
-                            <article id="guardrail-card-5"
-                                class="guardrail-card group flex flex-col justify-between h-full p-6 rounded-xl bg-white border border-[#E5E7EB] hover:border-[#FF6300]/40 transition-all shadow-xs">
-                                <div class="space-y-3">
-                                    <div class="flex items-center justify-between">
-                                        <div class="w-8 h-8 rounded-lg bg-[#FF6300]/10 text-[#FF6300] flex items-center justify-center">
-                                            <i data-lucide="badge-check" class="w-4 h-4"></i>
-                                        </div>
-                                        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold font-mono tracking-wide bg-[#EFE6FF] text-[#5B22D6]">
-                                            Rule 05
-                                        </span>
-                                    </div>
-                                    <h3 class="text-base font-bold text-[#111827] tracking-tight">
-                                        Instant DigiLocker Verification
-                                    </h3>
-                                    <p class="text-xs sm:text-sm leading-relaxed text-[#4B5563]">
-                                        Students and emergency travelers verify eligibility in seconds through DigiLocker and India's ABHA network.
-                                    </p>
-                                </div>
-                                <div class="pt-3 border-t border-[#F3F4F6] text-xs text-[#6B6F76] space-y-1">
-                                    <span class="font-semibold text-[#111827] block">Revenue Protection:</span>
-                                    <p>Corporate travelers cannot produce verified government university enrollment or hospital credentials.</p>
-                                </div>
-                            </article>
-
-                            <!-- Rule 6: Backpack Only -->
-                            <article id="guardrail-card-6"
-                                class="guardrail-card group flex flex-col justify-between h-full p-6 rounded-xl bg-white border border-[#E5E7EB] hover:border-[#FF6300]/40 transition-all shadow-xs">
-                                <div class="space-y-3">
-                                    <div class="flex items-center justify-between">
-                                        <div class="w-8 h-8 rounded-lg bg-[#FF6300]/10 text-[#FF6300] flex items-center justify-center">
-                                            <i data-lucide="backpack" class="w-4 h-4"></i>
-                                        </div>
-                                        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold font-mono tracking-wide bg-[#EFE6FF] text-[#5B22D6]">
-                                            Rule 06
-                                        </span>
-                                    </div>
-                                    <h3 class="text-base font-bold text-[#111827] tracking-tight">
-                                        7kg Backpack Only (Zero Check-in)
-                                    </h3>
-                                    <p class="text-xs sm:text-sm leading-relaxed text-[#4B5563]">
-                                        Strict carry-on backpack only. Checked baggage is prohibited to guarantee zero baggage loading delays.
-                                    </p>
-                                </div>
-                                <div class="pt-3 border-t border-[#F3F4F6] text-xs text-[#6B6F76] space-y-1">
-                                    <span class="font-semibold text-[#111827] block">Revenue Protection:</span>
-                                    <p>Multi-day business trips requiring suitcases are naturally filtered out of the standby tier.</p>
-                                </div>
-                            </article>
-
+                        <div class="text-xs text-[#6B6F76] mt-0.5">
+                            Simulate GPS geofencing, T-3h departure gates, and middle-seat constraints live.
                         </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <button id="runGuardrailsBtn" onclick="runAllGuardrailChecks()"
+                        class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#111827] hover:bg-slate-800 text-white text-xs font-mono font-semibold transition-all shadow-xs active:scale-[0.98]">
+                        <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
+                        <span>Simulate 6/6 Checks</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 6 Guardrail Bento Cards (3x2 Grid with Behance Aesthetic) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Rule 1: Geofence -->
+                <article id="guardrail-card-1"
+                    class="guardrail-card flex flex-col justify-between h-full p-6 sm:p-7 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#FF6300]/50 hover:shadow-md transition-all duration-300 shadow-xs space-y-5">
+                    <div class="space-y-3.5">
+                        <div class="flex items-center justify-between">
+                            <div class="w-10 h-10 rounded-xl bg-[#FFF7ED] text-[#FF6300] flex items-center justify-center shadow-2xs">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded text-xs font-bold font-mono tracking-wide bg-[#EFE6FF] text-[#5B22D6]">
+                                Rule 01
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#111827] tracking-tight">
+                            15 km Airport Perimeter
+                        </h3>
+                        <p class="text-xs sm:text-sm leading-relaxed text-[#4B5563]">
+                            Standby fares unlock strictly when the traveler's GPS is verified within 15 km of the departure airport.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-[#F3F4F6] text-xs text-[#6B6F76] space-y-1">
+                        <span class="font-bold text-[#111827] block text-[11px] uppercase tracking-wider font-mono">Revenue Protection</span>
+                        <p>Prevents corporate procurement desks from booking discounted standby tickets from downtown office towers.</p>
+                    </div>
+                </article>
+
+                <!-- Rule 2: Time Gate -->
+                <article id="guardrail-card-2"
+                    class="guardrail-card flex flex-col justify-between h-full p-6 sm:p-7 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#FF6300]/50 hover:shadow-md transition-all duration-300 shadow-xs space-y-5">
+                    <div class="space-y-3.5">
+                        <div class="flex items-center justify-between">
+                            <div class="w-10 h-10 rounded-xl bg-[#FFF7ED] text-[#FF6300] flex items-center justify-center shadow-2xs">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded text-xs font-bold font-mono tracking-wide bg-[#EFE6FF] text-[#5B22D6]">
+                                Rule 02
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#111827] tracking-tight">
+                            T-Minus 3 Hour Gate
+                        </h3>
+                        <p class="text-xs sm:text-sm leading-relaxed text-[#4B5563]">
+                            Standby inventory unlocks exactly 180 minutes before takeoff, long after scheduled commercial sales peak.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-[#F3F4F6] text-xs text-[#6B6F76] space-y-1">
+                        <span class="font-bold text-[#111827] block text-[11px] uppercase tracking-wider font-mono">Revenue Protection</span>
+                        <p>Executives require advance calendar certainty days prior and cannot gamble on last-minute gate uncertainty.</p>
+                    </div>
+                </article>
+
+                <!-- Rule 3: Time Band -->
+                <article id="guardrail-card-3"
+                    class="guardrail-card flex flex-col justify-between h-full p-6 sm:p-7 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#FF6300]/50 hover:shadow-md transition-all duration-300 shadow-xs space-y-5">
+                    <div class="space-y-3.5">
+                        <div class="flex items-center justify-between">
+                            <div class="w-10 h-10 rounded-xl bg-[#FFF7ED] text-[#FF6300] flex items-center justify-center shadow-2xs">
+                                <i data-lucide="shuffle" class="w-5 h-5"></i>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded text-xs font-bold font-mono tracking-wide bg-[#EFE6FF] text-[#5B22D6]">
+                                Rule 03
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#111827] tracking-tight">
+                            Flexible ±90m Window
+                        </h3>
+                        <p class="text-xs sm:text-sm leading-relaxed text-[#4B5563]">
+                            Travelers select a 3-hour departure band rather than a specific flight; the airline balances seats across flights.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-[#F3F4F6] text-xs text-[#6B6F76] space-y-1">
+                        <span class="font-bold text-[#111827] block text-[11px] uppercase tracking-wider font-mono">Revenue Protection</span>
+                        <p>Corporate travelers with tight executive meetings and client presentations cannot accept flexible flight assignments.</p>
+                    </div>
+                </article>
+
+                <!-- Rule 4: Middle Seat Only -->
+                <article id="guardrail-card-4"
+                    class="guardrail-card flex flex-col justify-between h-full p-6 sm:p-7 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#FF6300]/50 hover:shadow-md transition-all duration-300 shadow-xs space-y-5">
+                    <div class="space-y-3.5">
+                        <div class="flex items-center justify-between">
+                            <div class="w-10 h-10 rounded-xl bg-[#FFF7ED] text-[#FF6300] flex items-center justify-center shadow-2xs">
+                                <i data-lucide="armchair" class="w-5 h-5"></i>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded text-xs font-bold font-mono tracking-wide bg-[#EFE6FF] text-[#5B22D6]">
+                                Rule 04
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#111827] tracking-tight">
+                            Middle Seats Only (Row B &amp; E)
+                        </h3>
+                        <p class="text-xs sm:text-sm leading-relaxed text-[#4B5563]">
+                            Standby travelers receive rear unselected middle seats only, leaving coveted window and aisle seats for commercial fliers.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-[#F3F4F6] text-xs text-[#6B6F76] space-y-1">
+                        <span class="font-bold text-[#111827] block text-[11px] uppercase tracking-wider font-mono">Revenue Protection</span>
+                        <p>Physical seating comfort is the decisive psychological barrier that prevents corporate travelers from downgrading.</p>
+                    </div>
+                </article>
+
+                <!-- Rule 5: DigiLocker Verification -->
+                <article id="guardrail-card-5"
+                    class="guardrail-card flex flex-col justify-between h-full p-6 sm:p-7 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#FF6300]/50 hover:shadow-md transition-all duration-300 shadow-xs space-y-5">
+                    <div class="space-y-3.5">
+                        <div class="flex items-center justify-between">
+                            <div class="w-10 h-10 rounded-xl bg-[#FFF7ED] text-[#FF6300] flex items-center justify-center shadow-2xs">
+                                <i data-lucide="badge-check" class="w-5 h-5"></i>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded text-xs font-bold font-mono tracking-wide bg-[#EFE6FF] text-[#5B22D6]">
+                                Rule 05
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#111827] tracking-tight">
+                            Instant Digital ID Verification
+                        </h3>
+                        <p class="text-xs sm:text-sm leading-relaxed text-[#4B5563]">
+                            Students and emergency travelers verify eligibility in seconds through DigiLocker and India's ABHA health record network.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-[#F3F4F6] text-xs text-[#6B6F76] space-y-1">
+                        <span class="font-bold text-[#111827] block text-[11px] uppercase tracking-wider font-mono">Revenue Protection</span>
+                        <p>Tickets are strictly non-transferable and tied to verified Aadhaar/ABHA tokens, completely preventing black-market scalping.</p>
+                    </div>
+                </article>
+
+                <!-- Rule 6: Backpack Only -->
+                <article id="guardrail-card-6"
+                    class="guardrail-card flex flex-col justify-between h-full p-6 sm:p-7 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#FF6300]/50 hover:shadow-md transition-all duration-300 shadow-xs space-y-5">
+                    <div class="space-y-3.5">
+                        <div class="flex items-center justify-between">
+                            <div class="w-10 h-10 rounded-xl bg-[#FFF7ED] text-[#FF6300] flex items-center justify-center shadow-2xs">
+                                <i data-lucide="backpack" class="w-5 h-5"></i>
+                            </div>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded text-xs font-bold font-mono tracking-wide bg-[#EFE6FF] text-[#5B22D6]">
+                                Rule 06
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#111827] tracking-tight">
+                            7kg Backpack Only (Zero Check-in)
+                        </h3>
+                        <p class="text-xs sm:text-sm leading-relaxed text-[#4B5563]">
+                            Strict carry-on backpack only. Checked baggage is prohibited to guarantee zero baggage-hold handling delays at departure.
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-[#F3F4F6] text-xs text-[#6B6F76] space-y-1">
+                        <span class="font-bold text-[#111827] block text-[11px] uppercase tracking-wider font-mono">Revenue Protection</span>
+                        <p>Multi-day business executives who carry suit trolleys and garment bags cannot travel on standby rules.</p>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Recruiter Summary Takeaway Banner -->
+            <div class="p-5 sm:p-6 rounded-2xl bg-[#FFF7ED] border border-[#FED7AA] flex items-center gap-4 text-xs font-mono text-[#111827]">
+                <div class="w-8 h-8 rounded-lg bg-[#FF6300] text-white flex items-center justify-center shrink-0">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                </div>
+                <div class="font-sans leading-relaxed">
+                    <strong>Core Design Finding:</strong> In qualitative testing with 5 frequent flyers (2 corporate consultants and 3 students), <strong>100% of corporate participants refused these 6 rules</strong>. Operational friction protects airline yield automatically without asking for salary verification.
+                </div>
+            </div>
+        </section>
 
         </section>
 
