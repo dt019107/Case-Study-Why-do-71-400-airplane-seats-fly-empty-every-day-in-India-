@@ -20,52 +20,10 @@
 }
 
 /* ========================================================================= */
-/* 1. SCROLL-LINKED FLIGHT PATH & JET AIRLINER TRACKER                       */
+/* 1. SCROLL-LINKED FLIGHT PATH & JET AIRLINER TRACKER (Disabled)             */
 /* ========================================================================= */
 #flightPathMarginTracker {
-    position: fixed;
-    top: 72px;
-    right: 22px;
-    width: 48px;
-    height: calc(100vh - 96px);
-    pointer-events: none;
-    z-index: 35;
-    display: none;
-}
-
-@media (min-width: 1024px) {
-    #flightPathMarginTracker {
-        display: block;
-    }
-}
-
-.flight-track-path {
-    stroke: rgba(255, 99, 0, 0.22);
-    stroke-width: 2;
-    stroke-dasharray: 4 6;
-    fill: none;
-}
-
-.flight-track-fill {
-    stroke: #FF6300;
-    stroke-width: 2.5;
-    fill: none;
-    stroke-linecap: round;
-    transition: stroke-dashoffset 80ms linear;
-}
-
-.flight-tracker-plane {
-    position: absolute;
-    top: 0;
-    left: 24px;
-    width: 44px;
-    height: 44px;
-    margin-left: -22px;
-    margin-top: -22px;
-    will-change: transform;
-    pointer-events: auto;
-    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.14));
-    transition: transform 90ms cubic-bezier(0.22, 1, 0.36, 1);
+    display: none !important;
 }
 
 /* ========================================================================= */

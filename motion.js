@@ -18,21 +18,21 @@
     // Global Motion Configuration
     window.AeroFillMotionConfig = {
         reducedMotion: false,
-        flightPath: true,
+        flightPath: false, // Disabled toy margin tracker for clean professional portfolio
         sectionReveal: true,
-        cardLiftSpotlight: true,
-        magneticCta: true,
+        cardLiftSpotlight: false,
+        magneticCta: false,
         heroStory: true,
         heroSeatGrid: true,
         statCountUp: true,
         chartsMotion: true,
-        perishableTimers: true,
+        perishableTimers: false,
         cannibalizationMotion: true,
         guardrailVisuals: true,
-        guardrailRunAll: true,
-        sandboxStamp: true,
+        guardrailRunAll: false,
+        sandboxStamp: false,
         sanjeevaniMotion: true,
-        flightSchoolMotion: true,
+        flightSchoolMotion: false,
         cabinWave: true,
         cfoCalculatorMotion: true,
         pitchClosingLanding: true,
@@ -98,159 +98,14 @@
     }
 
     // =========================================================================
-    // 1. SCROLL-LINKED FLIGHT PATH & JET AIRLINER TRACKER (Item 1 & 24)
+    // 1. SCROLL-LINKED FLIGHT PATH & JET AIRLINER TRACKER (Disabled)
     // =========================================================================
     function initFlightPath() {
-        if (!cfg.flightPath) return;
-
-        // Create container if not exists
-        let tracker = document.getElementById('flightPathMarginTracker');
-        if (!tracker) {
-            tracker = document.createElement('div');
-            tracker.id = 'flightPathMarginTracker';
-            tracker.setAttribute('aria-hidden', 'true');
-            tracker.innerHTML = `
-                <svg width="48" height="100%" viewBox="0 0 48 600" preserveAspectRatio="none" class="w-full h-full overflow-visible">
-                    <path id="flightTrackPathDotted" class="flight-track-path" d="M24 0 L24 600" />
-                    <path id="flightTrackPathFill" class="flight-track-fill" d="M24 0 L24 600" stroke-dasharray="600" stroke-dashoffset="600" />
-                </svg>
-                <div id="flightTrackerPlane" class="flight-tracker-plane" title="AeroFill Flight Tracker">
-                    <svg viewBox="0 0 120 120" width="44" height="44" fill="none" class="overflow-visible" xmlns="http://www.w3.org/2000/svg">
-                      <defs>
-                        <filter id="planeDropShadow" x="-25%" y="-25%" width="150%" height="150%">
-                          <feDropShadow dx="0" dy="2.5" stdDeviation="2.5" flood-color="rgba(0,0,0,0.22)" />
-                        </filter>
-                        <linearGradient id="planeFuselageGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stop-color="#E2E8F0" />
-                          <stop offset="30%" stop-color="#FFFFFF" />
-                          <stop offset="70%" stop-color="#FFFFFF" />
-                          <stop offset="100%" stop-color="#CBD5E1" />
-                        </linearGradient>
-                        <linearGradient id="planeWingGradL" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stop-color="#FFFFFF" />
-                          <stop offset="100%" stop-color="#E2E8F0" />
-                        </linearGradient>
-                        <linearGradient id="planeWingGradR" x1="100%" y1="0%" x2="0%" y2="100%">
-                          <stop offset="0%" stop-color="#FFFFFF" />
-                          <stop offset="100%" stop-color="#E2E8F0" />
-                        </linearGradient>
-                        <linearGradient id="planeBlueAccent" x1="0%" y1="0%" x2="0%" y2="100%">
-                          <stop offset="0%" stop-color="#0284C7" />
-                          <stop offset="100%" stop-color="#0369A1" />
-                        </linearGradient>
-                      </defs>
-
-                      <g filter="url(#planeDropShadow)">
-                        <!-- Horizontal Stabilizers -->
-                        <path d="M60 100 L42 112 L42 115 L58 106 L62 106 L78 115 L78 112 Z" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="0.6" />
-                        
-                        <!-- Left Wing -->
-                        <path d="M54 52 L12 80 L10 83 L10 86 L15 85 L54 68 Z" fill="url(#planeWingGradL)" stroke="#CBD5E1" stroke-width="0.6" />
-                        <path d="M10 79 L10 86 L12 86 L12 79 Z" fill="#0284C7" />
-                        <rect x="24" y="80" width="1.5" height="5" rx="0.7" fill="#CBD5E1" />
-                        <rect x="33" y="76" width="1.5" height="5" rx="0.7" fill="#CBD5E1" />
-                        <rect x="42" y="72" width="1.5" height="5" rx="0.7" fill="#CBD5E1" />
-
-                        <!-- Right Wing -->
-                        <path d="M66 52 L108 80 L110 83 L110 86 L105 85 L66 68 Z" fill="url(#planeWingGradR)" stroke="#CBD5E1" stroke-width="0.6" />
-                        <path d="M108 79 L108 86 L110 86 L110 79 Z" fill="#0284C7" />
-                        <rect x="94" y="80" width="1.5" height="5" rx="0.7" fill="#CBD5E1" />
-                        <rect x="85" y="76" width="1.5" height="5" rx="0.7" fill="#CBD5E1" />
-                        <rect x="76" y="72" width="1.5" height="5" rx="0.7" fill="#CBD5E1" />
-
-                        <!-- Twin Jet Turbofan Engines -->
-                        <rect x="35" y="58" width="6.5" height="15" rx="3" fill="url(#planeBlueAccent)" stroke="#0284C7" stroke-width="0.5" />
-                        <ellipse cx="38.25" cy="58" rx="3" ry="1.5" fill="#64748B" />
-                        <ellipse cx="38.25" cy="58" rx="1.2" ry="0.6" fill="#0F172A" />
-
-                        <rect x="78.5" y="58" width="6.5" height="15" rx="3" fill="url(#planeBlueAccent)" stroke="#0284C7" stroke-width="0.5" />
-                        <ellipse cx="81.75" cy="58" rx="3" ry="1.5" fill="#64748B" />
-                        <ellipse cx="81.75" cy="58" rx="1.2" ry="0.6" fill="#0F172A" />
-
-                        <!-- Fuselage Cylinder Body -->
-                        <path d="M60 8 C56 12 53 22 53 38 L53 96 C53 104 57 112 60 115 C63 112 67 104 67 96 L67 38 C67 22 64 12 60 8 Z" fill="url(#planeFuselageGrad)" stroke="#CBD5E1" stroke-width="0.6" />
-
-                        <!-- Blue Radome Nose & Cockpit Crown -->
-                        <path d="M60 8 C57 11 54 18 54 28 C56 29 64 29 66 28 C66 18 63 11 60 8 Z" fill="url(#planeBlueAccent)" />
-                        
-                        <!-- Cockpit Glass Windshield -->
-                        <path d="M57 24 C58 23 59 23 60 23 C61 23 62 23 63 24 L63.5 25.5 C62 25 58 25 56.5 25.5 Z" fill="#0F172A" />
-                        <polygon points="56.2,25.6 54.8,26.5 55,27.5 56.8,26.5" fill="#1E293B" />
-                        <polygon points="63.8,25.6 65.2,26.5 65,27.5 63.2,26.5" fill="#1E293B" />
-
-                        <!-- Blue Dorsal Spine Stripe -->
-                        <rect x="58.8" y="28" width="2.4" height="18" rx="1.2" fill="#0284C7" />
-
-                        <!-- Passenger Cabin Windows -->
-                        <line x1="55.2" y1="32" x2="55.2" y2="90" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="1 2" />
-                        <line x1="64.8" y1="32" x2="64.8" y2="90" stroke="#1E293B" stroke-width="0.8" stroke-dasharray="1 2" />
-
-                        <!-- Vertical Stabilizer (Tail Fin) -->
-                        <path d="M59.3 92 L59.3 112 L60.7 112 L60.7 92 Z" fill="#0284C7" />
-                      </g>
-                    </svg>
-                </div>
-            `;
-            document.body.appendChild(tracker);
+        const tracker = document.getElementById('flightPathMarginTracker');
+        if (tracker) {
+            tracker.remove();
         }
-
-        const plane = document.getElementById('flightTrackerPlane');
-        const fillPath = document.getElementById('flightTrackPathFill');
-
-        let lastScrollY = window.scrollY;
-        let lastScrollTime = performance.now();
-        let currentBank = 0;
-
-        function updatePlanePosition() {
-            if (isReducedMotionActive() || window.innerWidth < 1024) {
-                if (tracker) tracker.style.display = 'none';
-                return;
-            } else {
-                if (tracker) tracker.style.display = 'block';
-            }
-
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            if (docHeight <= 0) return;
-            const scrollY = window.scrollY;
-            const progress = Math.max(0, Math.min(1, scrollY / docHeight));
-
-            const trackerHeight = tracker.clientHeight || 500;
-            const yPos = progress * trackerHeight;
-
-            // Smooth Banking Angle based on scroll velocity
-            const now = performance.now();
-            const dt = Math.max(16, now - lastScrollTime);
-            const deltaY = scrollY - lastScrollY;
-            const scrollVelocity = deltaY / dt; // px per ms
-            const targetBank = Math.max(-8, Math.min(8, scrollVelocity * 4.5));
-            currentBank += (targetBank - currentBank) * 0.25;
-
-            lastScrollY = scrollY;
-            lastScrollTime = now;
-
-            // Base rotation: 180 degrees (nose pointing straight down along the flight trajectory)
-            let rotation = 180 + currentBank;
-            let scale = 1;
-
-            if (progress > 0.95) {
-                const landingProgress = (progress - 0.95) / 0.05;
-                rotation = (180 + currentBank) - landingProgress * 45; // Level off flare for landing
-                scale = 1 + landingProgress * 0.15;
-            }
-
-            if (plane) {
-                plane.style.transform = `translate3d(0, ${yPos}px, 0) rotate(${rotation}deg) scale(${scale})`;
-            }
-
-            if (fillPath) {
-                const totalDash = 600;
-                fillPath.style.strokeDashoffset = (totalDash * (1 - progress)).toString();
-            }
-        }
-
-        window.addEventListener('scroll', updatePlanePosition, { passive: true });
-        window.addEventListener('resize', updatePlanePosition, { passive: true });
-        updatePlanePosition();
+        return;
     }
 
     // =========================================================================
