@@ -2063,385 +2063,311 @@
         <!-- ACT 3: USER RESEARCH & PERSONA DIVERGENCE (RADIAL GAUGES & COMPARISON)     -->
         <!-- ========================================================================= -->
         <section id="research" class="story-chapter scroll-mt-24 space-y-10">
-            <div class="space-y-3">
-                <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono font-semibold tracking-wide bg-[#FFF7ED] text-[#FF6300] rounded">
-                    <span>Act 3 • Behavioral Research &amp; Target Personas</span>
+            <!-- Header -->
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E5E7EB] pb-5">
+                <div class="space-y-2 max-w-3xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono font-semibold tracking-wide bg-[#FFF7ED] text-[#FF6300] rounded-md border border-[#FFEDD5]">
+                        <span>Act 3 • Behavioral Research &amp; Target Personas</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl font-bold text-[#111827] tracking-tight">
+                        User Research: <span class="text-[#FF6300]">Two Travelers, Opposite Needs</span>
+                    </h2>
+                    <p class="text-base text-[#6B6F76]">
+                        We explored traveler price elasticity, urgency drivers, and corporate expense policies to discover the exact friction boundary that separates leisure/distress flyers from corporate expense accounts.
+                    </p>
                 </div>
-                <h2 class="text-2xl sm:text-4xl font-bold text-[#111827] tracking-tight">
-                    Understanding the <span class="text-[#FF6300]">Two Opposite Travelers</span>
-                </h2>
-                <p class="text-base text-[#6B6F76] max-w-3xl">
-                    To prevent corporate revenue leakage, we designed the system around two personas with conflicting budgets and tolerances.
-                </p>
+
+                <div class="flex items-center gap-2 font-mono text-xs text-[#6B6F76]">
+                    <span class="px-3 py-1 rounded-md bg-[#F3F4F6] border border-[#E5E7EB] font-bold text-[#111827]">
+                        DGCA Aviation Data
+                    </span>
+                </div>
             </div>
 
-            <!-- Semicircular Radial Gauge Cards (Directly Inspired by Page 5 of Avare Behance) -->
+            <!-- Semicircular Dotted Radial Gauge Cards (Directly Inspired by Page 5 of Avare Behance) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Gauge 1: 78% Price Shortfall -->
-                <div class="p-6 rounded-2xl bg-white border border-[#E5E7EB] shadow-xs flex flex-col items-center text-center space-y-4">
-                    <div class="relative w-36 h-20 flex items-end justify-center overflow-hidden">
-                        <svg class="w-36 h-36 -rotate-180 transform" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="40" stroke="#F3F4F6" stroke-width="12" fill="none" />
-                            <circle cx="50" cy="50" r="40" stroke="#FF6300" stroke-width="12" fill="none" stroke-dasharray="125.6" stroke-dashoffset="27.6" stroke-linecap="round" />
+                <div class="p-7 rounded-3xl bg-white border border-[#E5E7EB] shadow-xs flex flex-col items-center text-center space-y-5 transition-transform hover:-translate-y-1 duration-200">
+                    <div class="relative w-44 h-24 flex items-end justify-center overflow-hidden">
+                        <svg class="w-44 h-44 -rotate-180 transform" viewBox="0 0 100 100">
+                            <!-- Background Track Arc -->
+                            <circle cx="50" cy="50" r="38" stroke="#F3F4F6" stroke-width="8" stroke-dasharray="119.4" stroke-dashoffset="0" fill="none" />
+                            <!-- Dotted Secondary Ring -->
+                            <circle cx="50" cy="50" r="28" stroke="#E5E7EB" stroke-width="2.5" stroke-dasharray="3 5" fill="none" />
+                            <!-- Active Accent Arc (78%) -->
+                            <circle cx="50" cy="50" r="38" stroke="#FF6300" stroke-width="8" stroke-dasharray="119.4" stroke-dashoffset="26.3" stroke-linecap="round" fill="none" />
                         </svg>
-                        <div class="absolute bottom-0 text-2xl font-bold text-[#111827] tabular-nums font-mono">78%</div>
+                        <div class="absolute bottom-1 flex flex-col items-center">
+                            <span class="text-2xl font-bold text-[#111827] tabular-nums font-mono">78%</span>
+                        </div>
                     </div>
-                    <div class="space-y-1">
-                        <h4 class="text-sm font-bold text-[#111827]">Surge Price Shortfall</h4>
-                        <p class="text-xs text-[#6B6F76] leading-relaxed">Difference between Ananya’s savings (₹4,800) and the ₹21,400 emergency surge fare.</p>
+                    <div class="space-y-1.5">
+                        <h4 class="text-base font-bold text-[#111827]">Surge Price Shortfall</h4>
+                        <p class="text-xs text-[#6B6F76] leading-relaxed">
+                            The gap between Ananya’s savings (₹4,800) and the ₹21,400 emergency surge fare, locking her out.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Gauge 2: 86.4% Industry Load Factor -->
-                <div class="p-6 rounded-2xl bg-white border border-[#E5E7EB] shadow-xs flex flex-col items-center text-center space-y-4">
-                    <div class="relative w-36 h-20 flex items-end justify-center overflow-hidden">
-                        <svg class="w-36 h-36 -rotate-180 transform" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="40" stroke="#F3F4F6" stroke-width="12" fill="none" />
-                            <circle cx="50" cy="50" r="40" stroke="#5B22D6" stroke-width="12" fill="none" stroke-dasharray="125.6" stroke-dashoffset="17.1" stroke-linecap="round" />
+                <div class="p-7 rounded-3xl bg-white border border-[#E5E7EB] shadow-xs flex flex-col items-center text-center space-y-5 transition-transform hover:-translate-y-1 duration-200">
+                    <div class="relative w-44 h-24 flex items-end justify-center overflow-hidden">
+                        <svg class="w-44 h-44 -rotate-180 transform" viewBox="0 0 100 100">
+                            <!-- Background Track Arc -->
+                            <circle cx="50" cy="50" r="38" stroke="#F3F4F6" stroke-width="8" stroke-dasharray="119.4" stroke-dashoffset="0" fill="none" />
+                            <!-- Dotted Secondary Ring -->
+                            <circle cx="50" cy="50" r="28" stroke="#E5E7EB" stroke-width="2.5" stroke-dasharray="3 5" fill="none" />
+                            <!-- Active Accent Arc (86.4%) -->
+                            <circle cx="50" cy="50" r="38" stroke="#5B22D6" stroke-width="8" stroke-dasharray="119.4" stroke-dashoffset="16.2" stroke-linecap="round" fill="none" />
                         </svg>
-                        <div class="absolute bottom-0 text-2xl font-bold text-[#111827] tabular-nums font-mono">86.4%</div>
+                        <div class="absolute bottom-1 flex flex-col items-center">
+                            <span class="text-2xl font-bold text-[#111827] tabular-nums font-mono">86.4%</span>
+                        </div>
                     </div>
-                    <div class="space-y-1">
-                        <h4 class="text-sm font-bold text-[#111827]">Industry Load Factor</h4>
-                        <p class="text-xs text-[#6B6F76] leading-relaxed">DGCA reported average load factor across Indian carriers, leaving 13.6% empty chairs per flight.</p>
+                    <div class="space-y-1.5">
+                        <h4 class="text-base font-bold text-[#111827]">Domestic Load Factor</h4>
+                        <p class="text-xs text-[#6B6F76] leading-relaxed">
+                            Official DGCA domestic average, meaning 13.6% of seats (~24 seats per A320) take off empty.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Gauge 3: ₹3,200 Standby Equilibrium -->
-                <div class="p-6 rounded-2xl bg-white border border-[#E5E7EB] shadow-xs flex flex-col items-center text-center space-y-4">
-                    <div class="relative w-36 h-20 flex items-end justify-center overflow-hidden">
-                        <svg class="w-36 h-36 -rotate-180 transform" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="40" stroke="#F3F4F6" stroke-width="12" fill="none" />
-                            <circle cx="50" cy="50" r="40" stroke="#0F9D58" stroke-width="12" fill="none" stroke-dasharray="125.6" stroke-dashoffset="40.2" stroke-linecap="round" />
+                <div class="p-7 rounded-3xl bg-white border border-[#E5E7EB] shadow-xs flex flex-col items-center text-center space-y-5 transition-transform hover:-translate-y-1 duration-200">
+                    <div class="relative w-44 h-24 flex items-end justify-center overflow-hidden">
+                        <svg class="w-44 h-44 -rotate-180 transform" viewBox="0 0 100 100">
+                            <!-- Background Track Arc -->
+                            <circle cx="50" cy="50" r="38" stroke="#F3F4F6" stroke-width="8" stroke-dasharray="119.4" stroke-dashoffset="0" fill="none" />
+                            <!-- Dotted Secondary Ring -->
+                            <circle cx="50" cy="50" r="28" stroke="#E5E7EB" stroke-width="2.5" stroke-dasharray="3 5" fill="none" />
+                            <!-- Active Accent Arc (100% Target) -->
+                            <circle cx="50" cy="50" r="38" stroke="#0F9D58" stroke-width="8" stroke-dasharray="119.4" stroke-dashoffset="38.2" stroke-linecap="round" fill="none" />
                         </svg>
-                        <div class="absolute bottom-0 text-2xl font-bold text-[#111827] tabular-nums font-mono">₹3,200</div>
+                        <div class="absolute bottom-1 flex flex-col items-center">
+                            <span class="text-2xl font-bold text-[#111827] tabular-nums font-mono">₹3,200</span>
+                        </div>
                     </div>
-                    <div class="space-y-1">
-                        <h4 class="text-sm font-bold text-[#111827]">Standby Equilibrium Fare</h4>
-                        <p class="text-xs text-[#6B6F76] leading-relaxed">Covers marginal fuel burn (₹820) + airport security fees (₹630) yielding +68% net contribution.</p>
+                    <div class="space-y-1.5">
+                        <h4 class="text-base font-bold text-[#111827]">Standby Equilibrium Fare</h4>
+                        <p class="text-xs text-[#6B6F76] leading-relaxed">
+                            Covers jet fuel (₹820) + airport security (₹630) while delivering +68% net profit contribution.
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <!-- Two Personas Comparison & Cannibalization Defense -->
-                        <!-- Two Persona Comparison Cards (Side by side, Navy vs Teal accents, 24px gap, 16px radius, 32px padding) -->
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <!-- Two Personas Comparison Cards (Inspired by Page 6 & 7 of Avare Behance) -->
+            <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#111827]">
+                        Target Persona Comparison
+                    </span>
+                    <span class="text-xs font-mono text-[#6B6F76]">Opposite Price Elasticity</span>
+                </div>
 
-                            <!-- Persona 1: Priya (Corporate Executive - Navy Accents) -->
-                            <div class="persona-card-initial persona-stagger-1 bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border border-slate-300 dark:border-slate-700 shadow-card flex flex-col justify-between space-y-6"
-                                role="region" aria-label="Persona: Priya, corporate executive paying ₹16,500">
-
-                                <div class="space-y-5">
-                                    <!-- Top large number & label -->
-                                    <div class="space-y-0.5">
-                                        <div
-                                            class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tabular-nums tracking-tight">
-                                            ₹16,500
-                                        </div>
-                                        <span class="text-xs font-medium text-slate-500 dark:text-slate-400 block">
-                                            what her company pays
-                                        </span>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+                    <!-- Persona 1: Priya (Corporate Executive) -->
+                    <div class="p-8 rounded-3xl bg-white border border-[#D5DCE8] shadow-xs flex flex-col justify-between space-y-6">
+                        <div class="space-y-5">
+                            <!-- Profile Header -->
+                            <div class="flex items-start justify-between">
+                                <div class="flex items-center gap-3.5">
+                                    <div class="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center font-bold text-lg shadow-xs">
+                                        💼
                                     </div>
-
-                                    <!-- Name, Role & Situation -->
-                                    <div
-                                        class="flex items-center gap-3 pt-1 border-t border-slate-100 dark:border-slate-800">
-                                        <div class="w-6 h-6 flex items-center justify-center shrink-0">
-                                            💼
-                                        </div>
-                                        <div>
-                                            <h3 class="text-base font-bold text-slate-900 dark:text-white">Priya (Age
-                                                36)</h3>
-                                            <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">VP of
-                                                Technology • 10:00 AM Mumbai Board Meeting</p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Three Labelled Rows: What she needs / What she accepts / What goes wrong -->
-                                    <div class="space-y-3 pt-1">
-                                        <div
-                                            class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
-                                            <i data-lucide="compass"
-                                                class="w-4 h-4 text-slate-400 dark:text-slate-500 shrink-0 mt-0.5"></i>
-                                            <div>
-                                                <span class="font-semibold text-slate-900 dark:text-white">What she
-                                                    needs:</span>
-                                                <span> Guaranteed front aisle seat (2C), 15kg trolley bag, and firm
-                                                    departure time.</span>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
-                                            <i data-lucide="check"
-                                                class="w-4 h-4 text-slate-400 dark:text-slate-500 shrink-0 mt-0.5"></i>
-                                            <div>
-                                                <span class="font-semibold text-slate-900 dark:text-white">What she
-                                                    accepts:</span>
-                                                <span> Premium corporate fare billed to employer expense account; price
-                                                    sensitivity is zero.</span>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="flex items-start gap-2.5 text-xs sm:text-sm text-amber-900 dark:text-amber-200/90 bg-amber-50/60 dark:bg-amber-950/20 p-2.5 rounded-xl border border-amber-200/60 dark:border-amber-900/40">
-                                            <i data-lucide="alert-triangle"
-                                                class="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5"></i>
-                                            <div>
-                                                <span class="font-semibold text-amber-950 dark:text-amber-200">What goes
-                                                    wrong:</span>
-                                                <span> If tickets drop publicly to ₹3,000 late, corporate travel policy
-                                                    mandates waiting for last-minute bargains.</span>
-                                            </div>
-                                        </div>
+                                    <div>
+                                        <h3 class="text-lg font-bold text-[#111827]">Priya (Age 36)</h3>
+                                        <p class="text-xs text-[#6B6F76]">VP of Technology • Corporate Account</p>
                                     </div>
                                 </div>
-
-                                <!-- Bottom Takeaway with thin coloured left line -->
-                                <div
-                                    class="border border-slate-200 dark:border-slate-800 dark:border-slate-300 pl-3.5 py-1 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-snug">
-                                    <p class="font-medium">Corporate travellers generate most of an airline's profit.
-                                    </p>
-                                    <span class="block text-[11px] text-slate-400 dark:text-slate-500 mt-1">Source:
-                                        Airline revenue management estimates • <span class="italic">Illustrative
-                                            example</span></span>
-                                </div>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 font-mono text-xs font-bold text-slate-800 tabular-nums">
+                                    ₹16,500 Fare
+                                </span>
                             </div>
 
-                            <!-- Persona 2: Ananya (Student - Teal Accents) -->
-                            <div class="persona-card-initial persona-stagger-2 bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border border-teal-200 dark:border-teal-800 shadow-card flex flex-col justify-between space-y-6"
-                                role="region" aria-label="Persona: Ananya, engineering student with ₹3,200 budget">
-
-                                <div class="space-y-5">
-                                    <!-- Top large number & label -->
-                                    <div class="space-y-0.5">
-                                        <div
-                                            class="text-3xl sm:text-4xl font-extrabold text-teal-600 dark:text-teal-400 tabular-nums tracking-tight">
-                                            ₹3,200
-                                        </div>
-                                        <span class="text-xs font-medium text-slate-500 dark:text-slate-400 block">
-                                            what she can afford
-                                        </span>
-                                    </div>
-
-                                    <!-- Name, Role & Situation -->
-                                    <div
-                                        class="flex items-center gap-3 pt-1 border-t border-slate-100 dark:border-slate-800">
-                                        <div class="w-6 h-6 flex items-center justify-center shrink-0">
-                                            🎒
-                                        </div>
-                                        <div>
-                                            <h3 class="text-base font-bold text-slate-900 dark:text-white">Ananya (Age
-                                                22)</h3>
-                                            <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">
-                                                Engineering Student, Bengaluru • Flying home to Delhi on short notice
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Three Labelled Rows: What she needs / What she accepts / What goes wrong -->
-                                    <div class="space-y-3 pt-1">
-                                        <div
-                                            class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
-                                            <i data-lucide="compass"
-                                                class="w-4 h-4 text-slate-400 dark:text-slate-500 shrink-0 mt-0.5"></i>
-                                            <div>
-                                                <span class="font-semibold text-slate-900 dark:text-white">What she
-                                                    needs:</span>
-                                                <span> Safe flight home to Delhi to be with family; fare within her
-                                                    ₹4,800 savings.</span>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
-                                            <i data-lucide="check"
-                                                class="w-4 h-4 text-slate-400 dark:text-slate-500 shrink-0 mt-0.5"></i>
-                                            <div>
-                                                <span class="font-semibold text-slate-900 dark:text-white">What she
-                                                    accepts:</span>
-                                                <span> Middle seat (28B), zero check-in luggage (backpack only), and
-                                                    45-min gate standby.</span>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="flex items-start gap-2.5 text-xs sm:text-sm text-amber-900 dark:text-amber-200/90 bg-amber-50/60 dark:bg-amber-950/20 p-2.5 rounded-xl border border-amber-200/60 dark:border-amber-900/40">
-                                            <i data-lucide="alert-triangle"
-                                                class="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5"></i>
-                                            <div>
-                                                <span class="font-semibold text-amber-950 dark:text-amber-200">What goes
-                                                    wrong:</span>
-                                                <span> At the ₹21,400 commercial ticket she faces, she stays stranded.
-                                                    The plane leaves with 24 empty seats and the airline earns
-                                                    ₹0.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Bottom Takeaway with thin coloured left line -->
-                                <div
-                                    class="border border-slate-200 dark:border-slate-800 dark:border-teal-400 pl-3.5 py-1 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-snug">
-                                    <p class="font-medium">AeroFill gives Ananya an empty seat at ₹3,200 without ever
-                                        leaking discounted inventory to Priya's corporate desk.</p>
-                                    <span class="block text-[11px] text-teal-600/80 dark:text-teal-400/80 mt-1">₹1,366
-                                        marginal profit recovered</span>
-                                </div>
+                            <!-- Quote Bubble (Like Page 6 of Avare Behance) -->
+                            <div class="p-4 rounded-2xl bg-[#F8F9FA] border border-[#E5E7EB] text-xs text-[#374151] italic leading-relaxed">
+                                "I cannot arrive tired or without my trolley bag and laptop. My company expense account pays for confirmed front aisle seats every time."
                             </div>
 
+                            <!-- Needs & Behavior List -->
+                            <div class="space-y-2.5 text-xs">
+                                <div class="flex items-start gap-2.5 text-[#4B5563]">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-slate-400 shrink-0 mt-0.5"></i>
+                                    <span><strong>Non-Negotiable:</strong> Confirmed aisle seat (2C), laptop charging, and guaranteed departure time.</span>
+                                </div>
+                                <div class="flex items-start gap-2.5 text-[#4B5563]">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-slate-400 shrink-0 mt-0.5"></i>
+                                    <span><strong>Luggage Need:</strong> 15kg rolling trolley bag for multiday business suits.</span>
+                                </div>
+                                <div class="flex items-start gap-2.5 text-rose-700 bg-rose-50/70 p-2.5 rounded-xl border border-rose-200">
+                                    <i data-lucide="x-circle" class="w-4 h-4 text-rose-600 shrink-0 mt-0.5"></i>
+                                    <span><strong>Standby Rejection:</strong> Refuses random middle seats and 7kg backpack restrictions 100% of the time.</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- STEP 4: The Cannibalization Moment & Shared Flight Price Ladder (Interactive) -->
-                        <div class="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-card space-y-6"
-                            role="region"
-                            aria-label="Interactive cannibalization simulator: Compare public discounting vs guarded standby">
+                        <div class="pt-4 border-t border-[#E5E7EB] flex items-center justify-between text-xs font-mono text-[#6B6F76]">
+                            <span>Price Sensitivity: <strong class="text-[#111827]">Zero (Expensed)</strong></span>
+                            <span>Full Fare Protected: <strong class="text-[#067647]">Yes</strong></span>
+                        </div>
+                    </div>
 
-                            <div
-                                class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2 border-b border-slate-100 dark:border-slate-800">
-                                <div>
-                                    <div class="flex items-center gap-2">
-                                        <span class="w-2 h-2 rounded-full bg-indigo-600"></span>
-                                        <h3
-                                            class="text-base sm:text-lg font-bold text-slate-900 dark:text-white tracking-tight">
-                                            Flight 6E-205 Bengaluru → Delhi: The Cannibalization Dilemma
-                                        </h3>
+                    <!-- Persona 2: Ananya (Distressed Student) -->
+                    <div class="p-8 rounded-3xl bg-white border-2 border-[#FF6300]/40 shadow-xs flex flex-col justify-between space-y-6">
+                        <div class="space-y-5">
+                            <!-- Profile Header -->
+                            <div class="flex items-start justify-between">
+                                <div class="flex items-center gap-3.5">
+                                    <div class="w-12 h-12 rounded-2xl bg-[#FF6300] text-white flex items-center justify-center font-bold text-lg shadow-xs">
+                                        🎒
                                     </div>
-                                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                                        Departs 06:00 AM • 26 seats empty • Toggle to see why public fire-sales destroy
-                                        yield
-                                    </p>
+                                    <div>
+                                        <h3 class="text-lg font-bold text-[#111827]">Ananya (Age 22)</h3>
+                                        <p class="text-xs text-[#6B6F76]">Student • Urgent Emergency Journey</p>
+                                    </div>
                                 </div>
-
-                                <!-- Two Interactive Toggles -->
-                                <div class="inline-flex p-1 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 self-start md:self-auto"
-                                    role="tablist" aria-label="Cannibalization pricing mode">
-                                    <button id="cannibalBtnPublic" type="button" role="tab" aria-selected="false"
-                                        aria-pressed="false" onclick="setCannibalizationMode('public')"
-                                        class="px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all">
-                                        Show the cheap seat to everyone
-                                    </button>
-                                    <button id="cannibalBtnGuarded" type="button" role="tab" aria-selected="true"
-                                        aria-pressed="true" onclick="setCannibalizationMode('guarded')"
-                                        class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-teal-600 text-white shadow-sm transition-all">
-                                        Guarded standby
-                                    </button>
-                                </div>
+                                <span class="px-2.5 py-1 rounded-md bg-[#FFF7ED] font-mono text-xs font-bold text-[#FF6300] border border-[#FFEDD5] tabular-nums">
+                                    ₹3,200 Standby
+                                </span>
                             </div>
 
-                            <!-- Shared Flight Price Ladder (Visual Benchmark) -->
-                            <div class="space-y-2">
-                                <div
-                                    class="flex justify-between items-center text-xs font-medium text-slate-500 dark:text-slate-400">
-                                    <span>Shared Flight Price Ladder</span>
-                                    <span>Flight 6E-205 (Same Aircraft)</span>
-                                </div>
-                                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs tabular-nums">
-                                    <div class="p-2.5 rounded-xl bg-[#F8F9FB] border border-[#D5D9E2]">
-                                        <div class="text-[11px] text-[#4B5563] font-normal">Late public drop</div>
-                                        <div class="text-sm font-bold text-[#0B1020]">₹3,000</div>
-                                    </div>
-                                    <div class="p-2.5 rounded-xl bg-[#0F8A78]/10 border border-[#0F8A78]/25">
-                                        <div class="text-[11px] text-[#0F8A78] font-normal">Ananya's Standby Fare</div>
-                                        <div class="text-sm font-bold text-[#0F8A78]">₹3,200</div>
-                                    </div>
-                                    <div class="p-2.5 rounded-xl bg-[#F8F9FB] border border-[#D5D9E2]">
-                                        <div class="text-[11px] text-[#4B5563] font-normal">Priya's Corporate Fare</div>
-                                        <div class="text-sm font-bold text-[#0B1020]">₹16,500</div>
-                                    </div>
-                                    <div class="p-2.5 rounded-xl bg-[#9F1239]/10 border border-[#9F1239]/25">
-                                        <div class="text-[11px] text-[#9F1239] font-normal">Emergency Counter Ticket
-                                        </div>
-                                        <div class="text-sm font-bold text-[#9F1239]">₹21,400</div>
-                                    </div>
-                                </div>
+                            <!-- Quote Bubble (Like Page 6 of Avare Behance) -->
+                            <div class="p-4 rounded-2xl bg-[#FFF7ED]/60 border border-[#FFEDD5] text-xs text-[#9A3412] italic leading-relaxed">
+                                "My mother is in ICU in Delhi. I just need to get home tonight. I will happily sit in any middle seat with only my backpack."
                             </div>
 
-                            <!-- Animated Price Bars (Left: Priya, Right: Ananya) -->
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-
-                                <!-- Left: Priya's Corporate Bar -->
-                                <div
-                                    class="p-4 sm:p-5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/80 space-y-3">
-                                    <div class="flex justify-between items-center">
-                                        <div>
-                                            <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Priya
-                                                (Age 36, VP of Technology)</span>
-                                            <span class="text-[11px] text-[#4B5563] block">Baseline: ₹16,500</span>
-                                        </div>
-                                        <span id="cannibalPriyaBadge"
-                                            class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-[#F8F9FB] text-[#0B1020] border border-[#D5D9E2]">
-                                            100% Protected
-                                        </span>
-                                    </div>
-
-                                    <div class="space-y-1.5">
-                                        <div class="flex justify-between items-baseline">
-                                            <span id="cannibalPriyaVal"
-                                                class="text-2xl sm:text-3xl font-extrabold text-[#0B1020] tabular-nums tracking-tight">
-                                                ₹16,500
-                                            </span>
-                                            <span class="text-xs text-[#4B5563]">Airline Revenue</span>
-                                        </div>
-                                        <!-- Bar Container -->
-                                        <div
-                                            class="w-full bg-slate-200 dark:bg-slate-700 h-7 rounded-lg overflow-hidden p-0.5">
-                                            <div id="cannibalPriyaBar" style="width: 100%;"
-                                                class="h-6 rounded-md bg-[#0B1020] transition-all duration-700 ease-out">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Dynamic Caption -->
-                                    <p id="cannibalPriyaCaption"
-                                        class="text-xs text-slate-600 dark:text-slate-300 font-medium min-h-[32px] flex items-center">
-                                        Priya's company pays full ₹16,500 because standby offers zero booking certainty
-                                        or seat selection.
-                                    </p>
+                            <!-- Needs & Behavior List -->
+                            <div class="space-y-2.5 text-xs">
+                                <div class="flex items-start gap-2.5 text-[#4B5563]">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-[#067647] shrink-0 mt-0.5"></i>
+                                    <span><strong>Primary Need:</strong> Fast, dignified flight home to Delhi within her ₹4,800 savings.</span>
                                 </div>
-
-                                <!-- Right: Ananya's Standby Bar -->
-                                <div
-                                    class="p-4 sm:p-5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/80 space-y-3">
-                                    <div class="flex justify-between items-center">
-                                        <div>
-                                            <span
-                                                class="text-xs font-semibold text-slate-700 dark:text-slate-300">Ananya
-                                                (Age 22, Student, Bengaluru)</span>
-                                            <span class="text-[11px] text-slate-400 block">Savings: ₹4,800 vs Surge
-                                                Fare: ₹21,400 <span
-                                                    class="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 ml-1">78%
-                                                    shortfall</span></span>
-                                        </div>
-                                        <span id="cannibalAnanyaBadge"
-                                            class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-[#0F8A78]/10 text-[#0F8A78] border border-[#0F8A78]/30">
-                                            +₹1,366 pure profit
-                                        </span>
-                                    </div>
-
-                                    <div class="space-y-1.5">
-                                        <div class="flex justify-between items-baseline">
-                                            <span id="cannibalAnanyaVal"
-                                                class="text-2xl sm:text-3xl font-extrabold text-[#0F8A78] tabular-nums tracking-tight">
-                                                ₹3,200
-                                            </span>
-                                            <span class="text-xs text-[#4B5563]">Recovered Yield</span>
-                                        </div>
-                                        <!-- Bar Container -->
-                                        <div
-                                            class="w-full bg-slate-200 dark:bg-slate-700 h-7 rounded-lg overflow-hidden p-0.5">
-                                            <div id="cannibalAnanyaBar" style="width: 19.4%;"
-                                                class="h-6 rounded-md bg-[#0F8A78] transition-all duration-700 ease-out">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Dynamic Caption -->
-                                    <p id="cannibalAnanyaCaption"
-                                        class="text-xs text-slate-600 dark:text-slate-300 font-medium min-h-[32px] flex items-center">
-                                        Ananya fills seat 28B at ₹3,200 (19.4% of full corporate fare) without ever
-                                        leaking discounted inventory to Priya's company.
-                                    </p>
+                                <div class="flex items-start gap-2.5 text-[#4B5563]">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-[#067647] shrink-0 mt-0.5"></i>
+                                    <span><strong>Friction Accepted:</strong> Accepts middle seat (28B), zero check-in bags, and 45-minute gate standby.</span>
                                 </div>
-
+                                <div class="flex items-start gap-2.5 text-[#067647] bg-[#E7F6EC] p-2.5 rounded-xl border border-[#067647]/20">
+                                    <i data-lucide="check" class="w-4 h-4 text-[#067647] shrink-0 mt-0.5"></i>
+                                    <span><strong>AeroFill Outcome:</strong> Reaches hospital in 4 hours; airline earns +₹1,750 net margin from empty seat.</span>
+                                </div>
                             </div>
+                        </div>
 
+                        <div class="pt-4 border-t border-[#E5E7EB] flex items-center justify-between text-xs font-mono text-[#6B6F76]">
+                            <span>Budget Cap: <strong class="text-[#111827]">₹4,800 Savings</strong></span>
+                            <span>Fare Relief: <strong class="text-[#FF6300]">85% vs Surge</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cannibalization Simulator Toggle (Why Public Discounts Fail vs Guarded Standby) -->
+            <div class="p-7 sm:p-8 rounded-3xl bg-white border border-[#E5E7EB] shadow-xs space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E5E7EB] pb-4">
+                    <div>
+                        <h3 class="text-base sm:text-lg font-bold text-[#111827] tracking-tight">
+                            Flight 6E-205 Cannibalization Defense Simulator
+                        </h3>
+                        <p class="text-xs text-[#6B6F76] mt-0.5">
+                            Toggle below to observe why airlines cannot run public last-minute sales, and how operational friction protects full fares.
+                        </p>
+                    </div>
+
+                    <!-- Interactive Mode Selector Buttons -->
+                    <div class="inline-flex p-1 rounded-xl bg-slate-100 border border-slate-200" role="tablist">
+                        <button id="cannibalBtnPublic" type="button" onclick="setCannibalizationMode('public')"
+                            class="px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-slate-900 transition-all">
+                            Public Discount (Open Drop)
+                        </button>
+                        <button id="cannibalBtnGuarded" type="button" onclick="setCannibalizationMode('guarded')"
+                            class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-[#FF6300] text-white shadow-xs transition-all">
+                            Guarded Standby (AeroFill)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Price Ladder Benchmark -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center text-xs font-mono">
+                    <div class="p-3.5 rounded-xl bg-[#F8F9FA] border border-[#E5E7EB] space-y-1">
+                        <div class="text-[10px] text-[#6B6F76]">Late Public Drop</div>
+                        <div class="text-base font-bold text-[#111827] tabular-nums">₹3,000</div>
+                        <div class="text-[10px] text-rose-600 font-sans">Cannibalizes Corporate</div>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-[#FFF7ED] border border-[#FED7AA] space-y-1">
+                        <div class="text-[10px] text-[#FF6300]">Ananya Standby</div>
+                        <div class="text-base font-bold text-[#FF6300] tabular-nums">₹3,200</div>
+                        <div class="text-[10px] text-[#067647] font-sans">Friction-Protected</div>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-[#F8F9FA] border border-[#E5E7EB] space-y-1">
+                        <div class="text-[10px] text-[#6B6F76]">Priya Corporate</div>
+                        <div class="text-base font-bold text-[#111827] tabular-nums">₹16,500</div>
+                        <div class="text-[10px] text-slate-500 font-sans">Full Scheduled Yield</div>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-rose-50 border border-rose-200 space-y-1">
+                        <div class="text-[10px] text-rose-700">Airport Counter Surge</div>
+                        <div class="text-base font-bold text-rose-700 tabular-nums">₹21,400</div>
+                        <div class="text-[10px] text-rose-600 font-sans">Locks Out Distressed</div>
+                    </div>
+                </div>
+
+                <!-- Animated Price Bars (Left: Priya, Right: Ananya) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                    <!-- Left: Priya's Corporate Bar -->
+                    <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-xs font-semibold text-slate-800">Priya (Corporate VP)</span>
+                                <span class="text-[11px] text-[#6B6F76] block">Full Yield: ₹16,500</span>
+                            </div>
+                            <span id="cannibalPriyaBadge" class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-200 text-slate-800 font-mono">
+                                100% Protected
+                            </span>
+                        </div>
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between items-baseline">
+                                <span id="cannibalPriyaVal" class="text-2xl font-bold text-[#111827] tabular-nums font-mono">
+                                    ₹16,500
+                                </span>
+                                <span class="text-xs text-[#6B6F76]">Airline Revenue</span>
+                            </div>
+                            <div class="w-full bg-slate-200 h-6 rounded-lg overflow-hidden p-0.5">
+                                <div id="cannibalPriyaBar" style="width: 100%;" class="h-5 rounded-md bg-[#111827] transition-all duration-700 ease-out"></div>
+                            </div>
+                        </div>
+                        <p id="cannibalPriyaCaption" class="text-xs text-[#4B5563] min-h-[32px] flex items-center leading-relaxed">
+                            Priya's company pays full ₹16,500 because standby offers zero booking certainty or seat selection.
+                        </p>
+                    </div>
+
+                    <!-- Right: Ananya's Standby Bar -->
+                    <div class="p-4 sm:p-5 rounded-2xl bg-[#FFF7ED] border border-[#FED7AA] space-y-3">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-xs font-semibold text-[#111827]">Ananya (Distressed Student)</span>
+                                <span class="text-[11px] text-[#6B6F76] block">Savings: ₹4,800 vs Surge ₹21,400</span>
+                            </div>
+                            <span id="cannibalAnanyaBadge" class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-[#E7F6EC] text-[#067647] font-mono border border-[#067647]/30">
+                                +₹1,366 profit
+                            </span>
+                        </div>
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between items-baseline">
+                                <span id="cannibalAnanyaVal" class="text-2xl font-bold text-[#067647] tabular-nums font-mono">
+                                    ₹3,200
+                                </span>
+                                <span class="text-xs text-[#067647]">Recovered Yield</span>
+                            </div>
+                            <div class="w-full bg-slate-200 h-6 rounded-lg overflow-hidden p-0.5">
+                                <div id="cannibalAnanyaBar" style="width: 19.4%;" class="h-5 rounded-md bg-[#067647] transition-all duration-700 ease-out"></div>
+                            </div>
+                        </div>
+                        <p id="cannibalAnanyaCaption" class="text-xs text-[#4B5563] min-h-[32px] flex items-center leading-relaxed">
+                            Ananya fills middle seat 28B at ₹3,200 without ever leaking discounted inventory to Priya's corporate travel desk.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- SUBTLE DIVIDER -->
