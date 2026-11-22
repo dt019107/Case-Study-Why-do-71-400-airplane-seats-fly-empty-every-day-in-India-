@@ -106,7 +106,7 @@
     background: #111827;
     color: #FFFFFF;
     font-family: "JetBrains Mono", ui-monospace, monospace;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 700;
     padding: 4px 10px;
     border-radius: 8px;
@@ -783,4 +783,16 @@ html.reduce-motion-active .draw-underline-target::after {
 
 html.reduce-motion-active #flightPathMarginTracker {
     display: none !important;
+}
+
+/* iOS Zoom Prevention on Form Controls */
+@media (max-width: 639px) {
+    input, select, textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* Accessible Heading Leading */
+h1, h2, h3, h4 {
+    line-height: 1.28;
 }
